@@ -5,6 +5,7 @@ import { AlertCircle, CheckCircle2 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { subscribe, type Toast } from "@/lib/toast";
 import { cn } from "@/lib/cn";
+import { DURATION, EASE_OUT } from "@/lib/motion";
 
 // Értesítések (pl. „Sikeresen bejelentkeztél”) – alul középen, képernyőolvasóval is
 export function Toaster() {
@@ -24,16 +25,16 @@ export function Toaster() {
             initial={{ opacity: 0, y: 16, scale: 0.97 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 8, scale: 0.97 }}
-            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: DURATION.overlay, ease: EASE_OUT }}
             className={cn(
-              "pointer-events-auto flex max-w-md items-center gap-3 rounded-2xl border bg-base-800/95 px-4 py-3 text-sm font-medium shadow-soft backdrop-blur-xl",
-              t.kind === "success" ? "border-emerald-400/30" : "border-rose-400/30",
+              "pointer-events-auto flex max-w-md items-center gap-3 rounded-xl border bg-base-800/95 px-4 py-3 text-sm font-medium shadow-float backdrop-blur-xl",
+              t.kind === "success" ? "border-success/30" : "border-danger/30",
             )}
           >
             {t.kind === "success" ? (
-              <CheckCircle2 className="size-5 shrink-0 text-emerald-400" aria-hidden="true" />
+              <CheckCircle2 className="size-5 shrink-0 text-success" aria-hidden="true" />
             ) : (
-              <AlertCircle className="size-5 shrink-0 text-rose-400" aria-hidden="true" />
+              <AlertCircle className="size-5 shrink-0 text-danger" aria-hidden="true" />
             )}
             {t.message}
           </m.div>

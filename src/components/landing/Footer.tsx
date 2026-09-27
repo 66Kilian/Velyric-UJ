@@ -50,13 +50,12 @@ export function Footer() {
 
         <div className="flex flex-col gap-4">
           <h3 className="text-sm font-semibold tracking-[0.14em] uppercase">{t("legal")}</h3>
-          {/* Helyőrző linkek – a jogi oldalak később készülnek */}
-          <a href="#" className={linkClass}>
+          <Link href="/adatvedelem" className={linkClass}>
             {t("privacy")}
-          </a>
-          <a href="#" className={linkClass}>
+          </Link>
+          <Link href="/aszf" className={linkClass}>
             {t("terms")}
-          </a>
+          </Link>
         </div>
       </Container>
       <Container>

@@ -12,7 +12,7 @@ type LogoProps = {
 };
 
 const markHeights = { sm: "h-6", md: "h-7", lg: "h-10" } as const;
-const wordSizes = { sm: "text-sm", md: "text-[15px]", lg: "text-xl" } as const;
+const wordSizes = { sm: "text-sm", md: "text-ui", lg: "text-xl" } as const;
 
 // Velyric logó: a V jel (public/brand/velyric-mark.png) + „VELYRIC” wordmark szövegként
 export function Logo({ size = "md", withWordmark = true, eager, className }: LogoProps) {

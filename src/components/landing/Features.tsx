@@ -1,42 +1,69 @@
-import { BarChart3, CalendarCheck, Languages, MessagesSquare, MoonStar, PhoneForwarded } from "lucide-react";
+import { BarChart3, CalendarCheck, Languages, MessagesSquare, MoonStar, PhoneForwarded, type LucideIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { CornerWave } from "@/components/decor/CornerWave";
 import { Container } from "@/components/ui/Container";
-import { RevealGroup, RevealItem } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { SpotlightCard } from "./SpotlightCard";
+import { cn } from "@/lib/cn";
 
-const items = [
+const items: { key: "conversation" | "booking" | "languages" | "handoff" | "allDay" | "analytics"; icon: LucideIcon }[] = [
   { key: "conversation", icon: MessagesSquare },
   { key: "booking", icon: CalendarCheck },
-  { key: "handoff", icon: PhoneForwarded },
   { key: "languages", icon: Languages },
+  { key: "handoff", icon: PhoneForwarded },
   { key: "allDay", icon: MoonStar },
   { key: "analytics", icon: BarChart3 },
-] as const;
+];
 
-// MIT TUD A VELYRIC – 6 feature-kártya
+// MIT TUD A VELYRIC – egy hívás idővonala; minden képesség ott jelenik meg, ahol dolgozik.
+// (A 6 képesség: ikon + cím + egy mondat, a hívás egy pillanatához kötve.)
 export function Features() {
   const t = useTranslations("features");
 
   return (
-    <section id="mit-tudunk" aria-labelledby="features-title" className="relative overflow-hidden py-28 sm:py-36">
-      <CornerWave flip className="hidden sm:block -bottom-24 -left-24 w-[520px] rotate-180 opacity-60 sm:w-[640px]" />
-      <Container className="relative">
-        <SectionHeading eyebrow={t("eyebrow")} title={<span id="features-title">{t("title")}</span>} />
-        <RevealGroup className="mt-14 grid gap-4 sm:mt-16 sm:grid-cols-2 lg:grid-cols-3">
-          {items.map(({ key, icon: Icon }) => (
-            <RevealItem key={key}>
-              <SpotlightCard>
-                <span className="flex size-12 items-center justify-center rounded-2xl bg-brand shadow-[0_8px_30px_-8px_rgb(229_35_126/0.6)]">
-                  <Icon className="size-5 text-white" aria-hidden="true" />
-                </span>
-                <h3 className="mt-6 text-xl font-semibold">{t(`items.${key}.title`)}</h3>
-                <p className="mt-2 leading-relaxed text-muted">{t(`items.${key}.text`)}</p>
-              </SpotlightCard>
-            </RevealItem>
-          ))}
-        </RevealGroup>
+    <section id="mit-tudunk" aria-labelledby="features-title" className="relative py-24 sm:py-32">
+      <Container>
+        <SectionHeading id="features-title" label={t("eyebrow")} title={t("title")} text={t("intro")} />
+
+        <ol className="mt-14 border-t border-line-strong sm:mt-20">
+          {items.map(({ key, icon: Icon }) => {
+            const who = t(`lines.${key}.who`) as "agent" | "caller" | "summary";
+            const time = t(`lines.${key}.time`);
+            return (
+              <li
+                key={key}
+                className="grid gap-5 border-b border-line py-8 md:grid-cols-[4.5rem_minmax(0,1fr)_minmax(0,1fr)] md:gap-8 md:py-10"
+              >
+                {/* Időbélyeg a hívásban */}
+                <p className="tabular text-sm font-medium text-muted md:pt-3">{time || t("after")}</p>
+
+                {/* A hívás pillanata */}
+                <div className="md:order-none order-last">
+                  <p className="mb-2 text-xs font-medium text-muted">{t(`speaker.${who}`)}</p>
+                  <p
+                    className={cn(
+                      "max-w-md rounded-xl px-4 py-3 text-ui leading-snug",
+                      who === "caller" && "rounded-bl-md bg-base-600",
+                      who === "agent" && "rounded-br-md border border-brand-pink/35 bg-brand-pink/10",
+                      who === "summary" && "border border-line-strong bg-base-800",
+                    )}
+                  >
+                    {t(`lines.${key}.line`)}
+                  </p>
+                </div>
+
+                {/* A képesség */}
+                <div className="flex gap-4">
+                  <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-base-700">
+                    <Icon className="size-5 text-fg" aria-hidden="true" />
+                  </span>
+                  <div>
+                    <h3 className="text-lg font-semibold">{t(`items.${key}.title`)}</h3>
+                    <p className="mt-1.5 leading-relaxed text-muted">{t(`items.${key}.text`)}</p>
+                  </div>
+                </div>
+              </li>
+            );
+          })}
+        </ol>
       </Container>
     </section>
   );

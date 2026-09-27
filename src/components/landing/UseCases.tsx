@@ -1,54 +1,131 @@
+"use client";
+
+import { CalendarCheck } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image, { type StaticImageData } from "next/image";
+import { useId, useRef, useState, type KeyboardEvent } from "react";
 import cafe from "@/assets/images/kavezo.jpg";
 import clinic from "@/assets/images/rendelo.jpg";
 import salon from "@/assets/images/szalon.jpg";
 import service from "@/assets/images/szerviz.jpg";
 import { Container } from "@/components/ui/Container";
-import { RevealGroup, RevealItem } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { cn } from "@/lib/cn";
 
-const items: { key: "salon" | "clinic" | "cafe" | "service"; img: StaticImageData }[] = [
+type Key = "salon" | "clinic" | "cafe" | "service";
+const items: { key: Key; img: StaticImageData }[] = [
   { key: "salon", img: salon },
   { key: "clinic", img: clinic },
   { key: "cafe", img: cafe },
   { key: "service", img: service },
 ];
 
-// KINEK SZÓL – képes kártyák tipikus hívásokkal
+// KINEK SZÓL – iparág-fülek: mindegyik a saját fotóját és egy tipikus rövid hívását mutatja.
+// Akadálymentes tablist: nyilakkal, Home/End-del is váltható.
 export function UseCases() {
   const t = useTranslations("useCases");
+  const tc = useTranslations("call");
+  const [active, setActive] = useState(0);
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const baseId = useId();
+
+  const select = (i: number) => {
+    setActive(i);
+    tabRefs.current[i]?.focus();
+  };
+  const onKeyDown = (e: KeyboardEvent) => {
+    const last = items.length - 1;
+    if (e.key === "ArrowRight" || e.key === "ArrowDown") select(active === last ? 0 : active + 1);
+    else if (e.key === "ArrowLeft" || e.key === "ArrowUp") select(active === 0 ? last : active - 1);
+    else if (e.key === "Home") select(0);
+    else if (e.key === "End") select(last);
+    else return;
+    e.preventDefault();
+  };
+
+  const current = items[active];
 
   return (
-    <section aria-labelledby="usecases-title" className="relative border-y border-line bg-base-800/40 py-28 sm:py-36">
+    <section aria-labelledby="usecases-title" className="relative py-24 sm:py-32">
       <Container>
-        <SectionHeading
-          eyebrow={t("eyebrow")}
-          title={<span id="usecases-title">{t("title")}</span>}
-          text={t("text")}
-        />
-        <RevealGroup className="mt-14 grid gap-4 sm:mt-16 sm:grid-cols-2 lg:grid-cols-4">
-          {items.map(({ key, img }) => (
-            <RevealItem key={key}>
-              <article className="group relative aspect-[4/5] overflow-hidden rounded-card border border-line-strong lg:aspect-[3/4.4]">
+        <SectionHeading id="usecases-title" label={t("eyebrow")} title={t("title")} text={t("text")} />
+
+        <div className="mt-12 grid gap-8 sm:mt-16 lg:grid-cols-[18rem_1fr] lg:gap-12">
+          {/* Fülek */}
+          <div
+            role="tablist"
+            aria-label={t("tabsLabel")}
+            aria-orientation="vertical"
+            onKeyDown={onKeyDown}
+            className="-mx-5 flex gap-2 overflow-x-auto px-5 pb-1 sm:mx-0 sm:px-0 lg:flex-col lg:overflow-visible"
+          >
+            {items.map(({ key }, i) => (
+              <button
+                key={key}
+                ref={(el) => {
+                  tabRefs.current[i] = el;
+                }}
+                type="button"
+                role="tab"
+                id={`${baseId}-tab-${key}`}
+                aria-selected={active === i}
+                aria-controls={`${baseId}-panel`}
+                tabIndex={active === i ? 0 : -1}
+                onClick={() => setActive(i)}
+                className={cn(
+                  "flex min-h-12 shrink-0 items-center gap-3 rounded-xl px-4 text-left text-ui font-semibold transition-colors duration-150",
+                  active === i ? "bg-base-600 text-fg" : "text-muted hover:bg-base-800 hover:text-fg",
+                )}
+              >
+                <span
+                  aria-hidden="true"
+                  className={cn("h-5 w-1 rounded-full bg-brand transition-opacity", active === i ? "opacity-100" : "opacity-0")}
+                />
+                {t(`items.${key}.title`)}
+              </button>
+            ))}
+          </div>
+
+          {/* Panel: fotó + tipikus hívás */}
+          <div
+            role="tabpanel"
+            id={`${baseId}-panel`}
+            aria-labelledby={`${baseId}-tab-${current.key}`}
+            className="grid overflow-hidden rounded-media border border-line-strong bg-base-800 md:grid-cols-[1.1fr_1fr]"
+          >
+            <div className="relative aspect-[4/3] md:aspect-auto md:min-h-[26rem]">
+              {items.map(({ key, img }, i) => (
                 <Image
+                  key={key}
                   src={img}
                   alt={t(`items.${key}.alt`)}
                   placeholder="blur"
-                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 90vw"
-                  className="h-full w-full object-cover transition-transform duration-700 ease-[var(--ease-premium)] group-hover:scale-105"
+                  sizes="(min-width: 1280px) 480px, (min-width: 1024px) 40vw, (min-width: 768px) 55vw, 100vw"
+                  aria-hidden={active !== i}
+                  className={cn(
+                    "absolute inset-0 h-full w-full object-cover transition-opacity duration-300",
+                    active === i ? "opacity-100" : "opacity-0",
+                  )}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-base-900 via-base-900/40 to-base-900/10" />
-                <div className="absolute inset-x-0 bottom-0 flex flex-col gap-3 p-6">
-                  <p className="self-start rounded-2xl rounded-bl-md border border-white/10 bg-base-900/70 px-3.5 py-2.5 text-sm leading-snug text-fg/90 backdrop-blur-md">
-                    {t(`items.${key}.quote`)}
-                  </p>
-                  <h3 className="text-xl font-semibold">{t(`items.${key}.title`)}</h3>
-                </div>
-              </article>
-            </RevealItem>
-          ))}
-        </RevealGroup>
+              ))}
+            </div>
+            <div key={current.key} className="flex flex-col justify-center gap-3 p-6 text-ui leading-snug sm:p-8">
+              <p className="text-xs font-medium text-muted">{tc("example")}</p>
+              <p className="turn-in max-w-[92%] self-start rounded-bubble rounded-bl-md bg-base-600 px-4 py-3">
+                <span className="sr-only">{tc("caller")}: </span>
+                {t(`items.${current.key}.quote`)}
+              </p>
+              <p className="turn-in max-w-[92%] self-end rounded-bubble rounded-br-md border border-brand-pink/35 bg-brand-pink/10 px-4 py-3 [animation-delay:120ms]">
+                <span className="sr-only">{tc("agent")}: </span>
+                {t(`items.${current.key}.agent`)}
+              </p>
+              <p className="turn-in mt-2 flex items-center gap-2 text-sm font-medium text-success [animation-delay:240ms]">
+                <CalendarCheck className="size-4 shrink-0" aria-hidden="true" />
+                {t(`items.${current.key}.outcome`)}
+              </p>
+            </div>
+          </div>
+        </div>
       </Container>
     </section>
   );

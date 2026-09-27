@@ -8,6 +8,7 @@ import { usePathname, useRouter } from "@/i18n/navigation";
 import { localeNames } from "@/i18n/locales";
 import { routing, type Locale } from "@/i18n/routing";
 import { cn } from "@/lib/cn";
+import { DURATION, EASE_OUT } from "@/lib/motion";
 
 // Nyelvváltás: ugyanazon az oldalon marad, csak a nyelv (és a beszédes URL) változik
 function useSwitchLocale() {
@@ -74,8 +75,8 @@ export function LanguageDropdown({ className }: { className?: string }) {
             initial={{ opacity: 0, y: -6 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -6 }}
-            transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute top-full right-0 mt-2 w-48 rounded-2xl border border-line-strong bg-base-800/95 p-1.5 shadow-soft backdrop-blur-xl"
+            transition={{ duration: DURATION.overlay, ease: EASE_OUT }}
+            className="absolute top-full right-0 mt-2 w-48 rounded-xl border border-line-strong bg-base-800/95 p-1.5 shadow-float backdrop-blur-xl"
           >
             {routing.locales.map((locale) => {
               const selected = locale === current;

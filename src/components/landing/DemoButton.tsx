@@ -2,19 +2,41 @@
 
 import { Phone, Play, X } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useRef } from "react";
+import { useMemo, useRef, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { site } from "@/lib/site";
+import { CallPlayback, type Turn } from "./CallPlayback";
 
-// „Nézd meg működés közben” – natív <dialog>: beépített fókuszkezelés és Esc
+// „Nézd meg működés közben” – natív <dialog> (beépített fókuszkezelés, Esc),
+// benne egy lejátszódó, egyértelműen példaként jelölt hívás
 export function DemoButton() {
   const t = useTranslations("demo");
   const tHero = useTranslations("hero");
   const dialogRef = useRef<HTMLDialogElement>(null);
+  const [open, setOpen] = useState(false);
+
+  const turns = useMemo<Turn[]>(
+    () => [
+      { who: "caller", text: t("t1") },
+      { who: "agent", text: t("t2") },
+      { who: "caller", text: t("t3") },
+      { who: "agent", text: t("t4") },
+    ],
+    [t],
+  );
+
+  const close = () => dialogRef.current?.close();
 
   return (
     <>
-      <Button variant="secondary" size="lg" onClick={() => dialogRef.current?.showModal()}>
+      <Button
+        variant="secondary"
+        size="lg"
+        onClick={() => {
+          setOpen(true);
+          dialogRef.current?.showModal();
+        }}
+      >
         <Play className="size-4 fill-current" aria-hidden="true" />
         {tHero("ctaSecondary")}
       </Button>
@@ -22,49 +44,44 @@ export function DemoButton() {
       <dialog
         ref={dialogRef}
         aria-labelledby="demo-title"
-        onClick={(e) => e.target === dialogRef.current && dialogRef.current?.close()}
-        className="demo-dialog m-auto w-[min(92vw,560px)] rounded-card border border-line-strong bg-base-800 p-0 text-fg shadow-card"
+        aria-describedby="demo-text"
+        onClose={() => setOpen(false)}
+        onClick={(e) => e.target === dialogRef.current && close()}
+        className="dialog-panel m-auto w-[min(94vw,560px)] rounded-panel border border-line-strong bg-base-900 p-0 text-fg shadow-float"
       >
-        <div className="relative p-6 sm:p-8">
+        <div className="relative p-5 sm:p-7">
           <button
             type="button"
-            onClick={() => dialogRef.current?.close()}
+            onClick={close}
             aria-label={t("close")}
             className="absolute top-3 right-3 flex size-12 items-center justify-center rounded-xl text-muted transition-colors hover:bg-base-700 hover:text-fg"
           >
             <X className="size-5" aria-hidden="true" />
           </button>
 
-          <h2 id="demo-title" className="pr-10 text-2xl font-bold">
+          <h2 id="demo-title" className="pr-12 text-2xl font-bold tracking-tight">
             {t("title")}
           </h2>
-          <p className="mt-2 text-muted">{t("text")}</p>
-
-          {/* Lejátszó-helyőrző: ide kerül majd a valódi hanganyag / videó */}
-          <div className="mt-6 flex items-center gap-4 rounded-2xl border border-line bg-base-900/60 p-4">
-            <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-brand opacity-60">
-              <Play className="size-5 fill-white text-white" aria-hidden="true" />
-              <span className="sr-only">{t("play")}</span>
-            </span>
-            <div className="flex h-10 flex-1 items-center gap-[3px] overflow-hidden" aria-hidden="true">
-              {Array.from({ length: 48 }, (_, i) => (
-                <span
-                  key={i}
-                  className="w-[3px] shrink-0 rounded-full bg-muted/40"
-                  style={{ height: `${25 + Math.abs(Math.sin(i * 0.9) * 60) + (i % 5) * 3}%` }}
-                />
-              ))}
-            </div>
-          </div>
-          <p className="mt-3 text-center text-xs font-semibold tracking-[0.14em] text-muted uppercase">
-            {t("soon")}
+          <p id="demo-text" className="mt-2 pr-4 text-muted">
+            {t("text")}
           </p>
 
-          <div className="mt-6 border-t border-line pt-6">
-            <p className="text-sm text-muted">{t("callText")}</p>
+          {/* Csak nyitott ablakban él (így mindig az elejéről indul) */}
+          {open && (
+            <CallPlayback
+              className="mt-6"
+              business={t("business")}
+              turns={turns}
+              outcome={{ kind: "handoff", text: t("handoff") }}
+            />
+          )}
+          <p className="mt-3 text-xs text-muted">{t("note")}</p>
+
+          <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-line pt-5 text-sm">
+            <span className="text-muted">{t("callText")}</span>
             <a
               href={site.phoneHref}
-              className="mt-3 inline-flex h-12 items-center gap-2 rounded-xl border border-line-strong px-5 font-semibold transition-colors hover:bg-base-700"
+              className="inline-flex min-h-11 items-center gap-2 font-semibold underline-offset-4 hover:underline"
             >
               <Phone className="size-4" aria-hidden="true" />
               {site.phone}

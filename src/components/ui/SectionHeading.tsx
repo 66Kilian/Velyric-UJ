@@ -1,45 +1,25 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/cn";
-import { Reveal } from "./Reveal";
-
-// Kis, nagybetűs szekció-címke gradiens vonalkával
-export function Eyebrow({ children, className }: { children: ReactNode; className?: string }) {
-  return (
-    <p
-      className={cn(
-        "inline-flex items-center gap-3 text-xs font-semibold tracking-[0.2em] text-muted uppercase",
-        className,
-      )}
-    >
-      <span aria-hidden="true" className="h-px w-8 bg-brand" />
-      {children}
-    </p>
-  );
-}
 
 type SectionHeadingProps = {
-  eyebrow: ReactNode;
+  id: string;
+  /** Kis szekciónév – csak ha információt hordoz (navigációs cél) */
+  label?: ReactNode;
   title: ReactNode;
   text?: ReactNode;
-  align?: "left" | "center";
   className?: string;
 };
 
-// Egységes szekció-fejléc: címke + nagy cím + opcionális bevezető
-export function SectionHeading({ eyebrow, title, text, align = "left", className }: SectionHeadingProps) {
+// Egységes szekció-fejléc: (név) + cím + bevezető. A szöveg a helyén jelenik meg,
+// nem úszik be – a mozgás a képeké és a 3D jelé.
+export function SectionHeading({ id, label, title, text, className }: SectionHeadingProps) {
   return (
-    <Reveal
-      className={cn(
-        "flex max-w-3xl flex-col gap-5",
-        align === "center" && "mx-auto items-center text-center",
-        className,
-      )}
-    >
-      <Eyebrow>{eyebrow}</Eyebrow>
-      <h2 className="text-[2rem] leading-[1.1] font-bold tracking-[-0.02em] text-balance sm:text-5xl">
+    <div className={cn("flex max-w-3xl flex-col", className)}>
+      {label && <p className="mb-5 text-sm font-semibold text-muted">{label}</p>}
+      <h2 id={id} className="text-title font-bold text-balance">
         {title}
       </h2>
-      {text && <p className="max-w-2xl text-lg leading-relaxed text-pretty text-muted">{text}</p>}
-    </Reveal>
+      {text && <p className="mt-5 max-w-2xl text-lead text-pretty text-muted">{text}</p>}
+    </div>
   );
 }

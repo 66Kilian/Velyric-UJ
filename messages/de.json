@@ -12,7 +12,7 @@
     "features": "Was wir können",
     "contact": "Kontakt",
     "login": "Anmelden",
-    "start": "Jetzt starten",
+    "start": "Konto erstellen",
     "openMenu": "Menü öffnen",
     "closeMenu": "Menü schließen",
     "language": "Sprache",
@@ -25,51 +25,58 @@
   },
   "hero": {
     "eyebrow": "KI-Sprachagenten für moderne Unternehmen",
-    "titleLine1": "Wir nehmen jeden Anruf an —",
+    "titleLine1": "Wir nehmen jeden Anruf an —",
     "titleLine2": "Tag und Nacht, in Ihrer Sprache.",
     "subtitle": "Der Sprachagent von Velyric geht ans Telefon wie Ihre beste Empfangskraft: freundlich, natürlich – und bucht sofort den Termin. Sie konzentrieren sich auf Ihre Arbeit.",
-    "ctaPrimary": "Jetzt starten",
+    "ctaPrimary": "Konto erstellen",
     "ctaSecondary": "In Aktion ansehen",
     "trust": {
-      "languages": "Ungarisch · Deutsch · Englisch",
-      "allDay": "Rund um die Uhr",
-      "calendar": "Kalender-Integration"
+      "languages": "Ungarisch, Deutsch und Englisch",
+      "allDay": "Rund um die Uhr erreichbar",
+      "calendar": "Bucht in Ihren Kalender"
     },
     "scroll": "Scrollen"
   },
   "call": {
-    "live": "Live-Anruf",
+    "example": "Beispielanruf",
+    "incoming": "Anruf läuft",
+    "ended": "Anruf beendet",
+    "transcript": "Gesprächsverlauf",
+    "caller": "Anrufer",
+    "agent": "Velyric",
+    "replay": "Erneut abspielen",
     "business": "Salon Bella",
-    "caller": "Guten Tag! Ich hätte gern morgen Nachmittag einen Haarschnitt.",
-    "agent": "Sehr gern! Um 14:00 oder 16:30 Uhr ist frei. Was passt Ihnen?",
-    "booked": "Termin gebucht · morgen 14:00 Uhr",
-    "waveLabel": "Der Sprachagent spricht gerade"
+    "t1": "Guten Tag! Ich hätte gern morgen Nachmittag einen Haarschnitt.",
+    "t2": "Sehr gern! Morgen ist um 14:00 oder 16:30 Uhr frei. Was passt Ihnen?",
+    "t3": "14 Uhr passt gut.",
+    "t4": "Wunderbar, Sie sind für morgen 14:00 Uhr eingetragen. Bis dann!",
+    "booked": "Termin gebucht: morgen 14:00 Uhr"
   },
   "story": {
     "eyebrow": "So arbeitet Velyric",
     "s1": {
-      "kicker": "01 · Anruf",
+      "kicker": "Anruf",
       "title": "Das Telefon klingelt. Velyric hat schon abgenommen.",
       "text": "Beim ersten Klingeln – frühmorgens, am Wochenende und zu Stoßzeiten. Keine besetzte Leitung, kein verlorener Kunde.",
       "bubble": "„Guten Tag, Salon Bella. Wie kann ich helfen?“"
     },
     "s2": {
-      "kicker": "02 · Verstehen",
+      "kicker": "Verstehen",
       "title": "Es spricht wie Ihr bester Mitarbeiter.",
       "text": "Natürliche, menschliche Sprache – auch wenn Anrufer unterbrechen oder das Thema wechseln. Auf Deutsch, Englisch oder Ungarisch.",
       "bubble": "„Natürlich! Welche Leistung und wann passt es Ihnen?“"
     },
     "s3": {
-      "kicker": "03 · Erledigen",
+      "kicker": "Erledigen",
       "title": "Es bucht. Es antwortet. Es erledigt.",
       "text": "Es prüft Ihren Kalender, bucht den freien Termin und beantwortet häufige Fragen mit Ihren Antworten: Preise, Öffnungszeiten, Parken.",
-      "bubble": "Gebucht · Dienstag 14:00 · Haarschnitt"
+      "bubble": "Gebucht: Dienstag 14:00, Haarschnitt"
     },
     "s4": {
-      "kicker": "04 · Übergabe",
+      "kicker": "Übergabe",
       "title": "Braucht es einen Menschen, übergibt es – mit Zusammenfassung.",
       "text": "Bei komplexen Anliegen verbindet es mit Ihrem Team und sendet das Wichtigste des Gesprächs. Niemand muss etwas zweimal sagen.",
-      "bubble": "Verbunden mit Anna · Zusammenfassung gesendet"
+      "bubble": "Mit Anna verbunden, mit Zusammenfassung"
     }
   },
   "about": {
@@ -97,7 +104,7 @@
     "title": "Wir kommen zu Ihnen und bauen es für Ihr Unternehmen.",
     "text": "Jedes Unternehmen ist anders. Deshalb installieren wir keine Vorlage: Gemeinsam planen wir, was er sagt, was er weiß und wann er übergibt.",
     "badgeTitle": "Persönliche Einführung",
-    "badgeText": "Vor Ort, bei Ihnen",
+    "badgeText": "vor Ort, bei Ihnen",
     "imageAlt": "Zwei Personen sehen sich gemeinsam ein Dokument an",
     "steps": {
       "visit": {
@@ -142,6 +149,45 @@
         "title": "Auswertungen",
         "text": "Sehen Sie, wer angerufen hat, was gewünscht wurde und wie es ausging – übersichtlich."
       }
+    },
+    "intro": "Ein Anruf von Anfang bis Ende – und wo jede Fähigkeit ihre Arbeit macht.",
+    "after": "Nach dem Anruf",
+    "lines": {
+      "conversation": {
+        "time": "00:02",
+        "who": "agent",
+        "line": "Guten Tag, Salon Bella. Wie kann ich helfen?"
+      },
+      "booking": {
+        "time": "00:14",
+        "who": "agent",
+        "line": "Sie sind für morgen 14:00 Uhr eingetragen, der Termin steht schon im Kalender."
+      },
+      "languages": {
+        "time": "00:31",
+        "who": "caller",
+        "line": "Do you also speak English?"
+      },
+      "handoff": {
+        "time": "00:48",
+        "who": "agent",
+        "line": "Dazu weiß Anna am meisten, ich verbinde Sie."
+      },
+      "allDay": {
+        "time": "02:14",
+        "who": "caller",
+        "line": "Entschuldigung für den späten Anruf, ich bräuchte morgen einen Termin."
+      },
+      "analytics": {
+        "time": "",
+        "who": "summary",
+        "line": "Neukundin, Haarschnitt, morgen 14:00. Übergeben an: Anna."
+      }
+    },
+    "speaker": {
+      "agent": "Velyric",
+      "caller": "Anrufer",
+      "summary": "Zusammenfassung"
     }
   },
   "useCases": {
@@ -151,30 +197,39 @@
     "items": {
       "salon": {
         "title": "Beauty-Salons",
-        "quote": "„Ich hätte gern morgen einen Färbetermin.“",
-        "alt": "Friseurin föhnt Haare in einem Salon"
+        "quote": "Ich hätte gern morgen einen Färbetermin.",
+        "alt": "Friseurin föhnt Haare in einem Salon",
+        "agent": "Morgen ist um 10:00 oder 15:00 Uhr frei. Was passt Ihnen?",
+        "outcome": "Färben gebucht für morgen 15:00 Uhr"
       },
       "clinic": {
         "title": "Praxen und Kliniken",
-        "quote": "„Kann ich meine Kontrolle am Donnerstag verschieben?“",
-        "alt": "Helle, moderne Zahnarztpraxis"
+        "quote": "Kann ich meine Kontrolle am Donnerstag verschieben?",
+        "alt": "Helle, moderne Zahnarztpraxis",
+        "agent": "Ich habe ihn auf nächsten Donnerstag, 8:30 Uhr, verlegt. Passt das?",
+        "outcome": "Kontrolle verlegt auf Donnerstag 8:30 Uhr"
       },
       "cafe": {
         "title": "Restaurants und Cafés",
-        "quote": "„Einen Tisch für vier am Freitagabend, bitte.“",
-        "alt": "Lächelnde Café-Besitzerin vor der Theke"
+        "quote": "Einen Tisch für vier am Freitagabend, bitte.",
+        "alt": "Lächelnde Café-Besitzerin vor der Theke",
+        "agent": "Freitag um 19:00 Uhr ist ein Tisch für vier frei. Soll ich buchen?",
+        "outcome": "Tisch gebucht: Freitag 19:00 Uhr, 4 Personen"
       },
       "service": {
         "title": "Werkstätten",
-        "quote": "„Wann können Sie sich mein Auto ansehen?“",
-        "alt": "Mechaniker arbeitet an Teilen in einer Werkstatt"
+        "quote": "Wann können Sie sich mein Auto ansehen?",
+        "alt": "Mechaniker arbeitet an Teilen in einer Werkstatt",
+        "agent": "Wir können Sie am Dienstag um 8:00 Uhr drannehmen. Was ist mit dem Auto?",
+        "outcome": "Durchsicht gebucht: Dienstag 8:00 Uhr"
       }
-    }
+    },
+    "tabsLabel": "Branche wählen"
   },
   "cta": {
     "title": "Nie wieder einen Anruf verpassen.",
     "text": "Zeigen Sie uns, wie Ihr Unternehmen arbeitet – wir zeigen Ihnen, wie viele Kunden Sie zurückgewinnen.",
-    "button": "Jetzt starten",
+    "button": "Konto erstellen",
     "orCall": "oder rufen Sie uns an:"
   },
   "footer": {
@@ -187,12 +242,17 @@
     "rights": "Alle Rechte vorbehalten."
   },
   "demo": {
-    "title": "Hören Sie Velyric",
-    "text": "Bald können Sie hier einen echten Anruf hören und ein kurzes Demo-Video ansehen.",
-    "soon": "Demo folgt in Kürze",
-    "callText": "Rufen Sie uns bis dahin an – wir zeigen es Ihnen live:",
-    "close": "Schließen",
-    "play": "Abspielen"
+    "title": "So klingt ein Anruf",
+    "text": "Ein typischer Anruf in einer Zahnarztpraxis: Velyric findet einen Termin und übergibt eine Frage an den Empfang.",
+    "business": "Praxis Lächeln",
+    "t1": "Guten Tag, ich bräuchte nächste Woche eine Zahnreinigung.",
+    "t2": "Gern. Dienstag um 9:00 Uhr oder Donnerstag um 15:30 Uhr ist frei. Was passt Ihnen?",
+    "t3": "Donnerstag passt. Zahlt das meine Versicherung?",
+    "t4": "Sie sind für Donnerstag 15:30 Uhr eingetragen. Zur Versicherung kann Ihnen meine Kollegin genauer helfen, ich verbinde Sie.",
+    "handoff": "An den Empfang übergeben, mit Zusammenfassung",
+    "note": "Anschauliches Beispiel. Echte Gespräche passen wir an Ihr Unternehmen an.",
+    "callText": "Fragen? Rufen Sie uns an:",
+    "close": "Schließen"
   },
   "auth": {
     "meta": {
@@ -212,7 +272,8 @@
       "google": "Weiter mit Google",
       "or": "oder mit E-Mail",
       "backHome": "Zur Startseite",
-      "notConfigured": "Die Anmeldung ist auf dieser Seite noch nicht aktiviert. Bald verfügbar!"
+      "notConfigured": "Die Anmeldung ist auf dieser Seite noch nicht aktiviert. Bald verfügbar!",
+      "signupSoon": "Die Registrierung startet in Kürze. Bis dahin rufen Sie uns gern an."
     },
     "strength": {
       "label": "Passwortstärke:",
@@ -220,7 +281,8 @@
       "fair": "Mittel",
       "strong": "Stark",
       "veryStrong": "Sehr stark",
-      "hint": "Tipp: Groß- und Kleinbuchstaben, Zahlen und Sonderzeichen mischen."
+      "hint": "Tipp: Groß- und Kleinbuchstaben, Zahlen und Sonderzeichen mischen.",
+      "minLength": "Mindestens 8 Zeichen"
     },
     "errors": {
       "emailRequired": "Bitte geben Sie Ihre E-Mail-Adresse ein.",
@@ -305,5 +367,16 @@
       "loggedOut": "Sie sind abgemeldet. Bis bald!",
       "welcome": "Erfolgreich angemeldet. Willkommen!"
     }
+  },
+  "legal": {
+    "privacy": "Datenschutzerklärung",
+    "terms": "Allgemeine Geschäftsbedingungen",
+    "draftTitle": "Dieses Dokument wird derzeit vorbereitet.",
+    "draftText": "Den endgültigen Text veröffentlichen wir hier in Kürze. Bei Fragen zu Ihren Daten oder unseren Bedingungen erreichen Sie uns jederzeit:"
+  },
+  "notFound": {
+    "title": "Diese Seite finden wir nicht.",
+    "text": "Vielleicht ist die Adresse vertippt oder die Seite existiert nicht mehr. Von der Startseite erreichen Sie alles.",
+    "cta": "Zur Startseite"
   }
 }

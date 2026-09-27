@@ -26,20 +26,20 @@ export type ButtonProps = AsButton | AsLink;
 // Alapstílus: min. 48px magas (mobil érintési cél), lekerekített, gyors visszajelzés
 const base =
   "group relative isolate inline-flex select-none items-center justify-center gap-2 whitespace-nowrap rounded-xl font-semibold " +
-  "transition-[transform,background-color,color,border-color] duration-200 ease-[var(--ease-premium)] " +
-  "active:scale-[0.98] disabled:pointer-events-none disabled:opacity-60 aria-busy:pointer-events-none";
+  "transition-[transform,background-color,color,border-color] duration-150 ease-out active:scale-[0.98] active:duration-75 " +
+  "disabled:pointer-events-none disabled:opacity-60 aria-busy:pointer-events-none";
 
 const sizes: Record<Size, string> = {
-  md: "h-12 px-5 text-[15px]",
+  md: "h-12 px-5 text-ui",
   lg: "h-14 px-7 text-base",
 };
 
 const variants: Record<Variant, string> = {
   // Gradiens gomb – hover-re lágy gradiens-glow a gomb mögött
-  primary: "bg-brand text-white [text-shadow:0_1px_1px_rgb(0_0_0/0.25)]",
+  primary: "bg-brand-deep text-white",
   // Visszafogott, keretes gomb sötét felületen
   secondary:
-    "border border-line-strong bg-base-800/60 text-fg hover:border-white/25 hover:bg-base-700",
+    "border border-line-strong bg-base-800 text-fg hover:border-white/30 hover:bg-base-700",
   // Szöveges gomb (pl. „Bejelentkezés” a navbarban)
   ghost: "text-muted hover:text-fg",
 };
@@ -62,7 +62,7 @@ export function Button(props: ButtonProps) {
       {variant === "primary" && (
         <span
           aria-hidden="true"
-          className="pointer-events-none absolute -inset-1 -z-10 rounded-[inherit] bg-brand opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-55 group-focus-visible:opacity-55"
+          className="pointer-events-none absolute inset-1 -z-10 rounded-[inherit] bg-brand opacity-0 blur-lg transition-opacity duration-200 group-hover:opacity-40"
         />
       )}
       {loading && <Spinner />}

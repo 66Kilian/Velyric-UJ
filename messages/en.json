@@ -12,7 +12,7 @@
     "features": "What we do",
     "contact": "Contact",
     "login": "Log in",
-    "start": "Get started",
+    "start": "Create account",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "language": "Language",
@@ -25,51 +25,58 @@
   },
   "hero": {
     "eyebrow": "AI voice agents for modern businesses",
-    "titleLine1": "We answer every call —",
+    "titleLine1": "We answer every call —",
     "titleLine2": "day and night, in your language.",
     "subtitle": "Velyric's voice agent picks up the phone like your best receptionist: friendly, natural, and it books the appointment right away. You stay focused on your work.",
-    "ctaPrimary": "Get started",
+    "ctaPrimary": "Create account",
     "ctaSecondary": "See it in action",
     "trust": {
-      "languages": "Hungarian · German · English",
-      "allDay": "24/7",
-      "calendar": "Calendar integration"
+      "languages": "Hungarian, German and English",
+      "allDay": "Available day and night",
+      "calendar": "Books into your calendar"
     },
     "scroll": "Scroll"
   },
   "call": {
-    "live": "Live call",
+    "example": "Example call",
+    "incoming": "Call in progress",
+    "ended": "Call ended",
+    "transcript": "Call transcript",
+    "caller": "Caller",
+    "agent": "Velyric",
+    "replay": "Replay",
     "business": "Bella Salon",
-    "caller": "Hi! I'd like a haircut tomorrow afternoon.",
-    "agent": "Happy to help! 2:00 pm or 4:30 pm is free. Which one works?",
-    "booked": "Appointment booked · tomorrow 2:00 pm",
-    "waveLabel": "The voice agent is speaking"
+    "t1": "Hi! I'd like a haircut tomorrow afternoon.",
+    "t2": "Happy to help! We have 2:00 pm or 4:30 pm tomorrow. Which would you like?",
+    "t3": "Two o'clock works.",
+    "t4": "Great, you're booked for tomorrow at 2:00 pm. See you then!",
+    "booked": "Appointment booked: tomorrow 2:00 pm"
   },
   "story": {
     "eyebrow": "How Velyric works",
     "s1": {
-      "kicker": "01 · Call",
+      "kicker": "Call",
       "title": "The phone rings. Velyric has already answered.",
       "text": "It picks up on the first ring — at dawn, on weekends and at peak hours. No busy line, no missed customer.",
       "bubble": "“Hello, you've reached Bella Salon. How can I help?”"
     },
     "s2": {
-      "kicker": "02 · Understanding",
+      "kicker": "Understanding",
       "title": "It talks like your best team member.",
       "text": "Natural, human speech — it keeps up even when callers interrupt or change topic. If they call in German or English, it switches language.",
       "bubble": "“Of course! Which service, and when would suit you?”"
     },
     "s3": {
-      "kicker": "03 · Handling",
+      "kicker": "Handling",
       "title": "It books. It answers. It gets it done.",
       "text": "It checks your calendar, books the free slot, and answers common questions with your answers: prices, opening hours, parking.",
-      "bubble": "Booked · Tuesday 2:00 pm · haircut"
+      "bubble": "Booked: Tuesday 2:00 pm, haircut"
     },
     "s4": {
-      "kicker": "04 · Handover",
+      "kicker": "Handover",
       "title": "When a human is needed, it hands over — with a summary.",
       "text": "For complex cases it transfers the call to your colleague and sends the gist of the conversation. Nobody has to repeat themselves.",
-      "bubble": "Transferred to Anna · summary sent"
+      "bubble": "Transferred to Anna, with a summary"
     }
   },
   "about": {
@@ -97,7 +104,7 @@
     "title": "We come to you and build it around your business.",
     "text": "Every business is different. That's why we don't install a template: together we plan what it says, what it knows and when it hands over.",
     "badgeTitle": "Personal onboarding",
-    "badgeText": "On site, at your location",
+    "badgeText": "on site, at your location",
     "imageAlt": "Two people at a table reviewing a document together",
     "steps": {
       "visit": {
@@ -142,6 +149,45 @@
         "title": "Analytics",
         "text": "See who called, what they wanted and how it ended — in clear reports."
       }
+    },
+    "intro": "One call from start to finish, and where each capability does its work.",
+    "after": "After the call",
+    "lines": {
+      "conversation": {
+        "time": "00:02",
+        "who": "agent",
+        "line": "Hello, you've reached Bella Salon. How can I help?"
+      },
+      "booking": {
+        "time": "00:14",
+        "who": "agent",
+        "line": "You're booked for tomorrow at 2:00 pm, it's already in the calendar."
+      },
+      "languages": {
+        "time": "00:31",
+        "who": "caller",
+        "line": "Sprechen Sie auch Deutsch?"
+      },
+      "handoff": {
+        "time": "00:48",
+        "who": "agent",
+        "line": "Anna knows this best, I'll put you through to her."
+      },
+      "allDay": {
+        "time": "02:14",
+        "who": "caller",
+        "line": "Sorry for calling so late, could I book something for tomorrow?"
+      },
+      "analytics": {
+        "time": "",
+        "who": "summary",
+        "line": "New customer, haircut, tomorrow 2:00 pm. Handed to: Anna."
+      }
+    },
+    "speaker": {
+      "agent": "Velyric",
+      "caller": "Caller",
+      "summary": "Summary"
     }
   },
   "useCases": {
@@ -151,30 +197,39 @@
     "items": {
       "salon": {
         "title": "Beauty salons",
-        "quote": "“Could I book a colour for tomorrow?”",
-        "alt": "Hairdresser blow-drying hair in a salon"
+        "quote": "Could I book a colour for tomorrow?",
+        "alt": "Hairdresser blow-drying hair in a salon",
+        "agent": "We have 10:00 am or 3:00 pm tomorrow. Which would you like?",
+        "outcome": "Colour booked for tomorrow 3:00 pm"
       },
       "clinic": {
         "title": "Practices and clinics",
-        "quote": "“Can I move my Thursday check-up?”",
-        "alt": "Bright, modern dental practice"
+        "quote": "Can I move my Thursday check-up?",
+        "alt": "Bright, modern dental practice",
+        "agent": "I've moved it to next Thursday at 8:30 am. Does that work?",
+        "outcome": "Check-up moved to Thursday 8:30 am"
       },
       "cafe": {
         "title": "Restaurants and cafés",
-        "quote": "“A table for four on Friday evening, please.”",
-        "alt": "Smiling café owner in front of the counter"
+        "quote": "A table for four on Friday evening, please.",
+        "alt": "Smiling café owner in front of the counter",
+        "agent": "There's a table for four on Friday at 7:00 pm. Shall I book it?",
+        "outcome": "Table booked for Friday 7:00 pm, 4 guests"
       },
       "service": {
         "title": "Garages and workshops",
-        "quote": "“When can you take a look at my car?”",
-        "alt": "Mechanic working on parts in a workshop"
+        "quote": "When can you take a look at my car?",
+        "alt": "Mechanic working on parts in a workshop",
+        "agent": "We can see you Tuesday at 8:00 am. What's wrong with the car?",
+        "outcome": "Inspection booked for Tuesday 8:00 am"
       }
-    }
+    },
+    "tabsLabel": "Choose an industry"
   },
   "cta": {
     "title": "Never miss another call.",
     "text": "Show us how your business works — we'll show you how many customers you can win back.",
-    "button": "Get started",
+    "button": "Create account",
     "orCall": "or call us:"
   },
   "footer": {
@@ -187,12 +242,17 @@
     "rights": "All rights reserved."
   },
   "demo": {
-    "title": "Listen to Velyric",
-    "text": "Soon you'll be able to hear a real call and watch a short demo video here.",
-    "soon": "Demo coming soon",
-    "callText": "In the meantime, call us and we'll show you live:",
-    "close": "Close",
-    "play": "Play"
+    "title": "What a call sounds like",
+    "text": "A typical call to a dental practice: Velyric finds a slot, then hands a question over to the front desk.",
+    "business": "Smile Dental",
+    "t1": "Hello, I need a teeth cleaning next week.",
+    "t2": "Happy to help. We can see you Tuesday at 9:00 am or Thursday at 3:30 pm. Which suits you?",
+    "t3": "Thursday is good. Does my insurance cover it?",
+    "t4": "You're booked for Thursday at 3:30 pm. My colleague can answer the insurance question best, I'll put you through.",
+    "handoff": "Transferred to the front desk, with a summary",
+    "note": "Illustrative example. Real conversations are tailored to your business.",
+    "callText": "Questions? Call us:",
+    "close": "Close"
   },
   "auth": {
     "meta": {
@@ -212,7 +272,8 @@
       "google": "Continue with Google",
       "or": "or with email",
       "backHome": "Back to home",
-      "notConfigured": "Sign-in isn't switched on for this site yet. Coming soon!"
+      "notConfigured": "Sign-in isn't switched on for this site yet. Coming soon!",
+      "signupSoon": "Sign-up opens soon. Until then, call us with any questions."
     },
     "strength": {
       "label": "Password strength:",
@@ -220,7 +281,8 @@
       "fair": "Fair",
       "strong": "Strong",
       "veryStrong": "Very strong",
-      "hint": "Tip: mix upper and lower case, numbers and symbols."
+      "hint": "Tip: mix upper and lower case, numbers and symbols.",
+      "minLength": "At least 8 characters"
     },
     "errors": {
       "emailRequired": "Please enter your email.",
@@ -305,5 +367,16 @@
       "loggedOut": "You're logged out. See you soon!",
       "welcome": "You're logged in. Welcome!"
     }
+  },
+  "legal": {
+    "privacy": "Privacy Policy",
+    "terms": "Terms and Conditions",
+    "draftTitle": "This document is being prepared.",
+    "draftText": "We'll publish the final text here soon. If you have questions about your data or our terms in the meantime, contact us:"
+  },
+  "notFound": {
+    "title": "We can't find this page.",
+    "text": "There may be a typo in the address, or the page no longer exists. Everything is reachable from the home page.",
+    "cta": "Back to home"
   }
 }

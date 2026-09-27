@@ -75,7 +75,7 @@ export function Navbar() {
                       onClick={(e) => goTo(e, section.id)}
                       aria-current={isActive ? "location" : undefined}
                       className={cn(
-                        "group relative flex h-12 items-center px-4 text-[15px] font-medium transition-colors",
+                        "group relative flex h-12 items-center px-4 text-ui font-medium transition-colors",
                         isActive ? "text-fg" : "text-muted hover:text-fg",
                       )}
                     >
@@ -84,7 +84,7 @@ export function Navbar() {
                       <span
                         aria-hidden="true"
                         className={cn(
-                          "absolute inset-x-4 bottom-2 h-px origin-left bg-brand transition-transform duration-300 ease-[var(--ease-premium)]",
+                          "absolute inset-x-4 bottom-2 h-px origin-left bg-brand transition-transform duration-300 ease-out",
                           isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100",
                         )}
                       />

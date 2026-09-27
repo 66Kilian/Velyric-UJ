@@ -10,6 +10,8 @@ export const routing = defineRouting({
     "/": "/",
     "/bejelentkezes": { hu: "/bejelentkezes", en: "/login", de: "/anmelden" },
     "/regisztracio": { hu: "/regisztracio", en: "/signup", de: "/registrieren" },
+    "/adatvedelem": { hu: "/adatvedelem", en: "/privacy", de: "/datenschutz" },
+    "/aszf": { hu: "/aszf", en: "/terms", de: "/agb" },
     "/auth/megerosites": {
       hu: "/auth/megerosites",
       en: "/auth/confirmed",

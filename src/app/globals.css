@@ -2,32 +2,36 @@
 
 /* ============================================================
    VELYRIC – Design rendszer
-   Sötét, prémium téma. A gradiens CSAK kiemelésre (gombok,
-   ikonok, vonalak, 3D) – a fekete tér adja a prémium hatást.
+   Ötlet: „a hívás maga az anyag”. A márka-gradiens jelentése:
+   A VELYRIC BESZÉL VAGY CSELEKSZIK – ezért csak a 3D jelen, a
+   hanghullámon, az ügynök mondatain és a fő gombon jelenik meg.
+   Minden más semleges; az állapotok (lefoglalva, átadva, hiba)
+   saját, szemantikus színt kapnak.
    ============================================================ */
 
 :root {
   /* Alapszínek (a specifikáció szerinti nevekkel) */
   --bg-900: #050409; /* fő háttér */
-  --bg-800: #0b0913; /* kártyák, sávok */
-  --bg-700: #141020; /* kiemelt felület */
+  --bg-800: #0b0913; /* sávok, panelek */
+  --bg-700: #141020; /* kiemelt felület, beviteli mezők hover */
+  --bg-600: #1d1830; /* hívó buborék, aktív fül */
   --text: #f4f1f8; /* fő szöveg */
-  --muted: #a49dba; /* másodlagos szöveg */
+  --muted: #a49dba; /* másodlagos szöveg (AA a --bg-700-ig) */
 
-  /* Márka gradiens */
+  /* Márka gradiens = a Velyric hangja */
   --brand-violet: #8b2fe8;
   --brand-pink: #e5237e;
   --brand-orange: #ff7a3c;
-  --brand-gradient: linear-gradient(
-    135deg,
-    var(--brand-violet) 0%,
-    var(--brand-pink) 55%,
-    var(--brand-orange) 100%
-  );
+  --brand-gradient: linear-gradient(135deg, var(--brand-violet) 0%, var(--brand-pink) 55%, var(--brand-orange) 100%);
 
-  /* Finom vonalak, keretek */
+  /* Állapotok: a hívás kimenetelei */
+  --success: #5fe0a4; /* lefoglalva, sikeres */
+  --warning: #f7b955; /* átadva munkatársnak, lejárt link */
+  --danger: #ff7a95; /* hiba */
+
+  /* Hajszálvonalak – a csoportosítás elsődleges eszköze (nem a kártya) */
   --line: rgb(244 241 248 / 0.08);
-  --line-strong: rgb(244 241 248 / 0.14);
+  --line-strong: rgb(244 241 248 / 0.16);
 
   /* A sticky navbar magassága – a szekció-ugrásnál ennyivel lejjebb áll meg */
   --nav-h: 72px;
@@ -35,11 +39,12 @@
   color-scheme: dark;
 }
 
-/* Tailwind tokenek → osztályok: bg-base-900, text-fg, text-muted, rounded-card, shadow-soft… */
+/* Tailwind tokenek → osztályok: bg-base-900, text-fg, text-success, rounded-panel… */
 @theme inline {
   --color-base-900: var(--bg-900);
   --color-base-800: var(--bg-800);
   --color-base-700: var(--bg-700);
+  --color-base-600: var(--bg-600);
   --color-fg: var(--text);
   --color-muted: var(--muted);
   --color-line: var(--line);
@@ -47,43 +52,53 @@
   --color-brand-violet: var(--brand-violet);
   --color-brand-pink: var(--brand-pink);
   --color-brand-orange: var(--brand-orange);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
 
   --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
 }
 
 @theme {
-  /* Lekerekítések: 12px = rounded-xl, 16px = rounded-2xl (Tailwind alap), 20px = rounded-card */
-  --radius-card: 1.25rem;
+  /* Sarokkerekítés szerep szerint: vezérlők és ikon-dobozok 12 (rounded-xl) · buborékok 16 · panelek 20 · média 28 */
+  --radius-bubble: 1rem; /* beszélgetés-buborékok */
+  --radius-panel: 1.25rem;
+  --radius-media: 1.75rem;
 
-  /* Lágy árnyékok */
-  --shadow-soft: 0 10px 30px -12px rgb(0 0 0 / 0.6);
-  --shadow-card: 0 1px 0 0 rgb(255 255 255 / 0.04) inset, 0 20px 50px -24px rgb(0 0 0 / 0.8);
+  /* Emelés: csak ami lebeg (navbar görgetés után, ablakok, értesítések, hívás-panel) */
+  --shadow-float: 0 1px 0 0 rgb(255 255 255 / 0.05) inset, 0 24px 60px -28px rgb(0 0 0 / 0.9);
 
-  /* Egységes, „prémium” easing */
-  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+  /* Mozgás-tokenek (egy fizika az egész oldalon) */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); /* belépés: gyors indulás, hosszú puha érkezés */
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0); /* kilépés */
+  --ease-move: cubic-bezier(0.65, 0, 0.35, 1); /* képernyőn belüli mozgás */
 
-  /* Folyadék-tipográfia a nagy címekhez */
-  --text-display: clamp(2.5rem, 1.6rem + 4.2vw, 4.75rem);
+  /* Tipográfiai skála */
+  --text-display: clamp(2.5rem, 1.5rem + 4.1vw, 4.5rem);
   --text-display--line-height: 1.04;
-  --text-display--letter-spacing: -0.03em;
+  --text-display--letter-spacing: -0.032em;
+  --text-title: clamp(2rem, 1.35rem + 2.3vw, 3.25rem);
+  --text-title--line-height: 1.08;
+  --text-title--letter-spacing: -0.025em;
+  --text-ui: 0.9375rem; /* gombok, fülek, buborékok */
+  --text-ui--line-height: 1.45;
+  --text-lead: 1.125rem;
+  --text-lead--line-height: 1.65;
 }
 
 /* ---------- Márka segédosztályok ---------- */
 
-/* Gradiens háttér (gombok, ikon-hátterek) */
+/* Gradiens felület: a Velyric „hangja” (fő gomb, 3D, hanghullám, ügynök-jelölő) */
 @utility bg-brand {
   background-image: var(--brand-gradient);
 }
 
-/* Gradiens szöveg (kiemelt szavak a címekben) */
-@utility text-brand {
-  background-image: var(--brand-gradient);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
+/* Fő gomb: a márka-gradiens 14%-kal mélyítve, hogy a fehér felirat AA-kontrasztú legyen (≥ 5.5:1) */
+@utility bg-brand-deep {
+  background-image: linear-gradient(rgb(0 0 0 / 0.14), rgb(0 0 0 / 0.14)), var(--brand-gradient);
 }
 
-/* Gradiens keret: a kártya saját háttere felett 1px-es gradiens vonal */
+/* Gradiens keret: a felület saját háttere felett 1px-es gradiens vonal */
 @utility border-brand {
   border: 1px solid transparent;
   background:
@@ -97,6 +112,11 @@
   letter-spacing: 0.24em;
   margin-right: -0.24em;
   font-weight: 600;
+}
+
+/* Táblázatos számjegyek az időbélyegekhez */
+@utility tabular {
+  font-variant-numeric: tabular-nums;
 }
 
 /* ---------- Globális alapok ---------- */
@@ -131,7 +151,7 @@
   }
 }
 
-/* Mozgáscsökkentés: aki kéri, annak nincs animáció */
+/* Mozgáscsökkentés: aki kéri, annak nincs mozgás (a visszajelzés színben megmarad) */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -145,22 +165,52 @@
   }
 }
 
-/* ---------- Landing animációk (csak transform/opacity → 60fps) ---------- */
+/* ---------- Mozgás (csak transform/opacity/clip-path → 60fps) ---------- */
 
-/* Hero belépő: elemek egymás után úsznak be */
-.hero-in {
-  animation: hero-in 0.9s var(--ease-premium) both;
-}
-@keyframes hero-in {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
+@media (prefers-reduced-motion: no-preference) {
+  /* Hero belépő: sorok maszk mögül csúsznak fel, sorrend = hierarchia, összesen < 900 ms */
+  .line-reveal {
+    display: block;
+    overflow: clip;
+    padding-bottom: 0.08em; /* az ékezetek és a „g/j” szára ne vágódjon le */
+  }
+  .line-reveal > span {
+    display: block;
+    animation: line-up 0.6s var(--ease-out) both;
+  }
+  .rise-in {
+    animation: rise-in 0.5s var(--ease-out) both;
+  }
+  /* Élő hanghullám: csak amíg valaki beszél (valódi „élő” jelzés) */
+  .voice-bar {
+    animation: voice-bar 0.9s var(--ease-move) infinite alternate;
+  }
+  /* Görgetés-jelző: finom pulzálás a hero alján */
+  .scroll-dot {
+    animation: scroll-dot 2s var(--ease-out) infinite;
+  }
+  .dialog-panel[open] {
+    animation: dialog-in 0.24s var(--ease-out);
+  }
+  .success-pop {
+    animation: success-pop 0.5s var(--ease-out) both;
+  }
+  /* Új beszélgetés-sor érkezése a hívás-átiratban */
+  .turn-in {
+    animation: rise-in 0.36s var(--ease-out) both;
   }
 }
 
-/* Élő hanghullám-oszlopok */
-.voice-bar {
-  animation: voice-bar 1.1s ease-in-out infinite alternate;
+@keyframes line-up {
+  from {
+    transform: translateY(105%);
+  }
+}
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
 }
 @keyframes voice-bar {
   from {
@@ -170,58 +220,33 @@
     transform: scaleY(1);
   }
 }
-
-/* Görgetés-jelző pötty */
-.scroll-dot {
-  animation: scroll-dot 1.8s var(--ease-premium) infinite;
-}
 @keyframes scroll-dot {
   0% {
     transform: translateY(0);
     opacity: 1;
   }
   70% {
-    transform: translateY(12px);
+    transform: translateY(10px);
     opacity: 0;
   }
   100% {
-    transform: translateY(0);
     opacity: 0;
   }
-}
-
-/* Lebegő hívás-kártya */
-.call-float {
-  animation: call-float 7s ease-in-out infinite;
-}
-@keyframes call-float {
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-/* Demo ablak */
-.demo-dialog::backdrop {
-  background: rgb(5 4 9 / 0.72);
-  backdrop-filter: blur(6px);
-}
-.demo-dialog[open] {
-  animation: dialog-in 0.35s var(--ease-premium);
 }
 @keyframes dialog-in {
   from {
     opacity: 0;
-    transform: translateY(16px) scale(0.98);
+    transform: translateY(12px) scale(0.98);
   }
-}
-
-/* Sikeres megerősítés: a pipa „bepattan” */
-.success-pop {
-  animation: success-pop 0.6s var(--ease-premium) both;
 }
 @keyframes success-pop {
   from {
     opacity: 0;
-    transform: scale(0.6);
+    transform: scale(0.8);
   }
+}
+
+.dialog-panel::backdrop {
+  background: rgb(5 4 9 / 0.78);
+  backdrop-filter: blur(4px);
 }

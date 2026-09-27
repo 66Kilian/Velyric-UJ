@@ -1,14 +1,14 @@
 import { clsx, type ClassValue } from "clsx";
 import { extendTailwindMerge } from "tailwind-merge";
 
-// A saját tokenjeinket (text-display, rounded-card, shadow-soft/card) is ismerje,
+// A saját tokenjeinket (text-display/title/lead/ui, rounded-bubble/panel/media, shadow-float) is ismerje,
 // hogy ne ütközzenek a színes text-* / alap rounded-* osztályokkal
 const twMerge = extendTailwindMerge({
   extend: {
     classGroups: {
-      "font-size": ["text-display"],
-      rounded: ["rounded-card"],
-      shadow: ["shadow-soft", "shadow-card"],
+      "font-size": ["text-display", "text-title", "text-lead", "text-ui"],
+      rounded: ["rounded-bubble", "rounded-panel", "rounded-media"],
+      shadow: ["shadow-float"],
     },
   },
 });

@@ -34,7 +34,7 @@ export const TextField = forwardRef<HTMLInputElement, FieldProps>(function TextF
         id={inputId}
         aria-invalid={!!error || undefined}
         aria-describedby={error ? errorId : undefined}
-        className={cn(inputClass, error ? "border-rose-400/70" : "border-line-strong")}
+        className={cn(inputClass, error ? "border-danger/70" : "border-line-strong")}
         {...props}
       />
       <FieldError id={errorId} message={error} />
@@ -63,7 +63,7 @@ export const PasswordField = forwardRef<HTMLInputElement, FieldProps & { childre
             type={visible ? "text" : "password"}
             aria-invalid={!!error || undefined}
             aria-describedby={error ? errorId : undefined}
-            className={cn(inputClass, "pr-12", error ? "border-rose-400/70" : "border-line-strong")}
+            className={cn(inputClass, "pr-12", error ? "border-danger/70" : "border-line-strong")}
             {...props}
           />
           <button
@@ -86,7 +86,7 @@ export const PasswordField = forwardRef<HTMLInputElement, FieldProps & { childre
 function FieldError({ id, message }: { id: string; message?: string | null }) {
   if (!message) return null;
   return (
-    <p id={id} className="flex items-center gap-1.5 text-sm text-rose-300">
+    <p id={id} className="flex items-center gap-1.5 text-sm text-danger">
       <AlertCircle className="size-4 shrink-0" aria-hidden="true" />
       {message}
     </p>

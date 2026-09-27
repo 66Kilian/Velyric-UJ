@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
+import { ogLocale } from "@/i18n/seo";
 import { site } from "@/lib/site";
 import { MotionProvider } from "@/components/providers/MotionProvider";
 import { Toaster } from "@/components/ui/Toaster";
@@ -43,8 +44,9 @@ export async function generateMetadata({
       siteName: site.name,
       title: t("title"),
       description: t("description"),
-      locale,
+      locale: ogLocale[locale],
     },
+    twitter: { card: "summary_large_image", title: t("title"), description: t("description") },
   };
 }
 

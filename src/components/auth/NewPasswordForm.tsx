@@ -70,8 +70,8 @@ export function NewPasswordForm({ linkError }: { linkError: boolean }) {
     return (
       <AuthCard title={t("newPassword.expiredTitle")}>
         <div className="flex flex-col items-center gap-6 text-center">
-          <span className="flex size-14 items-center justify-center rounded-2xl border border-amber-400/30 bg-amber-400/10">
-            <Clock className="size-7 text-amber-300" aria-hidden="true" />
+          <span className="flex size-14 items-center justify-center rounded-xl border border-warning/30 bg-warning/10">
+            <Clock className="size-7 text-warning" aria-hidden="true" />
           </span>
           <p className="text-muted">{t("newPassword.expiredText")}</p>
           <Button href="/bejelentkezes" size="lg" className="w-full">

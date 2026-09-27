@@ -3,8 +3,8 @@ import type { ReactNode } from "react";
 import { cn } from "@/lib/cn";
 
 const styles = {
-  error: { box: "border-rose-400/30 bg-rose-400/10 text-rose-200", Icon: AlertCircle },
-  success: { box: "border-emerald-400/30 bg-emerald-400/10 text-emerald-200", Icon: CheckCircle2 },
+  error: { box: "border-danger/30 bg-danger/10 text-danger", Icon: AlertCircle },
+  success: { box: "border-success/30 bg-success/10 text-success", Icon: CheckCircle2 },
   info: { box: "border-line-strong bg-base-700/60 text-fg/90", Icon: Info },
 } as const;
 

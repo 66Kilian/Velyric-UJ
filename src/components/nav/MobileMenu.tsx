@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/Button";
 import { useSectionNav } from "@/hooks/useSectionNav";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/cn";
+import { DURATION, EASE_OUT } from "@/lib/motion";
 import { lockScroll, unlockScroll } from "@/lib/scroll-lock";
 import { navSections, site } from "@/lib/site";
 import { LanguageSegmented } from "./LanguageSwitcher";
@@ -23,7 +24,6 @@ type MobileMenuProps = {
   onSignOut: () => void;
 };
 
-const ease = [0.22, 1, 0.36, 1] as const;
 
 // Teljes képernyős mobilmenü, jobbról becsúszva, nagy gombokkal
 export function MobileMenu({ open, onClose, active, returnFocusRef, loggedIn, onSignOut }: MobileMenuProps) {
@@ -83,14 +83,9 @@ export function MobileMenu({ open, onClose, active, returnFocusRef, loggedIn, on
           initial={{ x: "100%" }}
           animate={{ x: 0 }}
           exit={{ x: "100%" }}
-          transition={{ duration: 0.45, ease }}
+          transition={{ duration: DURATION.drawer, ease: EASE_OUT }}
           className="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-base-900 lg:hidden"
         >
-          {/* Finom márka-glow a jobb felső sarokban (a logó hullám-motívuma) */}
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -top-40 -right-40 size-[28rem] rounded-full bg-brand opacity-20 blur-[120px]"
-          />
 
           <div className="relative flex h-[var(--nav-h)] shrink-0 items-center justify-between px-5 sm:px-8">
             <Logo size="md" />
@@ -112,7 +107,7 @@ export function MobileMenu({ open, onClose, active, returnFocusRef, loggedIn, on
                   key={section.id}
                   initial={{ opacity: 0, x: 24 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.4, ease, delay: 0.12 + i * 0.06 }}
+                  transition={{ duration: DURATION.item, ease: EASE_OUT, delay: 0.1 + i * 0.05 }}
                 >
                   <Link
                     href={{ pathname: "/", hash: section.id }}
@@ -122,10 +117,15 @@ export function MobileMenu({ open, onClose, active, returnFocusRef, loggedIn, on
                     }}
                     aria-current={active === section.id ? "location" : undefined}
                     className={cn(
-                      "flex min-h-16 items-center border-b border-line text-3xl font-semibold tracking-tight transition-colors",
-                      active === section.id ? "text-brand" : "text-fg hover:text-muted",
+                      "flex min-h-16 items-center gap-4 border-b border-line text-3xl font-semibold tracking-tight transition-colors",
+                      active === section.id ? "text-fg" : "text-muted hover:text-fg",
                     )}
                   >
+                    {/* Aktív szekció: rövid gradiens-jelölő (a Velyric „hangja”), nem színes szöveg */}
+                    <span
+                      aria-hidden="true"
+                      className={cn("h-7 w-1 rounded-full bg-brand transition-opacity", active === section.id ? "opacity-100" : "opacity-0")}
+                    />
                     {t(section.labelKey)}
                   </Link>
                 </m.li>
@@ -136,7 +136,7 @@ export function MobileMenu({ open, onClose, active, returnFocusRef, loggedIn, on
           <m.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, ease, delay: 0.3 }}
+            transition={{ duration: DURATION.item, ease: EASE_OUT, delay: 0.25 }}
             className="relative flex flex-col gap-3 px-5 pt-8 pb-[max(1.5rem,env(safe-area-inset-bottom))] sm:px-8"
           >
             <Button href="/regisztracio" size="lg" onClick={onClose} className="w-full">

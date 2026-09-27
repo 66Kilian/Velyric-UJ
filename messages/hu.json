@@ -25,51 +25,58 @@
   },
   "hero": {
     "eyebrow": "MI hangügynökök modern vállalkozásoknak",
-    "titleLine1": "Minden hívást felveszünk —",
+    "titleLine1": "Minden hívást felveszünk —",
     "titleLine2": "éjjel-nappal, magyarul.",
     "subtitle": "A Velyric hangügynöke úgy veszi fel a telefont, mint a legjobb recepciósod: kedvesen, magyarul, és azonnal időpontot foglal. Te közben nyugodtan dolgozhatsz.",
     "ctaPrimary": "Kezdjük",
     "ctaSecondary": "Nézd meg működés közben",
     "trust": {
-      "languages": "Magyar · német · angol",
-      "allDay": "Éjjel-nappal",
-      "calendar": "Naptár-integráció"
+      "languages": "Magyarul, németül és angolul",
+      "allDay": "Éjjel-nappal elérhető",
+      "calendar": "A naptáradba foglal"
     },
     "scroll": "Görgess"
   },
   "call": {
-    "live": "Élő hívás",
+    "example": "Példa-beszélgetés",
+    "incoming": "Hívás folyamatban",
+    "ended": "Hívás vége",
+    "transcript": "A beszélgetés átirata",
+    "caller": "Hívó",
+    "agent": "Velyric",
+    "replay": "Újrajátszás",
     "business": "Bella Szalon",
-    "caller": "Jó napot! Holnap délutánra szeretnék egy hajvágást.",
-    "agent": "Szívesen! Holnap 14:00 vagy 16:30 szabad. Melyik legyen?",
-    "booked": "Időpont lefoglalva · holnap 14:00",
-    "waveLabel": "A hangügynök éppen beszél"
+    "t1": "Jó napot! Holnap délutánra szeretnék egy hajvágást.",
+    "t2": "Szívesen! Holnap 14:00-kor vagy 16:30-kor van szabad hely. Melyik legyen?",
+    "t3": "A kettő órás jó lesz.",
+    "t4": "Rendben, holnap 14:00-ra lefoglaltam. Várjuk szeretettel!",
+    "booked": "Időpont lefoglalva: holnap 14:00"
   },
   "story": {
     "eyebrow": "Így dolgozik a Velyric",
     "s1": {
-      "kicker": "01 · Hívás",
+      "kicker": "Hívás",
       "title": "Csörög a telefon. A Velyric már fel is vette.",
       "text": "Az első csengésre válaszol — hajnalban, hétvégén és csúcsidőben is. Nincs foglalt vonal, nincs elszalasztott ügyfél.",
       "bubble": "„Jó napot, a Bella Szalont hívta. Miben segíthetek?”"
     },
     "s2": {
-      "kicker": "02 · Megértés",
+      "kicker": "Megértés",
       "title": "Úgy beszél, mint a legjobb munkatársad.",
       "text": "Természetes, emberi magyar beszéd — akkor is érti a hívót, ha közbevág vagy témát vált. Ha németül vagy angolul hívják, nyelvet vált.",
       "bubble": "„Persze! Milyen szolgáltatásra és mikorra gondolt?”"
     },
     "s3": {
-      "kicker": "03 · Intézés",
+      "kicker": "Intézés",
       "title": "Időpontot foglal. Válaszol. Elintézi.",
       "text": "Belenéz a naptáradba, lefoglalja a szabad időpontot, és a te válaszaiddal felel a gyakori kérdésekre: árak, nyitvatartás, parkolás.",
-      "bubble": "Lefoglalva · kedd 14:00 · hajvágás"
+      "bubble": "Lefoglalva: kedd 14:00, hajvágás"
     },
     "s4": {
-      "kicker": "04 · Átadás",
+      "kicker": "Átadás",
       "title": "Ha ember kell, szól — összefoglalóval.",
       "text": "Összetett ügynél átkapcsolja a hívást a munkatársadnak, és elküldi a beszélgetés lényegét. Senkinek nem kell semmit kétszer elmondania.",
-      "bubble": "Átkapcsolva Annának · összefoglaló elküldve"
+      "bubble": "Átkapcsolva Annának, összefoglalóval"
     }
   },
   "about": {
@@ -97,7 +104,7 @@
     "title": "Kimegyünk hozzád, és a te vállalkozásodra építjük.",
     "text": "Minden vállalkozás más. Ezért nem sablont telepítünk: együtt tervezzük meg, mit mondjon, mit tudjon és mikor kapcsoljon át.",
     "badgeTitle": "Személyes bevezetés",
-    "badgeText": "Nálad, a saját helyszíneden",
+    "badgeText": "nálad, a saját helyszíneden",
     "imageAlt": "Két ember egy asztalnál együtt átnéz egy dokumentumot",
     "steps": {
       "visit": {
@@ -142,6 +149,45 @@
         "title": "Elemzések",
         "text": "Látod, ki hívott, mit kért és mi lett a vége — átlátható kimutatásokban."
       }
+    },
+    "intro": "Egy hívás menete elejétől a végéig – és hogy melyik képesség hol dolgozik benne.",
+    "after": "Hívás után",
+    "lines": {
+      "conversation": {
+        "time": "00:02",
+        "who": "agent",
+        "line": "Jó napot, a Bella Szalont hívta. Miben segíthetek?"
+      },
+      "booking": {
+        "time": "00:14",
+        "who": "agent",
+        "line": "Holnap 14:00-ra lefoglaltam, a naptárban már ott is van."
+      },
+      "languages": {
+        "time": "00:31",
+        "who": "caller",
+        "line": "Sprechen Sie auch Deutsch?"
+      },
+      "handoff": {
+        "time": "00:48",
+        "who": "agent",
+        "line": "Erről Anna tud a legtöbbet, átkapcsolom hozzá."
+      },
+      "allDay": {
+        "time": "02:14",
+        "who": "caller",
+        "line": "Elnézést a késői hívásért, holnapra kérnék időpontot."
+      },
+      "analytics": {
+        "time": "",
+        "who": "summary",
+        "line": "Új ügyfél, hajvágás, holnap 14:00. Átadva: Anna."
+      }
+    },
+    "speaker": {
+      "agent": "Velyric",
+      "caller": "Hívó",
+      "summary": "Összefoglaló"
     }
   },
   "useCases": {
@@ -151,25 +197,34 @@
     "items": {
       "salon": {
         "title": "Szépségszalonok",
-        "quote": "„Holnapra kérnék egy festést.”",
-        "alt": "Fodrász hajat szárít egy szalonban"
+        "quote": "Holnapra kérnék egy festést.",
+        "alt": "Fodrász hajat szárít egy szalonban",
+        "agent": "Holnap 10:00-kor és 15:00-kor van szabad hely. Melyik legyen?",
+        "outcome": "Festés lefoglalva holnap 15:00-ra"
       },
       "clinic": {
         "title": "Rendelők és klinikák",
-        "quote": "„Át tudnám tenni a csütörtöki kontrollt?”",
-        "alt": "Világos, modern fogorvosi rendelő"
+        "quote": "Át tudnám tenni a csütörtöki kontrollt?",
+        "alt": "Világos, modern fogorvosi rendelő",
+        "agent": "Áttettem jövő csütörtök 8:30-ra. Megfelel?",
+        "outcome": "Kontroll áthelyezve csütörtök 8:30-ra"
       },
       "cafe": {
         "title": "Éttermek és kávézók",
-        "quote": "„Péntek estére asztalt foglalnék négy főre.”",
-        "alt": "Mosolygó kávézótulajdonos a pult előtt"
+        "quote": "Péntek estére asztalt foglalnék négy főre.",
+        "alt": "Mosolygó kávézótulajdonos a pult előtt",
+        "agent": "Péntek 19:00-kor van asztal négy főre. Lefoglaljam?",
+        "outcome": "Asztal lefoglalva péntek 19:00-ra, 4 fő"
       },
       "service": {
         "title": "Szervizek és műhelyek",
-        "quote": "„Mikor tudják megnézni az autómat?”",
-        "alt": "Szerelő alkatrészeken dolgozik egy műhelyben"
+        "quote": "Mikor tudják megnézni az autómat?",
+        "alt": "Szerelő alkatrészeken dolgozik egy műhelyben",
+        "agent": "Kedden reggel 8-kor tudjuk fogadni. Mi a gond az autóval?",
+        "outcome": "Átvizsgálás rögzítve kedd 8:00-ra"
       }
-    }
+    },
+    "tabsLabel": "Válassz iparágat"
   },
   "cta": {
     "title": "Egyetlen hívás se maradjon fogadatlan.",
@@ -187,12 +242,17 @@
     "rights": "Minden jog fenntartva."
   },
   "demo": {
-    "title": "Hallgasd meg a Velyric-et",
-    "text": "Hamarosan itt meghallgathatsz egy valódi hívást és egy rövid bemutató videót.",
-    "soon": "A bemutató hamarosan érkezik",
-    "callText": "Addig is hívj minket, és élőben megmutatjuk:",
-    "close": "Bezárás",
-    "play": "Lejátszás"
+    "title": "Így hangzik egy hívás",
+    "text": "Egy tipikus hívás egy fogorvosi rendelőben: a Velyric időpontot keres, majd egy kérdésnél átkapcsol a recepcióra.",
+    "business": "Mosoly Fogászat",
+    "t1": "Jó napot, a jövő héten kellene egy fogkő-eltávolítás.",
+    "t2": "Szívesen segítek. Kedden 9:00-kor vagy csütörtökön 15:30-kor tudjuk fogadni. Melyik felel meg?",
+    "t3": "A csütörtök jó. És a biztosítóm fizeti ezt?",
+    "t4": "Lefoglaltam csütörtök 15:30-ra. A biztosítási kérdésben a kolléganőm pontosabban tud segíteni, átkapcsolom.",
+    "handoff": "Átkapcsolva a recepcióra, összefoglalóval",
+    "note": "Szemléltető példa. A valódi beszélgetéseket a te vállalkozásodhoz szabjuk.",
+    "callText": "Kérdésed van? Hívj minket:",
+    "close": "Bezárás"
   },
   "auth": {
     "meta": {
@@ -212,7 +272,8 @@
       "google": "Folytatás Google-lel",
       "or": "vagy e-maillel",
       "backHome": "Vissza a főoldalra",
-      "notConfigured": "A bejelentkezés még nincs bekapcsolva ezen az oldalon. Hamarosan elérhető!"
+      "notConfigured": "A bejelentkezés még nincs bekapcsolva ezen az oldalon. Hamarosan elérhető!",
+      "signupSoon": "A regisztráció hamarosan indul. Addig kérdés esetén hívj minket."
     },
     "strength": {
       "label": "Jelszó erőssége:",
@@ -220,7 +281,8 @@
       "fair": "Közepes",
       "strong": "Erős",
       "veryStrong": "Nagyon erős",
-      "hint": "Tipp: használj kis- és nagybetűt, számot és jelet is."
+      "hint": "Tipp: használj kis- és nagybetűt, számot és jelet is.",
+      "minLength": "Legalább 8 karakter"
     },
     "errors": {
       "emailRequired": "Add meg az e-mail-címedet.",
@@ -305,5 +367,16 @@
       "loggedOut": "Kijelentkeztél. Várunk vissza!",
       "welcome": "Sikeresen bejelentkeztél. Üdv!"
     }
+  },
+  "legal": {
+    "privacy": "Adatvédelmi tájékoztató",
+    "terms": "Általános Szerződési Feltételek",
+    "draftTitle": "Ez a dokumentum előkészítés alatt áll.",
+    "draftText": "A végleges szöveget hamarosan itt tesszük közzé. Ha addig kérdésed van az adataid kezeléséről vagy a feltételekről, keress minket bizalommal:"
+  },
+  "notFound": {
+    "title": "Ezt az oldalt nem találjuk.",
+    "text": "Lehet, hogy elírás van a címben, vagy az oldal már nem létezik. A főoldalról mindent elérsz.",
+    "cta": "Vissza a főoldalra"
   }
 }

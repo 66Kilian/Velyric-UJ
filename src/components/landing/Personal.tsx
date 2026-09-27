@@ -3,58 +3,51 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import meeting from "@/assets/images/szemelyes.jpg";
 import { Container } from "@/components/ui/Container";
-import { Reveal, RevealGroup, RevealItem } from "@/components/ui/Reveal";
+import { MediaReveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const steps = ["visit", "tailor", "launch"] as const;
 
-// SZEMÉLYESEN – kimegyünk, felmérünk, testreszabunk, élesítünk
+// SZEMÉLYESEN – kimegyünk, felmérünk, testreszabunk, élesítünk (valódi sorrend → számozott)
 export function Personal() {
   const t = useTranslations("personal");
 
   return (
-    <section aria-labelledby="personal-title" className="relative border-y border-line bg-base-800/40 py-28 sm:py-36">
-      <Container className="grid items-center gap-16 lg:grid-cols-2 lg:gap-20">
-        <Reveal className="relative">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-[28px] border border-line-strong sm:aspect-[5/5]">
+    <section aria-labelledby="personal-title" className="relative border-y border-line bg-base-800 py-24 sm:py-32">
+      <Container className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
+        <figure>
+          <MediaReveal className="relative aspect-[4/5] overflow-hidden rounded-media sm:aspect-square">
             <Image
               src={meeting}
               alt={t("imageAlt")}
               placeholder="blur"
-              sizes="(min-width: 1024px) 40vw, 90vw"
+              sizes="(min-width: 1280px) 600px, (min-width: 1024px) 46vw, 92vw"
               className="h-full w-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-base-900/70 via-transparent to-transparent" />
-            <div className="absolute inset-0 bg-[linear-gradient(135deg,rgb(139_47_232/0.18),transparent_45%,rgb(255_122_60/0.12))] mix-blend-soft-light" />
-          </div>
-          {/* Lebegő jelvény */}
-          <div className="absolute -bottom-6 left-6 flex items-center gap-3 rounded-2xl border border-line-strong bg-base-900/85 px-4 py-3 shadow-soft backdrop-blur-xl sm:left-auto sm:-right-6">
-            <span className="flex size-10 items-center justify-center rounded-xl bg-brand">
-              <MapPin className="size-5 text-white" aria-hidden="true" />
+          </MediaReveal>
+          <figcaption className="mt-4 flex items-center gap-2 text-sm text-muted">
+            <MapPin className="size-4 shrink-0 text-fg" aria-hidden="true" />
+            <span>
+              <span className="font-semibold text-fg">{t("badgeTitle")}</span> – {t("badgeText")}
             </span>
-            <div>
-              <p className="text-sm font-semibold">{t("badgeTitle")}</p>
-              <p className="text-xs text-muted">{t("badgeText")}</p>
-            </div>
-          </div>
-        </Reveal>
+          </figcaption>
+        </figure>
 
-        <div className="flex flex-col gap-12">
-          <SectionHeading eyebrow={t("eyebrow")} title={<span id="personal-title">{t("title")}</span>} text={t("text")} />
-          <RevealGroup className="relative flex flex-col gap-8">
-            <span aria-hidden="true" className="absolute top-2 bottom-2 left-[19px] w-px bg-gradient-to-b from-brand-violet via-brand-pink to-brand-orange opacity-40" />
+        <div>
+          <SectionHeading id="personal-title" label={t("eyebrow")} title={t("title")} text={t("text")} />
+          <ol className="mt-10 flex flex-col">
             {steps.map((key, i) => (
-              <RevealItem key={key} className="relative flex gap-5">
-                <span className="relative z-10 flex size-10 shrink-0 items-center justify-center rounded-full border-brand text-sm font-bold">
+              <li key={key} className="grid grid-cols-[2.5rem_1fr] gap-4 border-t border-line py-6 last:pb-0">
+                <span className="tabular flex size-9 items-center justify-center rounded-full border border-line-strong text-sm font-semibold">
                   {i + 1}
                 </span>
                 <div>
                   <h3 className="text-lg font-semibold">{t(`steps.${key}.title`)}</h3>
                   <p className="mt-1.5 leading-relaxed text-muted">{t(`steps.${key}.text`)}</p>
                 </div>
-              </RevealItem>
+              </li>
             ))}
-          </RevealGroup>
+          </ol>
         </div>
       </Container>
     </section>

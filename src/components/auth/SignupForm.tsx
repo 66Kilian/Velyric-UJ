@@ -70,8 +70,8 @@ export function SignupForm() {
     return (
       <AuthCard title={t("checkEmail.title")}>
         <div className="flex flex-col items-center gap-5 text-center">
-          <span className="flex size-14 items-center justify-center rounded-2xl border border-emerald-400/30 bg-emerald-400/10">
-            <MailCheck className="size-7 text-emerald-300" aria-hidden="true" />
+          <span className="flex size-14 items-center justify-center rounded-xl border border-success/30 bg-success/10">
+            <MailCheck className="size-7 text-success" aria-hidden="true" />
           </span>
           <p className="text-muted">
             {t("checkEmail.text")}
@@ -114,7 +114,7 @@ export function SignupForm() {
         </>
       }
     >
-      {!isSupabaseConfigured && <FormAlert kind="info" className="mb-6">{t("common.notConfigured")}</FormAlert>}
+      {!isSupabaseConfigured && <FormAlert kind="info" className="mb-6">{t("common.signupSoon")}</FormAlert>}
       {formError && <FormAlert kind="error" className="mb-6">{formError}</FormAlert>}
 
       <GoogleButton onError={setFormError} />
@@ -162,14 +162,14 @@ export function SignupForm() {
         <p className="text-center text-xs leading-relaxed text-muted">
           {t.rich("signup.terms", {
             terms: (chunks) => (
-              <a href="#" className="underline underline-offset-2 hover:text-fg">
+              <Link href="/aszf" className="underline underline-offset-2 hover:text-fg">
                 {chunks}
-              </a>
+              </Link>
             ),
             privacy: (chunks) => (
-              <a href="#" className="underline underline-offset-2 hover:text-fg">
+              <Link href="/adatvedelem" className="underline underline-offset-2 hover:text-fg">
                 {chunks}
-              </a>
+              </Link>
             ),
           })}
         </p>

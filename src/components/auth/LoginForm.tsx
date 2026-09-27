@@ -36,6 +36,7 @@ export function LoginForm({ initialError }: { initialError?: string | null }) {
   const [forgotSent, setForgotSent] = useState(false);
 
   const failures = useRef(0);
+  const passwordRef = useRef<HTMLInputElement>(null);
   const [lockLeft, setLockLeft] = useState(0);
   useEffect(() => {
     if (lockLeft <= 0) return;
@@ -70,16 +71,21 @@ export function LoginForm({ initialError }: { initialError?: string | null }) {
       ({ error: authError } = await supabase.auth.signInWithPassword({ email: email.trim(), password }));
     } else if (DEMO_ENABLED) {
       // Bemutató mód: csak a teszt fiók léphet be
-      await new Promise((r) => setTimeout(r, 400));
       if (!demoSignIn(email, password)) authError = { code: "invalid_credentials" };
     }
     setLoading(false);
 
     if (authError) {
       const key = authErrorKey(authError);
-      if (key === "invalidCredentials" && ++failures.current >= MAX_ATTEMPTS) {
-        failures.current = 0;
-        setLockLeft(LOCK_SECONDS);
+      if (key === "invalidCredentials") {
+        // Az e-mail marad, a jelszó törlődik és fókuszt kap – azonnal újrapróbálható
+        setPassword("");
+        setSubmitted(false); // a mezőhiba ne duplázza a fenti üzenetet
+        passwordRef.current?.focus();
+        if (++failures.current >= MAX_ATTEMPTS) {
+          failures.current = 0;
+          setLockLeft(LOCK_SECONDS);
+        }
       }
       return fail(key);
     }
@@ -198,6 +204,7 @@ export function LoginForm({ initialError }: { initialError?: string | null }) {
       <form onSubmit={onLogin} noValidate className="flex flex-col gap-5">
         {emailField}
         <PasswordField
+          ref={passwordRef}
           label={t("common.password")}
           name="password"
           autoComplete="current-password"

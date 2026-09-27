@@ -22,8 +22,8 @@ export function ConfirmResult({ error }: { error: boolean }) {
     return (
       <AuthCard title={t("errorTitle")}>
         <div className="flex flex-col items-center gap-6 text-center">
-          <span className="flex size-14 items-center justify-center rounded-2xl border border-amber-400/30 bg-amber-400/10">
-            <Clock className="size-7 text-amber-300" aria-hidden="true" />
+          <span className="flex size-14 items-center justify-center rounded-xl border border-warning/30 bg-warning/10">
+            <Clock className="size-7 text-warning" aria-hidden="true" />
           </span>
           <p className="text-muted">{t("errorText")}</p>
           <Button href="/bejelentkezes" size="lg" className="w-full">
@@ -37,8 +37,8 @@ export function ConfirmResult({ error }: { error: boolean }) {
   return (
     <AuthCard title={t("successTitle")}>
       <div className="flex flex-col items-center gap-6 text-center">
-        <span className="success-pop flex size-16 items-center justify-center rounded-full border border-emerald-400/30 bg-emerald-400/10">
-          <CircleCheckBig className="size-8 text-emerald-300" aria-hidden="true" />
+        <span className="success-pop flex size-16 items-center justify-center rounded-full border border-success/30 bg-success/10">
+          <CircleCheckBig className="size-8 text-success" aria-hidden="true" />
         </span>
         <p className="text-muted">{t("successText")}</p>
         <Button href="/" size="lg" className="w-full">

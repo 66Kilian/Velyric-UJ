@@ -2,18 +2,17 @@
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { CalendarCheck, Clock3, Languages, PhoneForwarded } from "lucide-react";
+import { CalendarCheck, CalendarClock, Languages, MoonStar, PhoneForwarded } from "lucide-react";
 import { useTranslations } from "next-intl";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { Eyebrow } from "@/components/ui/SectionHeading";
 import type { SceneInput } from "@/components/three/LogoScene";
 import { cn } from "@/lib/cn";
 import mark from "../../../public/brand/velyric-mark.png";
-import { CallCard } from "./CallCard";
+import { CallPlayback, type Turn } from "./CallPlayback";
 import { DemoButton } from "./DemoButton";
 
 // A 3D jelenet külön csomagban, csak a böngészőben töltődik be (gyors első betöltés)
@@ -24,7 +23,7 @@ const STEPS = ["s1", "s2", "s3", "s4"] as const;
 type Mode = "pending" | "3d" | "static";
 
 // Eldönti, kap-e a látogató 3D-t: csökkentett mozgásnál, adatspórolásnál vagy
-// gyenge eszközön a statikus, gradiens logó marad
+// gyenge eszközön a statikus logó marad
 function detectMode(): Exclude<Mode, "pending"> {
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const saveData = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData;
@@ -36,22 +35,37 @@ function detectMode(): Exclude<Mode, "pending"> {
   return reduce || saveData || weak || !webgl ? "static" : "3d";
 }
 
+// A hero + „Így dolgozik a Velyric”: a 3D V jel végig jelen van (sticky réteg).
+// A heróban a jel „beszél”: a példahívásban az ügynök mondatainál felerősödik a hangja.
 export function HeroStory() {
   const t = useTranslations("hero");
   const ts = useTranslations("story");
+  const tc = useTranslations("call");
 
   const wrapperRef = useRef<HTMLDivElement>(null);
-  const heroContentRef = useRef<HTMLDivElement>(null);
   const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
   const railRef = useRef<HTMLDivElement>(null);
   const posterRef = useRef<HTMLDivElement>(null);
-  const input = useRef<SceneInput>({ stage: 0, px: 0, py: 0 });
+  const input = useRef<SceneInput>({ stage: 0, px: 0, py: 0, speaking: false });
 
   const [mode, setMode] = useState<Mode>("pending");
   const [lite, setLite] = useState(false);
   const [inView, setInView] = useState(true);
   const [sceneReady, setSceneReady] = useState(false);
   const [activeStep, setActiveStep] = useState(-1);
+
+  const heroTurns = useMemo<Turn[]>(
+    () => [
+      { who: "caller", text: tc("t1") },
+      { who: "agent", text: tc("t2") },
+      { who: "caller", text: tc("t3") },
+      { who: "agent", text: tc("t4") },
+    ],
+    [tc],
+  );
+  const onSpeaking = useCallback((speaking: boolean) => {
+    input.current.speaking = speaking;
+  }, []);
 
   // 3D vagy statikus mód – csak a kliensen dönthető el
   useEffect(() => {
@@ -82,14 +96,13 @@ export function HeroStory() {
     return () => window.removeEventListener("pointermove", onMove);
   }, [mode, lite]);
 
-  // GSAP ScrollTrigger: a görgetés → „stage” érték (0 = hero, 1–4 = lépések),
-  // a hero szöveg parallaxa és a lépés-szövegek áttűnése
+  // GSAP ScrollTrigger: a görgetés → „stage” (0 = hero, 1–4 = lépések).
+  // Csak a 3D jel pózát és a haladás-sínt vezérli; a szöveg normálisan görög.
   useEffect(() => {
     const wrapper = wrapperRef.current;
     if (!wrapper) return;
     gsap.registerPlugin(ScrollTrigger);
     ScrollTrigger.config({ ignoreMobileResize: true });
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     let centers: number[] = [];
     const measure = () => {
@@ -116,26 +129,16 @@ export function HeroStory() {
       }
       input.current.stage = stage;
 
-      // Lépés-szövegek: a képernyő közepén lévő a legélesebb
-      if (!reduce) {
-        stepRefs.current.forEach((el, i) => {
-          if (!el) return;
-          const d = Math.abs(stage - (i + 1));
-          el.style.opacity = String(Math.max(0.12, 1 - d * 1.1));
-        });
-      }
       if (railRef.current) {
         railRef.current.style.transform = `scaleY(${Math.min(1, Math.max(0, (stage - 1) / 3))})`;
-        // A sín csak a történet alatt látszik
         const rail = railRef.current.parentElement;
         if (rail) rail.style.opacity = stage > 0.6 && stage < 4.4 ? "1" : "0";
       }
+      // Telefonon a heróban a szövegé a hely: a statikus jel ott rejtve
       if (posterRef.current) {
-        const phone = window.innerWidth < 640;
-        posterRef.current.style.opacity = phone && stage < 0.35 ? "0" : "1";
+        posterRef.current.style.opacity = window.innerWidth < 640 && stage < 0.35 ? "0" : "1";
       }
-      const step = Math.round(stage) - 1;
-      setActiveStep(stage < 0.5 ? -1 : step);
+      setActiveStep(stage < 0.5 ? -1 : Math.round(stage) - 1);
     };
 
     const ctx = gsap.context(() => {
@@ -149,16 +152,6 @@ export function HeroStory() {
         },
         onUpdate: update,
       });
-
-      // Hero szöveg: görgetéskor lágyan felúszik és elhalványul (scrub)
-      if (!reduce && heroContentRef.current) {
-        gsap.to(heroContentRef.current, {
-          yPercent: -12,
-          opacity: 0,
-          ease: "none",
-          scrollTrigger: { trigger: heroContentRef.current, start: "top top+=80", end: "bottom top+=120", scrub: true },
-        });
-      }
     }, wrapper);
 
     measure();
@@ -168,8 +161,8 @@ export function HeroStory() {
 
   const trust = [
     { icon: Languages, label: t("trust.languages") },
-    { icon: Clock3, label: t("trust.allDay") },
-    { icon: CalendarCheck, label: t("trust.calendar") },
+    { icon: MoonStar, label: t("trust.allDay") },
+    { icon: CalendarClock, label: t("trust.calendar") },
   ];
 
   return (
@@ -177,94 +170,91 @@ export function HeroStory() {
       {/* ---- Rögzített 3D réteg: a hero és a történet alatt végig látszik ---- */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
         <div className="sticky top-0 h-svh w-full overflow-hidden">
-          {/* Statikus logó: betöltés alatt, illetve csökkentett mozgásnál ez marad.
-              Telefonon a heróban rejtve (ott a szövegé a hely). */}
+          {/* Statikus jel: betöltés alatt, illetve csökkentett mozgásnál ez marad */}
           <div ref={posterRef} className="transition-opacity duration-500">
             <div
               className={cn(
-                "absolute top-[19svh] left-1/2 w-[58vw] max-w-[420px] -translate-x-1/2 -translate-y-1/2 transition-opacity duration-1000",
-                "lg:top-[43%] lg:left-[72%] lg:w-[30vw] lg:max-w-[500px]",
+                "absolute top-[19svh] left-1/2 w-[58vw] max-w-[420px] -translate-x-1/2 -translate-y-1/2 transition-opacity duration-700",
+                "lg:top-[34%] lg:left-[72%] lg:w-[27vw] lg:max-w-[460px]",
                 mode === "3d" && sceneReady ? "opacity-0" : "opacity-100",
               )}
             >
-              <div className="absolute inset-[-30%] rounded-full bg-[radial-gradient(closest-side,rgb(229_35_126/0.35),transparent)]" />
-              <Image src={mark} alt="" priority sizes="(min-width: 1024px) 30vw, 58vw" className="relative h-auto w-full" />
+              <Image src={mark} alt="" priority sizes="(min-width: 1024px) 27vw, 58vw" className="h-auto w-full" />
             </div>
           </div>
 
           {mode === "3d" && (
             <div
-              className={cn(
-                "absolute inset-0 transition-opacity duration-1000",
-                sceneReady ? "opacity-100" : "opacity-0",
-              )}
+              className={cn("absolute inset-0 transition-opacity duration-700", sceneReady ? "opacity-100" : "opacity-0")}
             >
               <LogoScene input={input} active={inView} lite={lite} onReady={() => setSceneReady(true)} />
             </div>
           )}
 
           {/* Mobilon a szöveg alatti sötétítés, hogy mindig olvasható legyen */}
-          <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-base-900 via-base-900/80 to-transparent lg:hidden" />
+          <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-base-900 via-base-900/85 to-transparent lg:hidden" />
         </div>
       </div>
 
       {/* ---- HERO ---- */}
       <section aria-labelledby="hero-title" className="relative">
-        <Container className="flex min-h-svh flex-col justify-end pt-[calc(var(--nav-h)+2rem)] pb-24 lg:justify-center lg:pb-16">
-          <div ref={heroContentRef} className="relative z-10 flex max-w-xl flex-col items-start gap-6 lg:max-w-[40rem]">
-            <p className="hero-in inline-flex items-center gap-2.5 rounded-full border border-line-strong bg-base-900/40 px-3.5 py-1.5 text-[11px] font-semibold tracking-[0.16em] text-muted uppercase backdrop-blur-sm sm:text-xs">
-              <span className="relative flex size-2">
-                <span className="absolute inset-0 animate-ping rounded-full bg-brand-pink/70" />
-                <span className="relative size-2 rounded-full bg-brand-pink" />
-              </span>
-              {t("eyebrow")}
-            </p>
+        <Container className="relative flex min-h-svh flex-col justify-end pt-[calc(var(--nav-h)+2.5rem)] pb-20 lg:justify-center lg:pb-24">
+          <div className="relative z-10 flex max-w-xl flex-col items-start lg:max-w-[38rem]">
+            <p className="rise-in text-xs font-semibold tracking-[0.16em] text-muted uppercase">{t("eyebrow")}</p>
 
-            <h1 id="hero-title" className="hero-in text-display font-bold text-balance [animation-delay:80ms]">
-              <span className="block">{t("titleLine1")}</span>
-              <span className="text-brand block pb-1">{t("titleLine2")}</span>
+            {/* Két sor, maszk mögül felcsúszva – az első elem a sorrendben (LCP) */}
+            <h1 id="hero-title" className="mt-5 text-display font-bold text-balance">
+              <span className="line-reveal">
+                <span>{t("titleLine1")}</span>
+              </span>
+              <span className="line-reveal">
+                <span className="[animation-delay:80ms]">{t("titleLine2")}</span>
+              </span>
             </h1>
 
-            <p className="hero-in max-w-lg text-base leading-relaxed text-pretty text-muted [animation-delay:160ms] sm:text-lg">
+            <p className="rise-in mt-6 max-w-lg text-lead text-pretty text-muted [animation-delay:220ms]">
               {t("subtitle")}
             </p>
 
-            <div className="hero-in flex w-full flex-col gap-3 [animation-delay:240ms] sm:w-auto sm:flex-row">
+            <div className="rise-in mt-9 flex w-full flex-col gap-3 [animation-delay:320ms] sm:w-auto sm:flex-row">
               <Button href="/regisztracio" size="lg">
                 {t("ctaPrimary")}
               </Button>
               <DemoButton />
             </div>
 
-            <ul className="hero-in mt-2 flex flex-wrap gap-x-6 gap-y-3 [animation-delay:320ms]">
+            <ul className="rise-in mt-8 flex flex-wrap gap-x-7 gap-y-3 [animation-delay:400ms]">
               {trust.map(({ icon: Icon, label }) => (
                 <li key={label} className="flex items-center gap-2 text-sm text-muted">
-                  <Icon className="size-4 text-brand-pink" aria-hidden="true" />
+                  <Icon className="size-4 text-fg" aria-hidden="true" />
                   {label}
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Élő hívás kártya – asztalon a 3D logó alatt */}
-          <div className="hero-in pointer-events-none absolute right-8 bottom-10 z-10 hidden [animation-delay:500ms] xl:right-12 lg:block">
-            <CallCard className="call-float" />
-          </div>
+          {/* A termék munka közben: egy lejátszódó példahívás (asztalon a 3D jel alatt) */}
+          <CallPlayback
+            className="rise-in relative z-10 mt-12 w-full max-w-md [animation-delay:520ms] lg:absolute lg:right-12 lg:bottom-14 lg:mt-0 lg:w-[23rem]"
+            business={tc("business")}
+            turns={heroTurns}
+            outcome={{ kind: "booked", text: tc("booked") }}
+            onSpeakingChange={onSpeaking}
+          />
         </Container>
 
-        {/* Görgetés-jelző */}
+        {/* Görgetés-jelző (finoman pulzál) */}
         <div
           aria-hidden="true"
-          className="absolute bottom-6 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-2 text-[11px] font-semibold tracking-[0.2em] text-muted uppercase sm:flex"
+          className="absolute bottom-5 left-1/2 z-10 hidden -translate-x-1/2 lg:flex"
         >
           <span className="flex h-9 w-6 justify-center rounded-full border border-line-strong pt-2">
-            <span className="scroll-dot h-2 w-1 rounded-full bg-brand" />
+            <span className="scroll-dot h-2 w-1 rounded-full bg-fg/70" />
           </span>
-          {t("scroll")}
         </div>
       </section>
 
-      {/* ---- A TÖRTÉNET: 4 lépés, a 3D logó közben átalakul ---- */}
+      {/* ---- A TÖRTÉNET: 4 lépés, a 3D jel közben átalakul ---- */}
       <section aria-labelledby="story-title" className="relative">
         <Container className="relative">
           {/* Haladás-sín (asztalon) */}
@@ -276,49 +266,38 @@ export function HeroStory() {
             </div>
           </div>
 
-          <h2 id="story-title" className="sr-only">
-            {ts("eyebrow")}
-          </h2>
-
           {STEPS.map((key, i) => (
             <div
               key={key}
               ref={(el) => {
                 stepRefs.current[i] = el;
               }}
-              className="flex min-h-svh items-end pb-16 transition-opacity duration-150 lg:items-center lg:pb-0 lg:pl-16"
+              className="flex min-h-svh items-end pb-16 lg:items-center lg:pb-0 lg:pl-16"
             >
-              <div className="relative z-10 flex max-w-lg flex-col gap-5">
-                {i === 0 && <Eyebrow>{ts("eyebrow")}</Eyebrow>}
-                <p className="text-sm font-semibold tracking-[0.14em] text-brand-pink uppercase">
-                  {ts(`${key}.kicker`)}
+              <div className="relative z-10 flex max-w-lg flex-col">
+                {i === 0 && (
+                  <h2 id="story-title" className="mb-8 text-sm font-semibold text-muted">
+                    {ts("eyebrow")}
+                  </h2>
+                )}
+                <p className="flex items-baseline gap-3 text-sm font-semibold">
+                  <span className="tabular text-muted">0{i + 1}</span>
+                  <span className="text-fg">{ts(`${key}.kicker`)}</span>
                 </p>
-                <h3 className="text-[2rem] leading-[1.1] font-bold tracking-[-0.02em] text-balance sm:text-5xl">
-                  {ts(`${key}.title`)}
-                </h3>
-                <p className="text-lg leading-relaxed text-pretty text-muted">{ts(`${key}.text`)}</p>
+                <h3 className="mt-4 text-title font-bold text-balance">{ts(`${key}.title`)}</h3>
+                <p className="mt-5 text-lead text-pretty text-muted">{ts(`${key}.text`)}</p>
                 <p
                   className={cn(
-                    "inline-flex items-center gap-2.5 self-start rounded-2xl border px-4 py-3 text-sm font-medium transition-colors duration-500",
-                    activeStep === i
-                      ? "border-brand-pink/40 bg-brand-pink/10 text-fg"
-                      : "border-line bg-base-800/60 text-muted",
+                    "mt-7 inline-flex items-center gap-2.5 self-start rounded-xl border px-4 py-3 text-sm font-medium transition-colors duration-300",
+                    activeStep === i ? "border-line-strong bg-base-700 text-fg" : "border-line bg-base-800 text-muted",
                   )}
                 >
                   {i === 3 ? (
-                    <PhoneForwarded className="size-4 shrink-0 text-brand-orange" aria-hidden="true" />
+                    <PhoneForwarded className="size-4 shrink-0 text-warning" aria-hidden="true" />
                   ) : i === 2 ? (
-                    <CalendarCheck className="size-4 shrink-0 text-emerald-400" aria-hidden="true" />
+                    <CalendarCheck className="size-4 shrink-0 text-success" aria-hidden="true" />
                   ) : (
-                    <span className="flex h-4 items-center gap-[2px]" aria-hidden="true">
-                      {[0.5, 1, 0.7, 0.9, 0.4].map((h, b) => (
-                        <span
-                          key={b}
-                          className="voice-bar w-[2px] rounded-full bg-brand"
-                          style={{ height: `${h * 100}%`, animationDelay: `${b * 90}ms` }}
-                        />
-                      ))}
-                    </span>
+                    <span className="h-4 w-1 shrink-0 rounded-full bg-brand" aria-hidden="true" />
                   )}
                   {ts(`${key}.bubble`)}
                 </p>

@@ -20,6 +20,8 @@ export type SceneInput = {
   /** Egér-pozíció -1..1 (enyhe parallaxhoz) */
   px: number;
   py: number;
+  /** A hero példahívásában épp az ügynök beszél → a hang-gyűrűk felerősödnek */
+  speaking: boolean;
 };
 
 type Pose = {
@@ -59,7 +61,7 @@ function keyframes(desktop: boolean, vw: number, vh: number, phone: boolean): Po
     const x = vw * 0.22;
     const s = THREE.MathUtils.clamp(vw * 0.085, 0.72, 1.0);
     return [
-      { x, y: 0.45, z: 0, rx: 0.12, ry: -0.42, s, explode: 0, handoff: 0, voice: 0.55, glow: 0.7 },
+      { x, y: 0.62, z: 0, rx: 0.12, ry: -0.42, s: s * 0.92, explode: 0, handoff: 0, voice: 0.2, glow: 0.6 },
       { x: x * 0.92, y: 0, z: 0, rx: 0.04, ry: 0.22, s: s * 1.06, explode: 0, handoff: 0, voice: 1, glow: 1 },
       { x: x * 0.92, y: 0, z: 0, rx: 0.32, ry: -0.8, s, explode: 1, handoff: 0, voice: 0.35, glow: 0.6 },
       { x: x * 0.92, y: 0, z: 0, rx: 0.08, ry: Math.PI * 2 - 0.3, s: s * 1.06, explode: 0.2, handoff: 0, voice: 0.6, glow: 0.9 },
@@ -301,8 +303,10 @@ function Scene({ input, lite }: { input: RefObject<SceneInput>; lite: boolean })
   useFrame((state, delta) => {
     const t = state.clock.elapsedTime;
     const dt = Math.min(delta, 1 / 20);
-    const { stage, px, py } = input.current;
+    const { stage, px, py, speaking } = input.current;
     const target = samplePose(keyframes(desktop, viewport.width, viewport.height, size.width < 640), stage);
+    // A jel „beszél”: amíg az ügynök szól a hero-hívásban, erősebb a hang
+    if (speaking && stage < 0.6) target.voice = Math.min(1.2, target.voice + 0.6);
 
     // Lágy követés: a jelenet „úszik” a cél felé, sosem ugrik
     if (!current.current) current.current = { ...target };
