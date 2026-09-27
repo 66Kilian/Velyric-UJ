@@ -1,0 +1,31 @@
+{
+  "metadata": {
+    "title": "Velyric – der KI-Sprachagent, der jeden Anruf annimmt",
+    "description": "Der KI-Sprachagent von Velyric nimmt Ihre Anrufe rund um die Uhr auf Deutsch, Englisch und Ungarisch an, bucht Termine und übergibt bei Bedarf an Ihr Team."
+  },
+  "brand": {
+    "homeLabel": "Velyric – zur Startseite",
+    "tagline": "KI-Sprachagenten für moderne Unternehmen"
+  },
+  "nav": {
+    "about": "Über uns",
+    "features": "Was wir können",
+    "contact": "Kontakt",
+    "login": "Anmelden",
+    "start": "Jetzt starten",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "language": "Sprache"
+  },
+  "common": {
+    "loading": "Wird geladen…"
+  },
+  "preview": {
+    "badge": "Basis-Vorschau · Schritt 1",
+    "title": "Die Grundlagen von Velyric stehen.",
+    "text": "Farben, Schrift, Logo und Buttons – in Schritt 3 macht diese Seite Platz für den echten Hero.",
+    "secondary": "Sekundärer Button",
+    "loadingButton": "Speichern",
+    "colors": "Farbsystem"
+  }
+}

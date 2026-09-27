@@ -1,0 +1,31 @@
+{
+  "metadata": {
+    "title": "Velyric – the AI voice agent that answers every call",
+    "description": "Velyric's AI voice agent answers your calls day and night in English, German and Hungarian, books appointments, and hands over to your team when needed."
+  },
+  "brand": {
+    "homeLabel": "Velyric – back to home",
+    "tagline": "AI voice agents for modern businesses"
+  },
+  "nav": {
+    "about": "About us",
+    "features": "What we do",
+    "contact": "Contact",
+    "login": "Log in",
+    "start": "Get started",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "language": "Language"
+  },
+  "common": {
+    "loading": "Loading…"
+  },
+  "preview": {
+    "badge": "Foundation preview · Step 1",
+    "title": "Velyric's foundations are ready.",
+    "text": "Colors, typeface, logo and buttons – in step 3 this page makes way for the real hero.",
+    "secondary": "Secondary button",
+    "loadingButton": "Saving",
+    "colors": "Color system"
+  }
+}

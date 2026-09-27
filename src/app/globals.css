@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+/* ============================================================
+   VELYRIC – Design rendszer
+   Sötét, prémium téma. A gradiens CSAK kiemelésre (gombok,
+   ikonok, vonalak, 3D) – a fekete tér adja a prémium hatást.
+   ============================================================ */
+
+:root {
+  /* Alapszínek (a specifikáció szerinti nevekkel) */
+  --bg-900: #050409; /* fő háttér */
+  --bg-800: #0b0913; /* kártyák, sávok */
+  --bg-700: #141020; /* kiemelt felület */
+  --text: #f4f1f8; /* fő szöveg */
+  --muted: #a49dba; /* másodlagos szöveg */
+
+  /* Márka gradiens */
+  --brand-violet: #8b2fe8;
+  --brand-pink: #e5237e;
+  --brand-orange: #ff7a3c;
+  --brand-gradient: linear-gradient(
+    135deg,
+    var(--brand-violet) 0%,
+    var(--brand-pink) 55%,
+    var(--brand-orange) 100%
+  );
+
+  /* Finom vonalak, keretek */
+  --line: rgb(244 241 248 / 0.08);
+  --line-strong: rgb(244 241 248 / 0.14);
+
+  /* A sticky navbar magassága – a szekció-ugrásnál ennyivel lejjebb áll meg */
+  --nav-h: 72px;
+
+  color-scheme: dark;
+}
+
+/* Tailwind tokenek → osztályok: bg-base-900, text-fg, text-muted, rounded-card, shadow-soft… */
+@theme inline {
+  --color-base-900: var(--bg-900);
+  --color-base-800: var(--bg-800);
+  --color-base-700: var(--bg-700);
+  --color-fg: var(--text);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-brand-violet: var(--brand-violet);
+  --color-brand-pink: var(--brand-pink);
+  --color-brand-orange: var(--brand-orange);
+
+  --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+}
+
+@theme {
+  /* Lekerekítések: 12px = rounded-xl, 16px = rounded-2xl (Tailwind alap), 20px = rounded-card */
+  --radius-card: 1.25rem;
+
+  /* Lágy árnyékok */
+  --shadow-soft: 0 10px 30px -12px rgb(0 0 0 / 0.6);
+  --shadow-card: 0 1px 0 0 rgb(255 255 255 / 0.04) inset, 0 20px 50px -24px rgb(0 0 0 / 0.8);
+
+  /* Egységes, „prémium” easing */
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Folyadék-tipográfia a nagy címekhez */
+  --text-display: clamp(2.5rem, 1.6rem + 4.2vw, 4.75rem);
+  --text-display--line-height: 1.04;
+  --text-display--letter-spacing: -0.03em;
+}
+
+/* ---------- Márka segédosztályok ---------- */
+
+/* Gradiens háttér (gombok, ikon-hátterek) */
+@utility bg-brand {
+  background-image: var(--brand-gradient);
+}
+
+/* Gradiens szöveg (kiemelt szavak a címekben) */
+@utility text-brand {
+  background-image: var(--brand-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Gradiens keret: a kártya saját háttere felett 1px-es gradiens vonal */
+@utility border-brand {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--bg-800), var(--bg-800)) padding-box,
+    var(--brand-gradient) border-box;
+}
+
+/* Wordmark: NAGYBETŰ, széles betűköz. A negatív margó kiegyenlíti az utolsó betű utáni közt. */
+@utility wordmark {
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  margin-right: -0.24em;
+  font-weight: 600;
+}
+
+/* ---------- Globális alapok ---------- */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--nav-h);
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: var(--bg-900);
+    color: var(--text);
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: rgb(229 35 126 / 0.35);
+    color: var(--text);
+  }
+
+  /* Jól látható, márkás fókuszkeret billentyűzetes navigációhoz */
+  :focus-visible {
+    outline: 2px solid var(--brand-pink);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+}
+
+/* Mozgáscsökkentés: aki kéri, annak nincs animáció */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

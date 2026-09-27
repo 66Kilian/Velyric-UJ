@@ -1,0 +1,31 @@
+{
+  "metadata": {
+    "title": "Velyric – MI hangügynök, aki minden hívást felvesz",
+    "description": "A Velyric MI hangügynöke éjjel-nappal felveszi a hívásokat magyarul, németül és angolul, időpontot foglal, és szükség esetén átadja a hívást a munkatársadnak."
+  },
+  "brand": {
+    "homeLabel": "Velyric – vissza a főoldalra",
+    "tagline": "MI hangügynökök modern vállalkozásoknak"
+  },
+  "nav": {
+    "about": "Kik vagyunk",
+    "features": "Mit tudunk",
+    "contact": "Kapcsolat",
+    "login": "Bejelentkezés",
+    "start": "Kezdjük",
+    "openMenu": "Menü megnyitása",
+    "closeMenu": "Menü bezárása",
+    "language": "Nyelv"
+  },
+  "common": {
+    "loading": "Betöltés…"
+  },
+  "preview": {
+    "badge": "Alap-előnézet · 1. lépés",
+    "title": "A Velyric alapjai készen állnak.",
+    "text": "Színek, betűtípus, logó és gombok – ez az oldal a 3. lépésben átadja a helyét a valódi Hero-nak.",
+    "secondary": "Másodlagos gomb",
+    "loadingButton": "Mentés",
+    "colors": "Színrendszer"
+  }
+}
