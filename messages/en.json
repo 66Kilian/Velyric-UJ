@@ -15,7 +15,10 @@
     "start": "Get started",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
-    "language": "Language"
+    "language": "Language",
+    "mainNav": "Main navigation",
+    "menu": "Menu",
+    "skipToContent": "Skip to content"
   },
   "common": {
     "loading": "Loading…"
@@ -26,6 +29,7 @@
     "text": "Colors, typeface, logo and buttons – in step 3 this page makes way for the real hero.",
     "secondary": "Secondary button",
     "loadingButton": "Saving",
-    "colors": "Color system"
+    "colors": "Color system",
+    "placeholder": "Placeholder section – built in step 4."
   }
 }

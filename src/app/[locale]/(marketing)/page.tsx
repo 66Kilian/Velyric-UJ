@@ -4,6 +4,7 @@ import { Logo } from "@/components/brand/Logo";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { routing } from "@/i18n/routing";
+import { navSections } from "@/lib/site";
 
 // IDEIGLENES előnézet (1. lépés): a design rendszer ellenőrzésére.
 // A 2–4. lépésben ezt váltja a Navbar + Hero + szekciók.
@@ -23,9 +24,8 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
   const nav = await getTranslations("nav");
 
   return (
-    <main className="py-10 sm:py-16">
-      <Container className="flex flex-col gap-16">
-        <Logo size="md" eager />
+    <>
+      <Container className="flex flex-col gap-16 pt-[calc(var(--nav-h)+3rem)] pb-16">
 
         <section className="flex max-w-3xl flex-col items-start gap-6">
           <span className="rounded-full border border-line-strong px-3 py-1 text-xs font-semibold tracking-[0.14em] text-muted uppercase">
@@ -78,6 +78,26 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
           <Logo size="lg" withWordmark={false} />
         </div>
       </Container>
-    </main>
+
+      {/* Helyőrző szekciók a navbar teszteléséhez (görgetés, aktív menüpont) */}
+      {navSections.map((section, i) => (
+        <Container
+          as="section"
+          key={section.id}
+          id={section.id}
+          className={i === navSections.length - 1 ? "py-16" : "py-24"}
+        >
+          <div
+            className={
+              "flex flex-col justify-center gap-3 rounded-card border border-dashed border-line-strong p-8 " +
+              (i === navSections.length - 1 ? "min-h-[40vh]" : "min-h-[90vh]")
+            }
+          >
+            <h2 className="text-3xl font-bold">{nav(section.labelKey)}</h2>
+            <p className="text-muted">{t("placeholder")}</p>
+          </div>
+        </Container>
+      ))}
+    </>
   );
 }

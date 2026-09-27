@@ -15,7 +15,10 @@
     "start": "Kezdjük",
     "openMenu": "Menü megnyitása",
     "closeMenu": "Menü bezárása",
-    "language": "Nyelv"
+    "language": "Nyelv",
+    "mainNav": "Fő navigáció",
+    "menu": "Menü",
+    "skipToContent": "Ugrás a tartalomra"
   },
   "common": {
     "loading": "Betöltés…"
@@ -26,6 +29,7 @@
     "text": "Színek, betűtípus, logó és gombok – ez az oldal a 3. lépésben átadja a helyét a valódi Hero-nak.",
     "secondary": "Másodlagos gomb",
     "loadingButton": "Mentés",
-    "colors": "Színrendszer"
+    "colors": "Színrendszer",
+    "placeholder": "Helyőrző szekció – a 4. lépésben készül el."
   }
 }

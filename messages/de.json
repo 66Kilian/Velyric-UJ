@@ -15,7 +15,10 @@
     "start": "Jetzt starten",
     "openMenu": "Menü öffnen",
     "closeMenu": "Menü schließen",
-    "language": "Sprache"
+    "language": "Sprache",
+    "mainNav": "Hauptnavigation",
+    "menu": "Menü",
+    "skipToContent": "Zum Inhalt springen"
   },
   "common": {
     "loading": "Wird geladen…"
@@ -26,6 +29,7 @@
     "text": "Farben, Schrift, Logo und Buttons – in Schritt 3 macht diese Seite Platz für den echten Hero.",
     "secondary": "Sekundärer Button",
     "loadingButton": "Speichern",
-    "colors": "Farbsystem"
+    "colors": "Farbsystem",
+    "placeholder": "Platzhalter-Bereich – kommt in Schritt 4."
   }
 }
