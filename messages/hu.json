@@ -193,5 +193,117 @@
     "callText": "Addig is hívj minket, és élőben megmutatjuk:",
     "close": "Bezárás",
     "play": "Lejátszás"
+  },
+  "auth": {
+    "meta": {
+      "login": "Bejelentkezés",
+      "signup": "Regisztráció",
+      "confirm": "E-mail megerősítése",
+      "newPassword": "Új jelszó"
+    },
+    "common": {
+      "email": "E-mail-cím",
+      "emailPlaceholder": "nev@cegem.hu",
+      "password": "Jelszó",
+      "passwordPlaceholder": "Legalább 8 karakter",
+      "confirmPassword": "Jelszó még egyszer",
+      "showPassword": "Jelszó mutatása",
+      "hidePassword": "Jelszó elrejtése",
+      "google": "Folytatás Google-lel",
+      "or": "vagy e-maillel",
+      "backHome": "Vissza a főoldalra",
+      "notConfigured": "A bejelentkezés még nincs bekapcsolva ezen az oldalon. Hamarosan elérhető!"
+    },
+    "strength": {
+      "label": "Jelszó erőssége:",
+      "weak": "Gyenge",
+      "fair": "Közepes",
+      "strong": "Erős",
+      "veryStrong": "Nagyon erős",
+      "hint": "Tipp: használj kis- és nagybetűt, számot és jelet is."
+    },
+    "errors": {
+      "emailRequired": "Add meg az e-mail-címedet.",
+      "emailInvalid": "Ez nem tűnik érvényes e-mail-címnek.",
+      "passwordRequired": "Add meg a jelszavadat.",
+      "passwordShort": "A jelszó legalább 8 karakter legyen.",
+      "mismatch": "A két jelszó nem egyezik.",
+      "invalidCredentials": "Hibás e-mail-cím vagy jelszó. Próbáld újra!",
+      "notConfirmed": "Még nem erősítetted meg az e-mail-címedet. Kattints a levelünkben lévő linkre.",
+      "rateLimit": "Túl sok próbálkozás. Kérlek, várj egy kicsit, és próbáld újra.",
+      "weakPassword": "Ez a jelszó túl könnyen kitalálható — válassz egy erősebbet.",
+      "samePassword": "Az új jelszó nem lehet ugyanaz, mint a régi.",
+      "network": "Nem sikerült kapcsolódni. Ellenőrizd az internetet, és próbáld újra.",
+      "generic": "Valami hiba történt. Kérlek, próbáld újra.",
+      "locked": "Túl sok sikertelen próbálkozás. Próbáld újra {seconds} másodperc múlva.",
+      "oauth": "A Google-bejelentkezés most nem sikerült. Próbáld újra.",
+      "confirmRequired": "Írd be még egyszer a jelszót."
+    },
+    "login": {
+      "title": "Üdv újra!",
+      "subtitle": "Jelentkezz be a Velyric-fiókodba.",
+      "submit": "Bejelentkezés",
+      "loading": "Bejelentkezés…",
+      "forgot": "Elfelejtett jelszó?",
+      "noAccount": "Még nincs fiókod?",
+      "signupLink": "Regisztrálj",
+      "success": "Sikeresen bejelentkeztél. Üdv újra!",
+      "resendConfirm": "Megerősítő link újraküldése"
+    },
+    "forgot": {
+      "title": "Új jelszó kérése",
+      "subtitle": "Add meg az e-mail-címedet, és küldünk egy linket, amivel új jelszót állíthatsz be.",
+      "submit": "Link küldése",
+      "loading": "Küldés…",
+      "sent": "Ha létezik ilyen fiók, elküldtük a linket. Nézd meg a postafiókodat (a spam mappát is).",
+      "back": "Vissza a bejelentkezéshez"
+    },
+    "signup": {
+      "title": "Kezdjük!",
+      "subtitle": "Hozd létre a fiókodat — egy perc az egész.",
+      "submit": "Fiók létrehozása",
+      "loading": "Létrehozás…",
+      "hasAccount": "Már van fiókod?",
+      "loginLink": "Jelentkezz be",
+      "terms": "A regisztrációval elfogadod az <terms>ÁSZF-et</terms> és az <privacy>Adatvédelmi tájékoztatót</privacy>."
+    },
+    "checkEmail": {
+      "title": "Nézd meg a postafiókodat",
+      "text": "Elküldtünk egy megerősítő linket erre a címre:",
+      "next": "Kattints a levélben lévő linkre, és már kész is.",
+      "notReceived": "Nem kaptad meg?",
+      "resend": "Küldd újra",
+      "resendIn": "Újraküldés {seconds} mp múlva",
+      "resent": "Újra elküldtük a linket.",
+      "spam": "Ha pár percen belül sem érkezik meg, nézd meg a spam mappát is.",
+      "wrongEmail": "Elírtad a címet?",
+      "restart": "Kezdd újra"
+    },
+    "confirm": {
+      "successTitle": "Sikeres megerősítés ✔",
+      "successText": "Az e-mail-címed megerősítve, és már be is jelentkeztél. Üdv a Velyric-nél!",
+      "cta": "Tovább a főoldalra",
+      "errorTitle": "Ez a link már nem érvényes",
+      "errorText": "A megerősítő link lejárt, vagy már felhasználták. Jelentkezz be, és egy kattintással küldünk újat.",
+      "errorCta": "Tovább a bejelentkezéshez"
+    },
+    "newPassword": {
+      "title": "Új jelszó beállítása",
+      "subtitle": "Válassz egy új, erős jelszót a fiókodhoz.",
+      "newPassword": "Új jelszó",
+      "confirmNew": "Új jelszó még egyszer",
+      "submit": "Jelszó mentése",
+      "loading": "Mentés…",
+      "success": "Kész! Az új jelszavad beállítva.",
+      "checking": "Link ellenőrzése…",
+      "expiredTitle": "Ez a link lejárt",
+      "expiredText": "A jelszó-visszaállító link lejárt, vagy már felhasználták. Kérj egy újat — pár másodperc az egész.",
+      "expiredCta": "Új link kérése"
+    },
+    "session": {
+      "logout": "Kijelentkezés",
+      "loggedOut": "Kijelentkeztél. Várunk vissza!",
+      "welcome": "Sikeresen bejelentkeztél. Üdv!"
+    }
   }
 }

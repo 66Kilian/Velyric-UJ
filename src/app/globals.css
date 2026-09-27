@@ -214,3 +214,14 @@
     transform: translateY(16px) scale(0.98);
   }
 }
+
+/* Sikeres megerősítés: a pipa „bepattan” */
+.success-pop {
+  animation: success-pop 0.6s var(--ease-premium) both;
+}
+@keyframes success-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+}

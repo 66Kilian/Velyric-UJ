@@ -193,5 +193,117 @@
     "callText": "In the meantime, call us and we'll show you live:",
     "close": "Close",
     "play": "Play"
+  },
+  "auth": {
+    "meta": {
+      "login": "Log in",
+      "signup": "Sign up",
+      "confirm": "Confirm email",
+      "newPassword": "New password"
+    },
+    "common": {
+      "email": "Email",
+      "emailPlaceholder": "name@company.com",
+      "password": "Password",
+      "passwordPlaceholder": "At least 8 characters",
+      "confirmPassword": "Confirm password",
+      "showPassword": "Show password",
+      "hidePassword": "Hide password",
+      "google": "Continue with Google",
+      "or": "or with email",
+      "backHome": "Back to home",
+      "notConfigured": "Sign-in isn't switched on for this site yet. Coming soon!"
+    },
+    "strength": {
+      "label": "Password strength:",
+      "weak": "Weak",
+      "fair": "Fair",
+      "strong": "Strong",
+      "veryStrong": "Very strong",
+      "hint": "Tip: mix upper and lower case, numbers and symbols."
+    },
+    "errors": {
+      "emailRequired": "Please enter your email.",
+      "emailInvalid": "That doesn't look like a valid email address.",
+      "passwordRequired": "Please enter your password.",
+      "passwordShort": "Your password needs at least 8 characters.",
+      "mismatch": "The two passwords don't match.",
+      "invalidCredentials": "Wrong email or password. Please try again!",
+      "notConfirmed": "You haven't confirmed your email yet. Click the link in our email.",
+      "rateLimit": "Too many attempts. Please wait a moment and try again.",
+      "weakPassword": "This password is too easy to guess — please choose a stronger one.",
+      "samePassword": "Your new password can't be the same as the old one.",
+      "network": "We couldn't connect. Check your internet and try again.",
+      "generic": "Something went wrong. Please try again.",
+      "locked": "Too many failed attempts. Try again in {seconds} seconds.",
+      "oauth": "Google sign-in didn't work this time. Please try again.",
+      "confirmRequired": "Please type your password again."
+    },
+    "login": {
+      "title": "Welcome back!",
+      "subtitle": "Log in to your Velyric account.",
+      "submit": "Log in",
+      "loading": "Logging in…",
+      "forgot": "Forgot password?",
+      "noAccount": "No account yet?",
+      "signupLink": "Sign up",
+      "success": "You're logged in. Welcome back!",
+      "resendConfirm": "Resend confirmation link"
+    },
+    "forgot": {
+      "title": "Reset your password",
+      "subtitle": "Enter your email and we'll send you a link to set a new password.",
+      "submit": "Send link",
+      "loading": "Sending…",
+      "sent": "If an account exists, we've sent the link. Check your inbox (and spam folder).",
+      "back": "Back to log in"
+    },
+    "signup": {
+      "title": "Let's get started!",
+      "subtitle": "Create your account — it takes a minute.",
+      "submit": "Create account",
+      "loading": "Creating…",
+      "hasAccount": "Already have an account?",
+      "loginLink": "Log in",
+      "terms": "By signing up you accept the <terms>Terms</terms> and the <privacy>Privacy Policy</privacy>."
+    },
+    "checkEmail": {
+      "title": "Check your inbox",
+      "text": "We've sent a confirmation link to:",
+      "next": "Click the link in the email and you're done.",
+      "notReceived": "Didn't get it?",
+      "resend": "Send again",
+      "resendIn": "Resend in {seconds}s",
+      "resent": "We've sent the link again.",
+      "spam": "If it doesn't arrive within a few minutes, check your spam folder.",
+      "wrongEmail": "Typo in your email?",
+      "restart": "Start over"
+    },
+    "confirm": {
+      "successTitle": "Email confirmed ✔",
+      "successText": "Your email is confirmed and you're logged in. Welcome to Velyric!",
+      "cta": "Continue to home",
+      "errorTitle": "This link is no longer valid",
+      "errorText": "The confirmation link has expired or was already used. Log in and we'll send you a new one with one click.",
+      "errorCta": "Go to log in"
+    },
+    "newPassword": {
+      "title": "Set a new password",
+      "subtitle": "Choose a new, strong password for your account.",
+      "newPassword": "New password",
+      "confirmNew": "Confirm new password",
+      "submit": "Save password",
+      "loading": "Saving…",
+      "success": "Done! Your new password is set.",
+      "checking": "Checking link…",
+      "expiredTitle": "This link has expired",
+      "expiredText": "The reset link has expired or was already used. Request a new one — it only takes a few seconds.",
+      "expiredCta": "Request a new link"
+    },
+    "session": {
+      "logout": "Log out",
+      "loggedOut": "You're logged out. See you soon!",
+      "welcome": "You're logged in. Welcome!"
+    }
   }
 }

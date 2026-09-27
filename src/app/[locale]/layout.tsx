@@ -6,6 +6,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { site } from "@/lib/site";
 import { MotionProvider } from "@/components/providers/MotionProvider";
+import { Toaster } from "@/components/ui/Toaster";
 import "../globals.css";
 
 // Montserrat saját kiszolgálással (nincs külső kérés); latin-ext kell az ő/ű betűkhöz
@@ -58,7 +59,10 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
     <html lang={locale} className={montserrat.variable} data-scroll-behavior="smooth">
       <body className="min-h-dvh bg-base-900 font-sans text-fg antialiased">
         <NextIntlClientProvider>
-          <MotionProvider>{children}</MotionProvider>
+          <MotionProvider>
+            {children}
+            <Toaster />
+          </MotionProvider>
         </NextIntlClientProvider>
       </body>
     </html>

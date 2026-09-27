@@ -19,13 +19,16 @@ type MobileMenuProps = {
   active: string | null;
   /** A hamburger gomb – bezáráskor ide tér vissza a fókusz */
   returnFocusRef: RefObject<HTMLButtonElement | null>;
+  loggedIn: boolean;
+  onSignOut: () => void;
 };
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
 // Teljes képernyős mobilmenü, jobbról becsúszva, nagy gombokkal
-export function MobileMenu({ open, onClose, active, returnFocusRef }: MobileMenuProps) {
+export function MobileMenu({ open, onClose, active, returnFocusRef, loggedIn, onSignOut }: MobileMenuProps) {
   const t = useTranslations("nav");
+  const tSession = useTranslations("auth.session");
   const { goTo } = useSectionNav();
   const panelRef = useRef<HTMLDivElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
@@ -139,15 +142,23 @@ export function MobileMenu({ open, onClose, active, returnFocusRef }: MobileMenu
             <Button href="/regisztracio" size="lg" onClick={onClose} className="w-full">
               {t("start")}
             </Button>
-            <Button
-              href="/bejelentkezes"
-              size="lg"
-              variant="secondary"
-              onClick={onClose}
-              className="w-full"
-            >
-              {t("login")}
-            </Button>
+            {loggedIn ? (
+              <Button
+                size="lg"
+                variant="secondary"
+                onClick={() => {
+                  onClose();
+                  onSignOut();
+                }}
+                className="w-full"
+              >
+                {tSession("logout")}
+              </Button>
+            ) : (
+              <Button href="/bejelentkezes" size="lg" variant="secondary" onClick={onClose} className="w-full">
+                {t("login")}
+              </Button>
+            )}
             <LanguageSegmented className="mt-3" />
             <a
               href={site.phoneHref}

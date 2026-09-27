@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import { useScrolled } from "@/hooks/useScrolled";
+import { useSession } from "@/hooks/useSession";
+import { useSignOut } from "@/hooks/useSignOut";
 import { useSectionNav } from "@/hooks/useSectionNav";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/cn";
@@ -21,6 +23,9 @@ const sectionIds = navSections.map((s) => s.id);
 export function Navbar() {
   const t = useTranslations("nav");
   const tBrand = useTranslations("brand");
+  const tSession = useTranslations("auth.session");
+  const session = useSession();
+  const signOut = useSignOut();
   const scrolled = useScrolled();
   const { onHome, goTo } = useSectionNav();
   const active = useActiveSection(sectionIds, onHome);
@@ -92,9 +97,15 @@ export function Navbar() {
 
           <div className="flex items-center gap-1 justify-self-end">
             <LanguageDropdown className="hidden lg:block" />
-            <Button variant="ghost" href="/bejelentkezes" className="hidden px-4 lg:inline-flex">
-              {t("login")}
-            </Button>
+            {session ? (
+              <Button variant="ghost" onClick={signOut} className="hidden px-4 lg:inline-flex">
+                {tSession("logout")}
+              </Button>
+            ) : (
+              <Button variant="ghost" href="/bejelentkezes" className="hidden px-4 lg:inline-flex">
+                {t("login")}
+              </Button>
+            )}
             <Button href="/regisztracio" className="ml-1 hidden sm:inline-flex">
               {t("start")}
             </Button>
@@ -120,6 +131,8 @@ export function Navbar() {
         onClose={closeMenu}
         active={active}
         returnFocusRef={menuButtonRef}
+        loggedIn={!!session}
+        onSignOut={signOut}
       />
     </>
   );

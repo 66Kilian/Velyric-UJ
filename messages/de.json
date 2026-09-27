@@ -193,5 +193,117 @@
     "callText": "Rufen Sie uns bis dahin an – wir zeigen es Ihnen live:",
     "close": "Schließen",
     "play": "Abspielen"
+  },
+  "auth": {
+    "meta": {
+      "login": "Anmelden",
+      "signup": "Registrieren",
+      "confirm": "E-Mail bestätigen",
+      "newPassword": "Neues Passwort"
+    },
+    "common": {
+      "email": "E-Mail-Adresse",
+      "emailPlaceholder": "name@firma.de",
+      "password": "Passwort",
+      "passwordPlaceholder": "Mindestens 8 Zeichen",
+      "confirmPassword": "Passwort wiederholen",
+      "showPassword": "Passwort anzeigen",
+      "hidePassword": "Passwort verbergen",
+      "google": "Weiter mit Google",
+      "or": "oder mit E-Mail",
+      "backHome": "Zur Startseite",
+      "notConfigured": "Die Anmeldung ist auf dieser Seite noch nicht aktiviert. Bald verfügbar!"
+    },
+    "strength": {
+      "label": "Passwortstärke:",
+      "weak": "Schwach",
+      "fair": "Mittel",
+      "strong": "Stark",
+      "veryStrong": "Sehr stark",
+      "hint": "Tipp: Groß- und Kleinbuchstaben, Zahlen und Sonderzeichen mischen."
+    },
+    "errors": {
+      "emailRequired": "Bitte geben Sie Ihre E-Mail-Adresse ein.",
+      "emailInvalid": "Das sieht nicht nach einer gültigen E-Mail-Adresse aus.",
+      "passwordRequired": "Bitte geben Sie Ihr Passwort ein.",
+      "passwordShort": "Das Passwort muss mindestens 8 Zeichen haben.",
+      "mismatch": "Die beiden Passwörter stimmen nicht überein.",
+      "invalidCredentials": "E-Mail oder Passwort ist falsch. Bitte erneut versuchen!",
+      "notConfirmed": "Sie haben Ihre E-Mail-Adresse noch nicht bestätigt. Klicken Sie auf den Link in unserer E-Mail.",
+      "rateLimit": "Zu viele Versuche. Bitte warten Sie kurz und versuchen Sie es erneut.",
+      "weakPassword": "Dieses Passwort ist zu leicht zu erraten – bitte wählen Sie ein stärkeres.",
+      "samePassword": "Das neue Passwort darf nicht dem alten entsprechen.",
+      "network": "Keine Verbindung. Bitte Internet prüfen und erneut versuchen.",
+      "generic": "Etwas ist schiefgelaufen. Bitte erneut versuchen.",
+      "locked": "Zu viele Fehlversuche. Bitte in {seconds} Sekunden erneut versuchen.",
+      "oauth": "Die Google-Anmeldung hat nicht geklappt. Bitte erneut versuchen.",
+      "confirmRequired": "Bitte geben Sie das Passwort erneut ein."
+    },
+    "login": {
+      "title": "Willkommen zurück!",
+      "subtitle": "Melden Sie sich bei Ihrem Velyric-Konto an.",
+      "submit": "Anmelden",
+      "loading": "Anmeldung…",
+      "forgot": "Passwort vergessen?",
+      "noAccount": "Noch kein Konto?",
+      "signupLink": "Registrieren",
+      "success": "Erfolgreich angemeldet. Willkommen zurück!",
+      "resendConfirm": "Bestätigungslink erneut senden"
+    },
+    "forgot": {
+      "title": "Passwort zurücksetzen",
+      "subtitle": "Geben Sie Ihre E-Mail-Adresse ein – wir senden Ihnen einen Link für ein neues Passwort.",
+      "submit": "Link senden",
+      "loading": "Wird gesendet…",
+      "sent": "Falls ein Konto existiert, haben wir den Link gesendet. Bitte prüfen Sie Ihr Postfach (auch den Spam-Ordner).",
+      "back": "Zurück zur Anmeldung"
+    },
+    "signup": {
+      "title": "Los geht's!",
+      "subtitle": "Erstellen Sie Ihr Konto – in einer Minute.",
+      "submit": "Konto erstellen",
+      "loading": "Wird erstellt…",
+      "hasAccount": "Schon ein Konto?",
+      "loginLink": "Anmelden",
+      "terms": "Mit der Registrierung akzeptieren Sie die <terms>AGB</terms> und die <privacy>Datenschutzerklärung</privacy>."
+    },
+    "checkEmail": {
+      "title": "Prüfen Sie Ihr Postfach",
+      "text": "Wir haben einen Bestätigungslink gesendet an:",
+      "next": "Klicken Sie auf den Link in der E-Mail – fertig.",
+      "notReceived": "Nicht erhalten?",
+      "resend": "Erneut senden",
+      "resendIn": "Erneut senden in {seconds} s",
+      "resent": "Wir haben den Link erneut gesendet.",
+      "spam": "Falls sie nicht in wenigen Minuten ankommt, prüfen Sie bitte den Spam-Ordner.",
+      "wrongEmail": "Tippfehler in der Adresse?",
+      "restart": "Neu beginnen"
+    },
+    "confirm": {
+      "successTitle": "Erfolgreich bestätigt ✔",
+      "successText": "Ihre E-Mail-Adresse ist bestätigt und Sie sind angemeldet. Willkommen bei Velyric!",
+      "cta": "Weiter zur Startseite",
+      "errorTitle": "Dieser Link ist nicht mehr gültig",
+      "errorText": "Der Bestätigungslink ist abgelaufen oder wurde bereits verwendet. Melden Sie sich an – wir senden Ihnen mit einem Klick einen neuen.",
+      "errorCta": "Zur Anmeldung"
+    },
+    "newPassword": {
+      "title": "Neues Passwort festlegen",
+      "subtitle": "Wählen Sie ein neues, starkes Passwort für Ihr Konto.",
+      "newPassword": "Neues Passwort",
+      "confirmNew": "Neues Passwort wiederholen",
+      "submit": "Passwort speichern",
+      "loading": "Wird gespeichert…",
+      "success": "Fertig! Ihr neues Passwort ist gesetzt.",
+      "checking": "Link wird geprüft…",
+      "expiredTitle": "Dieser Link ist abgelaufen",
+      "expiredText": "Der Link zum Zurücksetzen ist abgelaufen oder wurde bereits verwendet. Fordern Sie einfach einen neuen an.",
+      "expiredCta": "Neuen Link anfordern"
+    },
+    "session": {
+      "logout": "Abmelden",
+      "loggedOut": "Sie sind abgemeldet. Bis bald!",
+      "welcome": "Erfolgreich angemeldet. Willkommen!"
+    }
   }
 }
