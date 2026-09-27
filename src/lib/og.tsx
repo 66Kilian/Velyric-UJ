@@ -24,8 +24,8 @@ export async function renderOg({ eyebrow, title }: { eyebrow: string; title: str
           flexDirection: "column",
           justifyContent: "space-between",
           padding: 72,
-          background: "#071327",
-          backgroundImage: "radial-gradient(55% 70% at 88% 20%, rgba(255,0,122,0.28), rgba(7,19,39,0) 70%)",
+          background: "#1e0616",
+          backgroundImage: "radial-gradient(50% 65% at 88% 18%, rgba(255,0,122,0.38), rgba(30,6,22,0) 70%), radial-gradient(40% 55% at 8% 95%, rgba(240,0,255,0.22), rgba(30,6,22,0) 70%)",
           color: "#fff7fb",
           fontFamily: "Montserrat",
         }}
@@ -37,7 +37,7 @@ export async function renderOg({ eyebrow, title }: { eyebrow: string; title: str
           <div style={{ fontSize: 28, fontWeight: 700, letterSpacing: 7 }}>VELYRIC</div>
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ fontSize: 22, fontWeight: 500, color: "#ff4d9d", letterSpacing: 3, textTransform: "uppercase" }}>
+          <div style={{ fontSize: 22, fontWeight: 500, color: "#ff5fa8", letterSpacing: 3, textTransform: "uppercase" }}>
             {eyebrow}
           </div>
           <div style={{ fontSize: 64, fontWeight: 700, lineHeight: 1.06, letterSpacing: -2, marginTop: 20, maxWidth: 980 }}>

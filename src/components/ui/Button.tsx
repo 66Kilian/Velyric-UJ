@@ -41,7 +41,7 @@ const variants: Record<Variant, string> = {
   secondary:
     "border border-line-strong bg-surface text-ink hover:border-ink/25 hover:bg-raised",
   // Fordított gomb színes felületen (pl. a záró CTA panelen)
-  inverse: "bg-white text-navy hover:bg-white/90",
+  inverse: "bg-white text-on-light hover:bg-white/90",
   // Szöveges gomb (pl. „Bejelentkezés” a navbarban)
   ghost: "text-muted hover:text-ink",
 };

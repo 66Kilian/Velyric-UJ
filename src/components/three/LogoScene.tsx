@@ -129,7 +129,7 @@ const logoFragment = /* glsl */ `
     vec3 side = mix(uPlum, base, 0.35);
     vec3 col = mix(side, base, vCap) * diff;
     col += spec * 0.45;
-    col += fres * mix(uPink, uCoral, 0.5) * 0.8; // meleg perem-fény a navy háttér előtt
+    col += fres * mix(uPink, uCoral, 0.5) * 0.8; // meleg perem-fény a sötét háttér előtt
     col += sheen * 0.1;
     gl_FragColor = vec4(col, 1.0);
   }
@@ -143,7 +143,7 @@ const planeVertex = /* glsl */ `
   }
 `;
 
-// Puha rózsaszín fényudvar – a navy háttéren additív keveréssel „világít”
+// Puha rózsaszín fényudvar – a sötét háttéren additív keveréssel „világít”
 const glowFragment = /* glsl */ `
   uniform vec3 uPink; uniform vec3 uMagenta;
   uniform float uIntensity;

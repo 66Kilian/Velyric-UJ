@@ -98,7 +98,7 @@ export const DayDial = forwardRef<HTMLDivElement, DayDialProps>(function DayDial
             cx={200 + Math.cos(angle) * R}
             cy={200 + Math.sin(angle) * R}
             r="9"
-            fill="#071327"
+            fill="#1e0616"
             stroke="#FF4D9D"
             strokeWidth="4"
           />

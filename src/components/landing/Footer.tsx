@@ -13,7 +13,7 @@ export function Footer() {
   const nav = useTranslations("nav");
   const ti = useTranslations("industries");
   const year = new Date().getFullYear();
-  const linkClass = "text-on-navy transition-colors hover:text-white";
+  const linkClass = "text-muted transition-colors hover:text-white";
 
   return (
     <footer id="kapcsolat" aria-labelledby="footer-title" className="relative border-t border-line bg-deep text-ink">
@@ -26,7 +26,7 @@ export function Footer() {
             <Image src={mark} alt="" sizes="64px" className="h-7 w-auto" />
             <span className="wordmark text-[15px] leading-none">Velyric</span>
           </Link>
-          <p className="max-w-xs leading-relaxed text-on-navy">{t("tagline")}</p>
+          <p className="max-w-xs leading-relaxed text-muted">{t("tagline")}</p>
           <a href={site.phoneHref} className="inline-flex items-center gap-2 text-lg font-semibold hover:underline">
             <Phone className="size-4 text-brand-coral" aria-hidden="true" />
             {site.phone}
@@ -70,7 +70,7 @@ export function Footer() {
         </div>
       </Container>
       <Container>
-        <div className="flex flex-col gap-2 border-t border-white/10 py-6 text-sm text-on-navy sm:flex-row sm:justify-between">
+        <div className="flex flex-col gap-2 border-t border-white/10 py-6 text-sm text-muted sm:flex-row sm:justify-between">
           <p>
             © {year} {site.name}. {t("rights")}
           </p>
