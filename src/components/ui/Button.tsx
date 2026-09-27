@@ -66,7 +66,7 @@ export function Button(props: ButtonProps) {
         />
       )}
       {loading && <Spinner />}
-      <span>{loading && loadingText ? loadingText : children}</span>
+      <span className="inline-flex items-center gap-2">{loading && loadingText ? loadingText : children}</span>
     </>
   );
 

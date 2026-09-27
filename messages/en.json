@@ -23,13 +23,175 @@
   "common": {
     "loading": "Loading…"
   },
-  "preview": {
-    "badge": "Foundation preview · Step 1",
-    "title": "Velyric's foundations are ready.",
-    "text": "Colors, typeface, logo and buttons – in step 3 this page makes way for the real hero.",
-    "secondary": "Secondary button",
-    "loadingButton": "Saving",
-    "colors": "Color system",
-    "placeholder": "Placeholder section – built in step 4."
+  "hero": {
+    "eyebrow": "AI voice agents for modern businesses",
+    "titleLine1": "We answer every call —",
+    "titleLine2": "day and night, in your language.",
+    "subtitle": "Velyric's voice agent picks up the phone like your best receptionist: friendly, natural, and it books the appointment right away. You stay focused on your work.",
+    "ctaPrimary": "Get started",
+    "ctaSecondary": "See it in action",
+    "trust": {
+      "languages": "Hungarian · German · English",
+      "allDay": "24/7",
+      "calendar": "Calendar integration"
+    },
+    "scroll": "Scroll"
+  },
+  "call": {
+    "live": "Live call",
+    "business": "Bella Salon",
+    "caller": "Hi! I'd like a haircut tomorrow afternoon.",
+    "agent": "Happy to help! 2:00 pm or 4:30 pm is free. Which one works?",
+    "booked": "Appointment booked · tomorrow 2:00 pm",
+    "waveLabel": "The voice agent is speaking"
+  },
+  "story": {
+    "eyebrow": "How Velyric works",
+    "s1": {
+      "kicker": "01 · Call",
+      "title": "The phone rings. Velyric has already answered.",
+      "text": "It picks up on the first ring — at dawn, on weekends and at peak hours. No busy line, no missed customer.",
+      "bubble": "“Hello, you've reached Bella Salon. How can I help?”"
+    },
+    "s2": {
+      "kicker": "02 · Understanding",
+      "title": "It talks like your best team member.",
+      "text": "Natural, human speech — it keeps up even when callers interrupt or change topic. If they call in German or English, it switches language.",
+      "bubble": "“Of course! Which service, and when would suit you?”"
+    },
+    "s3": {
+      "kicker": "03 · Handling",
+      "title": "It books. It answers. It gets it done.",
+      "text": "It checks your calendar, books the free slot, and answers common questions with your answers: prices, opening hours, parking.",
+      "bubble": "Booked · Tuesday 2:00 pm · haircut"
+    },
+    "s4": {
+      "kicker": "04 · Handover",
+      "title": "When a human is needed, it hands over — with a summary.",
+      "text": "For complex cases it transfers the call to your colleague and sends the gist of the conversation. Nobody has to repeat themselves.",
+      "bubble": "Transferred to Anna · summary sent"
+    }
+  },
+  "about": {
+    "eyebrow": "About us",
+    "title": "A team that stands by you — in person.",
+    "p1": "We're building Velyric so that no business ever loses a customer to an unanswered call.",
+    "p2": "We don't hand you boxed software. We learn how your business works and tailor the voice agent to your needs and your tone.",
+    "values": {
+      "simple": {
+        "title": "Simple",
+        "text": "No IT team needed. We set it up and train it — you just see the results."
+      },
+      "hungarian": {
+        "title": "Local",
+        "text": "A Hungarian team with real support, and a voice agent that truly understands your callers."
+      },
+      "reliable": {
+        "title": "Reliable",
+        "text": "It works around the clock, your data is handled securely, and you can always reach us."
+      }
+    }
+  },
+  "personal": {
+    "eyebrow": "In person",
+    "title": "We come to you and build it around your business.",
+    "text": "Every business is different. That's why we don't install a template: together we plan what it says, what it knows and when it hands over.",
+    "badgeTitle": "Personal onboarding",
+    "badgeText": "On site, at your location",
+    "imageAlt": "Two people at a table reviewing a document together",
+    "steps": {
+      "visit": {
+        "title": "On-site assessment",
+        "text": "We visit you and look at who calls, what they ask and when traffic peaks."
+      },
+      "tailor": {
+        "title": "Tailoring",
+        "text": "We write the conversations in your style — prices, services, opening hours — and connect your calendar."
+      },
+      "launch": {
+        "title": "Launch and fine-tuning",
+        "text": "We test it together, go live, and keep refining it based on real calls in the first weeks."
+      }
+    }
+  },
+  "features": {
+    "eyebrow": "What Velyric can do",
+    "title": "Everything a great receptionist does. Tirelessly.",
+    "items": {
+      "conversation": {
+        "title": "Natural conversation",
+        "text": "It speaks smoothly with a human voice — callers often don't notice they're talking to AI."
+      },
+      "booking": {
+        "title": "Appointment booking",
+        "text": "It sees your calendar in real time and books, moves or cancels appointments without clashes."
+      },
+      "handoff": {
+        "title": "Smart handover",
+        "text": "When a human is needed it transfers instantly and sends a summary, so nobody starts over."
+      },
+      "languages": {
+        "title": "Multilingual",
+        "text": "It speaks Hungarian, German and English, and switches to the caller's language on its own."
+      },
+      "allDay": {
+        "title": "Available 24/7",
+        "text": "Weekends, holidays, nights — it always picks up. Never sick, never on vacation."
+      },
+      "analytics": {
+        "title": "Analytics",
+        "text": "See who called, what they wanted and how it ended — in clear reports."
+      }
+    }
+  },
+  "useCases": {
+    "eyebrow": "Who it's for",
+    "title": "Anyone whose phone keeps ringing.",
+    "text": "If calls matter but there isn't always someone to answer — Velyric is made for you.",
+    "items": {
+      "salon": {
+        "title": "Beauty salons",
+        "quote": "“Could I book a colour for tomorrow?”",
+        "alt": "Hairdresser blow-drying hair in a salon"
+      },
+      "clinic": {
+        "title": "Practices and clinics",
+        "quote": "“Can I move my Thursday check-up?”",
+        "alt": "Bright, modern dental practice"
+      },
+      "cafe": {
+        "title": "Restaurants and cafés",
+        "quote": "“A table for four on Friday evening, please.”",
+        "alt": "Smiling café owner in front of the counter"
+      },
+      "service": {
+        "title": "Garages and workshops",
+        "quote": "“When can you take a look at my car?”",
+        "alt": "Mechanic working on parts in a workshop"
+      }
+    }
+  },
+  "cta": {
+    "title": "Never miss another call.",
+    "text": "Show us how your business works — we'll show you how many customers you can win back.",
+    "button": "Get started",
+    "orCall": "or call us:"
+  },
+  "footer": {
+    "tagline": "AI voice agents for modern businesses. Day and night.",
+    "contact": "Contact",
+    "pages": "Pages",
+    "legal": "Legal",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "rights": "All rights reserved."
+  },
+  "demo": {
+    "title": "Listen to Velyric",
+    "text": "Soon you'll be able to hear a real call and watch a short demo video here.",
+    "soon": "Demo coming soon",
+    "callText": "In the meantime, call us and we'll show you live:",
+    "close": "Close",
+    "play": "Play"
   }
 }

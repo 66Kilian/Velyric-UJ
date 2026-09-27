@@ -23,13 +23,175 @@
   "common": {
     "loading": "Betöltés…"
   },
-  "preview": {
-    "badge": "Alap-előnézet · 1. lépés",
-    "title": "A Velyric alapjai készen állnak.",
-    "text": "Színek, betűtípus, logó és gombok – ez az oldal a 3. lépésben átadja a helyét a valódi Hero-nak.",
-    "secondary": "Másodlagos gomb",
-    "loadingButton": "Mentés",
-    "colors": "Színrendszer",
-    "placeholder": "Helyőrző szekció – a 4. lépésben készül el."
+  "hero": {
+    "eyebrow": "MI hangügynökök modern vállalkozásoknak",
+    "titleLine1": "Minden hívást felveszünk —",
+    "titleLine2": "éjjel-nappal, magyarul.",
+    "subtitle": "A Velyric hangügynöke úgy veszi fel a telefont, mint a legjobb recepciósod: kedvesen, magyarul, és azonnal időpontot foglal. Te közben nyugodtan dolgozhatsz.",
+    "ctaPrimary": "Kezdjük",
+    "ctaSecondary": "Nézd meg működés közben",
+    "trust": {
+      "languages": "Magyar · német · angol",
+      "allDay": "Éjjel-nappal",
+      "calendar": "Naptár-integráció"
+    },
+    "scroll": "Görgess"
+  },
+  "call": {
+    "live": "Élő hívás",
+    "business": "Bella Szalon",
+    "caller": "Jó napot! Holnap délutánra szeretnék egy hajvágást.",
+    "agent": "Szívesen! Holnap 14:00 vagy 16:30 szabad. Melyik legyen?",
+    "booked": "Időpont lefoglalva · holnap 14:00",
+    "waveLabel": "A hangügynök éppen beszél"
+  },
+  "story": {
+    "eyebrow": "Így dolgozik a Velyric",
+    "s1": {
+      "kicker": "01 · Hívás",
+      "title": "Csörög a telefon. A Velyric már fel is vette.",
+      "text": "Az első csengésre válaszol — hajnalban, hétvégén és csúcsidőben is. Nincs foglalt vonal, nincs elszalasztott ügyfél.",
+      "bubble": "„Jó napot, a Bella Szalont hívta. Miben segíthetek?”"
+    },
+    "s2": {
+      "kicker": "02 · Megértés",
+      "title": "Úgy beszél, mint a legjobb munkatársad.",
+      "text": "Természetes, emberi magyar beszéd — akkor is érti a hívót, ha közbevág vagy témát vált. Ha németül vagy angolul hívják, nyelvet vált.",
+      "bubble": "„Persze! Milyen szolgáltatásra és mikorra gondolt?”"
+    },
+    "s3": {
+      "kicker": "03 · Intézés",
+      "title": "Időpontot foglal. Válaszol. Elintézi.",
+      "text": "Belenéz a naptáradba, lefoglalja a szabad időpontot, és a te válaszaiddal felel a gyakori kérdésekre: árak, nyitvatartás, parkolás.",
+      "bubble": "Lefoglalva · kedd 14:00 · hajvágás"
+    },
+    "s4": {
+      "kicker": "04 · Átadás",
+      "title": "Ha ember kell, szól — összefoglalóval.",
+      "text": "Összetett ügynél átkapcsolja a hívást a munkatársadnak, és elküldi a beszélgetés lényegét. Senkinek nem kell semmit kétszer elmondania.",
+      "bubble": "Átkapcsolva Annának · összefoglaló elküldve"
+    }
+  },
+  "about": {
+    "eyebrow": "Kik vagyunk",
+    "title": "Magyar csapat, amely személyesen is melletted áll.",
+    "p1": "A Velyric-et azért építjük, hogy egyetlen vállalkozás se veszítsen el ügyfelet egy fel nem vett hívás miatt.",
+    "p2": "Nem dobozos szoftvert adunk a kezedbe. Megismerjük, hogyan működik a vállalkozásod, és a hangügynököt a te igényeidre, a te hangnemedre szabjuk.",
+    "values": {
+      "simple": {
+        "title": "Egyszerű",
+        "text": "Nem kell hozzá informatikus. Mi beállítjuk és betanítjuk — te csak az eredményt látod."
+      },
+      "hungarian": {
+        "title": "Magyar",
+        "text": "Magyar csapat, magyar ügyfélszolgálat, és egy hangügynök, aki tényleg érti a magyar hívókat."
+      },
+      "reliable": {
+        "title": "Megbízható",
+        "text": "Éjjel-nappal működik, az adataidat biztonságosan kezeljük, és bármikor elérsz minket."
+      }
+    }
+  },
+  "personal": {
+    "eyebrow": "Személyesen",
+    "title": "Kimegyünk hozzád, és a te vállalkozásodra építjük.",
+    "text": "Minden vállalkozás más. Ezért nem sablont telepítünk: együtt tervezzük meg, mit mondjon, mit tudjon és mikor kapcsoljon át.",
+    "badgeTitle": "Személyes bevezetés",
+    "badgeText": "Nálad, a saját helyszíneden",
+    "imageAlt": "Két ember egy asztalnál együtt átnéz egy dokumentumot",
+    "steps": {
+      "visit": {
+        "title": "Személyes felmérés",
+        "text": "Ellátogatunk hozzád, és megnézzük, kik hívnak, mit kérdeznek és mikor a legnagyobb a forgalom."
+      },
+      "tailor": {
+        "title": "Testreszabás",
+        "text": "Megírjuk a beszélgetéseket a te stílusodban — árak, szolgáltatások, nyitvatartás —, és összekötjük a naptáraddal."
+      },
+      "launch": {
+        "title": "Élesítés és finomhangolás",
+        "text": "Együtt teszteljük, élesítjük, és az első hetekben a valódi hívások alapján folyamatosan csiszoljuk."
+      }
+    }
+  },
+  "features": {
+    "eyebrow": "Mit tud a Velyric",
+    "title": "Minden, ami egy jó recepcióshoz kell. Fáradhatatlanul.",
+    "items": {
+      "conversation": {
+        "title": "Természetes beszélgetés",
+        "text": "Emberi hangon, gördülékenyen beszél — a hívók sokszor észre sem veszik, hogy MI-vel beszélnek."
+      },
+      "booking": {
+        "title": "Időpontfoglalás",
+        "text": "Valós időben látja a naptáradat, és ütközés nélkül foglal, módosít vagy mond le időpontot."
+      },
+      "handoff": {
+        "title": "Okos átadás munkatársnak",
+        "text": "Ha ember kell, azonnal átkapcsol, és összefoglalót küld, hogy ne kelljen újrakezdeni."
+      },
+      "languages": {
+        "title": "Többnyelvű",
+        "text": "Magyarul, németül és angolul is beszél, és a hívó nyelvére magától vált."
+      },
+      "allDay": {
+        "title": "Éjjel-nappal elérhető",
+        "text": "Hétvégén, ünnepnapon, éjjel is felveszi. Soha nem beteg, soha nincs szabadságon."
+      },
+      "analytics": {
+        "title": "Elemzések",
+        "text": "Látod, ki hívott, mit kért és mi lett a vége — átlátható kimutatásokban."
+      }
+    }
+  },
+  "useCases": {
+    "eyebrow": "Kinek szól",
+    "title": "Mindenkinek, akinek csörög a telefonja.",
+    "text": "Ha a hívások fontosak, de nincs mindig, aki felvegye — a Velyric neked készült.",
+    "items": {
+      "salon": {
+        "title": "Szépségszalonok",
+        "quote": "„Holnapra kérnék egy festést.”",
+        "alt": "Fodrász hajat szárít egy szalonban"
+      },
+      "clinic": {
+        "title": "Rendelők és klinikák",
+        "quote": "„Át tudnám tenni a csütörtöki kontrollt?”",
+        "alt": "Világos, modern fogorvosi rendelő"
+      },
+      "cafe": {
+        "title": "Éttermek és kávézók",
+        "quote": "„Péntek estére asztalt foglalnék négy főre.”",
+        "alt": "Mosolygó kávézótulajdonos a pult előtt"
+      },
+      "service": {
+        "title": "Szervizek és műhelyek",
+        "quote": "„Mikor tudják megnézni az autómat?”",
+        "alt": "Szerelő alkatrészeken dolgozik egy műhelyben"
+      }
+    }
+  },
+  "cta": {
+    "title": "Egyetlen hívás se maradjon fogadatlan.",
+    "text": "Mutasd meg, hogyan működik a vállalkozásod — mi megmutatjuk, mennyi ügyfelet nyerhetsz vissza.",
+    "button": "Kezdjük",
+    "orCall": "vagy hívj minket:"
+  },
+  "footer": {
+    "tagline": "MI hangügynökök modern vállalkozásoknak. Éjjel-nappal, magyarul.",
+    "contact": "Kapcsolat",
+    "pages": "Oldalak",
+    "legal": "Jogi információk",
+    "privacy": "Adatvédelem",
+    "terms": "ÁSZF",
+    "rights": "Minden jog fenntartva."
+  },
+  "demo": {
+    "title": "Hallgasd meg a Velyric-et",
+    "text": "Hamarosan itt meghallgathatsz egy valódi hívást és egy rövid bemutató videót.",
+    "soon": "A bemutató hamarosan érkezik",
+    "callText": "Addig is hívj minket, és élőben megmutatjuk:",
+    "close": "Bezárás",
+    "play": "Lejátszás"
   }
 }

@@ -144,3 +144,73 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ---------- Landing animációk (csak transform/opacity → 60fps) ---------- */
+
+/* Hero belépő: elemek egymás után úsznak be */
+.hero-in {
+  animation: hero-in 0.9s var(--ease-premium) both;
+}
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}
+
+/* Élő hanghullám-oszlopok */
+.voice-bar {
+  animation: voice-bar 1.1s ease-in-out infinite alternate;
+}
+@keyframes voice-bar {
+  from {
+    transform: scaleY(0.3);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+/* Görgetés-jelző pötty */
+.scroll-dot {
+  animation: scroll-dot 1.8s var(--ease-premium) infinite;
+}
+@keyframes scroll-dot {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  70% {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}
+
+/* Lebegő hívás-kártya */
+.call-float {
+  animation: call-float 7s ease-in-out infinite;
+}
+@keyframes call-float {
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Demo ablak */
+.demo-dialog::backdrop {
+  background: rgb(5 4 9 / 0.72);
+  backdrop-filter: blur(6px);
+}
+.demo-dialog[open] {
+  animation: dialog-in 0.35s var(--ease-premium);
+}
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+}
