@@ -5,7 +5,7 @@ import { cn } from "@/lib/cn";
 const styles = {
   error: { box: "border-danger/30 bg-danger/10 text-danger", Icon: AlertCircle },
   success: { box: "border-success/30 bg-success/10 text-success", Icon: CheckCircle2 },
-  info: { box: "border-line-strong bg-blush-deep/60 text-ink/90", Icon: Info },
+  info: { box: "border-line-strong bg-raised/60 text-ink/90", Icon: Info },
 } as const;
 
 // Üzenetsáv az űrlap tetején (hiba / siker / infó)

@@ -93,7 +93,7 @@ export function LanguageDropdown({ className }: { className?: string }) {
                     }}
                     className={cn(
                       "flex h-11 w-full items-center justify-between rounded-xl px-3 text-left text-sm font-medium transition-colors",
-                      selected ? "bg-blush-deep text-ink" : "text-muted hover:bg-blush-deep/60 hover:text-ink",
+                      selected ? "bg-raised text-ink" : "text-muted hover:bg-raised/60 hover:text-ink",
                     )}
                   >
                     {localeNames[locale]}

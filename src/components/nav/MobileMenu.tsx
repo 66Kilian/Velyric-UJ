@@ -94,7 +94,7 @@ export function MobileMenu({ open, onClose, active, returnFocusRef, loggedIn, on
               type="button"
               onClick={onClose}
               aria-label={t("closeMenu")}
-              className="-mr-2 flex size-12 items-center justify-center rounded-xl text-ink transition-colors hover:bg-blush-deep"
+              className="-mr-2 flex size-12 items-center justify-center rounded-xl text-ink transition-colors hover:bg-raised"
             >
               <X className="size-6" aria-hidden="true" />
             </button>

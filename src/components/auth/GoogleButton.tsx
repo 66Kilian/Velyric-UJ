@@ -33,7 +33,7 @@ export function GoogleButton({ onError }: { onError: (message: string) => void }
       onClick={onClick}
       disabled={loading}
       aria-busy={loading || undefined}
-      className="flex h-12 w-full items-center justify-center gap-3 rounded-xl border border-line-strong bg-white text-ui font-semibold text-ink shadow-[0_1px_2px_rgb(7_19_39/0.06)] transition-[transform,background-color] duration-200 hover:bg-blush active:scale-[0.98] disabled:opacity-70"
+      className="flex h-12 w-full items-center justify-center gap-3 rounded-xl border border-line-strong bg-white text-ui font-semibold text-navy transition-[transform,background-color] duration-200 hover:bg-white/90 active:scale-[0.98] disabled:opacity-70"
     >
       {loading ? (
         <Spinner className="text-[#1f1f1f]" />

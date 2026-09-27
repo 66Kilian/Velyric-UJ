@@ -16,7 +16,7 @@ export function Footer() {
   const linkClass = "text-on-navy transition-colors hover:text-white";
 
   return (
-    <footer id="kapcsolat" aria-labelledby="footer-title" className="relative bg-navy text-white">
+    <footer id="kapcsolat" aria-labelledby="footer-title" className="relative border-t border-line bg-deep text-ink">
       <h2 id="footer-title" className="sr-only">
         {t("contact")}
       </h2>

@@ -38,7 +38,7 @@ export function Navbar() {
       {/* Billentyűzetes felhasználóknak: ugrás egyenesen a tartalomra */}
       <a
         href="#tartalom"
-        className="sr-only z-[60] rounded-xl bg-blush-deep px-4 py-3 text-sm font-semibold focus:not-sr-only focus:fixed focus:top-3 focus:left-3"
+        className="sr-only z-[60] rounded-xl bg-raised px-4 py-3 text-sm font-semibold focus:not-sr-only focus:fixed focus:top-3 focus:left-3"
       >
         {t("skipToContent")}
       </a>
@@ -118,7 +118,7 @@ export function Navbar() {
               aria-label={t("openMenu")}
               aria-expanded={menuOpen}
               aria-controls="mobile-menu"
-              className="-mr-2 ml-1 flex size-12 items-center justify-center rounded-xl text-ink transition-colors hover:bg-blush-deep lg:hidden"
+              className="-mr-2 ml-1 flex size-12 items-center justify-center rounded-xl text-ink transition-colors hover:bg-raised lg:hidden"
             >
               <Menu className="size-6" aria-hidden="true" />
             </button>

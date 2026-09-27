@@ -57,7 +57,7 @@ export const DayDial = forwardRef<HTMLDivElement, DayDialProps>(function DayDial
                 y1={200 + Math.sin(a) * r1}
                 x2={200 + Math.cos(a) * r2}
                 y2={200 + Math.sin(a) * r2}
-                stroke={lit ? "#C8005F" : "rgb(7 19 39 / 0.22)"}
+                stroke={lit ? "#FF4D9D" : "rgb(255 247 251 / 0.22)"}
                 strokeWidth={major ? 3 : 1.5}
                 strokeLinecap="round"
               />
@@ -80,7 +80,7 @@ export const DayDial = forwardRef<HTMLDivElement, DayDialProps>(function DayDial
           })}
 
           {/* Pálya + telő ív */}
-          <circle cx="200" cy="200" r={R} fill="none" stroke="rgb(7 19 39 / 0.07)" strokeWidth="10" />
+          <circle cx="200" cy="200" r={R} fill="none" stroke="rgb(255 247 251 / 0.08)" strokeWidth="10" />
           <circle
             cx="200"
             cy="200"
@@ -98,8 +98,8 @@ export const DayDial = forwardRef<HTMLDivElement, DayDialProps>(function DayDial
             cx={200 + Math.cos(angle) * R}
             cy={200 + Math.sin(angle) * R}
             r="9"
-            fill="#fff"
-            stroke="#FF007A"
+            fill="#071327"
+            stroke="#FF4D9D"
             strokeWidth="4"
           />
         </svg>

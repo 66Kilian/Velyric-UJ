@@ -129,7 +129,7 @@ const logoFragment = /* glsl */ `
     vec3 side = mix(uPlum, base, 0.35);
     vec3 col = mix(side, base, vCap) * diff;
     col += spec * 0.45;
-    col = mix(col, vec3(1.0, 0.86, 0.94), fres * 0.35);
+    col += fres * mix(uPink, uCoral, 0.5) * 0.8; // meleg perem-fény a navy háttér előtt
     col += sheen * 0.1;
     gl_FragColor = vec4(col, 1.0);
   }
@@ -143,7 +143,7 @@ const planeVertex = /* glsl */ `
   }
 `;
 
-// Puha rózsaszín fényudvar – világos háttéren normál (nem additív) keveréssel
+// Puha rózsaszín fényudvar – a navy háttéren additív keveréssel „világít”
 const glowFragment = /* glsl */ `
   uniform vec3 uPink; uniform vec3 uMagenta;
   uniform float uIntensity;
@@ -152,7 +152,8 @@ const glowFragment = /* glsl */ `
     vec2 p = (vUv - 0.5) * 2.0;
     float r = length(p * vec2(1.0, 1.2));
     float a = exp(-r * r * 3.0) * uIntensity;
-    gl_FragColor = vec4(mix(uPink, uMagenta, r), a * 0.3);
+    float alpha = a * 0.5;
+    gl_FragColor = vec4(mix(uPink, uMagenta, r) * alpha, alpha);
   }
 `;
 
@@ -174,7 +175,8 @@ const waveFragment = (lines: number) => /* glsl */ `
       acc += 0.0028 / (abs(y - w) + 0.004) * env;
     }
     vec3 col = x < 0.5 ? mix(uMagenta, uPink, x * 2.0) : mix(uPink, uCoral, (x - 0.5) * 2.0);
-    gl_FragColor = vec4(col, min(acc, 1.6) * 0.3);
+    float alpha = min(acc, 1.6) * 0.32;
+    gl_FragColor = vec4(col * alpha, alpha);
   }
 `;
 
@@ -191,7 +193,8 @@ const ringsFragment = /* glsl */ `
       float ph = fract(uTime * 0.28 + float(i) / 3.0);
       acc += smoothstep(0.012, 0.0, abs(r - mix(0.32, 1.0, ph))) * (1.0 - ph) * (1.0 - ph);
     }
-    gl_FragColor = vec4(mix(uPink, uCoral, r), acc * uVoice * 0.5);
+    float alpha = acc * uVoice * 0.55;
+    gl_FragColor = vec4(mix(uPink, uCoral, r) * alpha, alpha);
   }
 `;
 
@@ -299,7 +302,12 @@ function Scene({ input, lite }: { input: RefObject<SceneInput>; lite: boolean })
     }
   });
 
-  const fxProps = { vertexShader: planeVertex, transparent: true, depthWrite: false } as const;
+  const fxProps = {
+    vertexShader: planeVertex,
+    transparent: true,
+    depthWrite: false,
+    blending: THREE.AdditiveBlending,
+  } as const;
 
   return (
     <>

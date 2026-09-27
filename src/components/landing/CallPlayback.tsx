@@ -112,7 +112,7 @@ export function CallPlayback({ business, turns, outcome, onSpeakingChange, class
       {/* Fejléc: ki hív, mióta, és hogy ez példa */}
       <div className="flex items-center justify-between gap-4 border-b border-line pb-4">
         <div className="flex min-w-0 items-center gap-3">
-          <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-blush-deep">
+          <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-raised">
             <PhoneIncoming className="size-5 text-ink" aria-hidden="true" />
           </span>
           <div className="min-w-0">
@@ -135,7 +135,7 @@ export function CallPlayback({ business, turns, outcome, onSpeakingChange, class
             className={cn(
               "turn-in max-w-[88%] rounded-xl px-3.5 py-2.5",
               turn.who === "caller"
-                ? "self-start rounded-bl-md bg-blush-deep text-ink"
+                ? "self-start rounded-bl-md bg-raised text-ink"
                 : "self-end rounded-br-md border border-brand-pink/35 bg-brand-pink/10 text-ink",
             )}
           >

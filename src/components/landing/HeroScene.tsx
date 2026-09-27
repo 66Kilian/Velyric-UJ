@@ -207,7 +207,7 @@ export function HeroScene() {
       {/* ---- HERO ---- */}
       <section
         aria-labelledby="hero-title"
-        className="relative bg-[radial-gradient(60%_55%_at_82%_30%,#ffe3f1_0%,rgba(255,247,251,0.6)_45%,#ffffff_75%)]"
+        className="relative bg-[radial-gradient(60%_60%_at_80%_25%,rgba(255,0,122,0.2)_0%,rgba(142,0,105,0.12)_40%,rgba(7,19,39,0)_75%)] bg-canvas"
       >
         <Container className="relative flex min-h-svh flex-col justify-end pt-[calc(var(--nav-h)+2.5rem)] pb-20 lg:justify-center lg:pb-24">
           <div className="relative z-20 flex max-w-xl flex-col items-start lg:max-w-[40rem]">
@@ -260,7 +260,7 @@ export function HeroScene() {
         id="kik-vagyunk"
         ref={teamRef}
         aria-labelledby="team-title"
-        className="relative bg-blush motion-safe:h-[300svh] motion-reduce:py-24 sm:motion-reduce:py-32"
+        className="relative bg-band motion-safe:h-[300svh] motion-reduce:py-24 sm:motion-reduce:py-32"
       >
         {/* A rögzítés CSS media query-vel dől el (nem JS-ből) → nincs elrendezés-ugrás betöltéskor */}
         <div ref={pinRef} className="motion-safe:sticky motion-safe:top-0 motion-safe:flex motion-safe:h-svh motion-safe:items-start lg:motion-safe:items-center">
@@ -286,7 +286,7 @@ export function HeroScene() {
                       <span
                         className={cn(
                           "flex size-11 items-center justify-center rounded-xl transition-colors duration-500",
-                          active ? "bg-cta text-white" : "bg-blush-deep text-muted",
+                          active ? "bg-cta text-white" : "bg-raised text-muted",
                         )}
                       >
                         <Icon className="size-5" aria-hidden="true" />

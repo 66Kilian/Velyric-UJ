@@ -13,7 +13,7 @@ export function Personal() {
   const t = useTranslations("personal");
 
   return (
-    <section aria-labelledby="personal-title" className="relative bg-blush py-24 sm:py-32">
+    <section aria-labelledby="personal-title" className="relative bg-band py-24 sm:py-32">
       <Container className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
         <figure>
           <MediaReveal className="relative aspect-[4/5] overflow-hidden rounded-media shadow-lift sm:aspect-square">

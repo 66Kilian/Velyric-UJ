@@ -19,8 +19,8 @@ const montserrat = Montserrat({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#fff7fb",
-  colorScheme: "light",
+  themeColor: "#071327",
+  colorScheme: "dark",
 };
 
 // Minden nyelvhez előre legenerált (statikus, gyors) oldalak

@@ -53,7 +53,7 @@ export async function IndustryPage({ industry, locale }: { industry: IndustryKey
       {/* ---- Iparági hero ---- */}
       <section
         aria-labelledby="industry-title"
-        className="relative overflow-hidden bg-[radial-gradient(55%_60%_at_85%_20%,#ffe3f1_0%,rgba(255,247,251,0.5)_50%,#ffffff_80%)] pt-[calc(var(--nav-h)+3rem)] pb-20 sm:pb-28"
+        className="relative overflow-hidden bg-[radial-gradient(60%_60%_at_80%_25%,rgba(255,0,122,0.2)_0%,rgba(142,0,105,0.12)_40%,rgba(7,19,39,0)_75%)] bg-canvas pt-[calc(var(--nav-h)+3rem)] pb-20 sm:pb-28"
       >
         <Container className="grid items-center gap-12 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
           <div>
@@ -118,7 +118,7 @@ export async function IndustryPage({ industry, locale }: { industry: IndustryKey
           </h2>
           <ul className="mt-12 grid gap-5 md:grid-cols-3">
             {PAINS.map((p) => (
-              <li key={p} className="rounded-panel border border-line bg-blush p-7">
+              <li key={p} className="rounded-panel border border-line bg-band p-7">
                 <span aria-hidden="true" className="block h-1 w-10 rounded-full bg-brand" />
                 <h3 className="mt-6 text-xl font-semibold">{t(`${industry}.pains.${p}.title`)}</h3>
                 <p className="mt-2 leading-relaxed text-muted">{t(`${industry}.pains.${p}.text`)}</p>
@@ -129,7 +129,7 @@ export async function IndustryPage({ industry, locale }: { industry: IndustryKey
       </section>
 
       {/* ---- Így dolgozik nálatok ---- */}
-      <section aria-labelledby="solves-title" className="bg-blush py-24 sm:py-28">
+      <section aria-labelledby="solves-title" className="bg-band py-24 sm:py-28">
         <Container className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="lg:sticky lg:top-[calc(var(--nav-h)+2rem)]">
             <h2 id="solves-title" className="text-title font-bold text-balance">
@@ -196,7 +196,7 @@ export async function IndustryPage({ industry, locale }: { industry: IndustryKey
               <li key={other.key}>
                 <Link
                   href={other.href}
-                  className="group flex min-h-16 items-center justify-between rounded-panel border border-line bg-surface px-5 font-semibold transition-colors hover:border-line-strong hover:bg-blush"
+                  className="group flex min-h-16 items-center justify-between rounded-panel border border-line bg-surface px-5 font-semibold transition-colors hover:border-line-strong hover:bg-band"
                 >
                   {t(`${other.key}.name`)}
                   <ArrowUpRight className="size-4 text-accent-ink transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />

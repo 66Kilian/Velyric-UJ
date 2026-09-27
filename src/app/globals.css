@@ -2,22 +2,24 @@
 
 /* ============================================================
    VELYRIC – Design rendszer (0.5 Dokumentum- és UI-alkalmazás)
-   Világos, légies alap: fehér + Soft Blush felületek, Deep Navy
-   szöveg. A márkaszínek (Magenta → Hot Pink → Crimson → Coral)
-   a Velyric „hangja”: CTA-k, kiemelések, a 3D jel. Fekete nincs.
+   Sötét, de NEM fekete: az alap a Deep Navy, a szöveg a Soft Blush.
+   A márkaszínek (Magenta → Hot Pink → Crimson → Coral, Deep Plum)
+   a Velyric „hangja”: CTA-k, kiemelések, a 3D jel.
    ============================================================ */
 
 :root {
-  /* Felületek */
-  --canvas: #ffffff; /* fő háttér */
-  --blush: #fff7fb; /* Soft Blush – lágy szekció-blokkok, infókártyák */
-  --blush-deep: #fcebf4; /* hívó-buborék, aktív fül, hover-kitöltés */
-  --surface: #ffffff; /* kártyák és panelek a blush sávokon */
+  /* Felületek – navy-lépcső (sötétből világosabb felé) */
+  --deep: #040c1c; /* legmélyebb navy: footer */
+  --canvas: #071327; /* Deep Navy – fő háttér */
+  --band: #0d1c38; /* váltakozó szekció-sáv */
+  --surface: #13244a; /* kártyák, panelek */
+  --raised: #182c57; /* hívó-buborék, aktív fül, hover-kitöltés */
 
   /* Szöveg */
-  --ink: #071327; /* Deep Navy – elsődleges szöveg, főcímek, wordmark */
-  --muted: #505a74; /* másodlagos szöveg (AA: 6,3:1 fehéren, 7:1 blush-on) */
-  --accent-ink: #c8005f; /* hangsúlyos szöveg-kiemelés (a Hot Pink AA-változata) */
+  --ink: #fff7fb; /* Soft Blush – elsődleges szöveg (17,6:1 navy-n) */
+  --muted: #aeb7ce; /* másodlagos szöveg (≥ 6,8:1 minden felületen) */
+  --accent-ink: #ff4d9d; /* hangsúlyos szöveg (a Hot Pink világosabb, AA-változata) */
+  --navy: #071327; /* navy szöveg világos elemeken (pl. fehér gomb) */
 
   /* Márkaszínek */
   --magenta: #f000ff; /* Electric Magenta – hero accent, highlight */
@@ -27,27 +29,28 @@
   --plum: #8e0069; /* Deep Plum – sötétebb accent */
   --brand-gradient: linear-gradient(135deg, var(--magenta) 0%, var(--pink) 45%, var(--crimson) 75%, var(--coral) 100%);
 
-  /* Állapotok (AA fehér háttéren) */
-  --success: #0e7a4e;
-  --warning: #a35a00;
-  --danger: #c4153f;
+  /* Állapotok (AA a navy felületeken) */
+  --success: #5ee0a4;
+  --warning: #f7b955;
+  --danger: #ff7a95;
 
-  /* Vonalak */
-  --line: rgb(7 19 39 / 0.08);
-  --line-strong: rgb(7 19 39 / 0.14);
+  /* Vonalak (Soft Blush áttetszően) */
+  --line: rgb(255 247 251 / 0.08);
+  --line-strong: rgb(255 247 251 / 0.16);
 
   --nav-h: 72px;
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 @theme inline {
+  --color-deep: var(--deep);
   --color-canvas: var(--canvas);
-  --color-blush: var(--blush);
-  --color-blush-deep: var(--blush-deep);
+  --color-band: var(--band);
   --color-surface: var(--surface);
+  --color-raised: var(--raised);
   --color-ink: var(--ink);
-  --color-navy: var(--ink);
-  --color-on-navy: #b9c1d6; /* másodlagos szöveg a Deep Navy footeren (10:1) */
+  --color-navy: var(--navy);
+  --color-on-navy: var(--muted);
   --color-muted: var(--muted);
   --color-accent-ink: var(--accent-ink);
   --color-line: var(--line);
@@ -70,9 +73,9 @@
   --radius-panel: 1.5rem;
   --radius-media: 2rem;
 
-  /* Emelés: puha, navy-tónusú árnyék (nem fekete) */
-  --shadow-float: 0 1px 2px rgb(7 19 39 / 0.04), 0 24px 60px -24px rgb(7 19 39 / 0.18);
-  --shadow-lift: 0 1px 2px rgb(7 19 39 / 0.05), 0 40px 80px -32px rgb(142 0 105 / 0.28);
+  /* Emelés: mély navy árnyék + finom felső fényél; a „lift” plum-tónusú */
+  --shadow-float: 0 1px 0 rgb(255 247 251 / 0.05) inset, 0 24px 60px -28px rgb(2 7 18 / 0.7);
+  --shadow-lift: 0 1px 0 rgb(255 247 251 / 0.06) inset, 0 40px 90px -36px rgb(142 0 105 / 0.55);
 
   /* Mozgás-tokenek (egy fizika az egész oldalon) */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -104,9 +107,9 @@
     linear-gradient(135deg, var(--magenta) -10%, var(--pink) 50%, var(--crimson) 110%);
 }
 
-/* Gradiens szöveg – csak nagy méretű kiemelésre, AA-kontrasztú mély tónusokkal */
+/* Gradiens szöveg – a hero kiemelő sora (Electric Magenta → Hot Pink → Coral, navy-n jól olvasható) */
 @utility text-brand {
-  background-image: linear-gradient(120deg, var(--plum) 0%, #c4007a 45%, #d6003f 90%);
+  background-image: linear-gradient(120deg, #f65cff 0%, #ff4d9d 50%, #ff8a6c 100%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -154,7 +157,7 @@
   }
 
   ::selection {
-    background: rgb(255 0 122 / 0.18);
+    background: rgb(255 0 122 / 0.35);
     color: var(--ink);
   }
 
@@ -266,6 +269,6 @@ html.lenis body {
 }
 
 .dialog-panel::backdrop {
-  background: rgb(7 19 39 / 0.45);
+  background: rgb(4 12 28 / 0.75);
   backdrop-filter: blur(4px);
 }

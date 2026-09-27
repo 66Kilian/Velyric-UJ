@@ -54,7 +54,7 @@ export function DemoButton() {
             type="button"
             onClick={close}
             aria-label={t("close")}
-            className="absolute top-3 right-3 flex size-12 items-center justify-center rounded-xl text-muted transition-colors hover:bg-blush-deep hover:text-ink"
+            className="absolute top-3 right-3 flex size-12 items-center justify-center rounded-xl text-muted transition-colors hover:bg-raised hover:text-ink"
           >
             <X className="size-5" aria-hidden="true" />
           </button>

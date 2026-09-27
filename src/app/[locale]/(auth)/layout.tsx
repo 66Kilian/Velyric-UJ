@@ -13,7 +13,7 @@ export default async function AuthLayout({ children, params }: LayoutProps<"/[lo
   const tBrand = await getTranslations("brand");
 
   return (
-    <div className="flex min-h-dvh flex-col overflow-x-clip bg-blush">
+    <div className="flex min-h-dvh flex-col overflow-x-clip bg-band">
       <header>
         <Container className="flex h-[var(--nav-h)] items-center justify-between">
           <Link href="/" aria-label={tBrand("homeLabel")} className="rounded-lg">
