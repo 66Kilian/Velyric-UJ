@@ -130,6 +130,10 @@
   font-weight: 600;
 }
 
+@utility font-display {
+  font-family: var(--font-display, var(--font-sans));
+}
+
 @utility tabular {
   font-variant-numeric: tabular-nums;
 }
@@ -360,4 +364,34 @@ html.lenis body {
   to {
     transform: translate3d(0, 50px, 0);
   }
+}
+
+/* ---------- Kezelő (kezelo.velyric.com) – a felhasználó témája ---------- */
+[data-dash] {
+  background-color: var(--canvas);
+  color: var(--ink);
+}
+/* A színes gomb a választott színből, rajta a hozzá illő (világos/sötét) felirat */
+[data-dash] .bg-cta {
+  background-image: linear-gradient(135deg, var(--magenta) -10%, var(--pink) 50%, var(--crimson) 110%);
+}
+[data-dash] .bg-cta.text-white,
+[data-dash] .bg-cta .text-white {
+  color: var(--on-accent);
+}
+[data-dash] .text-brand {
+  background-image: var(--brand-gradient);
+}
+[data-dash][data-style="classic"] h1,
+[data-dash][data-style="classic"] .font-display {
+  letter-spacing: -0.01em;
+}
+[data-dash][data-style="minimal"] .dash-panel {
+  backdrop-filter: none;
+}
+[data-dash] .dash-compact .dash-panel {
+  padding: 1rem;
+}
+[data-dash] ::selection {
+  background: color-mix(in oklab, var(--pink) 35%, transparent);
 }

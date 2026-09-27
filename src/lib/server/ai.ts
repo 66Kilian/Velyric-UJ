@@ -61,7 +61,12 @@ function trimTo(value: string, max: number) {
 
 // Claude hívása szigorú JSON-kimenettel; alacsony effort → gyors válasz a felületen.
 // Visszautasítás esetén a szerver automatikusan egy tartalék modellen próbálja újra (fallbacks).
-async function callClaude<T extends z.ZodType>(schema: T, prompt: string, maxTokens: number): Promise<z.infer<T> | null> {
+export async function callClaude<T extends z.ZodType>(
+  schema: T,
+  prompt: string,
+  maxTokens: number,
+  system: string = SYSTEM,
+): Promise<z.infer<T> | null> {
   const response = await getClient().beta.messages.parse({
     model: MODEL,
     max_tokens: maxTokens,
@@ -69,7 +74,7 @@ async function callClaude<T extends z.ZodType>(schema: T, prompt: string, maxTok
     fallbacks: "default",
     thinking: { type: "adaptive" },
     output_config: { effort: "low", format: betaZodOutputFormat(schema) },
-    system: SYSTEM,
+    system,
     messages: [{ role: "user", content: prompt }],
   });
   if (response.stop_reason === "refusal" || response.stop_reason === "max_tokens") return null;
@@ -157,7 +162,7 @@ Write:
   return messagesFromTemplates(input);
 }
 
-function logAiError(action: string, error: unknown) {
+export function logAiError(action: string, error: unknown) {
   // Csak a hiba típusa és státusza kerül a naplóba – a felhasználó szövege soha
   if (error instanceof Anthropic.APIError) console.error(`[ai:${action}] ${error.name} ${error.status}`);
   else console.error(`[ai:${action}] ${error instanceof Error ? error.name : "unknown error"}`);

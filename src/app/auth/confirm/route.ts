@@ -3,6 +3,7 @@ import { hasLocale } from "next-intl";
 import { NextResponse, type NextRequest } from "next/server";
 import { getPathname } from "@/i18n/navigation";
 import { routing, type AppPathname } from "@/i18n/routing";
+import { dashPath, isDashboardHost } from "@/lib/dashboard/url";
 import { isSupabaseConfigured } from "@/lib/supabase/config";
 import { getSupabaseServer } from "@/lib/supabase/server";
 
@@ -17,6 +18,8 @@ export async function GET(request: NextRequest) {
 
   const localeParam = searchParams.get("locale");
   const locale = hasLocale(routing.locales, localeParam) ? localeParam : routing.defaultLocale;
+  // A kezelő bejelentkezése (Google) ide tér vissza: siker után a kezelő főoldalára
+  const toDashboard = searchParams.get("next") === "/kezelo";
   const nextParam = searchParams.get("next") as AppPathname | null;
   const next = nextParam && ALLOWED_NEXT.includes(nextParam) ? nextParam : "/auth/megerosites";
 
@@ -47,6 +50,12 @@ export async function GET(request: NextRequest) {
     failed = !!error;
   }
 
+  if (toDashboard) {
+    const base = isDashboardHost(request.headers.get("host")) ? "" : "/kezelo";
+    const target = new URL(dashPath(locale, base, failed ? "/belepes" : "/"), origin);
+    if (failed) target.searchParams.set("error", "oauth");
+    return NextResponse.redirect(target);
+  }
   if (failed) return redirectTo(failTo, "expired");
   const response = redirectTo(next);
   if (next === "/" || next === "/beallitas") {

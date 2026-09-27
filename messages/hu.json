@@ -808,7 +808,8 @@
         "knowledgeLater": "Később küldöd, a kollégánk átveszi",
         "knowledgeFiles": "{count} fájl",
         "knowledgeNone": "Még nincs anyag"
-      }
+      },
+      "dashboard": "Tovább a kezelőmbe"
     },
     "preview": {
       "title": "Az ügynököd",
@@ -875,6 +876,543 @@
     "errors": {
       "generic": "Valami hiba történt. Próbáld újra.",
       "offline": "Nincs internetkapcsolat. A változásaidat elmentjük, amint újra van."
+    }
+  },
+  "dash": {
+    "nav": {
+      "label": "Kezelő navigáció",
+      "home": "Áttekintés",
+      "calls": "Hívások",
+      "assistant": "Asszisztens",
+      "settings": "Beállítások"
+    },
+    "shell": {
+      "logout": "Kijelentkezés",
+      "listening": "Figyel, hívásra kész",
+      "onCall": "{count} hívásban"
+    },
+    "kind": {
+      "appointments": {
+        "issues": "Teendők",
+        "issue": "Teendő",
+        "bookings": "Időpontok",
+        "resolved": "Kész",
+        "open": "Nyitott"
+      },
+      "reservations": {
+        "issues": "Teendők",
+        "issue": "Teendő",
+        "bookings": "Foglalások",
+        "resolved": "Kész",
+        "open": "Nyitott"
+      },
+      "cases": {
+        "issues": "Ügyek",
+        "issue": "Ügy",
+        "bookings": "",
+        "resolved": "Megoldva",
+        "open": "Nincs megoldva"
+      }
+    },
+    "login": {
+      "badge": "Kezelő",
+      "hero": "A vállalkozásod hangja, egy helyen.",
+      "heroText": "Élő hívások, amit az MI kiszedett belőlük, és minden beállítás — ahogy te raktad össze.",
+      "trustEncrypted": "Titkosított kapcsolat",
+      "trustGdpr": "GDPR-kompatibilis adatkezelés",
+      "eyebrow": "Velyric kezelő",
+      "title": "Üdv újra.",
+      "subtitle": "Jelentkezz be a kezelődbe.",
+      "submit": "Belépés",
+      "demoHint": "Bemutató mód: lépj be a teszt fiókkal (test123@gmail.com / test123).",
+      "expired": "Biztonsági okból kiléptettünk, mert egy ideig nem volt aktivitás. Jelentkezz be újra.",
+      "mfaTitle": "Kétlépcsős azonosítás",
+      "mfaText": "Írd be a hitelesítő alkalmazásod 6 jegyű kódját.",
+      "code": "Ellenőrző kód",
+      "codeInvalid": "Hibás vagy lejárt kód. Próbáld újra.",
+      "verify": "Ellenőrzés és belépés",
+      "footer": "A belépéssel elfogadod, hogy a munkamenetedet biztonsági okból rögzítjük. A kapcsolat végig titkosított."
+    },
+    "home": {
+      "morning": "Jó reggelt!",
+      "day": "Jó napot!",
+      "evening": "Jó estét!",
+      "summary": "{date} · {agent} ma {count, plural, =0 {még nem vett fel hívást} one {# hívást vett fel} other {# hívást vett fel}}."
+    },
+    "sample": {
+      "title": "Mintaadatok.",
+      "text": "Így fog kinézni a kezelőd — az első valódi hívás után a saját adataid jelennek meg.",
+      "demoText": "Bemutató módban minden adat példa.",
+      "hide": "Elrejtés",
+      "show": "Mintaadatok megtekintése"
+    },
+    "outcome": {
+      "resolved": "Megoldva",
+      "booked": "Lefoglalva",
+      "transferred": "Átkapcsolva",
+      "callback": "Visszahívás",
+      "unresolved": "Nincs megoldva",
+      "missed": "Nem fogadott"
+    },
+    "priority": {
+      "low": "Ráér",
+      "normal": "Normál",
+      "high": "Sürgős"
+    },
+    "widgets": {
+      "live": {
+        "title": "Élő hívások",
+        "hint": "Ami most zajlik, átirattal",
+        "now": "{count} élő",
+        "connecting": "{agent} kapcsolódik…",
+        "quiet": "Most csend van — {agent} figyel.",
+        "quietText": "Amint hívás érkezik, itt élőben látod."
+      },
+      "stats": {
+        "title": "Kulcsszámok",
+        "hint": "Hívások, kezelt és fennálló problémák",
+        "callsToday": "Hívások ma",
+        "callsWeek": "{count} az elmúlt 7 napban",
+        "handled": "Kezelt problémák",
+        "handledSub": "az elmúlt 7 napban",
+        "open": "Fennálló — {issues}",
+        "openSub": "rád vár",
+        "openNone": "minden rendben",
+        "bookingsToday": "{bookings} ma",
+        "bookingsSub": "az MI rögzítette",
+        "avg": "Átlagos hívásidő",
+        "avgSub": "perc:másodperc"
+      },
+      "issues": {
+        "title": "Fennálló {issues}",
+        "hint": "Amit az MI a hívásokból kiszedett",
+        "all": "Mind",
+        "none": "Nincs nyitott tétel",
+        "noneText": "Minden kezelve. Szép munka!",
+        "ai": "Az MI a hívásokból szedte ki."
+      },
+      "bookings": {
+        "title": "Következő {bookings}",
+        "hint": "A mai és holnapi foglalások",
+        "all": "Mind",
+        "party": "{count} fő",
+        "pending": "Megerősítésre vár",
+        "none": "Nincs közelgő foglalás"
+      },
+      "calls": {
+        "title": "Legutóbbi hívások",
+        "hint": "Összefoglalóval és kimenetellel",
+        "all": "Mind",
+        "none": "Még nincs hívás"
+      },
+      "volume": {
+        "title": "Hívások az elmúlt 7 napban",
+        "hint": "Napi hívásszám",
+        "total": "összesen {count}",
+        "calls": "{count} hívás"
+      },
+      "topics": {
+        "title": "Miről telefonálnak?",
+        "hint": "Az MI kategóriái a héten",
+        "none": "Még nincs elég adat"
+      },
+      "assistant": {
+        "title": "Az asszisztensed",
+        "hint": "Hang, köszönés, gyors szerkesztés",
+        "edit": "Szerkesztés",
+        "tasks": "{count} feladat",
+        "listen": "Meghallgatom"
+      }
+    },
+    "calls": {
+      "title": "Hívások",
+      "text": "Minden hívás összefoglalóval, átirattal és azzal, amit az MI kiszedett belőle.",
+      "filter": "Szűrés",
+      "all": "Mind",
+      "search": "Keresés név, szám vagy téma szerint",
+      "none": "Nincs a szűrésnek megfelelő hívás",
+      "unknown": "Ismeretlen hívó",
+      "live": "Élő",
+      "detail": "Hívás részletei",
+      "revealNumber": "Telefonszám megjelenítése",
+      "close": "Bezárás",
+      "summary": "Összefoglaló",
+      "extracted": "Amit az MI kiszedett",
+      "transcript": "Átirat",
+      "noTranscript": "Az átirat nem érhető el (vagy az adatmegőrzési idő lejárt).",
+      "caller": "Hívó",
+      "agent": "Asszisztens"
+    },
+    "issues": {
+      "text": "Amit a hívásokból az MI kiszedett: visszahívások, nyitott kérdések, problémák. Pipáld ki, ha kész.",
+      "source": "Forrás hívás",
+      "markResolved": "{resolved}",
+      "reopen": "Újranyitás",
+      "noneOpen": "Nincs nyitott tétel — minden kezelve.",
+      "noneResolved": "Még nincs lezárt tétel.",
+      "ai": "A tételeket az MI szedi ki a hívásokból; a tartalmukat nem, csak az állapotukat tudod módosítani."
+    },
+    "bookings": {
+      "text": "Az asszisztens által rögzített foglalások, napokra bontva.",
+      "party": "{count} fő",
+      "status": {
+        "confirmed": "Megerősítve",
+        "pending": "Függőben",
+        "cancelled": "Lemondva"
+      },
+      "confirm": "Megerősítés",
+      "cancel": "Lemondás",
+      "none": "Nincs közelgő foglalás.",
+      "notUsed": "A foglalások ennél a vállalkozástípusnál nincsenek bekapcsolva."
+    },
+    "assistant": {
+      "title": "{name} tudása",
+      "text": "Itt bővítheted és módosíthatod, mit tud, hogyan beszél és mire figyeljen.",
+      "tabs": {
+        "tasks": "Feladatok",
+        "voice": "Hang és szöveg",
+        "knowledge": "Tudásbázis"
+      },
+      "saving": "Mentés…",
+      "autosave": "Minden változás automatikusan mentődik"
+    },
+    "studio": {
+      "eyebrow": "Stúdió",
+      "progress": "{current}. lépés / {total}",
+      "preview": "Élő előnézet",
+      "back": "Vissza",
+      "next": "Tovább",
+      "finish": "Belépek a kezelőmbe",
+      "look": {
+        "title": "Rakd össze a saját kezelődet.",
+        "text": "Válaszd ki a stílust és a színeket — minden azonnal változik, és bármikor átállíthatod.",
+        "style": "Stílus",
+        "styles": {
+          "modern": {
+            "name": "Modern",
+            "text": "Lágy üveg, kerek formák"
+          },
+          "classic": {
+            "name": "Klasszikus",
+            "text": "Elegáns talpas betűk"
+          },
+          "minimal": {
+            "name": "Minimál",
+            "text": "Letisztult, vékony vonalak"
+          }
+        },
+        "mode": "Mód",
+        "dark": "Sötét",
+        "light": "Világos",
+        "accent": "Szín",
+        "accents": {
+          "rose": "Velyric rózsa",
+          "champagne": "Pezsgő",
+          "emerald": "Smaragd",
+          "sapphire": "Zafír",
+          "amethyst": "Ametiszt",
+          "coral": "Korall"
+        }
+      },
+      "home": {
+        "title": "Mit lássál a főoldalon?",
+        "text": "Kapcsold be, ami neked fontos, és rendezd sorba. A vállalkozásod jellegéhez igazítottuk.",
+        "kind": "A vállalkozásod jellege",
+        "kinds": {
+          "appointments": {
+            "name": "Időpontok",
+            "text": "Rendelő, szalon, szerviz: időpontfoglalás és teendők."
+          },
+          "reservations": {
+            "name": "Asztalfoglalás",
+            "text": "Étterem, kávézó: foglalások létszámmal."
+          },
+          "cases": {
+            "name": "Ügyek",
+            "text": "Pl. tech cég, ügyfélszolgálat: megoldva / nincs megoldva."
+          }
+        },
+        "widgets": "A főoldal dobozai",
+        "widgetsHint": "A nyilakkal állíthatod a sorrendet.",
+        "up": "feljebb",
+        "down": "lejjebb"
+      },
+      "privacy": {
+        "title": "Az adataid biztonságban vannak.",
+        "text": "A hívásokban a te ügyfeleid adatai szerepelnek. Ezeket a te megbízásodból, szigorú szabályok szerint kezeljük.",
+        "points": [
+          "Az adatokat csak te látod — minden fiók szigorúan el van különítve.",
+          "Titkosított kapcsolat és tárolás; a kártyaadatokat mi soha nem látjuk.",
+          "A hívások átiratát a beállított idő után automatikusan töröljük.",
+          "Bármikor letöltheted vagy véglegesen törölheted az összes adatodat.",
+          "Kétlépcsős azonosítást a Beállításokban kapcsolhatsz be — erősen ajánljuk."
+        ],
+        "retention": "Meddig őrizzük meg a hívások átiratát?",
+        "retentionHint": "Utána az átirat és a hívó adatai törlődnek, a statisztika megmarad.",
+        "days": "{days} napig",
+        "accept": "Elfogadom az adatfeldolgozási feltételeket (verzió: {version}): a Velyric adatfeldolgozóként, az én utasításaim szerint kezeli a hívók adatait, és a hívóknak tájékoztatást adok arról, hogy MI-asszisztenssel beszélnek.",
+        "required": "A folytatáshoz fogadd el az adatfeldolgozási feltételeket."
+      }
+    },
+    "tour": {
+      "label": "Bemutató",
+      "progress": "{current} / {total}",
+      "skip": "Átugrás",
+      "back": "Vissza",
+      "next": "Tovább",
+      "finish": "Kezdjük!",
+      "assistant": {
+        "title": "Az asszisztensed tudása",
+        "text": "Itt tudod az asszisztensed tudását módosítani és bővíteni: feladatok, hang, köszönés, árlista, nyitvatartás."
+      },
+      "live": {
+        "title": "Élő hívások",
+        "text": "Ha épp hívás zajlik, itt élőben látod, ki hív, mióta és miről beszélnek."
+      },
+      "stats": {
+        "title": "Egy pillantás alatt",
+        "text": "Hány hívás jött ma, hány problémát kezelt az asszisztens, és mi vár még rád."
+      },
+      "issues": {
+        "title": "{issues}",
+        "text": "Amit az MI a hívásokból kiszedett — visszahívások, nyitott kérdések. Pipáld ki, ha kész."
+      },
+      "calls": {
+        "title": "Minden hívás",
+        "text": "Összefoglaló, átirat és kimenetel minden hívásról, kereshetően."
+      },
+      "settings": {
+        "title": "Beállítások",
+        "text": "Kinézet, értesítések, kétlépcsős azonosítás, adatvédelem és számlák — mind itt."
+      },
+      "help": {
+        "title": "Súgó, mindig kéznél",
+        "text": "Ha elakadsz, kattints ide: lépésről lépésre segítünk, vagy írhatsz is nekünk."
+      }
+    },
+    "help": {
+      "button": "Súgó",
+      "eyebrow": "Súgó",
+      "title": "Miben segíthetünk?",
+      "search": "Keresés a súgóban",
+      "noResults": "Nincs találat. Írj nekünk, szívesen segítünk!",
+      "close": "Bezárás",
+      "back": "Vissza",
+      "contact": "Írj nekünk",
+      "tour": "Bemutató újra",
+      "showMe": "Mutasd meg",
+      "notHelped": "Nem segített — írok nektek",
+      "here": "Itt találod",
+      "gotIt": "Értem",
+      "contactTitle": "Írj nekünk",
+      "contactText": "Munkanapokon pár órán belül válaszolunk ide: {email}",
+      "subject": "Tárgy",
+      "message": "Üzenet",
+      "messagePlaceholder": "Írd le, mi történt, és mit szerettél volna…",
+      "send": "Küldés",
+      "sent": "Köszönjük! Megkaptuk az üzenetedet, hamarosan válaszolunk.",
+      "error": "Most nem sikerült elküldeni.",
+      "mailFallback": "Küldd el e-mailben",
+      "topics": {
+        "noCalls": {
+          "title": "Az asszisztens nem veszi fel a hívásokat",
+          "text": "hívás nem érkezik átirányítás",
+          "steps": [
+            "Ellenőrizd, hogy a telefonszámod át van-e irányítva a Velyric-vonalra (lásd: „Hogyan irányítsam át a számomat?”).",
+            "Az Asszisztens → Feladatok alatt nézd meg, mikor vegye fel: mindig, csak nyitvatartáson kívül, vagy ha ti nem veszitek fel.",
+            "Hívd fel a saját számodat egy másik telefonról, és figyeld az Élő hívások dobozt.",
+            "Ha így sem jelenik meg, írj nekünk — azonnal megnézzük."
+          ],
+          "where": "Az Asszisztens menüben állíthatod, mikor és mit csináljon."
+        },
+        "forward": {
+          "title": "Hogyan irányítsam át a számomat?",
+          "text": "átirányítás hívásátirányítás szolgáltató",
+          "steps": [
+            "A Velyric-számot a bevezetéskor a kollégánk adja meg neked.",
+            "Mindig: tárcsázd a **21*Velyric-szám# kódot, majd hívás gomb.",
+            "Csak ha foglalt: **67*Velyric-szám# · Ha nem veszed fel: **61*Velyric-szám#.",
+            "Kikapcsolás: ##002#. Vezetékes vagy céges alközpontnál a szolgáltatód segít."
+          ],
+          "where": ""
+        },
+        "wrongAnswer": {
+          "title": "Rossz vagy pontatlan választ adott",
+          "text": "hibás válasz tudás árlista",
+          "steps": [
+            "Nézd meg a hívás átiratát a Hívások menüben, hogy mit kérdeztek.",
+            "Az Asszisztens → Tudásbázis alatt töltsd fel a helyes információt (árlista, GYIK), vagy írd be az „Amit még érdemes tudnia” mezőbe.",
+            "Ha orvosi, jogi vagy egyéni kérdés volt, az asszisztens szándékosan átkapcsol — ez így helyes."
+          ],
+          "where": "Az Asszisztens → Tudásbázis fülön bővítheted, amit tud."
+        },
+        "hours": {
+          "title": "Csak nyitvatartáson kívül vegye fel",
+          "text": "nyitvatartás éjszaka hétvége",
+          "steps": [
+            "Nyisd meg: Asszisztens → Feladatok.",
+            "A „Mikor vegye fel a telefont?” résznél válaszd a „Nyitvatartáson kívül” lehetőséget.",
+            "A Tudásbázis fülön add meg a pontos nyitvatartást."
+          ],
+          "where": "Az Asszisztens → Feladatok fülön állítható."
+        },
+        "issues": {
+          "title": "Mit jelent egy nyitott tétel?",
+          "text": "ügy teendő megoldva nyitott",
+          "steps": [
+            "Minden hívás után az MI kiszedi, mit kell még emberként elintézned: visszahívás, nyitott kérdés, panasz.",
+            "Ha elintézted, kattints a „Megoldva” / „Kész” gombra.",
+            "A forrás hívást egy kattintással visszanézheted."
+          ],
+          "where": "Itt találod az összes nyitott és lezárt tételt."
+        },
+        "look": {
+          "title": "Hogyan változtatom meg a kinézetet?",
+          "text": "szín stílus sötét világos téma",
+          "steps": [
+            "Beállítások → Megjelenés.",
+            "Válassz stílust, sötét vagy világos módot és színt — azonnal látod.",
+            "Ugyanitt kapcsolhatod be/ki és rendezheted a főoldal dobozait."
+          ],
+          "where": "A Beállítások → Megjelenés alatt."
+        },
+        "invoice": {
+          "title": "Hol találom a számláimat?",
+          "text": "számla fizetés kártya lemondás",
+          "steps": [
+            "Beállítások → Számlázás.",
+            "A „Számlák és kártya” gomb a Stripe biztonságos oldalára visz: ott letöltheted a számlákat, cserélheted a kártyát vagy lemondhatod az előfizetést."
+          ],
+          "where": "A Beállítások → Számlázás alatt."
+        },
+        "data": {
+          "title": "Hogyan tölthetem le vagy törölhetem az adataimat?",
+          "text": "GDPR adat törlés letöltés export",
+          "steps": [
+            "Beállítások → Adatvédelem.",
+            "„Adataim letöltése”: egy fájlban megkapod az összes adatodat.",
+            "A fiók törlése végleges: minden hívás, átirat, beállítás és feltöltött fájl törlődik, és az előfizetés is megszűnik."
+          ],
+          "where": "A Beállítások → Adatvédelem alatt."
+        },
+        "security": {
+          "title": "Kétlépcsős azonosítás bekapcsolása",
+          "text": "biztonság 2FA kód hitelesítő",
+          "steps": [
+            "Tölts le egy hitelesítő alkalmazást (pl. Google Authenticator, Microsoft Authenticator, 1Password).",
+            "Beállítások → Biztonság → „Bekapcsolás”, majd olvasd be a QR-kódot.",
+            "Írd be a 6 jegyű kódot. Ezután minden belépésnél kérni fogjuk."
+          ],
+          "where": "A Beállítások → Biztonság alatt."
+        }
+      }
+    },
+    "idle": {
+      "title": "Hamarosan kiléptetünk",
+      "text": "Biztonsági okból {seconds} másodperc múlva kijelentkeztetünk, mert egy ideje nem volt aktivitás.",
+      "stay": "Maradok"
+    },
+    "settings": {
+      "title": "Beállítások",
+      "text": "Minden, ami a kezelődhöz és a fiókodhoz tartozik.",
+      "demoNote": "Bemutató mód: a biztonsági és adatkezelési funkciók valódi fiókkal érhetők el.",
+      "look": {
+        "title": "Megjelenés",
+        "text": "Stílus, szín, és hogy mi legyen a főoldalon.",
+        "density": "Sűrűség",
+        "comfortable": "Tágas",
+        "compact": "Tömör",
+        "studio": "Stúdió megnyitása",
+        "tour": "Bemutató újraindítása"
+      },
+      "notify": {
+        "title": "Értesítések",
+        "text": "Az értesítéseket ide küldjük: {email}.",
+        "newIssue": "Új teendő vagy ügy",
+        "newIssueText": "Azonnal szólunk, ha az MI egy hívásból új tennivalót szed ki.",
+        "missedCall": "Nem fogadott vagy megszakadt hívás",
+        "missedCallText": "Ha egy hívás nem ért véget rendesen.",
+        "daily": "Napi összefoglaló",
+        "dailyText": "Minden este egy rövid összefoglaló a nap hívásairól."
+      },
+      "security": {
+        "title": "Biztonság",
+        "text": "Védd a fiókodat — a kezelőben az ügyfeleid adatai vannak.",
+        "realOnly": "Valódi fiókkal érhető el.",
+        "mfa": "Kétlépcsős azonosítás",
+        "mfaText": "Belépéskor a jelszó mellett egy hitelesítő alkalmazás kódját is kérjük. Erősen ajánlott.",
+        "mfaOn": "Bekapcsolva — belépéskor kérjük a kódot.",
+        "mfaEnable": "Bekapcsolás",
+        "mfaDisable": "Kikapcsolás",
+        "mfaDisableConfirm": "Biztosan kikapcsolod a kétlépcsős azonosítást? A fiókod kevésbé lesz védett.",
+        "mfaAal2": "A kikapcsoláshoz jelentkezz be újra a kóddal.",
+        "mfaError": "Most nem sikerült elindítani. Próbáld újra.",
+        "mfaStep1": "Olvasd be a QR-kódot a hitelesítő alkalmazással.",
+        "mfaStep2": "Írd be az alkalmazás által mutatott 6 jegyű kódot.",
+        "mfaSecret": "Kézi beíráshoz:",
+        "mfaVerify": "Ellenőrzés és bekapcsolás",
+        "qrAlt": "QR-kód a hitelesítő alkalmazáshoz",
+        "code": "Ellenőrző kód",
+        "codeInvalid": "Hibás kód. Próbáld újra.",
+        "idle": "Automatikus kijelentkezés",
+        "idleText": "Ha a gépnél felejted a kezelőt, ennyi tétlenség után kiléptetünk.",
+        "minutes": "{count} perc után",
+        "never": "Soha (nem ajánlott)",
+        "password": "Jelszó módosítása",
+        "currentPassword": "Jelenlegi jelszó",
+        "newPassword": "Új jelszó",
+        "changePassword": "Jelszó módosítása",
+        "passwordChanged": "Kész, az új jelszavad beállítva.",
+        "wrongPassword": "A jelenlegi jelszó nem megfelelő.",
+        "log": "Biztonsági napló",
+        "logEmpty": "Még nincs bejegyzés.",
+        "events": {
+          "login": "Belépés",
+          "logout": "Kijelentkezés",
+          "mfa_enabled": "Kétlépcsős azonosítás bekapcsolva",
+          "mfa_disabled": "Kétlépcsős azonosítás kikapcsolva",
+          "password_changed": "Jelszó módosítva",
+          "settings_changed": "Beállítás módosítva"
+        }
+      },
+      "privacy": {
+        "title": "Adatvédelem",
+        "text": "Te döntöd el, meddig őrizzük a hívások adatait, és bármikor letöltheted vagy törölheted őket.",
+        "retention": "Hívásátiratok megőrzése",
+        "retentionText": "Ennyi idő után az átirat, a hívó neve és telefonszáma automatikusan törlődik. A statisztika megmarad.",
+        "days": "{days} nap",
+        "dpa": "Adatfeldolgozási feltételek",
+        "dpaAccepted": "Elfogadva ({version}) · {date}",
+        "dpaMissing": "Még nincs elfogadva.",
+        "privacyPolicy": "Adatvédelmi tájékoztató",
+        "terms": "ÁSZF",
+        "export": "Adataim letöltése",
+        "exportText": "Egy JSON-fájlban megkapod az összes adatodat: beállítás, hívások, átiratok, tételek, foglalások.",
+        "exportButton": "Letöltés",
+        "realOnly": "Valódi fiókkal érhető el.",
+        "deleteTitle": "Fiók végleges törlése",
+        "deleteText": "Minden adatod — hívások, átiratok, beállítások, feltöltött fájlok — véglegesen törlődik, és az előfizetés megszűnik.",
+        "deleteButton": "Fiók törlése",
+        "deleteWarning": "Ez nem visszavonható. A törlés után az asszisztens nem veszi fel többé a hívásaidat.",
+        "typeEmail": "A megerősítéshez írd be az e-mail-címedet: {email}",
+        "password": "Jelszó",
+        "deleteConfirm": "Végleges törlés",
+        "cancel": "Mégse",
+        "emailMismatch": "Az e-mail-cím nem egyezik.",
+        "wrongPassword": "Hibás jelszó.",
+        "deleteError": "Most nem sikerült törölni. Írj nekünk, és azonnal intézzük."
+      },
+      "billing": {
+        "title": "Számlázás",
+        "text": "Előfizetés, számlák és fizetési mód.",
+        "plan": "Velyric hangügynök",
+        "active": "Aktív előfizetés",
+        "inactive": "Nincs aktív előfizetés",
+        "demo": "Bemutató mód",
+        "portal": "Számlák és kártya",
+        "portalError": "A számlázási portál most nem érhető el.",
+        "setup": "A kezdeti beállítás módosítása →"
+      }
     }
   }
 }

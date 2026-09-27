@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowLeft, ArrowRight, Check, CloudOff, Eye, LogOut, X } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Logo } from "@/components/brand/Logo";
 import { LanguageDropdown } from "@/components/nav/LanguageSwitcher";
@@ -16,6 +16,7 @@ import { STEPS, type AnalyzeResult, type OnboardingData } from "@/lib/onboarding
 import { billingErrors, isValidPhone } from "@/lib/onboarding/validate";
 import type { PlanInfo } from "@/lib/server/stripe";
 import { site } from "@/lib/site";
+import { dashboardHref } from "@/lib/dashboard/url";
 import { AgentPreview } from "./AgentPreview";
 import { Guide } from "./Guide";
 import { BillingStep } from "./steps/BillingStep";
@@ -52,6 +53,7 @@ const markDone = (d: OnboardingData, status: OnboardingData["payment"]["status"]
 export function SetupWizard({ user, initial, serverPaid, plan, aiMode }: Props) {
   const t = useTranslations("setup");
   const tBrand = useTranslations("brand");
+  const locale = useLocale();
   const router = useRouter();
   const signOut = useSignOut();
 
@@ -80,11 +82,15 @@ export function SetupWizard({ user, initial, serverPaid, plan, aiMode }: Props) 
       return;
     }
     loadOnboarding(null, demoEmail).then((d) => {
+      if (d.completedAt && !new URLSearchParams(window.location.search).has("szerkesztes")) {
+        window.location.assign(dashboardHref(locale));
+        return;
+      }
       setEmail(demoEmail);
       setAnalyzedFrom(d.profile ? d.business.description.trim() : null);
       setData(d);
     });
-  }, [user, router]);
+  }, [user, router, locale]);
 
   // Visszatérés a Stripe fizetőoldaláról
   useEffect(() => {

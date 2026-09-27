@@ -1,6 +1,7 @@
 "use client";
 
-import { CircleCheckBig, Play, Sparkles } from "lucide-react";
+import { ArrowRight, CircleCheckBig, Play, Sparkles } from "lucide-react";
+import { dashboardHref } from "@/lib/dashboard/url";
 import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useMemo, useState } from "react";
 import { CallPlayback, type Turn } from "@/components/landing/CallPlayback";
@@ -137,9 +138,18 @@ export function DoneStep({ data, goTo, onSpeaking }: StepProps & { onSpeaking: (
         </dl>
       </section>
 
-      <Button href="/" size="lg" variant="secondary" className="self-start">
-        {t("home")}
-      </Button>
+      <div className="flex flex-wrap gap-3">
+        <a
+          href={dashboardHref(locale)}
+          className="group relative isolate inline-flex h-14 items-center justify-center gap-2 rounded-xl bg-cta px-7 text-base font-semibold text-white transition-transform active:scale-[0.98]"
+        >
+          {t("dashboard")}
+          <ArrowRight className="size-4" aria-hidden="true" />
+        </a>
+        <Button href="/" size="lg" variant="secondary">
+          {t("home")}
+        </Button>
+      </div>
     </div>
   );
 }

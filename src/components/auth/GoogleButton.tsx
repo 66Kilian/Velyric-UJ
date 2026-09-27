@@ -7,7 +7,7 @@ import { authCallbackUrl } from "@/lib/auth";
 import { getSupabaseBrowser } from "@/lib/supabase/client";
 
 // „Folytatás Google-lel” – egy kattintás, a Google után visszaérkezés bejelentkezve
-export function GoogleButton({ onError }: { onError: (message: string) => void }) {
+export function GoogleButton({ onError, redirectTo }: { onError: (message: string) => void; redirectTo?: () => string }) {
   const t = useTranslations("auth");
   const locale = useLocale();
   const [loading, setLoading] = useState(false);
@@ -18,7 +18,7 @@ export function GoogleButton({ onError }: { onError: (message: string) => void }
     setLoading(true);
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "google",
-      options: { redirectTo: authCallbackUrl("/beallitas", locale) },
+      options: { redirectTo: redirectTo ? redirectTo() : authCallbackUrl("/beallitas", locale) },
     });
     // Siker esetén a böngésző átirányít a Google-höz; ide csak hibánál jutunk
     if (error) {

@@ -6,6 +6,8 @@ export const site = {
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://velyric.com").replace(/\/$/, ""),
   phone: "+36 20 627 0766",
   phoneHref: "tel:+36206270766",
+  // Súgó-e-mail (a kezelő „Írj nekünk” tartalékcíme) – felülírható: NEXT_PUBLIC_SUPPORT_EMAIL
+  supportEmail: process.env.NEXT_PUBLIC_SUPPORT_EMAIL ?? "hello@velyric.com",
 } as const;
 
 // A navbar menüpontjai: a landing szekciók azonosítói (id) és a fordítási kulcsuk

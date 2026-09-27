@@ -54,6 +54,23 @@ Beüzemelés:
 - **Stripe:** hozz létre egy terméket árral (a `price_…` azonosító a `STRIPE_PRICE_ID`), és egy webhookot a `/api/billing/webhook` címre.
 - Ami nincs beállítva, az bemutató módban fut: MI helyett sablonok, természetes hang helyett a böngésző hangja, fizetés helyett „Folytatás fizetés nélkül”.
 
+## Kezelő (`kezelo.velyric.com`)
+
+A beállítás után a felhasználó a saját kezelőjébe kerül, ahol külön be kell jelentkeznie (kétlépcsős azonosítással, ha bekapcsolta).
+- **Első belépés – Stúdió:** stílus (Modern / Klasszikus / Minimál), sötét/világos mód, 6 szín, a főoldal dobozai, adatfeldolgozási hozzájárulás, adatmegőrzés.
+- **Bemutató túra:** elhomályosított háttér, kiemelt elem, nyíl + buborék; Tovább / Vissza / Átugrás.
+- **Főoldal:** élő hívások, kulcsszámok, fennálló ügyek/teendők (az MI szedi ki a hívásokból), foglalások, legutóbbi hívások, heti grafikon, témák.
+- **A vállalkozás jellege szerint:** időpontok (rendelő, szalon, szerviz) · asztalfoglalás (étterem) · ügyek megoldva/nincs megoldva (pl. tech cég).
+- **Súgó:** gyakori elakadások lépésekkel, „Mutasd meg” kiemeléssel, és „Írj nekünk” e-mail.
+- **Beállítások:** megjelenés, értesítések, 2FA, automatikus kijelentkezés, jelszócsere, biztonsági napló, adatmegőrzés, adatexport, fióktörlés, számlák (Stripe portál).
+
+Beüzemelés:
+1. Supabase → SQL Editor → futtasd a `supabase/migrations/20260929000000_dashboard.sql` fájlt (az onboarding migráció után).
+2. Supabase → Authentication → **Multi-Factor** → TOTP bekapcsolása; URL Configuration → Redirect URLs: `https://kezelo.velyric.com/**`.
+3. Supabase → Database → Cron: naponta `select public.purge_expired_call_data();` (adatmegőrzés).
+4. Vercel → Domains: `kezelo.velyric.com` hozzáadása ugyanehhez a projekthez, és `NEXT_PUBLIC_DASHBOARD_URL=https://kezelo.velyric.com`.
+5. Hangplatform → webhook: `POST https://velyric.com/api/voice/events`, fejlécek: `x-velyric-timestamp` (unix mp) és `x-velyric-signature` = hex(HMAC-SHA256(`<timestamp>.<nyers törzs>`, `VOICE_WEBHOOK_SECRET`)). Események: `call.started` és `call.ended` (átirattal; `account_id` = a Velyric-felhasználó azonosítója).
+
 ## Útvonalak
 
 | Oldal | HU | EN | DE |

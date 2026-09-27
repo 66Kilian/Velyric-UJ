@@ -808,7 +808,8 @@
         "knowledgeLater": "Sie senden sie später, ein Kollege übernimmt sie",
         "knowledgeFiles": "{count} Dateien",
         "knowledgeNone": "Noch keine Unterlagen"
-      }
+      },
+      "dashboard": "Zu meinem Dashboard"
     },
     "preview": {
       "title": "Ihr Agent",
@@ -875,6 +876,543 @@
     "errors": {
       "generic": "Etwas ist schiefgelaufen. Bitte erneut versuchen.",
       "offline": "Keine Internetverbindung. Ihre Änderungen werden gespeichert, sobald Sie wieder online sind."
+    }
+  },
+  "dash": {
+    "nav": {
+      "label": "Navigation",
+      "home": "Übersicht",
+      "calls": "Anrufe",
+      "assistant": "Assistent",
+      "settings": "Einstellungen"
+    },
+    "shell": {
+      "logout": "Abmelden",
+      "listening": "Hört zu, bereit für Anrufe",
+      "onCall": "In {count} Anrufen"
+    },
+    "kind": {
+      "appointments": {
+        "issues": "Aufgaben",
+        "issue": "Aufgabe",
+        "bookings": "Termine",
+        "resolved": "Erledigt",
+        "open": "Offen"
+      },
+      "reservations": {
+        "issues": "Aufgaben",
+        "issue": "Aufgabe",
+        "bookings": "Reservierungen",
+        "resolved": "Erledigt",
+        "open": "Offen"
+      },
+      "cases": {
+        "issues": "Fälle",
+        "issue": "Fall",
+        "bookings": "",
+        "resolved": "Gelöst",
+        "open": "Ungelöst"
+      }
+    },
+    "login": {
+      "badge": "Dashboard",
+      "hero": "Die Stimme Ihres Unternehmens, an einem Ort.",
+      "heroText": "Live-Anrufe, was die KI daraus erkannt hat, und alle Einstellungen — so, wie Sie es eingerichtet haben.",
+      "trustEncrypted": "Verschlüsselte Verbindung",
+      "trustGdpr": "DSGVO-konforme Datenverarbeitung",
+      "eyebrow": "Velyric-Dashboard",
+      "title": "Willkommen zurück.",
+      "subtitle": "Melden Sie sich in Ihrem Dashboard an.",
+      "submit": "Anmelden",
+      "demoHint": "Demo-Modus: Melden Sie sich mit dem Testkonto an (test123@gmail.com / test123).",
+      "expired": "Aus Sicherheitsgründen wurden Sie nach einer Zeit ohne Aktivität abgemeldet. Bitte melden Sie sich erneut an.",
+      "mfaTitle": "Zwei-Faktor-Authentifizierung",
+      "mfaText": "Geben Sie den 6-stelligen Code aus Ihrer Authenticator-App ein.",
+      "code": "Bestätigungscode",
+      "codeInvalid": "Falscher oder abgelaufener Code. Bitte erneut versuchen.",
+      "verify": "Prüfen und anmelden",
+      "footer": "Mit der Anmeldung stimmen Sie zu, dass wir Ihre Sitzung aus Sicherheitsgründen protokollieren. Die Verbindung ist durchgehend verschlüsselt."
+    },
+    "home": {
+      "morning": "Guten Morgen!",
+      "day": "Guten Tag!",
+      "evening": "Guten Abend!",
+      "summary": "{date} · {agent} hat heute {count, plural, =0 {noch keinen Anruf angenommen} one {# Anruf angenommen} other {# Anrufe angenommen}}."
+    },
+    "sample": {
+      "title": "Beispieldaten.",
+      "text": "So wird Ihr Dashboard aussehen — nach dem ersten echten Anruf erscheinen Ihre eigenen Daten.",
+      "demoText": "Im Demo-Modus sind alle Daten Beispiele.",
+      "hide": "Ausblenden",
+      "show": "Beispieldaten ansehen"
+    },
+    "outcome": {
+      "resolved": "Gelöst",
+      "booked": "Gebucht",
+      "transferred": "Weitergeleitet",
+      "callback": "Rückruf",
+      "unresolved": "Ungelöst",
+      "missed": "Verpasst"
+    },
+    "priority": {
+      "low": "Niedrig",
+      "normal": "Normal",
+      "high": "Dringend"
+    },
+    "widgets": {
+      "live": {
+        "title": "Live-Anrufe",
+        "hint": "Was gerade passiert, mit Transkript",
+        "now": "{count} live",
+        "connecting": "{agent} verbindet…",
+        "quiet": "Alles ruhig — {agent} hört zu.",
+        "quietText": "Sobald ein Anruf eingeht, sehen Sie ihn hier live."
+      },
+      "stats": {
+        "title": "Kennzahlen",
+        "hint": "Anrufe, gelöste und offene Probleme",
+        "callsToday": "Anrufe heute",
+        "callsWeek": "{count} in den letzten 7 Tagen",
+        "handled": "Gelöste Probleme",
+        "handledSub": "in den letzten 7 Tagen",
+        "open": "Offen — {issues}",
+        "openSub": "wartet auf Sie",
+        "openNone": "alles in Ordnung",
+        "bookingsToday": "{bookings} heute",
+        "bookingsSub": "von der KI erfasst",
+        "avg": "Durchschnittliche Anrufdauer",
+        "avgSub": "Minuten:Sekunden"
+      },
+      "issues": {
+        "title": "Offene {issues}",
+        "hint": "Was die KI aus Anrufen erkannt hat",
+        "all": "Alle",
+        "none": "Nichts offen",
+        "noneText": "Alles erledigt. Sehr gut!",
+        "ai": "Von der KI aus Anrufen erkannt."
+      },
+      "bookings": {
+        "title": "Nächste {bookings}",
+        "hint": "Buchungen heute und morgen",
+        "all": "Alle",
+        "party": "{count} Personen",
+        "pending": "Wartet auf Bestätigung",
+        "none": "Keine anstehenden Buchungen"
+      },
+      "calls": {
+        "title": "Letzte Anrufe",
+        "hint": "Mit Zusammenfassung und Ergebnis",
+        "all": "Alle",
+        "none": "Noch keine Anrufe"
+      },
+      "volume": {
+        "title": "Anrufe der letzten 7 Tage",
+        "hint": "Anrufe pro Tag",
+        "total": "{count} insgesamt",
+        "calls": "{count} Anrufe"
+      },
+      "topics": {
+        "title": "Worum geht es in den Anrufen?",
+        "hint": "Die Kategorien der KI diese Woche",
+        "none": "Noch nicht genug Daten"
+      },
+      "assistant": {
+        "title": "Ihr Assistent",
+        "hint": "Stimme, Begrüßung, schnell bearbeiten",
+        "edit": "Bearbeiten",
+        "tasks": "{count} Aufgaben",
+        "listen": "Anhören"
+      }
+    },
+    "calls": {
+      "title": "Anrufe",
+      "text": "Jeder Anruf mit Zusammenfassung, Transkript und dem, was die KI daraus erkannt hat.",
+      "filter": "Filter",
+      "all": "Alle",
+      "search": "Nach Name, Nummer oder Thema suchen",
+      "none": "Keine passenden Anrufe",
+      "unknown": "Unbekannter Anrufer",
+      "live": "Live",
+      "detail": "Anrufdetails",
+      "revealNumber": "Telefonnummer anzeigen",
+      "close": "Schließen",
+      "summary": "Zusammenfassung",
+      "extracted": "Was die KI erkannt hat",
+      "transcript": "Transkript",
+      "noTranscript": "Transkript nicht verfügbar (oder die Aufbewahrungsfrist ist abgelaufen).",
+      "caller": "Anrufer",
+      "agent": "Assistent"
+    },
+    "issues": {
+      "text": "Was die KI aus Anrufen erkannt hat: Rückrufe, offene Fragen, Probleme. Abhaken, wenn erledigt.",
+      "source": "Ursprünglicher Anruf",
+      "markResolved": "{resolved}",
+      "reopen": "Wieder öffnen",
+      "noneOpen": "Nichts offen — alles erledigt.",
+      "noneResolved": "Noch nichts abgeschlossen.",
+      "ai": "Die Einträge erkennt die KI aus den Anrufen; Sie können den Status ändern, nicht den Inhalt."
+    },
+    "bookings": {
+      "text": "Von Ihrem Assistenten erfasste Buchungen, nach Tagen.",
+      "party": "{count} Personen",
+      "status": {
+        "confirmed": "Bestätigt",
+        "pending": "Ausstehend",
+        "cancelled": "Storniert"
+      },
+      "confirm": "Bestätigen",
+      "cancel": "Stornieren",
+      "none": "Keine anstehenden Buchungen.",
+      "notUsed": "Buchungen sind für diese Unternehmensart nicht aktiviert."
+    },
+    "assistant": {
+      "title": "Das Wissen von {name}",
+      "text": "Erweitern und ändern Sie, was er weiß, wie er spricht und worauf er achtet.",
+      "tabs": {
+        "tasks": "Aufgaben",
+        "voice": "Stimme & Text",
+        "knowledge": "Wissensbasis"
+      },
+      "saving": "Wird gespeichert…",
+      "autosave": "Jede Änderung wird automatisch gespeichert"
+    },
+    "studio": {
+      "eyebrow": "Studio",
+      "progress": "Schritt {current} von {total}",
+      "preview": "Live-Vorschau",
+      "back": "Zurück",
+      "next": "Weiter",
+      "finish": "Zu meinem Dashboard",
+      "look": {
+        "title": "Gestalten Sie Ihr eigenes Dashboard.",
+        "text": "Wählen Sie Stil und Farben — alles ändert sich sofort und lässt sich jederzeit umstellen.",
+        "style": "Stil",
+        "styles": {
+          "modern": {
+            "name": "Modern",
+            "text": "Weiches Glas, runde Formen"
+          },
+          "classic": {
+            "name": "Klassisch",
+            "text": "Elegante Serifenschrift"
+          },
+          "minimal": {
+            "name": "Minimal",
+            "text": "Klar, feine Linien"
+          }
+        },
+        "mode": "Modus",
+        "dark": "Dunkel",
+        "light": "Hell",
+        "accent": "Farbe",
+        "accents": {
+          "rose": "Velyric-Rosé",
+          "champagne": "Champagner",
+          "emerald": "Smaragd",
+          "sapphire": "Saphir",
+          "amethyst": "Amethyst",
+          "coral": "Koralle"
+        }
+      },
+      "home": {
+        "title": "Was möchten Sie zuerst sehen?",
+        "text": "Aktivieren Sie, was Ihnen wichtig ist, und ordnen Sie es. Wir haben es auf Ihr Unternehmen abgestimmt.",
+        "kind": "Art des Unternehmens",
+        "kinds": {
+          "appointments": {
+            "name": "Termine",
+            "text": "Praxis, Salon, Werkstatt: Termine und Aufgaben."
+          },
+          "reservations": {
+            "name": "Tischreservierung",
+            "text": "Restaurant, Café: Reservierungen mit Personenzahl."
+          },
+          "cases": {
+            "name": "Fälle",
+            "text": "Z. B. Tech-Firma, Support: gelöst / ungelöst."
+          }
+        },
+        "widgets": "Karten auf der Startseite",
+        "widgetsHint": "Mit den Pfeilen ändern Sie die Reihenfolge.",
+        "up": "nach oben",
+        "down": "nach unten"
+      },
+      "privacy": {
+        "title": "Ihre Daten sind sicher.",
+        "text": "Anrufe enthalten die Daten Ihrer Kunden. Wir verarbeiten sie in Ihrem Auftrag und nach strengen Regeln.",
+        "points": [
+          "Nur Sie sehen Ihre Daten — jedes Konto ist strikt getrennt.",
+          "Verschlüsselte Verbindung und Speicherung; Kartendaten sehen wir nie.",
+          "Anruftranskripte werden nach der gewählten Frist automatisch gelöscht.",
+          "Sie können alle Ihre Daten jederzeit herunterladen oder endgültig löschen.",
+          "Aktivieren Sie die Zwei-Faktor-Authentifizierung in den Einstellungen — sehr empfohlen."
+        ],
+        "retention": "Wie lange sollen Anruftranskripte aufbewahrt werden?",
+        "retentionHint": "Danach werden Transkript und Anruferdaten gelöscht; Statistiken bleiben.",
+        "days": "{days} Tage",
+        "accept": "Ich akzeptiere die Bedingungen zur Auftragsverarbeitung (Version {version}): Velyric verarbeitet die Daten der Anrufer als Auftragsverarbeiter nach meinen Weisungen, und ich informiere Anrufer, dass sie mit einem KI-Assistenten sprechen.",
+        "required": "Bitte akzeptieren Sie die Bedingungen zur Auftragsverarbeitung."
+      }
+    },
+    "tour": {
+      "label": "Rundgang",
+      "progress": "{current} / {total}",
+      "skip": "Überspringen",
+      "back": "Zurück",
+      "next": "Weiter",
+      "finish": "Los geht's!",
+      "assistant": {
+        "title": "Das Wissen Ihres Assistenten",
+        "text": "Hier ändern und erweitern Sie, was Ihr Assistent weiß: Aufgaben, Stimme, Begrüßung, Preisliste, Öffnungszeiten."
+      },
+      "live": {
+        "title": "Live-Anrufe",
+        "text": "Läuft gerade ein Anruf, sehen Sie hier live, wer anruft, wie lange und worum es geht."
+      },
+      "stats": {
+        "title": "Auf einen Blick",
+        "text": "Wie viele Anrufe heute kamen, wie viele Probleme gelöst wurden und was noch auf Sie wartet."
+      },
+      "issues": {
+        "title": "{issues}",
+        "text": "Was die KI aus Anrufen erkannt hat — Rückrufe, offene Fragen. Abhaken, wenn erledigt."
+      },
+      "calls": {
+        "title": "Alle Anrufe",
+        "text": "Zusammenfassung, Transkript und Ergebnis jedes Anrufs, durchsuchbar."
+      },
+      "settings": {
+        "title": "Einstellungen",
+        "text": "Aussehen, Benachrichtigungen, Zwei-Faktor, Datenschutz und Rechnungen — alles hier."
+      },
+      "help": {
+        "title": "Hilfe, immer zur Hand",
+        "text": "Nicht weiter? Klicken Sie hier: Wir helfen Schritt für Schritt, oder Sie schreiben uns."
+      }
+    },
+    "help": {
+      "button": "Hilfe",
+      "eyebrow": "Hilfe",
+      "title": "Wie können wir helfen?",
+      "search": "Hilfe durchsuchen",
+      "noResults": "Keine Treffer. Schreiben Sie uns, wir helfen gern!",
+      "close": "Schließen",
+      "back": "Zurück",
+      "contact": "Schreiben Sie uns",
+      "tour": "Rundgang wiederholen",
+      "showMe": "Zeig es mir",
+      "notHelped": "Hat nicht geholfen — Nachricht schreiben",
+      "here": "Hier finden Sie es",
+      "gotIt": "Verstanden",
+      "contactTitle": "Schreiben Sie uns",
+      "contactText": "An Werktagen antworten wir innerhalb weniger Stunden an: {email}",
+      "subject": "Betreff",
+      "message": "Nachricht",
+      "messagePlaceholder": "Beschreiben Sie, was passiert ist und was Sie erwartet haben…",
+      "send": "Senden",
+      "sent": "Vielen Dank! Wir haben Ihre Nachricht erhalten und antworten bald.",
+      "error": "Senden hat gerade nicht geklappt.",
+      "mailFallback": "Per E-Mail senden",
+      "topics": {
+        "noCalls": {
+          "title": "Der Assistent nimmt keine Anrufe an",
+          "text": "keine Anrufe Weiterleitung",
+          "steps": [
+            "Prüfen Sie, ob Ihre Nummer auf die Velyric-Leitung umgeleitet ist (siehe „Wie leite ich meine Nummer um?“).",
+            "Unter Assistent → Aufgaben prüfen Sie, wann er abhebt: immer, außerhalb der Öffnungszeiten oder wenn Sie nicht können.",
+            "Rufen Sie Ihre Nummer von einem anderen Telefon an und beobachten Sie die Live-Anrufe.",
+            "Immer noch nichts? Schreiben Sie uns — wir sehen sofort nach."
+          ],
+          "where": "Im Menü Assistent stellen Sie ein, wann und was er tut."
+        },
+        "forward": {
+          "title": "Wie leite ich meine Nummer um?",
+          "text": "Umleitung Rufumleitung Anbieter",
+          "steps": [
+            "Ihre Velyric-Nummer erhalten Sie bei der Einführung von unserem Kollegen.",
+            "Immer: **21*Velyric-Nummer# wählen und Anruftaste drücken.",
+            "Nur bei besetzt: **67*Velyric-Nummer# · Bei Nichtannahme: **61*Velyric-Nummer#.",
+            "Ausschalten: ##002#. Bei Festnetz oder Telefonanlage hilft Ihr Anbieter."
+          ],
+          "where": ""
+        },
+        "wrongAnswer": {
+          "title": "Falsche oder ungenaue Antwort",
+          "text": "falsche Antwort Wissen Preisliste",
+          "steps": [
+            "Sehen Sie sich das Transkript unter Anrufe an, um die Frage zu prüfen.",
+            "Unter Assistent → Wissensbasis laden Sie die richtige Information hoch (Preisliste, FAQ) oder ergänzen sie im Notizfeld.",
+            "Bei medizinischen, rechtlichen oder persönlichen Fragen leitet der Assistent absichtlich weiter — das ist richtig."
+          ],
+          "where": "Unter Assistent → Wissensbasis erweitern Sie sein Wissen."
+        },
+        "hours": {
+          "title": "Nur außerhalb der Öffnungszeiten abheben",
+          "text": "Öffnungszeiten Nacht Wochenende",
+          "steps": [
+            "Öffnen Sie Assistent → Aufgaben.",
+            "Wählen Sie bei „Wann soll Velyric abheben?“ die Option „Außerhalb der Öffnungszeiten“.",
+            "Tragen Sie in der Wissensbasis die genauen Öffnungszeiten ein."
+          ],
+          "where": "Einstellbar unter Assistent → Aufgaben."
+        },
+        "issues": {
+          "title": "Was bedeutet ein offener Eintrag?",
+          "text": "Fall Aufgabe gelöst offen",
+          "steps": [
+            "Nach jedem Anruf erkennt die KI, was noch ein Mensch erledigen muss: Rückruf, offene Frage, Beschwerde.",
+            "Wenn erledigt, klicken Sie auf „Gelöst“ / „Erledigt“.",
+            "Den ursprünglichen Anruf sehen Sie mit einem Klick."
+          ],
+          "where": "Hier finden Sie alle offenen und erledigten Einträge."
+        },
+        "look": {
+          "title": "Wie ändere ich das Aussehen?",
+          "text": "Farbe Stil dunkel hell Thema",
+          "steps": [
+            "Einstellungen → Aussehen.",
+            "Wählen Sie Stil, hellen oder dunklen Modus und Farbe — Sie sehen es sofort.",
+            "Hier schalten und ordnen Sie auch die Karten der Startseite."
+          ],
+          "where": "Unter Einstellungen → Aussehen."
+        },
+        "invoice": {
+          "title": "Wo finde ich meine Rechnungen?",
+          "text": "Rechnung Zahlung Karte Kündigung",
+          "steps": [
+            "Einstellungen → Abrechnung.",
+            "„Rechnungen und Karte“ führt zur sicheren Stripe-Seite: Rechnungen herunterladen, Karte ändern oder Abo kündigen."
+          ],
+          "where": "Unter Einstellungen → Abrechnung."
+        },
+        "data": {
+          "title": "Wie lade ich meine Daten herunter oder lösche sie?",
+          "text": "DSGVO Daten löschen herunterladen Export",
+          "steps": [
+            "Einstellungen → Datenschutz.",
+            "„Meine Daten herunterladen“ liefert alle Daten in einer Datei.",
+            "Das Löschen des Kontos ist endgültig: alle Anrufe, Transkripte, Einstellungen und Dateien werden gelöscht, das Abo endet."
+          ],
+          "where": "Unter Einstellungen → Datenschutz."
+        },
+        "security": {
+          "title": "Zwei-Faktor-Authentifizierung aktivieren",
+          "text": "Sicherheit 2FA Code Authenticator",
+          "steps": [
+            "Installieren Sie eine Authenticator-App (z. B. Google Authenticator, Microsoft Authenticator, 1Password).",
+            "Einstellungen → Sicherheit → „Aktivieren“, dann QR-Code scannen.",
+            "6-stelligen Code eingeben. Ab dann fragen wir bei jeder Anmeldung danach."
+          ],
+          "where": "Unter Einstellungen → Sicherheit."
+        }
+      }
+    },
+    "idle": {
+      "title": "Abmeldung in Kürze",
+      "text": "Aus Sicherheitsgründen melden wir Sie wegen Inaktivität in {seconds} Sekunden ab.",
+      "stay": "Angemeldet bleiben"
+    },
+    "settings": {
+      "title": "Einstellungen",
+      "text": "Alles rund um Ihr Dashboard und Ihr Konto.",
+      "demoNote": "Demo-Modus: Sicherheits- und Datenfunktionen sind mit einem echten Konto verfügbar.",
+      "look": {
+        "title": "Aussehen",
+        "text": "Stil, Farbe und was auf der Startseite steht.",
+        "density": "Dichte",
+        "comfortable": "Großzügig",
+        "compact": "Kompakt",
+        "studio": "Studio öffnen",
+        "tour": "Rundgang wiederholen"
+      },
+      "notify": {
+        "title": "Benachrichtigungen",
+        "text": "Benachrichtigungen senden wir an {email}.",
+        "newIssue": "Neue Aufgabe oder neuer Fall",
+        "newIssueText": "Wir melden uns sofort, wenn die KI einen neuen Eintrag aus einem Anruf erkennt.",
+        "missedCall": "Verpasster oder abgebrochener Anruf",
+        "missedCallText": "Wenn ein Anruf nicht ordentlich beendet wurde.",
+        "daily": "Tägliche Zusammenfassung",
+        "dailyText": "Jeden Abend eine kurze Übersicht der Anrufe des Tages."
+      },
+      "security": {
+        "title": "Sicherheit",
+        "text": "Schützen Sie Ihr Konto — Ihr Dashboard enthält Kundendaten.",
+        "realOnly": "Mit einem echten Konto verfügbar.",
+        "mfa": "Zwei-Faktor-Authentifizierung",
+        "mfaText": "Bei der Anmeldung fragen wir zusätzlich zum Passwort einen Code aus einer Authenticator-App ab. Sehr empfohlen.",
+        "mfaOn": "Aktiv — wir fragen bei der Anmeldung nach dem Code.",
+        "mfaEnable": "Aktivieren",
+        "mfaDisable": "Deaktivieren",
+        "mfaDisableConfirm": "Zwei-Faktor wirklich deaktivieren? Ihr Konto ist dann weniger geschützt.",
+        "mfaAal2": "Melden Sie sich zum Deaktivieren erneut mit Code an.",
+        "mfaError": "Konnte gerade nicht starten. Bitte erneut versuchen.",
+        "mfaStep1": "Scannen Sie den QR-Code mit Ihrer Authenticator-App.",
+        "mfaStep2": "Geben Sie den 6-stelligen Code aus der App ein.",
+        "mfaSecret": "Zur manuellen Eingabe:",
+        "mfaVerify": "Prüfen und aktivieren",
+        "qrAlt": "QR-Code für die Authenticator-App",
+        "code": "Bestätigungscode",
+        "codeInvalid": "Falscher Code. Bitte erneut versuchen.",
+        "idle": "Automatische Abmeldung",
+        "idleText": "Bleibt das Dashboard offen, melden wir Sie nach dieser Inaktivität ab.",
+        "minutes": "Nach {count} Minuten",
+        "never": "Nie (nicht empfohlen)",
+        "password": "Passwort ändern",
+        "currentPassword": "Aktuelles Passwort",
+        "newPassword": "Neues Passwort",
+        "changePassword": "Passwort ändern",
+        "passwordChanged": "Fertig, Ihr neues Passwort ist gesetzt.",
+        "wrongPassword": "Das aktuelle Passwort ist falsch.",
+        "log": "Sicherheitsprotokoll",
+        "logEmpty": "Noch keine Einträge.",
+        "events": {
+          "login": "Anmeldung",
+          "logout": "Abmeldung",
+          "mfa_enabled": "Zwei-Faktor aktiviert",
+          "mfa_disabled": "Zwei-Faktor deaktiviert",
+          "password_changed": "Passwort geändert",
+          "settings_changed": "Einstellung geändert"
+        }
+      },
+      "privacy": {
+        "title": "Datenschutz",
+        "text": "Sie entscheiden, wie lange wir Anrufdaten speichern, und können sie jederzeit herunterladen oder löschen.",
+        "retention": "Aufbewahrung der Transkripte",
+        "retentionText": "Danach werden Transkript, Name und Nummer des Anrufers automatisch gelöscht. Statistiken bleiben.",
+        "days": "{days} Tage",
+        "dpa": "Auftragsverarbeitung",
+        "dpaAccepted": "Akzeptiert ({version}) · {date}",
+        "dpaMissing": "Noch nicht akzeptiert.",
+        "privacyPolicy": "Datenschutzerklärung",
+        "terms": "AGB",
+        "export": "Meine Daten herunterladen",
+        "exportText": "Alle Ihre Daten in einer JSON-Datei: Einrichtung, Anrufe, Transkripte, Einträge, Buchungen.",
+        "exportButton": "Herunterladen",
+        "realOnly": "Mit einem echten Konto verfügbar.",
+        "deleteTitle": "Konto endgültig löschen",
+        "deleteText": "Alle Daten — Anrufe, Transkripte, Einstellungen, Dateien — werden endgültig gelöscht, und das Abo endet.",
+        "deleteButton": "Konto löschen",
+        "deleteWarning": "Das kann nicht rückgängig gemacht werden. Danach nimmt der Assistent keine Anrufe mehr an.",
+        "typeEmail": "Zur Bestätigung geben Sie Ihre E-Mail-Adresse ein: {email}",
+        "password": "Passwort",
+        "deleteConfirm": "Endgültig löschen",
+        "cancel": "Abbrechen",
+        "emailMismatch": "Die E-Mail-Adresse stimmt nicht überein.",
+        "wrongPassword": "Falsches Passwort.",
+        "deleteError": "Löschen hat gerade nicht geklappt. Schreiben Sie uns, wir erledigen es sofort."
+      },
+      "billing": {
+        "title": "Abrechnung",
+        "text": "Abo, Rechnungen und Zahlungsmethode.",
+        "plan": "Velyric-Sprachagent",
+        "active": "Aktives Abo",
+        "inactive": "Kein aktives Abo",
+        "demo": "Demo-Modus",
+        "portal": "Rechnungen und Karte",
+        "portalError": "Das Abrechnungsportal ist gerade nicht erreichbar.",
+        "setup": "Ersteinrichtung ändern →"
+      }
     }
   }
 }

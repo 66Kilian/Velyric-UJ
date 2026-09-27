@@ -808,7 +808,8 @@
         "knowledgeLater": "You'll send it later, a colleague will collect it",
         "knowledgeFiles": "{count} files",
         "knowledgeNone": "No materials yet"
-      }
+      },
+      "dashboard": "Go to my dashboard"
     },
     "preview": {
       "title": "Your agent",
@@ -875,6 +876,543 @@
     "errors": {
       "generic": "Something went wrong. Please try again.",
       "offline": "No internet connection. We'll save your changes as soon as you're back online."
+    }
+  },
+  "dash": {
+    "nav": {
+      "label": "Dashboard navigation",
+      "home": "Overview",
+      "calls": "Calls",
+      "assistant": "Assistant",
+      "settings": "Settings"
+    },
+    "shell": {
+      "logout": "Log out",
+      "listening": "Listening, ready for calls",
+      "onCall": "On {count} calls"
+    },
+    "kind": {
+      "appointments": {
+        "issues": "To-dos",
+        "issue": "To-do",
+        "bookings": "Appointments",
+        "resolved": "Done",
+        "open": "Open"
+      },
+      "reservations": {
+        "issues": "To-dos",
+        "issue": "To-do",
+        "bookings": "Reservations",
+        "resolved": "Done",
+        "open": "Open"
+      },
+      "cases": {
+        "issues": "Cases",
+        "issue": "Case",
+        "bookings": "",
+        "resolved": "Resolved",
+        "open": "Unresolved"
+      }
+    },
+    "login": {
+      "badge": "Dashboard",
+      "hero": "Your business's voice, in one place.",
+      "heroText": "Live calls, what the AI extracted from them, and every setting — arranged the way you like.",
+      "trustEncrypted": "Encrypted connection",
+      "trustGdpr": "GDPR-compliant data handling",
+      "eyebrow": "Velyric dashboard",
+      "title": "Welcome back.",
+      "subtitle": "Sign in to your dashboard.",
+      "submit": "Sign in",
+      "demoHint": "Demo mode: sign in with the test account (test123@gmail.com / test123).",
+      "expired": "For your security we signed you out after a period of inactivity. Please sign in again.",
+      "mfaTitle": "Two-step verification",
+      "mfaText": "Enter the 6-digit code from your authenticator app.",
+      "code": "Verification code",
+      "codeInvalid": "Wrong or expired code. Please try again.",
+      "verify": "Verify and sign in",
+      "footer": "By signing in you agree that we log your session for security. The connection is encrypted end to end."
+    },
+    "home": {
+      "morning": "Good morning!",
+      "day": "Good afternoon!",
+      "evening": "Good evening!",
+      "summary": "{date} · {agent} has {count, plural, =0 {not answered any calls yet today} one {answered # call today} other {answered # calls today}}."
+    },
+    "sample": {
+      "title": "Sample data.",
+      "text": "This is how your dashboard will look — your own data appears after the first real call.",
+      "demoText": "In demo mode all data is an example.",
+      "hide": "Hide",
+      "show": "View sample data"
+    },
+    "outcome": {
+      "resolved": "Resolved",
+      "booked": "Booked",
+      "transferred": "Transferred",
+      "callback": "Callback",
+      "unresolved": "Unresolved",
+      "missed": "Missed"
+    },
+    "priority": {
+      "low": "Low",
+      "normal": "Normal",
+      "high": "Urgent"
+    },
+    "widgets": {
+      "live": {
+        "title": "Live calls",
+        "hint": "What's happening now, with transcript",
+        "now": "{count} live",
+        "connecting": "{agent} is connecting…",
+        "quiet": "All quiet — {agent} is listening.",
+        "quietText": "As soon as a call comes in, you'll see it here live."
+      },
+      "stats": {
+        "title": "Key numbers",
+        "hint": "Calls, handled and open problems",
+        "callsToday": "Calls today",
+        "callsWeek": "{count} in the last 7 days",
+        "handled": "Problems handled",
+        "handledSub": "in the last 7 days",
+        "open": "Open — {issues}",
+        "openSub": "waiting for you",
+        "openNone": "all good",
+        "bookingsToday": "{bookings} today",
+        "bookingsSub": "captured by the AI",
+        "avg": "Average call time",
+        "avgSub": "minutes:seconds"
+      },
+      "issues": {
+        "title": "Open {issues}",
+        "hint": "What the AI extracted from calls",
+        "all": "All",
+        "none": "Nothing open",
+        "noneText": "Everything's handled. Nice work!",
+        "ai": "Extracted from calls by the AI."
+      },
+      "bookings": {
+        "title": "Upcoming {bookings}",
+        "hint": "Today's and tomorrow's bookings",
+        "all": "All",
+        "party": "{count} guests",
+        "pending": "Awaiting confirmation",
+        "none": "No upcoming bookings"
+      },
+      "calls": {
+        "title": "Recent calls",
+        "hint": "With summary and outcome",
+        "all": "All",
+        "none": "No calls yet"
+      },
+      "volume": {
+        "title": "Calls in the last 7 days",
+        "hint": "Daily call count",
+        "total": "{count} total",
+        "calls": "{count} calls"
+      },
+      "topics": {
+        "title": "What do people call about?",
+        "hint": "The AI's categories this week",
+        "none": "Not enough data yet"
+      },
+      "assistant": {
+        "title": "Your assistant",
+        "hint": "Voice, greeting, quick edit",
+        "edit": "Edit",
+        "tasks": "{count} tasks",
+        "listen": "Listen"
+      }
+    },
+    "calls": {
+      "title": "Calls",
+      "text": "Every call with a summary, transcript and what the AI extracted from it.",
+      "filter": "Filter",
+      "all": "All",
+      "search": "Search by name, number or topic",
+      "none": "No calls match this filter",
+      "unknown": "Unknown caller",
+      "live": "Live",
+      "detail": "Call details",
+      "revealNumber": "Show phone number",
+      "close": "Close",
+      "summary": "Summary",
+      "extracted": "What the AI extracted",
+      "transcript": "Transcript",
+      "noTranscript": "Transcript not available (or the retention period has passed).",
+      "caller": "Caller",
+      "agent": "Assistant"
+    },
+    "issues": {
+      "text": "What the AI extracted from calls: callbacks, open questions, problems. Tick them off when done.",
+      "source": "Source call",
+      "markResolved": "{resolved}",
+      "reopen": "Reopen",
+      "noneOpen": "Nothing open — everything's handled.",
+      "noneResolved": "Nothing closed yet.",
+      "ai": "Items are extracted from calls by the AI; you can change their status, not their content."
+    },
+    "bookings": {
+      "text": "Bookings captured by your assistant, day by day.",
+      "party": "{count} guests",
+      "status": {
+        "confirmed": "Confirmed",
+        "pending": "Pending",
+        "cancelled": "Cancelled"
+      },
+      "confirm": "Confirm",
+      "cancel": "Cancel",
+      "none": "No upcoming bookings.",
+      "notUsed": "Bookings aren't enabled for this type of business."
+    },
+    "assistant": {
+      "title": "{name}'s knowledge",
+      "text": "Extend and change what it knows, how it speaks and what to look out for.",
+      "tabs": {
+        "tasks": "Tasks",
+        "voice": "Voice & wording",
+        "knowledge": "Knowledge base"
+      },
+      "saving": "Saving…",
+      "autosave": "Every change is saved automatically"
+    },
+    "studio": {
+      "eyebrow": "Studio",
+      "progress": "Step {current} of {total}",
+      "preview": "Live preview",
+      "back": "Back",
+      "next": "Continue",
+      "finish": "Enter my dashboard",
+      "look": {
+        "title": "Design your own dashboard.",
+        "text": "Pick the style and colours — everything changes instantly, and you can switch any time.",
+        "style": "Style",
+        "styles": {
+          "modern": {
+            "name": "Modern",
+            "text": "Soft glass, rounded shapes"
+          },
+          "classic": {
+            "name": "Classic",
+            "text": "Elegant serif type"
+          },
+          "minimal": {
+            "name": "Minimal",
+            "text": "Clean, thin lines"
+          }
+        },
+        "mode": "Mode",
+        "dark": "Dark",
+        "light": "Light",
+        "accent": "Colour",
+        "accents": {
+          "rose": "Velyric rose",
+          "champagne": "Champagne",
+          "emerald": "Emerald",
+          "sapphire": "Sapphire",
+          "amethyst": "Amethyst",
+          "coral": "Coral"
+        }
+      },
+      "home": {
+        "title": "What do you want to see first?",
+        "text": "Switch on what matters to you and put it in order. We've tailored it to your business.",
+        "kind": "Type of business",
+        "kinds": {
+          "appointments": {
+            "name": "Appointments",
+            "text": "Clinic, salon, garage: bookings and to-dos."
+          },
+          "reservations": {
+            "name": "Table bookings",
+            "text": "Restaurant, café: reservations with party size."
+          },
+          "cases": {
+            "name": "Cases",
+            "text": "E.g. tech company, support: resolved / unresolved."
+          }
+        },
+        "widgets": "Homepage cards",
+        "widgetsHint": "Use the arrows to change the order.",
+        "up": "move up",
+        "down": "move down"
+      },
+      "privacy": {
+        "title": "Your data is safe.",
+        "text": "Calls contain your customers' data. We process it on your behalf, under strict rules.",
+        "points": [
+          "Only you can see your data — every account is strictly separated.",
+          "Encrypted connection and storage; we never see card details.",
+          "Call transcripts are deleted automatically after the period you choose.",
+          "You can download or permanently delete all your data at any time.",
+          "Turn on two-step verification in Settings — we strongly recommend it."
+        ],
+        "retention": "How long should we keep call transcripts?",
+        "retentionHint": "After that the transcript and caller details are deleted; statistics remain.",
+        "days": "{days} days",
+        "accept": "I accept the data processing terms (version {version}): Velyric processes callers' data as a processor on my instructions, and I inform callers that they are speaking with an AI assistant.",
+        "required": "Please accept the data processing terms to continue."
+      }
+    },
+    "tour": {
+      "label": "Tour",
+      "progress": "{current} / {total}",
+      "skip": "Skip",
+      "back": "Back",
+      "next": "Next",
+      "finish": "Let's go!",
+      "assistant": {
+        "title": "Your assistant's knowledge",
+        "text": "Here you can change and extend what your assistant knows: tasks, voice, greeting, price list, opening hours."
+      },
+      "live": {
+        "title": "Live calls",
+        "text": "When a call is in progress you see it here live: who's calling, for how long and what about."
+      },
+      "stats": {
+        "title": "At a glance",
+        "text": "How many calls came in today, how many problems the assistant handled, and what's still waiting for you."
+      },
+      "issues": {
+        "title": "{issues}",
+        "text": "What the AI extracted from calls — callbacks, open questions. Tick them off when done."
+      },
+      "calls": {
+        "title": "Every call",
+        "text": "Summary, transcript and outcome of every call, searchable."
+      },
+      "settings": {
+        "title": "Settings",
+        "text": "Appearance, notifications, two-step verification, privacy and invoices — all here."
+      },
+      "help": {
+        "title": "Help, always at hand",
+        "text": "Stuck? Click here: we'll guide you step by step, or you can write to us."
+      }
+    },
+    "help": {
+      "button": "Help",
+      "eyebrow": "Help",
+      "title": "How can we help?",
+      "search": "Search help",
+      "noResults": "No results. Write to us, we're happy to help!",
+      "close": "Close",
+      "back": "Back",
+      "contact": "Write to us",
+      "tour": "Replay tour",
+      "showMe": "Show me",
+      "notHelped": "Didn't help — write to you",
+      "here": "You'll find it here",
+      "gotIt": "Got it",
+      "contactTitle": "Write to us",
+      "contactText": "On workdays we reply within a few hours to: {email}",
+      "subject": "Subject",
+      "message": "Message",
+      "messagePlaceholder": "Tell us what happened and what you expected…",
+      "send": "Send",
+      "sent": "Thank you! We've received your message and will reply soon.",
+      "error": "We couldn't send it just now.",
+      "mailFallback": "Send by email",
+      "topics": {
+        "noCalls": {
+          "title": "The assistant doesn't answer calls",
+          "text": "no calls forwarding",
+          "steps": [
+            "Check that your number is forwarded to your Velyric line (see “How do I forward my number?”).",
+            "Under Assistant → Tasks, check when it should answer: always, outside opening hours, or when you can't.",
+            "Call your own number from another phone and watch the Live calls card.",
+            "Still nothing? Write to us — we'll look into it right away."
+          ],
+          "where": "In the Assistant menu you set when and what it does."
+        },
+        "forward": {
+          "title": "How do I forward my number?",
+          "text": "forwarding divert carrier",
+          "steps": [
+            "Our colleague gives you your Velyric number during onboarding.",
+            "Always: dial **21*Velyric number# and press call.",
+            "Only when busy: **67*Velyric number# · When unanswered: **61*Velyric number#.",
+            "To turn off: ##002#. For landlines or company PBX, your provider will help."
+          ],
+          "where": ""
+        },
+        "wrongAnswer": {
+          "title": "It gave a wrong or inaccurate answer",
+          "text": "wrong answer knowledge price list",
+          "steps": [
+            "Look at the call transcript in Calls to see what was asked.",
+            "Under Assistant → Knowledge base, upload the correct information (price list, FAQ) or add it under “Anything else it should know”.",
+            "If it was a medical, legal or personal question, the assistant transfers on purpose — that's correct."
+          ],
+          "where": "Extend what it knows under Assistant → Knowledge base."
+        },
+        "hours": {
+          "title": "Only answer outside opening hours",
+          "text": "opening hours night weekend",
+          "steps": [
+            "Open Assistant → Tasks.",
+            "Under “When should it answer?”, choose “Outside opening hours”.",
+            "Add your exact opening hours on the Knowledge base tab."
+          ],
+          "where": "Set it on the Assistant → Tasks tab."
+        },
+        "issues": {
+          "title": "What does an open item mean?",
+          "text": "case to-do resolved open",
+          "steps": [
+            "After every call the AI extracts what a person still needs to do: a callback, an open question, a complaint.",
+            "When it's done, click “Resolved” / “Done”.",
+            "You can replay the source call with one click."
+          ],
+          "where": "All open and closed items are here."
+        },
+        "look": {
+          "title": "How do I change the look?",
+          "text": "colour style dark light theme",
+          "steps": [
+            "Settings → Appearance.",
+            "Choose a style, dark or light mode and a colour — you see it instantly.",
+            "Here you can also toggle and reorder the homepage cards."
+          ],
+          "where": "Under Settings → Appearance."
+        },
+        "invoice": {
+          "title": "Where are my invoices?",
+          "text": "invoice payment card cancel",
+          "steps": [
+            "Settings → Billing.",
+            "“Invoices and card” takes you to Stripe's secure page: download invoices, change your card or cancel the subscription."
+          ],
+          "where": "Under Settings → Billing."
+        },
+        "data": {
+          "title": "How do I download or delete my data?",
+          "text": "GDPR data delete download export",
+          "steps": [
+            "Settings → Privacy.",
+            "“Download my data” gives you all your data in one file.",
+            "Deleting the account is permanent: all calls, transcripts, settings and uploaded files are deleted and the subscription ends."
+          ],
+          "where": "Under Settings → Privacy."
+        },
+        "security": {
+          "title": "Turn on two-step verification",
+          "text": "security 2FA code authenticator",
+          "steps": [
+            "Install an authenticator app (e.g. Google Authenticator, Microsoft Authenticator, 1Password).",
+            "Settings → Security → “Turn on”, then scan the QR code.",
+            "Enter the 6-digit code. From then on we'll ask for it at every sign-in."
+          ],
+          "where": "Under Settings → Security."
+        }
+      }
+    },
+    "idle": {
+      "title": "Signing you out soon",
+      "text": "For your security we'll sign you out in {seconds} seconds due to inactivity.",
+      "stay": "Stay signed in"
+    },
+    "settings": {
+      "title": "Settings",
+      "text": "Everything about your dashboard and account.",
+      "demoNote": "Demo mode: security and data features are available with a real account.",
+      "look": {
+        "title": "Appearance",
+        "text": "Style, colour, and what's on your homepage.",
+        "density": "Density",
+        "comfortable": "Spacious",
+        "compact": "Compact",
+        "studio": "Open Studio",
+        "tour": "Replay tour"
+      },
+      "notify": {
+        "title": "Notifications",
+        "text": "We send notifications to {email}.",
+        "newIssue": "New to-do or case",
+        "newIssueText": "We'll tell you right away when the AI extracts a new item from a call.",
+        "missedCall": "Missed or dropped call",
+        "missedCallText": "When a call didn't end properly.",
+        "daily": "Daily summary",
+        "dailyText": "A short summary of the day's calls every evening."
+      },
+      "security": {
+        "title": "Security",
+        "text": "Protect your account — your dashboard holds your customers' data.",
+        "realOnly": "Available with a real account.",
+        "mfa": "Two-step verification",
+        "mfaText": "At sign-in we'll ask for a code from an authenticator app as well as your password. Strongly recommended.",
+        "mfaOn": "On — we ask for the code at sign-in.",
+        "mfaEnable": "Turn on",
+        "mfaDisable": "Turn off",
+        "mfaDisableConfirm": "Turn off two-step verification? Your account will be less protected.",
+        "mfaAal2": "Sign in again with your code to turn it off.",
+        "mfaError": "Couldn't start just now. Please try again.",
+        "mfaStep1": "Scan the QR code with your authenticator app.",
+        "mfaStep2": "Enter the 6-digit code shown in the app.",
+        "mfaSecret": "For manual entry:",
+        "mfaVerify": "Verify and turn on",
+        "qrAlt": "QR code for the authenticator app",
+        "code": "Verification code",
+        "codeInvalid": "Wrong code. Please try again.",
+        "idle": "Automatic sign-out",
+        "idleText": "If you leave the dashboard open, we sign you out after this much inactivity.",
+        "minutes": "After {count} minutes",
+        "never": "Never (not recommended)",
+        "password": "Change password",
+        "currentPassword": "Current password",
+        "newPassword": "New password",
+        "changePassword": "Change password",
+        "passwordChanged": "Done, your new password is set.",
+        "wrongPassword": "The current password is incorrect.",
+        "log": "Security log",
+        "logEmpty": "No entries yet.",
+        "events": {
+          "login": "Sign-in",
+          "logout": "Sign-out",
+          "mfa_enabled": "Two-step verification turned on",
+          "mfa_disabled": "Two-step verification turned off",
+          "password_changed": "Password changed",
+          "settings_changed": "Setting changed"
+        }
+      },
+      "privacy": {
+        "title": "Privacy",
+        "text": "You decide how long we keep call data, and you can download or delete it at any time.",
+        "retention": "Transcript retention",
+        "retentionText": "After this period the transcript, caller name and number are deleted automatically. Statistics remain.",
+        "days": "{days} days",
+        "dpa": "Data processing terms",
+        "dpaAccepted": "Accepted ({version}) · {date}",
+        "dpaMissing": "Not accepted yet.",
+        "privacyPolicy": "Privacy Policy",
+        "terms": "Terms",
+        "export": "Download my data",
+        "exportText": "Get all your data in one JSON file: setup, calls, transcripts, items, bookings.",
+        "exportButton": "Download",
+        "realOnly": "Available with a real account.",
+        "deleteTitle": "Delete account permanently",
+        "deleteText": "All your data — calls, transcripts, settings, uploaded files — is deleted permanently and the subscription ends.",
+        "deleteButton": "Delete account",
+        "deleteWarning": "This can't be undone. After deletion the assistant will no longer answer your calls.",
+        "typeEmail": "To confirm, type your email address: {email}",
+        "password": "Password",
+        "deleteConfirm": "Delete permanently",
+        "cancel": "Cancel",
+        "emailMismatch": "The email address doesn't match.",
+        "wrongPassword": "Wrong password.",
+        "deleteError": "Couldn't delete just now. Write to us and we'll handle it right away."
+      },
+      "billing": {
+        "title": "Billing",
+        "text": "Subscription, invoices and payment method.",
+        "plan": "Velyric voice agent",
+        "active": "Active subscription",
+        "inactive": "No active subscription",
+        "demo": "Demo mode",
+        "portal": "Invoices and card",
+        "portalError": "The billing portal isn't available right now.",
+        "setup": "Change the initial setup →"
+      }
     }
   }
 }

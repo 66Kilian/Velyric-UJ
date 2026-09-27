@@ -46,7 +46,7 @@ export function Orb({ active = false, size = "md" }: { active?: boolean; size?: 
   return (
     <span aria-hidden="true" className={cn("relative flex shrink-0 items-center justify-center", size === "lg" ? "size-16" : "size-10")}>
       <span className={cn("orb-ring absolute inset-0 rounded-full bg-brand opacity-30 blur-md", active && "orb-ring-fast")} />
-      <span className="relative size-full rounded-full bg-[radial-gradient(circle_at_30%_25%,#ffd1e6_0%,#ff4d9d_28%,#c4007a_62%,#5c0045_100%)] shadow-[inset_0_-6px_14px_rgb(30_6_22/0.45),0_8px_24px_-8px_rgb(255_0_122/0.6)]" />
+      <span className="relative size-full rounded-full bg-[radial-gradient(circle_at_30%_25%,color-mix(in_oklab,var(--pink)_25%,white)_0%,color-mix(in_oklab,var(--pink)_80%,white)_28%,var(--crimson)_62%,color-mix(in_oklab,var(--crimson)_45%,black)_100%)] shadow-[inset_0_-6px_14px_rgb(0_0_0/0.35),0_8px_24px_-8px_color-mix(in_oklab,var(--pink)_60%,transparent)]" />
     </span>
   );
 }
