@@ -27,7 +27,7 @@ export function Toaster() {
             exit={{ opacity: 0, y: 8, scale: 0.97 }}
             transition={{ duration: DURATION.overlay, ease: EASE_OUT }}
             className={cn(
-              "pointer-events-auto flex max-w-md items-center gap-3 rounded-xl border bg-base-800/95 px-4 py-3 text-sm font-medium shadow-float backdrop-blur-xl",
+              "pointer-events-auto flex max-w-md items-center gap-3 rounded-xl border bg-surface/95 px-4 py-3 text-sm font-medium shadow-float backdrop-blur-xl",
               t.kind === "success" ? "border-success/30" : "border-danger/30",
             )}
           >

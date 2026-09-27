@@ -9,7 +9,6 @@
   },
   "nav": {
     "about": "Über uns",
-    "features": "Was wir können",
     "contact": "Kontakt",
     "login": "Anmelden",
     "start": "Konto erstellen",
@@ -18,7 +17,8 @@
     "language": "Sprache",
     "mainNav": "Hauptnavigation",
     "menu": "Menü",
-    "skipToContent": "Zum Inhalt springen"
+    "skipToContent": "Zum Inhalt springen",
+    "solutions": "Lösungen"
   },
   "common": {
     "loading": "Wird geladen…"
@@ -50,54 +50,8 @@
     "t2": "Sehr gern! Morgen ist um 14:00 oder 16:30 Uhr frei. Was passt Ihnen?",
     "t3": "14 Uhr passt gut.",
     "t4": "Wunderbar, Sie sind für morgen 14:00 Uhr eingetragen. Bis dann!",
-    "booked": "Termin gebucht: morgen 14:00 Uhr"
-  },
-  "story": {
-    "eyebrow": "So arbeitet Velyric",
-    "s1": {
-      "kicker": "Anruf",
-      "title": "Das Telefon klingelt. Velyric hat schon abgenommen.",
-      "text": "Beim ersten Klingeln – frühmorgens, am Wochenende und zu Stoßzeiten. Keine besetzte Leitung, kein verlorener Kunde.",
-      "bubble": "„Guten Tag, Salon Bella. Wie kann ich helfen?“"
-    },
-    "s2": {
-      "kicker": "Verstehen",
-      "title": "Es spricht wie Ihr bester Mitarbeiter.",
-      "text": "Natürliche, menschliche Sprache – auch wenn Anrufer unterbrechen oder das Thema wechseln. Auf Deutsch, Englisch oder Ungarisch.",
-      "bubble": "„Natürlich! Welche Leistung und wann passt es Ihnen?“"
-    },
-    "s3": {
-      "kicker": "Erledigen",
-      "title": "Es bucht. Es antwortet. Es erledigt.",
-      "text": "Es prüft Ihren Kalender, bucht den freien Termin und beantwortet häufige Fragen mit Ihren Antworten: Preise, Öffnungszeiten, Parken.",
-      "bubble": "Gebucht: Dienstag 14:00, Haarschnitt"
-    },
-    "s4": {
-      "kicker": "Übergabe",
-      "title": "Braucht es einen Menschen, übergibt es – mit Zusammenfassung.",
-      "text": "Bei komplexen Anliegen verbindet es mit Ihrem Team und sendet das Wichtigste des Gesprächs. Niemand muss etwas zweimal sagen.",
-      "bubble": "Mit Anna verbunden, mit Zusammenfassung"
-    }
-  },
-  "about": {
-    "eyebrow": "Über uns",
-    "title": "Ein Team, das persönlich an Ihrer Seite steht.",
-    "p1": "Wir bauen Velyric, damit kein Unternehmen mehr einen Kunden durch einen verpassten Anruf verliert.",
-    "p2": "Wir geben Ihnen keine Software von der Stange. Wir lernen, wie Ihr Unternehmen arbeitet, und passen den Sprachagenten an Ihre Bedürfnisse und Ihren Ton an.",
-    "values": {
-      "simple": {
-        "title": "Einfach",
-        "text": "Keine IT-Abteilung nötig. Wir richten ein und trainieren – Sie sehen nur die Ergebnisse."
-      },
-      "hungarian": {
-        "title": "Persönlich",
-        "text": "Echte Ansprechpartner und ein Sprachagent, der Ihre Anrufer wirklich versteht."
-      },
-      "reliable": {
-        "title": "Zuverlässig",
-        "text": "Er arbeitet rund um die Uhr, Ihre Daten sind sicher, und Sie erreichen uns jederzeit."
-      }
-    }
+    "booked": "Termin gebucht: morgen 14:00 Uhr",
+    "exampleShort": "Beispiel"
   },
   "personal": {
     "eyebrow": "Persönlich",
@@ -120,111 +74,6 @@
         "text": "Wir testen gemeinsam, gehen live und verbessern in den ersten Wochen anhand echter Anrufe."
       }
     }
-  },
-  "features": {
-    "eyebrow": "Was Velyric kann",
-    "title": "Alles, was eine gute Empfangskraft kann. Unermüdlich.",
-    "items": {
-      "conversation": {
-        "title": "Natürliche Gespräche",
-        "text": "Flüssig und mit menschlicher Stimme – Anrufer merken oft gar nicht, dass sie mit KI sprechen."
-      },
-      "booking": {
-        "title": "Terminbuchung",
-        "text": "Sieht Ihren Kalender in Echtzeit und bucht, verschiebt oder storniert Termine ohne Überschneidungen."
-      },
-      "handoff": {
-        "title": "Intelligente Übergabe",
-        "text": "Braucht es einen Menschen, verbindet es sofort und sendet eine Zusammenfassung."
-      },
-      "languages": {
-        "title": "Mehrsprachig",
-        "text": "Spricht Deutsch, Englisch und Ungarisch und wechselt automatisch in die Sprache des Anrufers."
-      },
-      "allDay": {
-        "title": "Rund um die Uhr",
-        "text": "Wochenende, Feiertag, nachts – es nimmt immer ab. Nie krank, nie im Urlaub."
-      },
-      "analytics": {
-        "title": "Auswertungen",
-        "text": "Sehen Sie, wer angerufen hat, was gewünscht wurde und wie es ausging – übersichtlich."
-      }
-    },
-    "intro": "Ein Anruf von Anfang bis Ende – und wo jede Fähigkeit ihre Arbeit macht.",
-    "after": "Nach dem Anruf",
-    "lines": {
-      "conversation": {
-        "time": "00:02",
-        "who": "agent",
-        "line": "Guten Tag, Salon Bella. Wie kann ich helfen?"
-      },
-      "booking": {
-        "time": "00:14",
-        "who": "agent",
-        "line": "Sie sind für morgen 14:00 Uhr eingetragen, der Termin steht schon im Kalender."
-      },
-      "languages": {
-        "time": "00:31",
-        "who": "caller",
-        "line": "Do you also speak English?"
-      },
-      "handoff": {
-        "time": "00:48",
-        "who": "agent",
-        "line": "Dazu weiß Anna am meisten, ich verbinde Sie."
-      },
-      "allDay": {
-        "time": "02:14",
-        "who": "caller",
-        "line": "Entschuldigung für den späten Anruf, ich bräuchte morgen einen Termin."
-      },
-      "analytics": {
-        "time": "",
-        "who": "summary",
-        "line": "Neukundin, Haarschnitt, morgen 14:00. Übergeben an: Anna."
-      }
-    },
-    "speaker": {
-      "agent": "Velyric",
-      "caller": "Anrufer",
-      "summary": "Zusammenfassung"
-    }
-  },
-  "useCases": {
-    "eyebrow": "Für wen",
-    "title": "Für alle, bei denen das Telefon klingelt.",
-    "text": "Wenn Anrufe wichtig sind, aber nicht immer jemand abnehmen kann – Velyric ist für Sie gemacht.",
-    "items": {
-      "salon": {
-        "title": "Beauty-Salons",
-        "quote": "Ich hätte gern morgen einen Färbetermin.",
-        "alt": "Friseurin föhnt Haare in einem Salon",
-        "agent": "Morgen ist um 10:00 oder 15:00 Uhr frei. Was passt Ihnen?",
-        "outcome": "Färben gebucht für morgen 15:00 Uhr"
-      },
-      "clinic": {
-        "title": "Praxen und Kliniken",
-        "quote": "Kann ich meine Kontrolle am Donnerstag verschieben?",
-        "alt": "Helle, moderne Zahnarztpraxis",
-        "agent": "Ich habe ihn auf nächsten Donnerstag, 8:30 Uhr, verlegt. Passt das?",
-        "outcome": "Kontrolle verlegt auf Donnerstag 8:30 Uhr"
-      },
-      "cafe": {
-        "title": "Restaurants und Cafés",
-        "quote": "Einen Tisch für vier am Freitagabend, bitte.",
-        "alt": "Lächelnde Café-Besitzerin vor der Theke",
-        "agent": "Freitag um 19:00 Uhr ist ein Tisch für vier frei. Soll ich buchen?",
-        "outcome": "Tisch gebucht: Freitag 19:00 Uhr, 4 Personen"
-      },
-      "service": {
-        "title": "Werkstätten",
-        "quote": "Wann können Sie sich mein Auto ansehen?",
-        "alt": "Mechaniker arbeitet an Teilen in einer Werkstatt",
-        "agent": "Wir können Sie am Dienstag um 8:00 Uhr drannehmen. Was ist mit dem Auto?",
-        "outcome": "Durchsicht gebucht: Dienstag 8:00 Uhr"
-      }
-    },
-    "tabsLabel": "Branche wählen"
   },
   "cta": {
     "title": "Nie wieder einen Anruf verpassen.",
@@ -378,5 +227,279 @@
     "title": "Diese Seite finden wir nicht.",
     "text": "Vielleicht ist die Adresse vertippt oder die Seite existiert nicht mehr. Von der Startseite erreichen Sie alles.",
     "cta": "Zur Startseite"
+  },
+  "team": {
+    "label": "Über uns",
+    "title": "Ein Team, das rund um die Uhr an Ihrer Seite steht.",
+    "clock": "Ihre Velyric-Leitung ist erreichbar",
+    "clockA11y": "24-Stunden-Zifferblatt: Velyric nimmt zu jeder Stunde des Tages Anrufe an.",
+    "pillars": {
+      "team": {
+        "title": "Ein Team, rund um die Uhr erreichbar",
+        "text": "Menschen, kein Ticketsystem. Bei Fragen erreichen Sie uns Tag und Nacht."
+      },
+      "line": {
+        "title": "Eine Leitung, die nie besetzt ist",
+        "text": "Ihre Velyric-Leitung nimmt zu jeder Stunde ab, auch am Wochenende und an Feiertagen."
+      },
+      "devs": {
+        "title": "Profi-Entwickler, auf Sie zugeschnitten",
+        "text": "Unsere Entwickler bauen den Sprachagenten für Ihr Unternehmen: Ihre Leistungen, Preise, Ihr Ton und Ihr Kalender."
+      }
+    }
+  },
+  "industries": {
+    "label": "Lösungen",
+    "title": "Auf Ihre Branche zugeschnitten.",
+    "text": "Ein Salon telefoniert anders als eine Praxis oder eine Werkstatt. Wählen Sie Ihre Branche und sehen Sie, wie Velyric bei Ihnen arbeiten würde.",
+    "open": "Ansehen",
+    "page": {
+      "painsTitle": "Kommt Ihnen das bekannt vor?",
+      "solvesTitle": "So arbeitet Velyric bei Ihnen",
+      "typicalTitle": "Worum es bei Ihren Anrufen am häufigsten geht",
+      "callTitle": "So klingt ein Anruf bei Ihnen",
+      "others": "Andere Branchen",
+      "all": "Alle Lösungen"
+    },
+    "salon": {
+      "name": "Salons",
+      "card": "Nimmt ab, auch während Sie färben, und bucht direkt in Ihren Kalender.",
+      "metaTitle": "KI-Telefonassistent für Friseur- und Kosmetiksalons",
+      "metaDescription": "Velyric nimmt die Anrufe Ihres Salons an, bucht Termine in Ihren Kalender und erledigt Absagen, während Sie sich um Ihre Kundin kümmern. Tag und Nacht.",
+      "kicker": "Velyric für Salons",
+      "title": "Sie kümmern sich um die Kundin. Wir gehen ans Telefon.",
+      "text": "Für Friseure, Kosmetik- und Nagelstudios: Velyric nimmt Anrufe an, bucht Termine in Ihren Kalender und erledigt Absagen, während Sie arbeiten.",
+      "img1Alt": "Friseurin stylt das Haar einer Kundin in einem hellen Salon",
+      "img2Alt": "Heller Salonempfang mit Produktregalen und Kundinnen",
+      "pains": {
+        "a": {
+          "title": "Es klingelt beim Färben",
+          "text": "Sie können den Pinsel nicht weglegen, und die Kundin bucht woanders."
+        },
+        "b": {
+          "title": "Anrufe abends und am Wochenende",
+          "text": "Die meisten rufen nach Feierabend an, wenn der Salon schon zu hat."
+        },
+        "c": {
+          "title": "Absagen, leere Stühle",
+          "text": "Eine vergessene Absage ist eine verlorene Stunde, und Umbuchen heißt wieder telefonieren."
+        }
+      },
+      "solves": {
+        "a": {
+          "title": "Buchung in Ihren Kalender",
+          "text": "Sieht freie Zeiten und kennt die Dauer: Färben dauert länger als Schneiden."
+        },
+        "b": {
+          "title": "Umbuchen und Absagen",
+          "text": "Bei einer Absage wird der Termin sofort im Kalender frei."
+        },
+        "c": {
+          "title": "Preise und Leistungen",
+          "text": "Beantwortet häufige Fragen mit Ihrer Preisliste."
+        },
+        "d": {
+          "title": "Auch nach Mitarbeiterin",
+          "text": "Möchte die Kundin zu ihrer gewohnten Friseurin, sucht es in deren Kalender."
+        }
+      },
+      "typical": [
+        "Terminbuchung",
+        "Umbuchen, Absagen",
+        "Preise, Leistungen",
+        "Heute noch frei?",
+        "Öffnungszeiten, Parken"
+      ],
+      "call": {
+        "business": "Salon Bella",
+        "t1": "Hallo, ich hätte gern am Donnerstag Färben und Schneiden bei Réka.",
+        "t2": "Réka hat am Donnerstag ab 10:00 Uhr zweieinhalb Stunden frei. Passt das?",
+        "t3": "Perfekt.",
+        "t4": "Gebucht: Donnerstag 10:00 Uhr bei Réka, Färben und Schneiden. Bis dann!",
+        "outcome": "Gebucht: Donnerstag 10:00, Réka"
+      },
+      "ctaTitle": "Geben Sie Ihrem Salon eine eigene Stimme.",
+      "ctaText": "Wir sehen uns an, wie Ihr Salon arbeitet, und passen Velyric daran an."
+    },
+    "clinic": {
+      "name": "Praxen und Kliniken",
+      "card": "Vergibt und verlegt Termine, damit sich der Empfang um die Patienten kümmern kann.",
+      "metaTitle": "KI-Telefonassistent für Praxen und Kliniken",
+      "metaDescription": "Velyric nimmt die Anrufe Ihrer Praxis an, vergibt und verlegt Termine und leitet medizinische Fragen immer an Ihr Team weiter. Tag und Nacht.",
+      "kicker": "Velyric für Praxen",
+      "title": "Weniger Klingeln am Empfang. Mehr Aufmerksamkeit für Patienten.",
+      "text": "Für Zahnarzt-, Privat- und Facharztpraxen: Velyric nimmt Anrufe an, vergibt und verlegt Termine und leitet medizinische Fragen immer an Ihr Team weiter.",
+      "img1Alt": "Zahnarzt im Gespräch mit einer Patientin in einer hellen Praxis",
+      "img2Alt": "Zahnarzthelferin bei einer Behandlung in einer modernen Praxis",
+      "pains": {
+        "a": {
+          "title": "Morgens rufen alle gleichzeitig an",
+          "text": "Zur Öffnung ist besetzt, und die Patienten versuchen es immer wieder."
+        },
+        "b": {
+          "title": "Der Empfang kann nicht überall sein",
+          "text": "Am Tresen wartet ein Patient, und das Telefon klingelt."
+        },
+        "c": {
+          "title": "Kontrollen und Verlegungen",
+          "text": "Die meisten Anrufe sind Routine, brauchen aber jedes Mal einen Menschen."
+        }
+      },
+      "solves": {
+        "a": {
+          "title": "Termine und Verlegungen",
+          "text": "Findet freie Zeiten nach Sprechzeiten und Behandlungsdauer."
+        },
+        "b": {
+          "title": "Medizinische Frage? Weitergeleitet.",
+          "text": "Keine medizinische Beratung: Fachfragen gehen immer an Ihr Team, mit Zusammenfassung."
+        },
+        "c": {
+          "title": "Sprechzeiten, Mitbringen",
+          "text": "Erklärt Sprechzeiten, was Patienten mitbringen sollen und wie sie Sie finden."
+        },
+        "d": {
+          "title": "Nur nötige Daten",
+          "text": "Fragt nur, was der Termin erfordert, nicht mehr."
+        }
+      },
+      "typical": [
+        "Neuer Termin",
+        "Kontrolle verlegen",
+        "Sprechzeiten",
+        "Was soll ich mitbringen?",
+        "Medizinische Frage → Team"
+      ],
+      "call": {
+        "business": "Praxis Lächeln",
+        "t1": "Guten Tag, ich möchte meine Kontrolle nächste Woche verlegen.",
+        "t2": "Gern. Dienstag um 8:30 Uhr oder Mittwoch um 14:00 Uhr ist frei. Was passt?",
+        "t3": "Mittwoch passt.",
+        "t4": "Verlegt auf Mittwoch 14:00 Uhr. Bitte bringen Sie Ihre Versichertenkarte mit.",
+        "outcome": "Verlegt: Mittwoch 14:00"
+      },
+      "ctaTitle": "Ein ruhigerer Empfang.",
+      "ctaText": "Wir kommen in Ihre Praxis und passen Velyric an Ihre Abläufe an."
+    },
+    "restaurant": {
+      "name": "Restaurants und Cafés",
+      "card": "Nimmt auch zur Stoßzeit Tischreservierungen an und beantwortet Fragen zu Öffnungszeiten, Karte und Parken.",
+      "metaTitle": "KI-Telefonassistent für Restaurants und Cafés",
+      "metaDescription": "Velyric nimmt die Anrufe Ihres Restaurants an, reserviert Tische auch zur Stoßzeit und beantwortet Fragen zu Karte und Öffnungszeiten. In drei Sprachen.",
+      "kicker": "Velyric für Restaurants",
+      "title": "Freitagabend ausgebucht. Das Telefon wird trotzdem abgenommen.",
+      "text": "Für Restaurants, Bistros und Cafés: Velyric nimmt Reservierungsanrufe an, bucht Tische und beantwortet häufige Fragen, während Sie sich um Ihre Gäste kümmern.",
+      "img1Alt": "Belebtes, helles Restaurant mit Gästen und Servicekraft",
+      "img2Alt": "Lächelnde Café-Besitzerin vor der Theke",
+      "pains": {
+        "a": {
+          "title": "Zur Stoßzeit hat niemand Zeit",
+          "text": "Die meisten Anrufe kommen genau dann, wenn der Raum am vollsten ist."
+        },
+        "b": {
+          "title": "Immer dieselben Fragen",
+          "text": "Heute Abend noch frei? Wie lange geöffnet? Etwas Glutenfreies?"
+        },
+        "c": {
+          "title": "Verlorene Reservierungen",
+          "text": "Ein verpasster Anruf ist ein leerer Tisch und ein Gast, der woanders hingeht."
+        }
+      },
+      "solves": {
+        "a": {
+          "title": "Tischreservierung",
+          "text": "Bucht nach Personenzahl und Uhrzeit und schlägt eine andere Zeit vor, wenn Sie voll sind."
+        },
+        "b": {
+          "title": "Karte, Allergene, Öffnungszeiten",
+          "text": "Antwortet nach Ihrer Karte und Ihren Regeln."
+        },
+        "c": {
+          "title": "Gruppen und Events",
+          "text": "Bei größeren Gruppen oder Events verbindet es mit der zuständigen Person, mit Zusammenfassung."
+        },
+        "d": {
+          "title": "Mehrsprachig",
+          "text": "Spricht mit Touristen auch Englisch und Ungarisch."
+        }
+      },
+      "typical": [
+        "Tischreservierung",
+        "Heute Abend frei?",
+        "Öffnungszeiten",
+        "Karte, Allergene",
+        "Events → Leitung"
+      ],
+      "call": {
+        "business": "Terrassen-Bistro",
+        "t1": "Guten Abend, ich hätte gern morgen um sieben einen Tisch für sechs Personen.",
+        "t2": "Um sieben sind wir ausgebucht, aber um 19:30 Uhr ist ein Tisch für sechs auf der Terrasse frei. Passt das?",
+        "t3": "Ja, gern.",
+        "t4": "Reserviert für morgen 19:30 Uhr, sechs Personen, Terrasse. Bis morgen!",
+        "outcome": "Tisch reserviert: morgen 19:30, 6 Personen"
+      },
+      "ctaTitle": "Jeder Anruf eine Reservierung, kein leerer Tisch.",
+      "ctaText": "Wir schauen, wann bei Ihnen am meisten klingelt, und passen Velyric daran an."
+    },
+    "auto": {
+      "name": "Autowerkstätten",
+      "card": "Kein Rennen zum Telefon mit öligen Händen: nimmt ab und bucht den Werkstatttermin.",
+      "metaTitle": "KI-Telefonassistent für Autowerkstätten",
+      "metaDescription": "Velyric nimmt die Anrufe Ihrer Werkstatt an, bucht Werkstatttermine und notiert, was mit dem Auto los ist, während Sie arbeiten. Tag und Nacht.",
+      "kicker": "Velyric für Werkstätten",
+      "title": "Sie sind unter der Motorhaube. Velyric ist am Telefon.",
+      "text": "Für Autowerkstätten, Reifenhändler und Betriebe: Velyric nimmt Anrufe an, bucht Werkstatttermine und notiert, was mit dem Auto los ist.",
+      "img1Alt": "Lächelnde Mechanikerin in einer hellen Werkstatt",
+      "img2Alt": "Mechaniker arbeitet im Motorraum eines Autos",
+      "pains": {
+        "a": {
+          "title": "Mit öligen Händen telefoniert man nicht",
+          "text": "Die Arbeit lässt sich nicht unterbrechen, und der Anrufer wartet nicht."
+        },
+        "b": {
+          "title": "Anrufwelle in der Saison",
+          "text": "In der Reifensaison klingelt das Telefon den ganzen Tag."
+        },
+        "c": {
+          "title": "„Wann ist es fertig?“",
+          "text": "Viele Anrufe drehen sich um dasselbe und reißen jedes Mal aus der Arbeit."
+        }
+      },
+      "solves": {
+        "a": {
+          "title": "Werkstatttermin",
+          "text": "Notiert Kennzeichen, Modell und Problem und bucht einen freien Termin."
+        },
+        "b": {
+          "title": "Reifensaison",
+          "text": "Nimmt auch zur Stoßzeit jeden Anruf an und vergibt freie Termine."
+        },
+        "c": {
+          "title": "Fragen zur Reparatur",
+          "text": "Verbindet mit dem Mechaniker oder bittet um Rückruf im Namen des Anrufers."
+        },
+        "d": {
+          "title": "Preise nur aus Ihrer Liste",
+          "text": "Nennt nur Preise, die Sie hinterlegt haben; alles andere geht an Ihr Team."
+        }
+      },
+      "typical": [
+        "Werkstatttermin",
+        "Reifenwechsel",
+        "Wann ist es fertig?",
+        "Preise",
+        "Panne → Team"
+      ],
+      "call": {
+        "business": "Schnell-Service",
+        "t1": "Guten Tag, ich bräuchte nächste Woche einen Reifenwechsel für einen Skoda Octavia.",
+        "t2": "Gern. Montag um 8:00 Uhr oder Dienstag um 13:00 Uhr ist frei. Was passt Ihnen?",
+        "t3": "Montagmorgen passt.",
+        "t4": "Eingetragen für Montag 8:00 Uhr: Skoda Octavia, Reifenwechsel. Bis dann!",
+        "outcome": "Gebucht: Montag 8:00, Reifenwechsel"
+      },
+      "ctaTitle": "Verlieren Sie keine Aufträge mehr ans Telefon.",
+      "ctaText": "Wir kommen in Ihre Werkstatt und passen Velyric an Ihre Arbeitsweise an."
+    }
   }
 }

@@ -9,7 +9,6 @@
   },
   "nav": {
     "about": "About us",
-    "features": "What we do",
     "contact": "Contact",
     "login": "Log in",
     "start": "Create account",
@@ -18,7 +17,8 @@
     "language": "Language",
     "mainNav": "Main navigation",
     "menu": "Menu",
-    "skipToContent": "Skip to content"
+    "skipToContent": "Skip to content",
+    "solutions": "Solutions"
   },
   "common": {
     "loading": "Loading…"
@@ -50,54 +50,8 @@
     "t2": "Happy to help! We have 2:00 pm or 4:30 pm tomorrow. Which would you like?",
     "t3": "Two o'clock works.",
     "t4": "Great, you're booked for tomorrow at 2:00 pm. See you then!",
-    "booked": "Appointment booked: tomorrow 2:00 pm"
-  },
-  "story": {
-    "eyebrow": "How Velyric works",
-    "s1": {
-      "kicker": "Call",
-      "title": "The phone rings. Velyric has already answered.",
-      "text": "It picks up on the first ring — at dawn, on weekends and at peak hours. No busy line, no missed customer.",
-      "bubble": "“Hello, you've reached Bella Salon. How can I help?”"
-    },
-    "s2": {
-      "kicker": "Understanding",
-      "title": "It talks like your best team member.",
-      "text": "Natural, human speech — it keeps up even when callers interrupt or change topic. If they call in German or English, it switches language.",
-      "bubble": "“Of course! Which service, and when would suit you?”"
-    },
-    "s3": {
-      "kicker": "Handling",
-      "title": "It books. It answers. It gets it done.",
-      "text": "It checks your calendar, books the free slot, and answers common questions with your answers: prices, opening hours, parking.",
-      "bubble": "Booked: Tuesday 2:00 pm, haircut"
-    },
-    "s4": {
-      "kicker": "Handover",
-      "title": "When a human is needed, it hands over — with a summary.",
-      "text": "For complex cases it transfers the call to your colleague and sends the gist of the conversation. Nobody has to repeat themselves.",
-      "bubble": "Transferred to Anna, with a summary"
-    }
-  },
-  "about": {
-    "eyebrow": "About us",
-    "title": "A team that stands by you — in person.",
-    "p1": "We're building Velyric so that no business ever loses a customer to an unanswered call.",
-    "p2": "We don't hand you boxed software. We learn how your business works and tailor the voice agent to your needs and your tone.",
-    "values": {
-      "simple": {
-        "title": "Simple",
-        "text": "No IT team needed. We set it up and train it — you just see the results."
-      },
-      "hungarian": {
-        "title": "Local",
-        "text": "A Hungarian team with real support, and a voice agent that truly understands your callers."
-      },
-      "reliable": {
-        "title": "Reliable",
-        "text": "It works around the clock, your data is handled securely, and you can always reach us."
-      }
-    }
+    "booked": "Appointment booked: tomorrow 2:00 pm",
+    "exampleShort": "Example"
   },
   "personal": {
     "eyebrow": "In person",
@@ -120,111 +74,6 @@
         "text": "We test it together, go live, and keep refining it based on real calls in the first weeks."
       }
     }
-  },
-  "features": {
-    "eyebrow": "What Velyric can do",
-    "title": "Everything a great receptionist does. Tirelessly.",
-    "items": {
-      "conversation": {
-        "title": "Natural conversation",
-        "text": "It speaks smoothly with a human voice — callers often don't notice they're talking to AI."
-      },
-      "booking": {
-        "title": "Appointment booking",
-        "text": "It sees your calendar in real time and books, moves or cancels appointments without clashes."
-      },
-      "handoff": {
-        "title": "Smart handover",
-        "text": "When a human is needed it transfers instantly and sends a summary, so nobody starts over."
-      },
-      "languages": {
-        "title": "Multilingual",
-        "text": "It speaks Hungarian, German and English, and switches to the caller's language on its own."
-      },
-      "allDay": {
-        "title": "Available 24/7",
-        "text": "Weekends, holidays, nights — it always picks up. Never sick, never on vacation."
-      },
-      "analytics": {
-        "title": "Analytics",
-        "text": "See who called, what they wanted and how it ended — in clear reports."
-      }
-    },
-    "intro": "One call from start to finish, and where each capability does its work.",
-    "after": "After the call",
-    "lines": {
-      "conversation": {
-        "time": "00:02",
-        "who": "agent",
-        "line": "Hello, you've reached Bella Salon. How can I help?"
-      },
-      "booking": {
-        "time": "00:14",
-        "who": "agent",
-        "line": "You're booked for tomorrow at 2:00 pm, it's already in the calendar."
-      },
-      "languages": {
-        "time": "00:31",
-        "who": "caller",
-        "line": "Sprechen Sie auch Deutsch?"
-      },
-      "handoff": {
-        "time": "00:48",
-        "who": "agent",
-        "line": "Anna knows this best, I'll put you through to her."
-      },
-      "allDay": {
-        "time": "02:14",
-        "who": "caller",
-        "line": "Sorry for calling so late, could I book something for tomorrow?"
-      },
-      "analytics": {
-        "time": "",
-        "who": "summary",
-        "line": "New customer, haircut, tomorrow 2:00 pm. Handed to: Anna."
-      }
-    },
-    "speaker": {
-      "agent": "Velyric",
-      "caller": "Caller",
-      "summary": "Summary"
-    }
-  },
-  "useCases": {
-    "eyebrow": "Who it's for",
-    "title": "Anyone whose phone keeps ringing.",
-    "text": "If calls matter but there isn't always someone to answer — Velyric is made for you.",
-    "items": {
-      "salon": {
-        "title": "Beauty salons",
-        "quote": "Could I book a colour for tomorrow?",
-        "alt": "Hairdresser blow-drying hair in a salon",
-        "agent": "We have 10:00 am or 3:00 pm tomorrow. Which would you like?",
-        "outcome": "Colour booked for tomorrow 3:00 pm"
-      },
-      "clinic": {
-        "title": "Practices and clinics",
-        "quote": "Can I move my Thursday check-up?",
-        "alt": "Bright, modern dental practice",
-        "agent": "I've moved it to next Thursday at 8:30 am. Does that work?",
-        "outcome": "Check-up moved to Thursday 8:30 am"
-      },
-      "cafe": {
-        "title": "Restaurants and cafés",
-        "quote": "A table for four on Friday evening, please.",
-        "alt": "Smiling café owner in front of the counter",
-        "agent": "There's a table for four on Friday at 7:00 pm. Shall I book it?",
-        "outcome": "Table booked for Friday 7:00 pm, 4 guests"
-      },
-      "service": {
-        "title": "Garages and workshops",
-        "quote": "When can you take a look at my car?",
-        "alt": "Mechanic working on parts in a workshop",
-        "agent": "We can see you Tuesday at 8:00 am. What's wrong with the car?",
-        "outcome": "Inspection booked for Tuesday 8:00 am"
-      }
-    },
-    "tabsLabel": "Choose an industry"
   },
   "cta": {
     "title": "Never miss another call.",
@@ -378,5 +227,279 @@
     "title": "We can't find this page.",
     "text": "There may be a typo in the address, or the page no longer exists. Everything is reachable from the home page.",
     "cta": "Back to home"
+  },
+  "team": {
+    "label": "About us",
+    "title": "A Hungarian team that's by your side 24 hours a day.",
+    "clock": "Your Velyric line answers",
+    "clockA11y": "24-hour dial: Velyric answers calls every hour of the day.",
+    "pillars": {
+      "team": {
+        "title": "A local team, available 24/7",
+        "text": "People, not a ticketing system. If you have a question, you can reach us day or night."
+      },
+      "line": {
+        "title": "A line that's never busy",
+        "text": "Your Velyric line answers every hour of the day, on weekends and holidays too."
+      },
+      "devs": {
+        "title": "Expert developers, built around you",
+        "text": "Our engineers build the voice agent for your business: your services, prices, tone of voice and calendar."
+      }
+    }
+  },
+  "industries": {
+    "label": "Solutions",
+    "title": "Built for your industry.",
+    "text": "A salon takes calls differently from a practice or a workshop. Pick yours and see how Velyric would work for you.",
+    "open": "Take a look",
+    "page": {
+      "painsTitle": "Sound familiar?",
+      "solvesTitle": "How Velyric works for you",
+      "typicalTitle": "What your callers ask most",
+      "callTitle": "What a call sounds like at your place",
+      "others": "Other industries",
+      "all": "All solutions"
+    },
+    "salon": {
+      "name": "Beauty salons",
+      "card": "Answers the phone even while you're colouring, and books straight into your calendar.",
+      "metaTitle": "AI phone assistant for beauty salons",
+      "metaDescription": "Velyric answers your salon's calls, books appointments into your calendar and handles cancellations while you focus on your client. Day and night.",
+      "kicker": "Velyric for beauty salons",
+      "title": "You focus on the client. We answer the phone.",
+      "text": "For hair salons, beauticians and nail studios: Velyric answers calls, books appointments into your calendar and handles cancellations while you work.",
+      "img1Alt": "Hairdresser styling a client's hair in a bright salon",
+      "img2Alt": "Bright salon reception with product shelves and clients",
+      "pains": {
+        "a": {
+          "title": "It rings while you're colouring",
+          "text": "You can't put the brush down for a call, and the client books elsewhere."
+        },
+        "b": {
+          "title": "Evening and weekend calls",
+          "text": "Most people call after work, when the salon is already closed."
+        },
+        "c": {
+          "title": "Cancellations, empty chairs",
+          "text": "A forgotten cancellation is a lost hour, and rebooking means more calls."
+        }
+      },
+      "solves": {
+        "a": {
+          "title": "Books into your calendar",
+          "text": "It sees free slots and knows service lengths: a colour takes longer than a cut."
+        },
+        "b": {
+          "title": "Rescheduling and cancelling",
+          "text": "When someone cancels, the slot is freed in your calendar right away."
+        },
+        "c": {
+          "title": "Prices and services",
+          "text": "Answers common questions with your own price list."
+        },
+        "d": {
+          "title": "By stylist, too",
+          "text": "If a client wants their usual stylist, it looks for space in that calendar."
+        }
+      },
+      "typical": [
+        "Booking",
+        "Rescheduling, cancelling",
+        "Prices, services",
+        "Any space today?",
+        "Opening hours, parking"
+      ],
+      "call": {
+        "business": "Bella Salon",
+        "t1": "Hi, I'd like a colour and cut with Réka on Thursday.",
+        "t2": "Réka has two and a half hours free from 10:00 am on Thursday. Does that work?",
+        "t3": "Perfect.",
+        "t4": "You're booked with Réka on Thursday at 10:00 am, colour and cut. See you then!",
+        "outcome": "Booked: Thursday 10:00 am, Réka"
+      },
+      "ctaTitle": "Give your salon a voice of its own.",
+      "ctaText": "We look at how your salon works and tailor Velyric to it."
+    },
+    "clinic": {
+      "name": "Practices and clinics",
+      "card": "Books and moves appointments, so your front desk can focus on patients.",
+      "metaTitle": "AI phone assistant for practices and clinics",
+      "metaDescription": "Velyric answers your practice's calls, books and moves appointments, and always passes medical questions to your staff. Day and night.",
+      "kicker": "Velyric for practices",
+      "title": "Fewer rings at the front desk. More attention for patients.",
+      "text": "For dental, private and specialist practices: Velyric answers calls, books and moves appointments, and always puts medical questions through to your staff.",
+      "img1Alt": "Dentist talking with a patient in a bright practice",
+      "img2Alt": "Dental assistant treating a patient in a modern practice",
+      "pains": {
+        "a": {
+          "title": "Everyone calls at opening time",
+          "text": "The line is busy in the morning and patients keep trying again."
+        },
+        "b": {
+          "title": "The front desk can't be in two places",
+          "text": "A patient waits at the desk while the phone keeps ringing."
+        },
+        "c": {
+          "title": "Check-ups and rescheduling",
+          "text": "Most calls are routine, yet each one needs a person."
+        }
+      },
+      "solves": {
+        "a": {
+          "title": "Booking and moving",
+          "text": "Finds free slots based on your hours and treatment length."
+        },
+        "b": {
+          "title": "Medical question? Transferred.",
+          "text": "It never gives medical advice: every clinical question goes to your staff, with a summary."
+        },
+        "c": {
+          "title": "Hours and what to bring",
+          "text": "Explains opening hours, what patients should bring and how to find you."
+        },
+        "d": {
+          "title": "Only the data it needs",
+          "text": "It asks only what the appointment requires, nothing more."
+        }
+      },
+      "typical": [
+        "New appointment",
+        "Move a check-up",
+        "Opening hours",
+        "What should I bring?",
+        "Medical question → staff"
+      ],
+      "call": {
+        "business": "Smile Dental",
+        "t1": "Hello, I'd like to move my check-up next week.",
+        "t2": "Of course. We can see you Tuesday at 8:30 am or Wednesday at 2:00 pm. Which suits you?",
+        "t3": "Wednesday works.",
+        "t4": "I've moved you to Wednesday at 2:00 pm. Please bring your insurance card.",
+        "outcome": "Moved: Wednesday 2:00 pm"
+      },
+      "ctaTitle": "A calmer front desk.",
+      "ctaText": "We visit your practice and tailor Velyric to your schedule."
+    },
+    "restaurant": {
+      "name": "Restaurants and cafés",
+      "card": "Takes table bookings even at peak time, and answers questions on hours, menu and parking.",
+      "metaTitle": "AI phone assistant for restaurants and cafés",
+      "metaDescription": "Velyric answers your restaurant's calls, takes table bookings even at peak time and answers questions about the menu and opening hours. In three languages.",
+      "kicker": "Velyric for restaurants",
+      "title": "Full house on Friday. The phone still gets answered.",
+      "text": "For restaurants, bistros and cafés: Velyric answers booking calls, reserves tables and handles common questions while you look after your guests.",
+      "img1Alt": "Busy, bright restaurant with guests and a server",
+      "img2Alt": "Smiling café owner in front of the counter",
+      "pains": {
+        "a": {
+          "title": "Nobody free at peak time",
+          "text": "Most calls come in exactly when the room is fullest."
+        },
+        "b": {
+          "title": "The same questions again",
+          "text": "Any tables tonight? How late are you open? Anything gluten-free?"
+        },
+        "c": {
+          "title": "Lost bookings",
+          "text": "A missed call is an empty table and a guest who goes elsewhere."
+        }
+      },
+      "solves": {
+        "a": {
+          "title": "Table booking",
+          "text": "Books by party size and time, and suggests another time when you're full."
+        },
+        "b": {
+          "title": "Menu, allergens, hours",
+          "text": "Answers from your own menu and rules."
+        },
+        "c": {
+          "title": "Groups and events",
+          "text": "For larger parties or events it transfers to the person in charge, with a summary."
+        },
+        "d": {
+          "title": "Several languages",
+          "text": "Speaks German and English with tourists too."
+        }
+      },
+      "typical": [
+        "Table booking",
+        "Tables tonight?",
+        "Opening hours",
+        "Menu, allergens",
+        "Events → manager"
+      ],
+      "call": {
+        "business": "Terrace Bistro",
+        "t1": "Good evening, I'd like a table for six tomorrow at seven.",
+        "t2": "Seven is fully booked, but there's a table for six on the terrace at 7:30. Would that work?",
+        "t3": "Yes, that's fine.",
+        "t4": "You're booked for tomorrow at 7:30, six people, on the terrace. See you then!",
+        "outcome": "Table booked: tomorrow 7:30 pm, 6 guests"
+      },
+      "ctaTitle": "Turn every call into a booking, not an empty table.",
+      "ctaText": "We look at when your phone rings most and tailor Velyric to it."
+    },
+    "auto": {
+      "name": "Auto repair shops",
+      "card": "No more running to the phone with oily hands: it answers and books the service slot.",
+      "metaTitle": "AI phone assistant for auto repair shops",
+      "metaDescription": "Velyric answers your workshop's calls, books service appointments and notes what's wrong with the car while you work. Day and night.",
+      "kicker": "Velyric for workshops",
+      "title": "You're under the bonnet. Velyric is on the phone.",
+      "text": "For garages, tyre shops and workshops: Velyric answers calls, books service appointments and notes what's wrong with the car.",
+      "img1Alt": "Smiling mechanic in a bright workshop",
+      "img2Alt": "Mechanic working in a car's engine bay",
+      "pains": {
+        "a": {
+          "title": "You can't phone with oily hands",
+          "text": "A mechanic can't drop the job, and the caller won't wait."
+        },
+        "b": {
+          "title": "Seasonal call floods",
+          "text": "In tyre season the phone rings all day."
+        },
+        "c": {
+          "title": "\"When will it be ready?\"",
+          "text": "So many calls are about the same thing, and each one breaks focus."
+        }
+      },
+      "solves": {
+        "a": {
+          "title": "Service booking",
+          "text": "Notes the plate, model and problem, and books a free slot."
+        },
+        "b": {
+          "title": "Tyre season",
+          "text": "Answers every call even at peak time and hands out free slots."
+        },
+        "c": {
+          "title": "Questions about a repair",
+          "text": "Transfers to the mechanic or requests a callback on the caller's behalf."
+        },
+        "d": {
+          "title": "Prices only from your list",
+          "text": "Quotes only prices you've given it; everything else goes to your staff."
+        }
+      },
+      "typical": [
+        "Service booking",
+        "Tyre change",
+        "When will it be ready?",
+        "Prices",
+        "Breakdown → staff"
+      ],
+      "call": {
+        "business": "Quick Service",
+        "t1": "Hello, I need a tyre change next week for a Skoda Octavia.",
+        "t2": "Happy to help. Monday at 8:00 am or Tuesday at 1:00 pm is free. Which would you like?",
+        "t3": "Monday morning works.",
+        "t4": "Booked for Monday 8:00 am: Skoda Octavia, tyre change. See you then!",
+        "outcome": "Booked: Monday 8:00 am, tyre change"
+      },
+      "ctaTitle": "Stop losing jobs to the phone.",
+      "ctaText": "We visit your workshop and tailor Velyric to how you work."
+    }
   }
 }

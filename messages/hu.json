@@ -9,7 +9,6 @@
   },
   "nav": {
     "about": "Kik vagyunk",
-    "features": "Mit tudunk",
     "contact": "Kapcsolat",
     "login": "Bejelentkezés",
     "start": "Kezdjük",
@@ -18,7 +17,8 @@
     "language": "Nyelv",
     "mainNav": "Fő navigáció",
     "menu": "Menü",
-    "skipToContent": "Ugrás a tartalomra"
+    "skipToContent": "Ugrás a tartalomra",
+    "solutions": "Megoldások"
   },
   "common": {
     "loading": "Betöltés…"
@@ -50,54 +50,8 @@
     "t2": "Szívesen! Holnap 14:00-kor vagy 16:30-kor van szabad hely. Melyik legyen?",
     "t3": "A kettő órás jó lesz.",
     "t4": "Rendben, holnap 14:00-ra lefoglaltam. Várjuk szeretettel!",
-    "booked": "Időpont lefoglalva: holnap 14:00"
-  },
-  "story": {
-    "eyebrow": "Így dolgozik a Velyric",
-    "s1": {
-      "kicker": "Hívás",
-      "title": "Csörög a telefon. A Velyric már fel is vette.",
-      "text": "Az első csengésre válaszol — hajnalban, hétvégén és csúcsidőben is. Nincs foglalt vonal, nincs elszalasztott ügyfél.",
-      "bubble": "„Jó napot, a Bella Szalont hívta. Miben segíthetek?”"
-    },
-    "s2": {
-      "kicker": "Megértés",
-      "title": "Úgy beszél, mint a legjobb munkatársad.",
-      "text": "Természetes, emberi magyar beszéd — akkor is érti a hívót, ha közbevág vagy témát vált. Ha németül vagy angolul hívják, nyelvet vált.",
-      "bubble": "„Persze! Milyen szolgáltatásra és mikorra gondolt?”"
-    },
-    "s3": {
-      "kicker": "Intézés",
-      "title": "Időpontot foglal. Válaszol. Elintézi.",
-      "text": "Belenéz a naptáradba, lefoglalja a szabad időpontot, és a te válaszaiddal felel a gyakori kérdésekre: árak, nyitvatartás, parkolás.",
-      "bubble": "Lefoglalva: kedd 14:00, hajvágás"
-    },
-    "s4": {
-      "kicker": "Átadás",
-      "title": "Ha ember kell, szól — összefoglalóval.",
-      "text": "Összetett ügynél átkapcsolja a hívást a munkatársadnak, és elküldi a beszélgetés lényegét. Senkinek nem kell semmit kétszer elmondania.",
-      "bubble": "Átkapcsolva Annának, összefoglalóval"
-    }
-  },
-  "about": {
-    "eyebrow": "Kik vagyunk",
-    "title": "Magyar csapat, amely személyesen is melletted áll.",
-    "p1": "A Velyric-et azért építjük, hogy egyetlen vállalkozás se veszítsen el ügyfelet egy fel nem vett hívás miatt.",
-    "p2": "Nem dobozos szoftvert adunk a kezedbe. Megismerjük, hogyan működik a vállalkozásod, és a hangügynököt a te igényeidre, a te hangnemedre szabjuk.",
-    "values": {
-      "simple": {
-        "title": "Egyszerű",
-        "text": "Nem kell hozzá informatikus. Mi beállítjuk és betanítjuk — te csak az eredményt látod."
-      },
-      "hungarian": {
-        "title": "Magyar",
-        "text": "Magyar csapat, magyar ügyfélszolgálat, és egy hangügynök, aki tényleg érti a magyar hívókat."
-      },
-      "reliable": {
-        "title": "Megbízható",
-        "text": "Éjjel-nappal működik, az adataidat biztonságosan kezeljük, és bármikor elérsz minket."
-      }
-    }
+    "booked": "Időpont lefoglalva: holnap 14:00",
+    "exampleShort": "Példa"
   },
   "personal": {
     "eyebrow": "Személyesen",
@@ -120,111 +74,6 @@
         "text": "Együtt teszteljük, élesítjük, és az első hetekben a valódi hívások alapján folyamatosan csiszoljuk."
       }
     }
-  },
-  "features": {
-    "eyebrow": "Mit tud a Velyric",
-    "title": "Minden, ami egy jó recepcióshoz kell. Fáradhatatlanul.",
-    "items": {
-      "conversation": {
-        "title": "Természetes beszélgetés",
-        "text": "Emberi hangon, gördülékenyen beszél — a hívók sokszor észre sem veszik, hogy MI-vel beszélnek."
-      },
-      "booking": {
-        "title": "Időpontfoglalás",
-        "text": "Valós időben látja a naptáradat, és ütközés nélkül foglal, módosít vagy mond le időpontot."
-      },
-      "handoff": {
-        "title": "Okos átadás munkatársnak",
-        "text": "Ha ember kell, azonnal átkapcsol, és összefoglalót küld, hogy ne kelljen újrakezdeni."
-      },
-      "languages": {
-        "title": "Többnyelvű",
-        "text": "Magyarul, németül és angolul is beszél, és a hívó nyelvére magától vált."
-      },
-      "allDay": {
-        "title": "Éjjel-nappal elérhető",
-        "text": "Hétvégén, ünnepnapon, éjjel is felveszi. Soha nem beteg, soha nincs szabadságon."
-      },
-      "analytics": {
-        "title": "Elemzések",
-        "text": "Látod, ki hívott, mit kért és mi lett a vége — átlátható kimutatásokban."
-      }
-    },
-    "intro": "Egy hívás menete elejétől a végéig – és hogy melyik képesség hol dolgozik benne.",
-    "after": "Hívás után",
-    "lines": {
-      "conversation": {
-        "time": "00:02",
-        "who": "agent",
-        "line": "Jó napot, a Bella Szalont hívta. Miben segíthetek?"
-      },
-      "booking": {
-        "time": "00:14",
-        "who": "agent",
-        "line": "Holnap 14:00-ra lefoglaltam, a naptárban már ott is van."
-      },
-      "languages": {
-        "time": "00:31",
-        "who": "caller",
-        "line": "Sprechen Sie auch Deutsch?"
-      },
-      "handoff": {
-        "time": "00:48",
-        "who": "agent",
-        "line": "Erről Anna tud a legtöbbet, átkapcsolom hozzá."
-      },
-      "allDay": {
-        "time": "02:14",
-        "who": "caller",
-        "line": "Elnézést a késői hívásért, holnapra kérnék időpontot."
-      },
-      "analytics": {
-        "time": "",
-        "who": "summary",
-        "line": "Új ügyfél, hajvágás, holnap 14:00. Átadva: Anna."
-      }
-    },
-    "speaker": {
-      "agent": "Velyric",
-      "caller": "Hívó",
-      "summary": "Összefoglaló"
-    }
-  },
-  "useCases": {
-    "eyebrow": "Kinek szól",
-    "title": "Mindenkinek, akinek csörög a telefonja.",
-    "text": "Ha a hívások fontosak, de nincs mindig, aki felvegye — a Velyric neked készült.",
-    "items": {
-      "salon": {
-        "title": "Szépségszalonok",
-        "quote": "Holnapra kérnék egy festést.",
-        "alt": "Fodrász hajat szárít egy szalonban",
-        "agent": "Holnap 10:00-kor és 15:00-kor van szabad hely. Melyik legyen?",
-        "outcome": "Festés lefoglalva holnap 15:00-ra"
-      },
-      "clinic": {
-        "title": "Rendelők és klinikák",
-        "quote": "Át tudnám tenni a csütörtöki kontrollt?",
-        "alt": "Világos, modern fogorvosi rendelő",
-        "agent": "Áttettem jövő csütörtök 8:30-ra. Megfelel?",
-        "outcome": "Kontroll áthelyezve csütörtök 8:30-ra"
-      },
-      "cafe": {
-        "title": "Éttermek és kávézók",
-        "quote": "Péntek estére asztalt foglalnék négy főre.",
-        "alt": "Mosolygó kávézótulajdonos a pult előtt",
-        "agent": "Péntek 19:00-kor van asztal négy főre. Lefoglaljam?",
-        "outcome": "Asztal lefoglalva péntek 19:00-ra, 4 fő"
-      },
-      "service": {
-        "title": "Szervizek és műhelyek",
-        "quote": "Mikor tudják megnézni az autómat?",
-        "alt": "Szerelő alkatrészeken dolgozik egy műhelyben",
-        "agent": "Kedden reggel 8-kor tudjuk fogadni. Mi a gond az autóval?",
-        "outcome": "Átvizsgálás rögzítve kedd 8:00-ra"
-      }
-    },
-    "tabsLabel": "Válassz iparágat"
   },
   "cta": {
     "title": "Egyetlen hívás se maradjon fogadatlan.",
@@ -378,5 +227,279 @@
     "title": "Ezt az oldalt nem találjuk.",
     "text": "Lehet, hogy elírás van a címben, vagy az oldal már nem létezik. A főoldalról mindent elérsz.",
     "cta": "Vissza a főoldalra"
+  },
+  "team": {
+    "label": "Kik vagyunk",
+    "title": "Egy magyar csapat, amely a nap 24 órájában melletted áll.",
+    "clock": "A Velyric-vonalad hívható",
+    "clockA11y": "24 órás számlap: a Velyric a nap minden órájában felveszi a hívást.",
+    "pillars": {
+      "team": {
+        "title": "Magyar csapat, 0–24 elérhető",
+        "text": "Emberek, nem jegykezelő rendszer. Ha kérdésed van, éjjel-nappal elérsz minket, magyarul."
+      },
+      "line": {
+        "title": "Egy vonal, ami sosem foglalt",
+        "text": "A Velyric-vonalad a nap mind a 24 órájában felveszi a hívást, hétvégén és ünnepnapon is."
+      },
+      "devs": {
+        "title": "Profi fejlesztőcsapat, rád szabva",
+        "text": "Programozóink a te vállalkozásodhoz építik a hangügynököt: a te szolgáltatásaid, áraid, hangnemed és naptárad szerint."
+      }
+    }
+  },
+  "industries": {
+    "label": "Megoldások",
+    "title": "A te iparágadra szabva.",
+    "text": "Egy szalon másképp telefonál, mint egy rendelő vagy egy műhely. Válaszd ki a tiédet, és nézd meg, hogyan dolgozna nálad a Velyric.",
+    "open": "Megnézem",
+    "page": {
+      "painsTitle": "Ismerős?",
+      "solvesTitle": "Így dolgozik nálatok a Velyric",
+      "typicalTitle": "Amiről nálatok a legtöbben telefonálnak",
+      "callTitle": "Így hangzik egy hívás nálatok",
+      "others": "Más iparágak",
+      "all": "Összes megoldás"
+    },
+    "salon": {
+      "name": "Szépségszalonok",
+      "card": "Festés közben is felveszi a telefont, és beírja az időpontot a naptáradba.",
+      "metaTitle": "MI telefonos asszisztens szépségszalonoknak",
+      "metaDescription": "A Velyric felveszi a szalonod hívásait, időpontot foglal a naptáradba és intézi a lemondásokat, miközben te a vendégre figyelsz. Magyarul, éjjel-nappal.",
+      "kicker": "Velyric szépségszalonoknak",
+      "title": "Te a vendégre figyelsz. A telefont mi vesszük fel.",
+      "text": "Fodrászatoknak, kozmetikáknak és körmösöknek: a Velyric felveszi a hívásokat, időpontot foglal a naptáradba, és a lemondásokat is intézi, miközben te dolgozol.",
+      "img1Alt": "Fodrász egy vendég haját készíti egy világos szalonban",
+      "img2Alt": "Világos szalon-recepció termékpolcokkal és vendégekkel",
+      "pains": {
+        "a": {
+          "title": "Csörög, miközben festesz",
+          "text": "Nem teheted le az ecsetet egy hívásért, a vendég pedig máshol foglal."
+        },
+        "b": {
+          "title": "Esti és hétvégi hívások",
+          "text": "A legtöbben munka után telefonálnak, amikor a szalon már zárva van."
+        },
+        "c": {
+          "title": "Lemondások, üres székek",
+          "text": "Egy elfelejtett lemondás egy kiesett óra, az újrafoglalás pedig megint telefon."
+        }
+      },
+      "solves": {
+        "a": {
+          "title": "Foglalás a naptáradba",
+          "text": "Látja a szabad időpontokat, és a szolgáltatás hosszával számol: egy festés tovább tart, mint egy vágás."
+        },
+        "b": {
+          "title": "Átfoglalás és lemondás",
+          "text": "Ha valaki lemond, az időpont azonnal felszabadul a naptárban."
+        },
+        "c": {
+          "title": "Árak és szolgáltatások",
+          "text": "A te árlistáddal válaszol a gyakori kérdésekre."
+        },
+        "d": {
+          "title": "Kolléga szerint is",
+          "text": "Ha a vendég a megszokott fodrászához menne, az ő naptárában keres helyet."
+        }
+      },
+      "typical": [
+        "Időpontfoglalás",
+        "Átfoglalás, lemondás",
+        "Árak, szolgáltatások",
+        "Van még hely ma?",
+        "Nyitvatartás, parkolás"
+      ],
+      "call": {
+        "business": "Bella Szalon",
+        "t1": "Szia, csütörtökre szeretnék festést és vágást Rékához.",
+        "t2": "Rékánál csütörtökön 10:00-tól van két és fél óra szabad. Megfelel?",
+        "t3": "Tökéletes.",
+        "t4": "Lefoglaltam csütörtök 10:00-ra Rékához, festés és vágás. Várunk!",
+        "outcome": "Lefoglalva: csütörtök 10:00, Réka"
+      },
+      "ctaTitle": "Legyen a szalonodnak is saját hangja.",
+      "ctaText": "Megnézzük, hogyan működik a szalonod, és rád szabjuk a Velyric-et."
+    },
+    "clinic": {
+      "name": "Rendelők és klinikák",
+      "card": "Időpontot ad és áthelyez, a recepció pedig a betegekre figyelhet.",
+      "metaTitle": "MI telefonos asszisztens rendelőknek és klinikáknak",
+      "metaDescription": "A Velyric felveszi a rendelő hívásait, időpontot ad és áthelyez, az orvosi kérdéseket pedig mindig a kollégáidhoz kapcsolja. Magyarul, éjjel-nappal.",
+      "kicker": "Velyric rendelőknek",
+      "title": "Kevesebb csörgés a recepción. Több figyelem a betegre.",
+      "text": "Fogorvosi, magán- és szakrendelőknek: a Velyric felveszi a hívásokat, időpontot ad és áthelyez, az orvosi kérdéseket pedig mindig a kollégáidhoz kapcsolja.",
+      "img1Alt": "Fogorvos beszélget a páciensével egy világos rendelőben",
+      "img2Alt": "Fogorvosi asszisztens kezelés közben egy modern rendelőben",
+      "pains": {
+        "a": {
+          "title": "Reggel mindenki egyszerre hív",
+          "text": "Nyitáskor foglalt a vonal, a betegek pedig újra és újra próbálkoznak."
+        },
+        "b": {
+          "title": "A recepció két helyen van egyszerre",
+          "text": "A pult előtt beteg áll, közben csörög a telefon."
+        },
+        "c": {
+          "title": "Kontrollok és áthelyezések",
+          "text": "A legtöbb hívás rutinkérdés, mégis minden alkalommal ember kell hozzá."
+        }
+      },
+      "solves": {
+        "a": {
+          "title": "Időpont és áthelyezés",
+          "text": "Szabad időpontot keres a rendelési idő és a kezelés hossza szerint."
+        },
+        "b": {
+          "title": "Orvosi kérdés? Átkapcsol.",
+          "text": "Egészségügyi tanácsot nem ad: minden szakmai kérdést a kollégáidhoz irányít, összefoglalóval."
+        },
+        "c": {
+          "title": "Rendelési idő, teendők",
+          "text": "Elmondja, mikor rendeltek, mit hozzon a beteg, és hogyan jut el hozzátok."
+        },
+        "d": {
+          "title": "Csak a szükséges adat",
+          "text": "Csak azt kérdezi meg, ami az időponthoz kell, semmi többet."
+        }
+      },
+      "typical": [
+        "Új időpont",
+        "Kontroll áthelyezése",
+        "Rendelési idő",
+        "Mit hozzak magammal?",
+        "Orvosi kérdés → kolléga"
+      ],
+      "call": {
+        "business": "Mosoly Fogászat",
+        "t1": "Jó napot, a jövő heti kontrollomat szeretném áttenni.",
+        "t2": "Rendben. Kedden 8:30-kor vagy szerdán 14:00-kor tudjuk fogadni. Melyik jó?",
+        "t3": "A szerda jó lesz.",
+        "t4": "Áttettem szerdán 14:00-ra. Kérem, hozza magával a TAJ-kártyáját!",
+        "outcome": "Áthelyezve: szerda 14:00"
+      },
+      "ctaTitle": "Legyen nyugodtabb a recepció.",
+      "ctaText": "Kijövünk a rendelőbe, és a ti menetrendetekhez szabjuk a Velyric-et."
+    },
+    "restaurant": {
+      "name": "Éttermek és kávézók",
+      "card": "Csúcsidőben is asztalt foglal, és válaszol a nyitvatartásra, menüre, parkolásra.",
+      "metaTitle": "MI telefonos asszisztens éttermeknek és kávézóknak",
+      "metaDescription": "A Velyric felveszi az étterem hívásait, asztalt foglal csúcsidőben is, és válaszol a menüre, nyitvatartásra vonatkozó kérdésekre. Magyarul, németül, angolul.",
+      "kicker": "Velyric éttermeknek",
+      "title": "Péntek este teltház. A telefon mégsem csörög hiába.",
+      "text": "Éttermeknek, bisztróknak és kávézóknak: a Velyric felveszi a foglalási hívásokat, asztalt foglal, és válaszol a gyakori kérdésekre, amíg ti a vendégekkel foglalkoztok.",
+      "img1Alt": "Nyüzsgő, világos étterem vendégekkel és felszolgálóval",
+      "img2Alt": "Mosolygó kávézótulajdonos a pult előtt",
+      "pains": {
+        "a": {
+          "title": "Csúcsidőben nincs, aki felvegye",
+          "text": "Amikor a legtöbben hívnak, épp akkor van a legtöbb vendég a teremben."
+        },
+        "b": {
+          "title": "Mindig ugyanazok a kérdések",
+          "text": "Van hely ma estére? Meddig vagytok nyitva? Van gluténmentes?"
+        },
+        "c": {
+          "title": "Elveszett foglalások",
+          "text": "Egy fel nem vett hívás egy üres asztal, és egy vendég, aki máshová megy."
+        }
+      },
+      "solves": {
+        "a": {
+          "title": "Asztalfoglalás",
+          "text": "Létszám és időpont szerint foglal, és ha tele vagytok, másik időpontot ajánl."
+        },
+        "b": {
+          "title": "Menü, allergének, nyitvatartás",
+          "text": "A ti étlapotok és szabályaitok alapján válaszol."
+        },
+        "c": {
+          "title": "Csoportok és rendezvények",
+          "text": "Nagyobb társaságnál vagy rendezvénynél átkapcsol a felelőshöz, összefoglalóval."
+        },
+        "d": {
+          "title": "Több nyelven",
+          "text": "A turistákkal németül és angolul is beszél."
+        }
+      },
+      "typical": [
+        "Asztalfoglalás",
+        "Van hely ma estére?",
+        "Nyitvatartás",
+        "Menü, allergének",
+        "Rendezvény → felelős"
+      ],
+      "call": {
+        "business": "Terasz Bisztró",
+        "t1": "Jó estét, holnap este hétre szeretnék asztalt hat főre.",
+        "t2": "Hétkor sajnos tele vagyunk, de 19:30-kor van egy hatfős asztal a teraszon. Megfelel?",
+        "t3": "Igen, az jó.",
+        "t4": "Lefoglaltam holnap 19:30-ra, hat főre, a teraszra. Várunk titeket!",
+        "outcome": "Asztal lefoglalva: holnap 19:30, 6 fő"
+      },
+      "ctaTitle": "Minden hívásból foglalás legyen, ne üres asztal.",
+      "ctaText": "Megnézzük, mikor csörög nálatok a legtöbbet, és arra szabjuk a Velyric-et."
+    },
+    "auto": {
+      "name": "Autószervizek",
+      "card": "Olajos kézzel sem kell a telefonhoz rohanni: felveszi, és beírja a szervizidőpontot.",
+      "metaTitle": "MI telefonos asszisztens autószervizeknek",
+      "metaDescription": "A Velyric felveszi a műhely hívásait, szervizidőpontot foglal, és felírja, mi a gond az autóval, miközben ti dolgoztok. Magyarul, éjjel-nappal.",
+      "kicker": "Velyric autószervizeknek",
+      "title": "Te a motorháztető alatt vagy. A Velyric a telefonnál.",
+      "text": "Autószervizeknek, gumiszervizeknek és műhelyeknek: a Velyric felveszi a hívásokat, szervizidőpontot foglal, és felírja, mi a gond az autóval.",
+      "img1Alt": "Mosolygó szerelő egy világos műhelyben",
+      "img2Alt": "Szerelő egy autó motorterén dolgozik",
+      "pains": {
+        "a": {
+          "title": "Olajos kézzel nem lehet telefonálni",
+          "text": "A szerelő nem hagyhatja félbe a munkát, a hívó pedig nem vár."
+        },
+        "b": {
+          "title": "Szezonban dől a hívás",
+          "text": "Gumicsere-szezonban a telefon egész nap csörög."
+        },
+        "c": {
+          "title": "„Mikor lesz kész?”",
+          "text": "Rengeteg hívás ugyanarról szól, és mindig elvonja a figyelmet a munkáról."
+        }
+      },
+      "solves": {
+        "a": {
+          "title": "Szervizidőpont",
+          "text": "Felírja a rendszámot, a típust és a hibát, és a szabad sávba foglal."
+        },
+        "b": {
+          "title": "Gumicsere-szezon",
+          "text": "Csúcsidőben is minden hívást felvesz, és kiosztja a szabad időpontokat."
+        },
+        "c": {
+          "title": "Kérdés a javításról",
+          "text": "A szerelőhöz kapcsol, vagy visszahívást kér a nevében."
+        },
+        "d": {
+          "title": "Ár csak a te listádból",
+          "text": "Csak azt az árat mondja, amit te megadtál; minden mást a kollégádhoz irányít."
+        }
+      },
+      "typical": [
+        "Szervizidőpont",
+        "Gumicsere",
+        "Mikor lesz kész?",
+        "Árak",
+        "Autómentés → kolléga"
+      ],
+      "call": {
+        "business": "Gyors Szerviz",
+        "t1": "Jó napot, a jövő héten kellene egy gumicsere egy Skoda Octaviára.",
+        "t2": "Szívesen. Hétfőn 8:00-kor vagy kedden 13:00-kor van szabad hely. Melyik legyen?",
+        "t3": "Hétfő reggel jó.",
+        "t4": "Beírtam hétfő 8:00-ra: Skoda Octavia, gumicsere. Várjuk!",
+        "outcome": "Lefoglalva: hétfő 8:00, gumicsere"
+      },
+      "ctaTitle": "A műhelyed ne veszítsen több munkát a telefon miatt.",
+      "ctaText": "Kijövünk a műhelybe, és a ti munkarendetekhez szabjuk a Velyric-et."
+    }
   }
 }

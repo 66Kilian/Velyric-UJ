@@ -11,9 +11,9 @@ type FieldProps = InputHTMLAttributes<HTMLInputElement> & {
 };
 
 const inputClass =
-  "h-12 w-full rounded-xl border bg-base-900/70 px-4 text-[16px] text-fg placeholder:text-muted/60 " +
+  "h-12 w-full rounded-xl border bg-canvas/70 px-4 text-[16px] text-ink placeholder:text-muted/60 " +
   "transition-[border-color,box-shadow] duration-200 outline-none " +
-  "focus:border-brand-pink/70 focus:shadow-[0_0_0_4px_rgb(229_35_126/0.15)]";
+  "focus:border-brand-pink/70 focus:shadow-[0_0_0_4px_rgb(255_0_122/0.14)]";
 
 // Címkés beviteli mező, azonnali, barátságos hibaüzenettel
 export const TextField = forwardRef<HTMLInputElement, FieldProps>(function TextField(
@@ -26,7 +26,7 @@ export const TextField = forwardRef<HTMLInputElement, FieldProps>(function TextF
 
   return (
     <div className={cn("flex flex-col gap-2", className)}>
-      <label htmlFor={inputId} className="text-sm font-medium text-fg/90">
+      <label htmlFor={inputId} className="text-sm font-medium text-ink/90">
         {label}
       </label>
       <input
@@ -53,7 +53,7 @@ export const PasswordField = forwardRef<HTMLInputElement, FieldProps & { childre
 
     return (
       <div className={cn("flex flex-col gap-2", className)}>
-        <label htmlFor={inputId} className="text-sm font-medium text-fg/90">
+        <label htmlFor={inputId} className="text-sm font-medium text-ink/90">
           {label}
         </label>
         <div className="relative">
@@ -71,7 +71,7 @@ export const PasswordField = forwardRef<HTMLInputElement, FieldProps & { childre
             onClick={() => setVisible((v) => !v)}
             aria-label={visible ? t("hidePassword") : t("showPassword")}
             aria-pressed={visible}
-            className="absolute top-0 right-0 flex size-12 items-center justify-center rounded-xl text-muted transition-colors hover:text-fg"
+            className="absolute top-0 right-0 flex size-12 items-center justify-center rounded-xl text-muted transition-colors hover:text-ink"
           >
             {visible ? <EyeOff className="size-5" aria-hidden="true" /> : <Eye className="size-5" aria-hidden="true" />}
           </button>

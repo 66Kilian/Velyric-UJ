@@ -34,7 +34,7 @@ export function StrengthMeter({ password }: { password: string }) {
             ))}
           </div>
           <p className="text-xs text-muted">
-            {t("label")} <span className="font-semibold text-fg">{t(labels[score] || "weak")}</span>
+            {t("label")} <span className="font-semibold text-ink">{t(labels[score] || "weak")}</span>
             {score > 0 && score < 3 && <span className="block pt-0.5">{t("hint")}</span>}
           </p>
         </div>

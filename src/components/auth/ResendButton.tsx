@@ -51,7 +51,7 @@ export function ResendButton({
       type="button"
       onClick={resend}
       disabled={cooling || loading}
-      className="inline-flex min-h-12 items-center gap-2 font-semibold text-brand-pink underline-offset-4 transition-colors hover:underline disabled:cursor-not-allowed disabled:text-muted disabled:no-underline"
+      className="inline-flex min-h-12 items-center gap-2 font-semibold text-accent-ink underline-offset-4 transition-colors hover:underline disabled:cursor-not-allowed disabled:text-muted disabled:no-underline"
     >
       {loading && <Spinner className="size-4" />}
       {cooling ? t("checkEmail.resendIn", { seconds }) : (label ?? t("checkEmail.resend"))}

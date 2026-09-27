@@ -1,7 +1,6 @@
 import { ArrowLeft } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { Logo } from "@/components/brand/Logo";
-import { Ambient } from "@/components/decor/Ambient";
 import { LanguageDropdown } from "@/components/nav/LanguageSwitcher";
 import { Container } from "@/components/ui/Container";
 import { Link } from "@/i18n/navigation";
@@ -14,8 +13,7 @@ export default async function AuthLayout({ children, params }: LayoutProps<"/[lo
   const tBrand = await getTranslations("brand");
 
   return (
-    <div className="flex min-h-dvh flex-col overflow-x-clip">
-      <Ambient />
+    <div className="flex min-h-dvh flex-col overflow-x-clip bg-blush">
       <header>
         <Container className="flex h-[var(--nav-h)] items-center justify-between">
           <Link href="/" aria-label={tBrand("homeLabel")} className="rounded-lg">
@@ -28,7 +26,7 @@ export default async function AuthLayout({ children, params }: LayoutProps<"/[lo
         {children}
         <Link
           href="/"
-          className="mt-8 inline-flex min-h-12 items-center gap-2 text-sm font-medium text-muted transition-colors hover:text-fg"
+          className="mt-8 inline-flex min-h-12 items-center gap-2 text-sm font-medium text-muted transition-colors hover:text-ink"
         >
           <ArrowLeft className="size-4" aria-hidden="true" />
           {t("backHome")}

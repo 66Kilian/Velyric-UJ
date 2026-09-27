@@ -1,57 +1,62 @@
 @import "tailwindcss";
 
 /* ============================================================
-   VELYRIC – Design rendszer
-   Ötlet: „a hívás maga az anyag”. A márka-gradiens jelentése:
-   A VELYRIC BESZÉL VAGY CSELEKSZIK – ezért csak a 3D jelen, a
-   hanghullámon, az ügynök mondatain és a fő gombon jelenik meg.
-   Minden más semleges; az állapotok (lefoglalva, átadva, hiba)
-   saját, szemantikus színt kapnak.
+   VELYRIC – Design rendszer (0.5 Dokumentum- és UI-alkalmazás)
+   Világos, légies alap: fehér + Soft Blush felületek, Deep Navy
+   szöveg. A márkaszínek (Magenta → Hot Pink → Crimson → Coral)
+   a Velyric „hangja”: CTA-k, kiemelések, a 3D jel. Fekete nincs.
    ============================================================ */
 
 :root {
-  /* Alapszínek (a specifikáció szerinti nevekkel) */
-  --bg-900: #050409; /* fő háttér */
-  --bg-800: #0b0913; /* sávok, panelek */
-  --bg-700: #141020; /* kiemelt felület, beviteli mezők hover */
-  --bg-600: #1d1830; /* hívó buborék, aktív fül */
-  --text: #f4f1f8; /* fő szöveg */
-  --muted: #a49dba; /* másodlagos szöveg (AA a --bg-700-ig) */
+  /* Felületek */
+  --canvas: #ffffff; /* fő háttér */
+  --blush: #fff7fb; /* Soft Blush – lágy szekció-blokkok, infókártyák */
+  --blush-deep: #fcebf4; /* hívó-buborék, aktív fül, hover-kitöltés */
+  --surface: #ffffff; /* kártyák és panelek a blush sávokon */
 
-  /* Márka gradiens = a Velyric hangja */
-  --brand-violet: #8b2fe8;
-  --brand-pink: #e5237e;
-  --brand-orange: #ff7a3c;
-  --brand-gradient: linear-gradient(135deg, var(--brand-violet) 0%, var(--brand-pink) 55%, var(--brand-orange) 100%);
+  /* Szöveg */
+  --ink: #071327; /* Deep Navy – elsődleges szöveg, főcímek, wordmark */
+  --muted: #505a74; /* másodlagos szöveg (AA: 6,3:1 fehéren, 7:1 blush-on) */
+  --accent-ink: #c8005f; /* hangsúlyos szöveg-kiemelés (a Hot Pink AA-változata) */
 
-  /* Állapotok: a hívás kimenetelei */
-  --success: #5fe0a4; /* lefoglalva, sikeres */
-  --warning: #f7b955; /* átadva munkatársnak, lejárt link */
-  --danger: #ff7a95; /* hiba */
+  /* Márkaszínek */
+  --magenta: #f000ff; /* Electric Magenta – hero accent, highlight */
+  --pink: #ff007a; /* Hot Pink – gombok, CTA, interakciók */
+  --crimson: #ff174e; /* Crimson Red – másodlagos accent */
+  --coral: #ff7a59; /* Warm Coral – gradient lezárás, hover */
+  --plum: #8e0069; /* Deep Plum – sötétebb accent */
+  --brand-gradient: linear-gradient(135deg, var(--magenta) 0%, var(--pink) 45%, var(--crimson) 75%, var(--coral) 100%);
 
-  /* Hajszálvonalak – a csoportosítás elsődleges eszköze (nem a kártya) */
-  --line: rgb(244 241 248 / 0.08);
-  --line-strong: rgb(244 241 248 / 0.16);
+  /* Állapotok (AA fehér háttéren) */
+  --success: #0e7a4e;
+  --warning: #a35a00;
+  --danger: #c4153f;
 
-  /* A sticky navbar magassága – a szekció-ugrásnál ennyivel lejjebb áll meg */
+  /* Vonalak */
+  --line: rgb(7 19 39 / 0.08);
+  --line-strong: rgb(7 19 39 / 0.14);
+
   --nav-h: 72px;
-
-  color-scheme: dark;
+  color-scheme: light;
 }
 
-/* Tailwind tokenek → osztályok: bg-base-900, text-fg, text-success, rounded-panel… */
 @theme inline {
-  --color-base-900: var(--bg-900);
-  --color-base-800: var(--bg-800);
-  --color-base-700: var(--bg-700);
-  --color-base-600: var(--bg-600);
-  --color-fg: var(--text);
+  --color-canvas: var(--canvas);
+  --color-blush: var(--blush);
+  --color-blush-deep: var(--blush-deep);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-navy: var(--ink);
+  --color-on-navy: #b9c1d6; /* másodlagos szöveg a Deep Navy footeren (10:1) */
   --color-muted: var(--muted);
+  --color-accent-ink: var(--accent-ink);
   --color-line: var(--line);
   --color-line-strong: var(--line-strong);
-  --color-brand-violet: var(--brand-violet);
-  --color-brand-pink: var(--brand-pink);
-  --color-brand-orange: var(--brand-orange);
+  --color-brand-magenta: var(--magenta);
+  --color-brand-pink: var(--pink);
+  --color-brand-crimson: var(--crimson);
+  --color-brand-coral: var(--coral);
+  --color-brand-plum: var(--plum);
   --color-success: var(--success);
   --color-warning: var(--warning);
   --color-danger: var(--danger);
@@ -60,53 +65,61 @@
 }
 
 @theme {
-  /* Sarokkerekítés szerep szerint: vezérlők és ikon-dobozok 12 (rounded-xl) · buborékok 16 · panelek 20 · média 28 */
-  --radius-bubble: 1rem; /* beszélgetés-buborékok */
-  --radius-panel: 1.25rem;
-  --radius-media: 1.75rem;
+  /* Sarokkerekítés szerep szerint: vezérlők 12 (rounded-xl) · buborékok 16 · panelek 24 · média 32 */
+  --radius-bubble: 1rem;
+  --radius-panel: 1.5rem;
+  --radius-media: 2rem;
 
-  /* Emelés: csak ami lebeg (navbar görgetés után, ablakok, értesítések, hívás-panel) */
-  --shadow-float: 0 1px 0 0 rgb(255 255 255 / 0.05) inset, 0 24px 60px -28px rgb(0 0 0 / 0.9);
+  /* Emelés: puha, navy-tónusú árnyék (nem fekete) */
+  --shadow-float: 0 1px 2px rgb(7 19 39 / 0.04), 0 24px 60px -24px rgb(7 19 39 / 0.18);
+  --shadow-lift: 0 1px 2px rgb(7 19 39 / 0.05), 0 40px 80px -32px rgb(142 0 105 / 0.28);
 
   /* Mozgás-tokenek (egy fizika az egész oldalon) */
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); /* belépés: gyors indulás, hosszú puha érkezés */
-  --ease-in: cubic-bezier(0.7, 0, 0.84, 0); /* kilépés */
-  --ease-move: cubic-bezier(0.65, 0, 0.35, 1); /* képernyőn belüli mozgás */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-move: cubic-bezier(0.65, 0, 0.35, 1);
 
   /* Tipográfiai skála */
-  --text-display: clamp(2.5rem, 1.5rem + 4.1vw, 4.5rem);
-  --text-display--line-height: 1.04;
-  --text-display--letter-spacing: -0.032em;
-  --text-title: clamp(2rem, 1.35rem + 2.3vw, 3.25rem);
-  --text-title--line-height: 1.08;
-  --text-title--letter-spacing: -0.025em;
-  --text-ui: 0.9375rem; /* gombok, fülek, buborékok */
+  --text-display: clamp(2.6rem, 1.5rem + 4.4vw, 5rem);
+  --text-display--line-height: 1.02;
+  --text-display--letter-spacing: -0.035em;
+  --text-title: clamp(2.1rem, 1.35rem + 2.6vw, 3.6rem);
+  --text-title--line-height: 1.06;
+  --text-title--letter-spacing: -0.03em;
+  --text-lead: 1.1875rem;
+  --text-lead--line-height: 1.6;
+  --text-ui: 0.9375rem;
   --text-ui--line-height: 1.45;
-  --text-lead: 1.125rem;
-  --text-lead--line-height: 1.65;
 }
 
 /* ---------- Márka segédosztályok ---------- */
 
-/* Gradiens felület: a Velyric „hangja” (fő gomb, 3D, hanghullám, ügynök-jelölő) */
 @utility bg-brand {
   background-image: var(--brand-gradient);
 }
 
-/* Fő gomb: a márka-gradiens 14%-kal mélyítve, hogy a fehér felirat AA-kontrasztú legyen (≥ 5.5:1) */
-@utility bg-brand-deep {
-  background-image: linear-gradient(rgb(0 0 0 / 0.14), rgb(0 0 0 / 0.14)), var(--brand-gradient);
+/* Fő gomb: márka-gradiens 16% Deep Navy fátyollal → a fehér felirat AA (≈5:1) */
+@utility bg-cta {
+  background-image: linear-gradient(rgb(7 19 39 / 0.16), rgb(7 19 39 / 0.16)),
+    linear-gradient(135deg, var(--magenta) -10%, var(--pink) 50%, var(--crimson) 110%);
 }
 
-/* Gradiens keret: a felület saját háttere felett 1px-es gradiens vonal */
+/* Gradiens szöveg – csak nagy méretű kiemelésre, AA-kontrasztú mély tónusokkal */
+@utility text-brand {
+  background-image: linear-gradient(120deg, var(--plum) 0%, #c4007a 45%, #d6003f 90%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Gradiens keret */
 @utility border-brand {
   border: 1px solid transparent;
   background:
-    linear-gradient(var(--bg-800), var(--bg-800)) padding-box,
+    linear-gradient(var(--surface), var(--surface)) padding-box,
     var(--brand-gradient) border-box;
 }
 
-/* Wordmark: NAGYBETŰ, széles betűköz. A negatív margó kiegyenlíti az utolsó betű utáni közt. */
 @utility wordmark {
   text-transform: uppercase;
   letter-spacing: 0.24em;
@@ -114,7 +127,6 @@
   font-weight: 600;
 }
 
-/* Táblázatos számjegyek az időbélyegekhez */
 @utility tabular {
   font-variant-numeric: tabular-nums;
 }
@@ -123,15 +135,18 @@
 
 @layer base {
   html {
-    scroll-behavior: smooth;
     scroll-padding-top: var(--nav-h);
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
   }
+  /* Natív sima görgetés csak akkor, ha a Lenis nem fut */
+  html:not(.lenis) {
+    scroll-behavior: smooth;
+  }
 
   body {
-    background-color: var(--bg-900);
-    color: var(--text);
+    background-color: var(--canvas);
+    color: var(--ink);
     font-family: var(--font-sans);
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -139,22 +154,29 @@
   }
 
   ::selection {
-    background: rgb(229 35 126 / 0.35);
-    color: var(--text);
+    background: rgb(255 0 122 / 0.18);
+    color: var(--ink);
   }
 
-  /* Jól látható, márkás fókuszkeret billentyűzetes navigációhoz */
   :focus-visible {
-    outline: 2px solid var(--brand-pink);
+    outline: 2px solid var(--accent-ink);
     outline-offset: 3px;
     border-radius: 6px;
   }
 }
 
-/* Mozgáscsökkentés: aki kéri, annak nincs mozgás (a visszajelzés színben megmarad) */
+/* Lenis (sima görgetés) alapstílusai */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
-    scroll-behavior: auto;
+    scroll-behavior: auto !important;
   }
   *,
   *::before,
@@ -168,24 +190,22 @@
 /* ---------- Mozgás (csak transform/opacity/clip-path → 60fps) ---------- */
 
 @media (prefers-reduced-motion: no-preference) {
-  /* Hero belépő: sorok maszk mögül csúsznak fel, sorrend = hierarchia, összesen < 900 ms */
   .line-reveal {
     display: block;
     overflow: clip;
-    padding-bottom: 0.08em; /* az ékezetek és a „g/j” szára ne vágódjon le */
+    padding-bottom: 0.1em;
+    margin-bottom: -0.1em;
   }
   .line-reveal > span {
     display: block;
-    animation: line-up 0.6s var(--ease-out) both;
+    animation: line-up 0.7s var(--ease-out) both;
   }
   .rise-in {
-    animation: rise-in 0.5s var(--ease-out) both;
+    animation: rise-in 0.6s var(--ease-out) both;
   }
-  /* Élő hanghullám: csak amíg valaki beszél (valódi „élő” jelzés) */
   .voice-bar {
     animation: voice-bar 0.9s var(--ease-move) infinite alternate;
   }
-  /* Görgetés-jelző: finom pulzálás a hero alján */
   .scroll-dot {
     animation: scroll-dot 2s var(--ease-out) infinite;
   }
@@ -195,7 +215,6 @@
   .success-pop {
     animation: success-pop 0.5s var(--ease-out) both;
   }
-  /* Új beszélgetés-sor érkezése a hívás-átiratban */
   .turn-in {
     animation: rise-in 0.36s var(--ease-out) both;
   }
@@ -203,13 +222,13 @@
 
 @keyframes line-up {
   from {
-    transform: translateY(105%);
+    transform: translateY(110%);
   }
 }
 @keyframes rise-in {
   from {
     opacity: 0;
-    transform: translateY(14px);
+    transform: translateY(16px);
   }
 }
 @keyframes voice-bar {
@@ -247,6 +266,6 @@
 }
 
 .dialog-panel::backdrop {
-  background: rgb(5 4 9 / 0.78);
+  background: rgb(7 19 39 / 0.45);
   backdrop-filter: blur(4px);
 }

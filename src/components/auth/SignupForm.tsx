@@ -75,7 +75,7 @@ export function SignupForm() {
           </span>
           <p className="text-muted">
             {t("checkEmail.text")}
-            <strong className="mt-1 block text-lg break-all text-fg">{sentTo}</strong>
+            <strong className="mt-1 block text-lg break-all text-ink">{sentTo}</strong>
           </p>
           <p className="text-sm text-muted">{t("checkEmail.next")}</p>
           <div className="w-full border-t border-line pt-5 text-sm">
@@ -91,7 +91,7 @@ export function SignupForm() {
                 setSentTo(null);
                 setSubmitted(false);
               }}
-              className="min-h-12 font-semibold text-fg underline-offset-4 hover:underline"
+              className="min-h-12 font-semibold text-ink underline-offset-4 hover:underline"
             >
               {t("checkEmail.restart")}
             </button>
@@ -108,7 +108,7 @@ export function SignupForm() {
       footer={
         <>
           {t("signup.hasAccount")}{" "}
-          <Link href="/bejelentkezes" className="font-semibold text-fg underline-offset-4 hover:underline">
+          <Link href="/bejelentkezes" className="font-semibold text-ink underline-offset-4 hover:underline">
             {t("signup.loginLink")}
           </Link>
         </>
@@ -162,12 +162,12 @@ export function SignupForm() {
         <p className="text-center text-xs leading-relaxed text-muted">
           {t.rich("signup.terms", {
             terms: (chunks) => (
-              <Link href="/aszf" className="underline underline-offset-2 hover:text-fg">
+              <Link href="/aszf" className="underline underline-offset-2 hover:text-ink">
                 {chunks}
               </Link>
             ),
             privacy: (chunks) => (
-              <Link href="/adatvedelem" className="underline underline-offset-2 hover:text-fg">
+              <Link href="/adatvedelem" className="underline underline-offset-2 hover:text-ink">
                 {chunks}
               </Link>
             ),

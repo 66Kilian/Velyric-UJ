@@ -14,8 +14,8 @@ export function AuthCard({ title, subtitle, children, footer }: AuthCardProps) {
   return (
     <div className="relative w-full max-w-[440px]">
       {/* Gradiens keret, finom márkaszínű fénnyel (nem elmosott folt) */}
-      <div className="rounded-[21px] bg-[linear-gradient(135deg,rgb(139_47_232/0.6),rgb(229_35_126/0.22)_45%,rgb(255_122_60/0.5))] p-px shadow-[0_30px_80px_-40px_rgb(229_35_126/0.45)]">
-        <div className="rounded-panel bg-base-800 px-6 py-8 sm:px-9 sm:py-10">
+      <div className="rounded-[calc(var(--radius-panel)+1px)] bg-[linear-gradient(135deg,rgb(240_0_255/0.55),rgb(255_0_122/0.25)_45%,rgb(255_122_89/0.55))] p-px shadow-lift">
+        <div className="rounded-panel bg-surface px-6 py-8 sm:px-9 sm:py-10">
           <div className="flex flex-col items-center text-center">
             <Image src={mark} alt="Velyric" sizes="56px" className="h-10 w-auto" preload />
             <h1 className="mt-6 text-2xl font-bold tracking-tight sm:text-[1.75rem]">{title}</h1>

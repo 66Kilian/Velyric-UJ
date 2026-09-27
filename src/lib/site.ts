@@ -11,7 +11,7 @@ export const site = {
 // A navbar menüpontjai: a landing szekciók azonosítói (id) és a fordítási kulcsuk
 export const navSections = [
   { id: "kik-vagyunk", labelKey: "about" },
-  { id: "mit-tudunk", labelKey: "features" },
+  { id: "megoldasok", labelKey: "solutions" },
   { id: "kapcsolat", labelKey: "contact" },
 ] as const;
 

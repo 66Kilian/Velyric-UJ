@@ -13,10 +13,10 @@ export function Personal() {
   const t = useTranslations("personal");
 
   return (
-    <section aria-labelledby="personal-title" className="relative border-y border-line bg-base-800 py-24 sm:py-32">
+    <section aria-labelledby="personal-title" className="relative bg-blush py-24 sm:py-32">
       <Container className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
         <figure>
-          <MediaReveal className="relative aspect-[4/5] overflow-hidden rounded-media sm:aspect-square">
+          <MediaReveal className="relative aspect-[4/5] overflow-hidden rounded-media shadow-lift sm:aspect-square">
             <Image
               src={meeting}
               alt={t("imageAlt")}
@@ -26,9 +26,9 @@ export function Personal() {
             />
           </MediaReveal>
           <figcaption className="mt-4 flex items-center gap-2 text-sm text-muted">
-            <MapPin className="size-4 shrink-0 text-fg" aria-hidden="true" />
+            <MapPin className="size-4 shrink-0 text-accent-ink" aria-hidden="true" />
             <span>
-              <span className="font-semibold text-fg">{t("badgeTitle")}</span> – {t("badgeText")}
+              <span className="font-semibold text-ink">{t("badgeTitle")}</span> – {t("badgeText")}
             </span>
           </figcaption>
         </figure>
@@ -37,8 +37,8 @@ export function Personal() {
           <SectionHeading id="personal-title" label={t("eyebrow")} title={t("title")} text={t("text")} />
           <ol className="mt-10 flex flex-col">
             {steps.map((key, i) => (
-              <li key={key} className="grid grid-cols-[2.5rem_1fr] gap-4 border-t border-line py-6 last:pb-0">
-                <span className="tabular flex size-9 items-center justify-center rounded-full border border-line-strong text-sm font-semibold">
+              <li key={key} className="grid grid-cols-[2.5rem_1fr] gap-4 border-t border-line-strong py-6 last:pb-0">
+                <span className="tabular flex size-9 items-center justify-center rounded-full bg-cta text-sm font-bold text-white">
                   {i + 1}
                 </span>
                 <div>

@@ -15,7 +15,7 @@ type SectionHeadingProps = {
 export function SectionHeading({ id, label, title, text, className }: SectionHeadingProps) {
   return (
     <div className={cn("flex max-w-3xl flex-col", className)}>
-      {label && <p className="mb-5 text-sm font-semibold text-muted">{label}</p>}
+      {label && <p className="mb-4 text-sm font-semibold text-accent-ink">{label}</p>}
       <h2 id={id} className="text-title font-bold text-balance">
         {title}
       </h2>

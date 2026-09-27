@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import { hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { About } from "@/components/landing/About";
-import { Features } from "@/components/landing/Features";
 import { FinalCta } from "@/components/landing/FinalCta";
-import { HeroStory } from "@/components/landing/HeroStory";
+import { HeroScene } from "@/components/landing/HeroScene";
+import { IndustriesPreview } from "@/components/landing/IndustriesPreview";
 import { Personal } from "@/components/landing/Personal";
-import { UseCases } from "@/components/landing/UseCases";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { routing } from "@/i18n/routing";
 import { localizedAlternates } from "@/i18n/seo";
@@ -18,8 +16,8 @@ export async function generateMetadata({ params }: PageProps<"/[locale]">): Prom
   return { alternates: localizedAlternates("/", locale) };
 }
 
-// A landing oldal: Hero + „Így dolgozik” (3D jel) → Kik vagyunk → Személyesen
-// → Mit tud (egy hívás idővonala) → Kinek szól (iparág-fülek) → Záró CTA
+// Főoldal: Hero → Kik vagyunk (24 órás számlap, a 3D jel beérkezik) → Megoldások (iparágak)
+// → Személyesen → Záró CTA (a footer a layoutban)
 export default async function HomePage({ params }: PageProps<"/[locale]">) {
   const { locale } = await params;
   if (hasLocale(routing.locales, locale)) setRequestLocale(locale);
@@ -40,6 +38,12 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
           telephone: "+36-20-627-0766",
           contactType: "customer service",
           availableLanguage: ["hu", "de", "en"],
+          hoursAvailable: {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            opens: "00:00",
+            closes: "23:59",
+          },
         },
       },
       {
@@ -57,11 +61,9 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
   return (
     <>
       <JsonLd data={structuredData} />
-      <HeroStory />
-      <About />
+      <HeroScene />
+      <IndustriesPreview />
       <Personal />
-      <Features />
-      <UseCases />
       <FinalCta />
     </>
   );

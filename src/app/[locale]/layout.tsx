@@ -7,6 +7,7 @@ import { routing } from "@/i18n/routing";
 import { ogLocale } from "@/i18n/seo";
 import { site } from "@/lib/site";
 import { MotionProvider } from "@/components/providers/MotionProvider";
+import { SmoothScroll } from "@/components/providers/SmoothScroll";
 import { Toaster } from "@/components/ui/Toaster";
 import "../globals.css";
 
@@ -18,8 +19,8 @@ const montserrat = Montserrat({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#050409",
-  colorScheme: "dark",
+  themeColor: "#fff7fb",
+  colorScheme: "light",
 };
 
 // Minden nyelvhez előre legenerált (statikus, gyors) oldalak
@@ -59,11 +60,12 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
 
   return (
     <html lang={locale} className={montserrat.variable} data-scroll-behavior="smooth">
-      <body className="min-h-dvh bg-base-900 font-sans text-fg antialiased">
+      <body className="min-h-dvh bg-canvas font-sans text-ink antialiased">
         <NextIntlClientProvider>
           <MotionProvider>
             {children}
             <Toaster />
+            <SmoothScroll />
           </MotionProvider>
         </NextIntlClientProvider>
       </body>

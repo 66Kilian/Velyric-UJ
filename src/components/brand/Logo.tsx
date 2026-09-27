@@ -26,7 +26,7 @@ export function Logo({ size = "md", withWordmark = true, eager, className }: Log
         className={cn("w-auto", markHeights[size])}
       />
       {withWordmark && (
-        <span className={cn("wordmark leading-none text-fg", wordSizes[size])}>Velyric</span>
+        <span className={cn("wordmark leading-none text-ink", wordSizes[size])}>Velyric</span>
       )}
     </span>
   );

@@ -38,7 +38,7 @@ export function Navbar() {
       {/* Billentyűzetes felhasználóknak: ugrás egyenesen a tartalomra */}
       <a
         href="#tartalom"
-        className="sr-only z-[60] rounded-xl bg-base-700 px-4 py-3 text-sm font-semibold focus:not-sr-only focus:fixed focus:top-3 focus:left-3"
+        className="sr-only z-[60] rounded-xl bg-blush-deep px-4 py-3 text-sm font-semibold focus:not-sr-only focus:fixed focus:top-3 focus:left-3"
       >
         {t("skipToContent")}
       </a>
@@ -48,7 +48,7 @@ export function Navbar() {
         <div
           aria-hidden="true"
           className={cn(
-            "absolute inset-0 border-b bg-base-900/75 backdrop-blur-xl backdrop-saturate-150 transition-[opacity,border-color] duration-500",
+            "absolute inset-0 border-b bg-canvas/75 backdrop-blur-xl backdrop-saturate-150 transition-[opacity,border-color] duration-500",
             scrolled ? "border-line opacity-100" : "border-transparent opacity-0",
           )}
         />
@@ -76,7 +76,7 @@ export function Navbar() {
                       aria-current={isActive ? "location" : undefined}
                       className={cn(
                         "group relative flex h-12 items-center px-4 text-ui font-medium transition-colors",
-                        isActive ? "text-fg" : "text-muted hover:text-fg",
+                        isActive ? "text-ink" : "text-muted hover:text-ink",
                       )}
                     >
                       {t(section.labelKey)}
@@ -118,7 +118,7 @@ export function Navbar() {
               aria-label={t("openMenu")}
               aria-expanded={menuOpen}
               aria-controls="mobile-menu"
-              className="-mr-2 ml-1 flex size-12 items-center justify-center rounded-xl text-fg transition-colors hover:bg-base-700 lg:hidden"
+              className="-mr-2 ml-1 flex size-12 items-center justify-center rounded-xl text-ink transition-colors hover:bg-blush-deep lg:hidden"
             >
               <Menu className="size-6" aria-hidden="true" />
             </button>

@@ -107,13 +107,13 @@ export function CallPlayback({ business, turns, outcome, onSpeakingChange, class
   return (
     <div
       ref={rootRef}
-      className={cn("rounded-panel border border-line-strong bg-base-800 p-5 shadow-float sm:p-6", className)}
+      className={cn("rounded-panel border border-line-strong bg-surface p-5 shadow-float sm:p-6", className)}
     >
       {/* Fejléc: ki hív, mióta, és hogy ez példa */}
       <div className="flex items-center justify-between gap-4 border-b border-line pb-4">
         <div className="flex min-w-0 items-center gap-3">
-          <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-base-600">
-            <PhoneIncoming className="size-5 text-fg" aria-hidden="true" />
+          <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-blush-deep">
+            <PhoneIncoming className="size-5 text-ink" aria-hidden="true" />
           </span>
           <div className="min-w-0">
             <p className="truncate text-sm font-semibold">{business}</p>
@@ -123,7 +123,7 @@ export function CallPlayback({ business, turns, outcome, onSpeakingChange, class
           </div>
         </div>
         <span className="shrink-0 rounded-md border border-line-strong px-2 py-1 text-[11px] font-medium text-muted">
-          {t("example")}
+          {t("exampleShort")}
         </span>
       </div>
 
@@ -135,8 +135,8 @@ export function CallPlayback({ business, turns, outcome, onSpeakingChange, class
             className={cn(
               "turn-in max-w-[88%] rounded-xl px-3.5 py-2.5",
               turn.who === "caller"
-                ? "self-start rounded-bl-md bg-base-600 text-fg"
-                : "self-end rounded-br-md border border-brand-pink/35 bg-brand-pink/10 text-fg",
+                ? "self-start rounded-bl-md bg-blush-deep text-ink"
+                : "self-end rounded-br-md border border-brand-pink/35 bg-brand-pink/10 text-ink",
             )}
           >
             <span className="sr-only">{turn.who === "caller" ? t("caller") : t("agent")}: </span>
@@ -182,7 +182,7 @@ export function CallPlayback({ business, turns, outcome, onSpeakingChange, class
               setElapsed(0);
               setRun((r) => r + 1);
             }}
-            className="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-2 text-xs font-medium text-muted transition-colors hover:text-fg"
+            className="inline-flex min-h-11 items-center gap-1.5 rounded-lg px-2 text-xs font-medium text-muted transition-colors hover:text-ink"
           >
             <RotateCcw className="size-3.5" aria-hidden="true" />
             {t("replay")}

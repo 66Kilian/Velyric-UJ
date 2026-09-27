@@ -3,7 +3,7 @@ import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/cn";
 import { Spinner } from "./Spinner";
 
-type Variant = "primary" | "secondary" | "ghost";
+type Variant = "primary" | "secondary" | "ghost" | "inverse";
 type Size = "md" | "lg";
 
 type BaseProps = {
@@ -36,12 +36,14 @@ const sizes: Record<Size, string> = {
 
 const variants: Record<Variant, string> = {
   // Gradiens gomb – hover-re lágy gradiens-glow a gomb mögött
-  primary: "bg-brand-deep text-white",
+  primary: "bg-cta text-white",
   // Visszafogott, keretes gomb sötét felületen
   secondary:
-    "border border-line-strong bg-base-800 text-fg hover:border-white/30 hover:bg-base-700",
+    "border border-line-strong bg-surface text-ink hover:border-ink/25 hover:bg-blush-deep",
+  // Fordított gomb színes felületen (pl. a záró CTA panelen)
+  inverse: "bg-white text-ink hover:bg-blush",
   // Szöveges gomb (pl. „Bejelentkezés” a navbarban)
-  ghost: "text-muted hover:text-fg",
+  ghost: "text-muted hover:text-ink",
 };
 
 export function Button(props: ButtonProps) {

@@ -47,14 +47,14 @@ export function DemoButton() {
         aria-describedby="demo-text"
         onClose={() => setOpen(false)}
         onClick={(e) => e.target === dialogRef.current && close()}
-        className="dialog-panel m-auto w-[min(94vw,560px)] rounded-panel border border-line-strong bg-base-900 p-0 text-fg shadow-float"
+        className="dialog-panel m-auto w-[min(94vw,560px)] rounded-panel border border-line-strong bg-canvas p-0 text-ink shadow-float"
       >
         <div className="relative p-5 sm:p-7">
           <button
             type="button"
             onClick={close}
             aria-label={t("close")}
-            className="absolute top-3 right-3 flex size-12 items-center justify-center rounded-xl text-muted transition-colors hover:bg-base-700 hover:text-fg"
+            className="absolute top-3 right-3 flex size-12 items-center justify-center rounded-xl text-muted transition-colors hover:bg-blush-deep hover:text-ink"
           >
             <X className="size-5" aria-hidden="true" />
           </button>

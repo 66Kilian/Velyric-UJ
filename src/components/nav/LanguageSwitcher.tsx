@@ -58,7 +58,7 @@ export function LanguageDropdown({ className }: { className?: string }) {
         aria-controls={listId}
         aria-label={`${t("language")}: ${localeNames[current]}`}
         onClick={() => setOpen((v) => !v)}
-        className="flex h-12 items-center gap-1.5 rounded-xl px-3 text-sm font-semibold text-muted transition-colors hover:text-fg"
+        className="flex h-12 items-center gap-1.5 rounded-xl px-3 text-sm font-semibold text-muted transition-colors hover:text-ink"
       >
         <Globe className="size-4" aria-hidden="true" />
         <span className="uppercase">{current}</span>
@@ -76,7 +76,7 @@ export function LanguageDropdown({ className }: { className?: string }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -6 }}
             transition={{ duration: DURATION.overlay, ease: EASE_OUT }}
-            className="absolute top-full right-0 mt-2 w-48 rounded-xl border border-line-strong bg-base-800/95 p-1.5 shadow-float backdrop-blur-xl"
+            className="absolute top-full right-0 mt-2 w-48 rounded-xl border border-line-strong bg-surface/95 p-1.5 shadow-float backdrop-blur-xl"
           >
             {routing.locales.map((locale) => {
               const selected = locale === current;
@@ -93,11 +93,11 @@ export function LanguageDropdown({ className }: { className?: string }) {
                     }}
                     className={cn(
                       "flex h-11 w-full items-center justify-between rounded-xl px-3 text-left text-sm font-medium transition-colors",
-                      selected ? "bg-base-700 text-fg" : "text-muted hover:bg-base-700/60 hover:text-fg",
+                      selected ? "bg-blush-deep text-ink" : "text-muted hover:bg-blush-deep/60 hover:text-ink",
                     )}
                   >
                     {localeNames[locale]}
-                    {selected && <Check className="size-4 text-brand-pink" aria-hidden="true" />}
+                    {selected && <Check className="size-4 text-accent-ink" aria-hidden="true" />}
                   </button>
                 </li>
               );
@@ -130,8 +130,8 @@ export function LanguageSegmented({ className }: { className?: string }) {
             className={cn(
               "h-12 rounded-xl border text-sm font-semibold transition-colors",
               selected
-                ? "border-brand text-fg"
-                : "border-line-strong text-muted hover:border-white/25 hover:text-fg",
+                ? "border-brand text-ink"
+                : "border-line-strong text-muted hover:border-ink/25 hover:text-ink",
             )}
           >
             {localeNames[locale]}

@@ -149,7 +149,7 @@ export function LoginForm({ initialError }: { initialError?: string | null }) {
           <button
             type="button"
             onClick={() => switchView("login")}
-            className="min-h-12 font-semibold text-fg underline-offset-4 hover:underline"
+            className="min-h-12 font-semibold text-ink underline-offset-4 hover:underline"
           >
             ← {t("forgot.back")}
           </button>
@@ -177,7 +177,7 @@ export function LoginForm({ initialError }: { initialError?: string | null }) {
       footer={
         <>
           {t("login.noAccount")}{" "}
-          <Link href="/regisztracio" className="font-semibold text-fg underline-offset-4 hover:underline">
+          <Link href="/regisztracio" className="font-semibold text-ink underline-offset-4 hover:underline">
             {t("login.signupLink")}
           </Link>
         </>
@@ -216,7 +216,7 @@ export function LoginForm({ initialError }: { initialError?: string | null }) {
           <button
             type="button"
             onClick={() => switchView("forgot")}
-            className="min-h-10 text-sm font-medium text-muted underline-offset-4 transition-colors hover:text-fg hover:underline"
+            className="min-h-10 text-sm font-medium text-muted underline-offset-4 transition-colors hover:text-ink hover:underline"
           >
             {t("login.forgot")}
           </button>

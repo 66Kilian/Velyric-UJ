@@ -84,7 +84,7 @@ export function MobileMenu({ open, onClose, active, returnFocusRef, loggedIn, on
           animate={{ x: 0 }}
           exit={{ x: "100%" }}
           transition={{ duration: DURATION.drawer, ease: EASE_OUT }}
-          className="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-base-900 lg:hidden"
+          className="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-canvas lg:hidden"
         >
 
           <div className="relative flex h-[var(--nav-h)] shrink-0 items-center justify-between px-5 sm:px-8">
@@ -94,7 +94,7 @@ export function MobileMenu({ open, onClose, active, returnFocusRef, loggedIn, on
               type="button"
               onClick={onClose}
               aria-label={t("closeMenu")}
-              className="-mr-2 flex size-12 items-center justify-center rounded-xl text-fg transition-colors hover:bg-base-700"
+              className="-mr-2 flex size-12 items-center justify-center rounded-xl text-ink transition-colors hover:bg-blush-deep"
             >
               <X className="size-6" aria-hidden="true" />
             </button>
@@ -118,7 +118,7 @@ export function MobileMenu({ open, onClose, active, returnFocusRef, loggedIn, on
                     aria-current={active === section.id ? "location" : undefined}
                     className={cn(
                       "flex min-h-16 items-center gap-4 border-b border-line text-3xl font-semibold tracking-tight transition-colors",
-                      active === section.id ? "text-fg" : "text-muted hover:text-fg",
+                      active === section.id ? "text-ink" : "text-muted hover:text-ink",
                     )}
                   >
                     {/* Aktív szekció: rövid gradiens-jelölő (a Velyric „hangja”), nem színes szöveg */}
@@ -162,7 +162,7 @@ export function MobileMenu({ open, onClose, active, returnFocusRef, loggedIn, on
             <LanguageSegmented className="mt-3" />
             <a
               href={site.phoneHref}
-              className="mt-2 flex h-12 items-center justify-center gap-2 text-sm font-medium text-muted transition-colors hover:text-fg"
+              className="mt-2 flex h-12 items-center justify-center gap-2 text-sm font-medium text-muted transition-colors hover:text-ink"
             >
               <Phone className="size-4" aria-hidden="true" />
               {site.phone}
