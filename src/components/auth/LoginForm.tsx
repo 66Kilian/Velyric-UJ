@@ -5,7 +5,7 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Button } from "@/components/ui/Button";
 import { Link, useRouter } from "@/i18n/navigation";
 import { authCallbackUrl, authErrorKey, isValidEmail, type AuthErrorKey } from "@/lib/auth";
-import { isSupabaseConfigured } from "@/lib/supabase/config";
+import { DEMO_ENABLED, demoSignIn } from "@/lib/demo";
 import { getSupabaseBrowser } from "@/lib/supabase/client";
 import { toast } from "@/lib/toast";
 import { AuthCard } from "./AuthCard";
@@ -64,10 +64,15 @@ export function LoginForm({ initialError }: { initialError?: string | null }) {
     if (emailError || passwordError || lockLeft > 0) return;
 
     const supabase = getSupabaseBrowser();
-    if (!supabase) return setError(t("common.notConfigured"));
-
+    let authError: unknown = null;
     setLoading(true);
-    const { error: authError } = await supabase.auth.signInWithPassword({ email: email.trim(), password });
+    if (supabase) {
+      ({ error: authError } = await supabase.auth.signInWithPassword({ email: email.trim(), password }));
+    } else if (DEMO_ENABLED) {
+      // Bemutató mód: csak a teszt fiók léphet be
+      await new Promise((r) => setTimeout(r, 400));
+      if (!demoSignIn(email, password)) authError = { code: "invalid_credentials" };
+    }
     setLoading(false);
 
     if (authError) {
@@ -172,7 +177,6 @@ export function LoginForm({ initialError }: { initialError?: string | null }) {
         </>
       }
     >
-      {!isSupabaseConfigured && <FormAlert kind="info" className="mb-6">{t("common.notConfigured")}</FormAlert>}
       {lockLeft > 0 ? (
         <FormAlert kind="error" className="mb-6">{t("errors.locked", { seconds: lockLeft })}</FormAlert>
       ) : (
