@@ -2,7 +2,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { ImageResponse } from "next/og";
 
-// Közös, megtervezett megosztási kép (1200×630): Soft Blush alap, Deep Navy cím, márka-hanghullám
+// Közös, megtervezett megosztási kép (1200×630): sötét szilva alap, Soft Blush cím, márka-fény
 export const OG_SIZE = { width: 1200, height: 630 };
 
 const bars = [0.35, 0.6, 0.9, 0.55, 1, 0.7, 0.45, 0.85, 0.6, 0.3, 0.75, 0.5, 0.95, 0.4, 0.65, 0.3];

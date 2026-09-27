@@ -38,6 +38,22 @@ npm run dev                         # http://localhost:3000
    - Az OAuth consent screenen add meg az app nevét (Velyric), a logót és a domaint.
 8. **Rate limit / védelem:** Authentication → Rate Limits – az alapértékek jók. Ha sok a robot-regisztráció, kapcsold be az Attack Protection → CAPTCHA-t.
 
+## Beállítás bejelentkezés után (`/beallitas`)
+
+Bejelentkezés után a felhasználó egy 6 lépéses, MI-vezérelt beállításon megy végig:
+1. **Vállalkozás** – pár mondat a cégről → a Claude profilt, javasolt feladatokat és köszönést készít
+2. **Feladatok** – igen/nem kapcsolók, mikor vegye fel, nyelvek, átkapcsolási szám
+3. **Hang** – 4 hang meghallgatható mintával, ki szól először, magázás/tegezés, köszönés és köszönő üzenet
+4. **Tudás** – fájlfeltöltés (Supabase Storage) vagy „később küldöm”, nyitvatartás
+5. **Számlázás** – cég/magánszemély, adószám élő ellenőrzéssel, cím
+6. **Indítás** – Stripe fizetőoldal (kártya, Apple Pay, Google Pay) → **Kész** oldal példahívással
+
+Beüzemelés:
+- **Adatbázis:** Supabase → SQL Editor → futtasd a `supabase/migrations/20260928000000_onboarding.sql` fájlt.
+- **Kulcsok:** lásd `.env.local.example` (Anthropic, ElevenLabs, Stripe, Supabase service role).
+- **Stripe:** hozz létre egy terméket árral (a `price_…` azonosító a `STRIPE_PRICE_ID`), és egy webhookot a `/api/billing/webhook` címre.
+- Ami nincs beállítva, az bemutató módban fut: MI helyett sablonok, természetes hang helyett a böngésző hangja, fizetés helyett „Folytatás fizetés nélkül”.
+
 ## Útvonalak
 
 | Oldal | HU | EN | DE |
@@ -47,6 +63,7 @@ npm run dev                         # http://localhost:3000
 | Regisztráció | `/regisztracio` | `/en/signup` | `/de/registrieren` |
 | Megerősítés | `/auth/megerosites` | `/en/auth/confirmed` | `/de/auth/bestaetigt` |
 | Új jelszó | `/auth/uj-jelszo` | `/en/auth/new-password` | `/de/auth/neues-passwort` |
+| Beállítás | `/beallitas` | `/en/setup` | `/de/einrichtung` |
 
 A Supabase-linkek a `/auth/confirm` visszahívásra érkeznek, az irányít tovább.
 

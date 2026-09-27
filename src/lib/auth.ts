@@ -49,7 +49,7 @@ export function passwordScore(pw: string): 0 | 1 | 2 | 3 | 4 {
 }
 
 // A Supabase-linkek ide térnek vissza (e-mail megerősítés, jelszó-visszaállítás, Google)
-export function authCallbackUrl(next: "/" | "/auth/megerosites" | "/auth/uj-jelszo", locale: string) {
+export function authCallbackUrl(next: "/beallitas" | "/auth/megerosites" | "/auth/uj-jelszo", locale: string) {
   const url = new URL("/auth/confirm", window.location.origin);
   url.searchParams.set("next", next);
   url.searchParams.set("locale", locale);

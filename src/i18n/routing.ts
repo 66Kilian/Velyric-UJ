@@ -20,6 +20,8 @@ export const routing = defineRouting({
     "/megoldasok/ettermek": { hu: "/megoldasok/ettermek", en: "/solutions/restaurants", de: "/loesungen/restaurants" },
     "/megoldasok/autoszervizek": { hu: "/megoldasok/autoszervizek", en: "/solutions/auto-repair", de: "/loesungen/werkstaetten" },
     "/aszf": { hu: "/aszf", en: "/terms", de: "/agb" },
+    // Bejelentkezés utáni beállítás (onboarding)
+    "/beallitas": { hu: "/beallitas", en: "/setup", de: "/einrichtung" },
     "/auth/megerosites": {
       hu: "/auth/megerosites",
       en: "/auth/confirmed",

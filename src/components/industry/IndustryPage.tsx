@@ -53,7 +53,7 @@ export async function IndustryPage({ industry, locale }: { industry: IndustryKey
       {/* ---- Iparági hero ---- */}
       <section
         aria-labelledby="industry-title"
-        className="relative overflow-hidden bg-[radial-gradient(60%_60%_at_80%_25%,rgba(255,0,122,0.2)_0%,rgba(142,0,105,0.12)_40%,rgba(7,19,39,0)_75%)] bg-canvas pt-[calc(var(--nav-h)+3rem)] pb-20 sm:pb-28"
+        className="relative overflow-hidden bg-[radial-gradient(60%_60%_at_80%_25%,rgba(255,0,122,0.2)_0%,rgba(142,0,105,0.12)_40%,rgba(30,6,22,0)_75%)] bg-canvas pt-[calc(var(--nav-h)+3rem)] pb-20 sm:pb-28"
       >
         <Container className="grid items-center gap-12 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
           <div>

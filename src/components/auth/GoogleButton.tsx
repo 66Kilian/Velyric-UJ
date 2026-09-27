@@ -18,7 +18,7 @@ export function GoogleButton({ onError }: { onError: (message: string) => void }
     setLoading(true);
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "google",
-      options: { redirectTo: authCallbackUrl("/", locale) },
+      options: { redirectTo: authCallbackUrl("/beallitas", locale) },
     });
     // Siker esetén a böngésző átirányít a Google-höz; ide csak hibánál jutunk
     if (error) {

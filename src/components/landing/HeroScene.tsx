@@ -207,7 +207,7 @@ export function HeroScene() {
       {/* ---- HERO ---- */}
       <section
         aria-labelledby="hero-title"
-        className="relative bg-[radial-gradient(60%_60%_at_80%_25%,rgba(255,0,122,0.2)_0%,rgba(142,0,105,0.12)_40%,rgba(7,19,39,0)_75%)] bg-canvas"
+        className="relative bg-[radial-gradient(60%_60%_at_80%_25%,rgba(255,0,122,0.2)_0%,rgba(142,0,105,0.12)_40%,rgba(30,6,22,0)_75%)] bg-canvas"
       >
         <Container className="relative flex min-h-svh flex-col justify-end pt-[calc(var(--nav-h)+2.5rem)] pb-20 lg:justify-center lg:pb-24">
           <div className="relative z-20 flex max-w-xl flex-col items-start lg:max-w-[40rem]">

@@ -18,7 +18,8 @@
     "mainNav": "Hauptnavigation",
     "menu": "Menü",
     "skipToContent": "Zum Inhalt springen",
-    "solutions": "Lösungen"
+    "solutions": "Lösungen",
+    "account": "Mein Konto"
   },
   "common": {
     "loading": "Wird geladen…"
@@ -193,7 +194,7 @@
     "confirm": {
       "successTitle": "Erfolgreich bestätigt ✔",
       "successText": "Ihre E-Mail-Adresse ist bestätigt und Sie sind angemeldet. Willkommen bei Velyric!",
-      "cta": "Weiter zur Startseite",
+      "cta": "Weiter zur Einrichtung",
       "errorTitle": "Dieser Link ist nicht mehr gültig",
       "errorText": "Der Bestätigungslink ist abgelaufen oder wurde bereits verwendet. Melden Sie sich an – wir senden Ihnen mit einem Klick einen neuen.",
       "errorCta": "Zur Anmeldung"
@@ -500,6 +501,380 @@
       },
       "ctaTitle": "Verlieren Sie keine Aufträge mehr ans Telefon.",
       "ctaText": "Wir kommen in Ihre Werkstatt und passen Velyric an Ihre Arbeitsweise an."
+    }
+  },
+  "setup": {
+    "meta": {
+      "title": "Einrichtung"
+    },
+    "header": {
+      "saving": "Wird gespeichert…",
+      "saved": "Gespeichert",
+      "saveFailed": "Speichern fehlgeschlagen",
+      "account": "Konto",
+      "logout": "Abmelden",
+      "help": "Hilfe:"
+    },
+    "steps": {
+      "business": "Unternehmen",
+      "tasks": "Aufgaben",
+      "voice": "Stimme",
+      "knowledge": "Wissen",
+      "billing": "Rechnung",
+      "payment": "Start",
+      "done": "Fertig",
+      "progress": "Schritt {current} von {total}",
+      "rail": "Schritte der Einrichtung"
+    },
+    "nav": {
+      "back": "Zurück",
+      "next": "Weiter",
+      "skip": "Jetzt überspringen",
+      "fixErrors": "Bitte prüfen Sie die rot markierten Felder."
+    },
+    "guide": {
+      "name": "Velyric-Assistent",
+      "thinking": "Einen Moment…",
+      "welcome": "Willkommen! Ich führe Sie durch die Einrichtung — etwa 5 Minuten. Alles wird laufend gespeichert, Sie können jederzeit weitermachen.",
+      "templateNote": "Ich arbeite gerade mit Vorlagen — die vollständige KI-Analyse startet, sobald der Schlüssel eingerichtet ist."
+    },
+    "business": {
+      "eyebrow": "Schritt 1",
+      "title": "Erzählen Sie uns von Ihrem Unternehmen.",
+      "lead": "Ein paar Sätze genügen. Daraus erstelle ich die erste Version Ihres Sprachagenten — alles lässt sich später ändern.",
+      "name": "Name des Unternehmens",
+      "namePlaceholder": "z. B. Zahnarztpraxis Lächeln",
+      "website": "Website",
+      "optional": "optional",
+      "websitePlaceholder": "z. B. praxis-laecheln.at",
+      "description": "Was machen Sie, und warum rufen Kunden bei Ihnen an?",
+      "descriptionPlaceholder": "z. B. Wir sind eine Zahnarztpraxis in Wien mit zwei Ärzten. Die meisten Anrufer wollen einen Termin buchen oder verschieben, viele fragen nach Preisen und Zahnreinigung.",
+      "descriptionHint": "In Ihren eigenen Worten: wer anruft, was gefragt wird, was am wichtigsten ist.",
+      "tooShort": "Bitte schreiben Sie mindestens ein, zwei Sätze (mind. 20 Zeichen).",
+      "examples": "Ideen:",
+      "exampleClinic": "Zahnarztpraxis",
+      "exampleSalon": "Friseursalon",
+      "exampleRestaurant": "Restaurant",
+      "exampleAuto": "Autowerkstatt",
+      "exampleTexts": {
+        "clinic": "Wir sind eine Zahnarztpraxis in Wien mit zwei Zahnärzten und einer Dentalhygienikerin. Die meisten Anrufer wollen einen Termin buchen, verschieben oder fragen nach Behandlungspreisen.",
+        "salon": "Wir sind ein Friseur- und Kosmetiksalon in Graz mit fünf Mitarbeiterinnen. Kunden rufen wegen Färben, Schneiden und Nägeln an, und viele sagen kurzfristig ab.",
+        "restaurant": "Wir sind ein italienisches Restaurant am Plattensee mit 80 Plätzen und Terrasse. Im Sommer gibt es viele Tischreservierungen, viele deutsch- und englischsprachige Gäste und Fragen zu glutenfreien Gerichten.",
+        "auto": "Wir sind eine Kfz- und Reifenwerkstatt in Linz. In der Saison klingelt das Telefon den ganzen Tag wegen Reifenwechsel, und viele fragen, wann ihr Auto fertig ist."
+      },
+      "analyze": "Mit KI analysieren",
+      "reanalyze": "Erneut analysieren",
+      "analyzing": [
+        "Ich lese Ihre Beschreibung…",
+        "Ich erkenne Ihre Branche…",
+        "Ich stelle die Aufgaben zusammen…",
+        "Ich schreibe die erste Begrüßung…"
+      ],
+      "resultTitle": "So verstehe ich Ihr Unternehmen",
+      "resultEdit": "Wenn etwas nicht stimmt, ändern Sie es — der Agent arbeitet damit.",
+      "summary": "Zusammenfassung",
+      "services": "Leistungen",
+      "changed": "Sie haben die Beschreibung geändert — soll ich neu analysieren?",
+      "error": "Die Analyse hat gerade nicht geklappt. Bitte versuchen Sie es in einer Minute erneut.",
+      "rateLimited": "Zu viele Anfragen in kurzer Zeit. Bitte warten Sie einen Moment.",
+      "nameRequired": "Bitte geben Sie den Namen Ihres Unternehmens ein."
+    },
+    "tasks": {
+      "eyebrow": "Schritt 2",
+      "title": "Wofür brauchen Sie Velyric?",
+      "lead": "Auf Basis Ihrer Beschreibung schlage ich Folgendes vor. Schalten Sie ein, was Velyric für Sie übernehmen soll.",
+      "yes": "Ja",
+      "no": "Nein",
+      "enabledCount": "{count} Aufgaben aktiv",
+      "noneEnabled": "Bitte aktivieren Sie mindestens eine Aufgabe.",
+      "addLabel": "Eigene Aufgabe",
+      "addPlaceholder": "z. B. Gutscheinbestellungen",
+      "add": "Hinzufügen",
+      "remove": "Entfernen",
+      "coverageTitle": "Wann soll Velyric abheben?",
+      "coverage": {
+        "always": {
+          "title": "Immer",
+          "text": "Rund um die Uhr, jeder Anruf wird angenommen."
+        },
+        "afterHours": {
+          "title": "Außerhalb der Öffnungszeiten",
+          "text": "Tagsüber Sie, abends und am Wochenende Velyric."
+        },
+        "overflow": {
+          "title": "Wenn Sie nicht können",
+          "text": "Wenn besetzt ist oder nach ein paar Klingeltönen niemand abhebt."
+        }
+      },
+      "languagesTitle": "In welchen Sprachen soll Velyric sprechen?",
+      "languages": {
+        "hu": "Ungarisch",
+        "de": "Deutsch",
+        "en": "Englisch"
+      },
+      "handoffTitle": "Weiterleitung an einen Menschen",
+      "handoffText": "Wenn der Anrufer einen Menschen sprechen möchte oder etwas fragt, das Velyric nicht beantworten darf, wird an diese Nummer weitergeleitet — mit Zusammenfassung.",
+      "handoffPlaceholder": "+43 660 123 4567",
+      "handoffInvalid": "Bitte geben Sie eine gültige Telefonnummer ein oder lassen Sie das Feld leer."
+    },
+    "voice": {
+      "eyebrow": "Schritt 3",
+      "title": "Wie soll Velyric klingen?",
+      "lead": "Hören Sie sich alle an und wählen Sie die Stimme, die zu Ihrem Unternehmen passt.",
+      "personas": {
+        "luca": "Warm, freundlich",
+        "dora": "Ruhig, elegant",
+        "bence": "Tief, beruhigend",
+        "mate": "Frisch, dynamisch"
+      },
+      "female": "Weibliche Stimme",
+      "male": "Männliche Stimme",
+      "play": "Anhören",
+      "stop": "Stopp",
+      "loadingAudio": "Audio wird geladen…",
+      "previewNote": "Vorschau mit der Stimme Ihres Browsers. Die endgültige, natürliche Stimme erhalten Sie bei der Einrichtung.",
+      "selected": "Ausgewählt",
+      "firstTitle": "Wer spricht im Anruf zuerst?",
+      "first": {
+        "agent": {
+          "title": "Velyric begrüßt",
+          "text": "Stellt sich sofort nach dem Abheben vor."
+        },
+        "caller": {
+          "title": "Der Anrufer zuerst",
+          "text": "Wartet auf das „Hallo“ und begrüßt dann."
+        }
+      },
+      "formalityTitle": "Wie soll Velyric Anrufer ansprechen?",
+      "formality": {
+        "formal": {
+          "title": "Mit „Sie“",
+          "text": "„Wie kann ich Ihnen helfen?“"
+        },
+        "informal": {
+          "title": "Mit „du“",
+          "text": "„Wie kann ich dir helfen?“"
+        }
+      },
+      "agentName": "Wie soll sich der Agent vorstellen?",
+      "agentNameHint": "Der Name Ihres Agenten in den Anrufen.",
+      "greeting": "Begrüßung",
+      "closing": "Dankesnachricht am Ende des Anrufs",
+      "regenerate": "Neue Version",
+      "regenerating": "Wird geschrieben…",
+      "instructionPlaceholder": "Wunsch zum Text? z. B. kürzer",
+      "aiNote": "Laut EU-KI-Verordnung muss der Anrufer wissen, dass er mit einer KI spricht — daher sagt die Begrüßung das immer.",
+      "greetingRequired": "Die Begrüßung darf nicht leer sein."
+    },
+    "knowledge": {
+      "eyebrow": "Schritt 4",
+      "title": "Was soll Velyric wissen?",
+      "lead": "Je mehr Velyric weiß, desto genauer die Antworten. Preisliste, Leistungen, häufige Fragen, Speisekarte — alles hilft.",
+      "drop": "Dateien hierher ziehen oder",
+      "browse": "vom Computer auswählen",
+      "formats": "PDF, Word, Excel, TXT oder Bild · max. 20 MB pro Datei",
+      "uploading": "Wird hochgeladen…",
+      "uploaded": "Hochgeladen",
+      "remove": "Entfernen",
+      "tooLarge": "{name}: zu groß (max. 20 MB).",
+      "badType": "{name}: dieses Format können wir nicht annehmen.",
+      "uploadFailed": "{name}: Upload fehlgeschlagen. Bitte erneut versuchen.",
+      "demoFiles": "Demo-Modus: Dateien werden nicht hochgeladen, sie erscheinen nur in der Liste.",
+      "laterTitle": "Ich habe eine große Wissensbasis — ich sende sie später",
+      "laterText": "Kein Problem. Ein Kollege meldet sich bei Ihnen und übernimmt die Unterlagen persönlich.",
+      "hours": "Öffnungszeiten",
+      "hoursPlaceholder": "z. B. Mo–Fr 8:00–18:00, Sa 9:00–13:00, sonntags geschlossen",
+      "notes": "Was Velyric noch wissen sollte",
+      "notesPlaceholder": "z. B. Parkplätze im Hof, nur nach Terminvereinbarung, Kartenzahlung möglich",
+      "empty": "Dieser Schritt ist optional, macht aber viel für genaue Antworten aus."
+    },
+    "billing": {
+      "eyebrow": "Schritt 5",
+      "title": "Rechnungsdaten",
+      "lead": "Die Rechnung stellen wir auf diesen Namen und diese Adresse aus.",
+      "type": {
+        "company": "Unternehmen / Einzelunternehmer",
+        "individual": "Privatperson"
+      },
+      "country": "Land",
+      "countries": {
+        "HU": "Ungarn",
+        "AT": "Österreich",
+        "DE": "Deutschland",
+        "OTHER": "Anderes EU-Land"
+      },
+      "companyName": "Firmenname",
+      "companyNamePlaceholder": "z. B. Praxis Lächeln GmbH",
+      "fullName": "Vollständiger Name",
+      "fullNamePlaceholder": "z. B. Anna Huber",
+      "taxNumber": "Ungarische Steuernummer",
+      "taxNumberPlaceholder": "12345678-1-12",
+      "taxValid": "Gültiges Format",
+      "euVat": "USt-IdNr. / UID",
+      "euVatPlaceholderHU": "HU12345678",
+      "euVatPlaceholder": "z. B. ATU12345678",
+      "euVatSuggest": "Übernehmen: {value}",
+      "zip": "PLZ",
+      "city": "Ort",
+      "address": "Straße und Hausnummer",
+      "addressPlaceholder": "z. B. Hauptstraße 12",
+      "email": "Rechnungs-E-Mail",
+      "phone": "Telefonnummer",
+      "phoneHint": "Unter dieser Nummer meldet sich unser Kollege zur Einführung.",
+      "accept": "Ich akzeptiere die <terms>AGB</terms> und die <privacy>Datenschutzerklärung</privacy>.",
+      "errors": {
+        "nameRequired": "Bitte geben Sie den Namen ein.",
+        "taxRequired": "Bitte geben Sie die Steuernummer ein.",
+        "taxInvalid": "Keine gültige Steuernummer. Format: 12345678-1-12.",
+        "euVatRequired": "Für Unternehmen außerhalb Ungarns ist die USt-IdNr. erforderlich.",
+        "euVatInvalid": "Keine gültige USt-IdNr. (z. B. ATU12345678).",
+        "zipInvalid": "Ungültige PLZ.",
+        "cityRequired": "Bitte geben Sie den Ort ein.",
+        "addressRequired": "Bitte geben Sie die Adresse ein.",
+        "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+        "phoneInvalid": "Bitte geben Sie eine gültige Telefonnummer ein.",
+        "acceptRequired": "Bitte akzeptieren Sie die Bedingungen, um fortzufahren."
+      },
+      "optional": "optional"
+    },
+    "payment": {
+      "eyebrow": "Schritt 6",
+      "title": "Starten wir.",
+      "lead": "Sichere Zahlung über Stripe — mit Karte, Apple Pay oder Google Pay.",
+      "summary": "Übersicht",
+      "plan": "Velyric-Sprachagent",
+      "custom": "Nach individuellem Angebot",
+      "perInterval": {
+        "day": "/ Tag",
+        "week": "/ Woche",
+        "month": "/ Monat",
+        "year": "/ Jahr"
+      },
+      "oneTime": "einmalig",
+      "includes": [
+        "Persönliche Einführung und Einrichtung",
+        "Ihr eigener, maßgeschneiderter Sprachagent",
+        "Support rund um die Uhr"
+      ],
+      "for": "Rechnung an: {name}",
+      "edit": "Ändern",
+      "pay": "Weiter zur sicheren Zahlung",
+      "redirecting": "Weiterleitung zu Stripe…",
+      "secure": "Ihre Kartendaten verarbeitet Stripe — wir sehen sie nie.",
+      "methods": "Akzeptierte Zahlungsarten",
+      "demoTitle": "Demo-Modus",
+      "demoText": "Zahlungen sind auf dieser Seite noch nicht aktiviert. Sie können den Ablauf ohne Belastung durchgehen.",
+      "demoContinue": "Ohne Zahlung fortfahren",
+      "loginRequired": "Zum Bezahlen melden Sie sich bitte mit einem echten Konto an.",
+      "cancelled": "Die Zahlung wurde abgebrochen — es wurde nichts belastet. Sie können jederzeit neu starten.",
+      "verifying": "Zahlung wird geprüft…",
+      "notPaid": "Die Zahlung ist noch nicht bestätigt. Falls abgebucht wurde, rufen Sie uns bitte an.",
+      "error": "Die Zahlung konnte gerade nicht gestartet werden. Bitte versuchen Sie es in einer Minute erneut.",
+      "taxRejected": "Stripe hat die Steuernummer nicht akzeptiert. Bitte prüfen Sie Ihre Rechnungsdaten.",
+      "questions": "Fragen vor der Zahlung? Rufen Sie uns an:"
+    },
+    "done": {
+      "eyebrow": "Fertig",
+      "title": "{agent} nimmt bald Ihre Anrufe entgegen.",
+      "lead": "Wir haben Ihre Einrichtung erhalten. Ab hier übernehmen wir — Sie verfolgen nur noch die Anrufe.",
+      "paid": "Zahlung erfolgreich",
+      "demo": "Demo-Modus",
+      "listen": "Hören Sie die Begrüßung",
+      "demoCall": "So wird ein Anruf bei Ihnen klingen",
+      "demoCallNote": "Ein Beispiel, das die KI aus Ihrer Beschreibung erstellt hat.",
+      "nextTitle": "Wie geht es weiter?",
+      "next": [
+        {
+          "title": "Wir rufen innerhalb von 24 Stunden an",
+          "text": "Ein Kollege geht die Einstellungen mit Ihnen durch und vereinbart die persönliche Einführung."
+        },
+        {
+          "title": "Gemeinsam testen",
+          "text": "Sie erhalten eine Testnummer und probieren alles live aus, bevor es startet."
+        },
+        {
+          "title": "Live gehen",
+          "text": "Sie leiten Ihre Anrufe um, und Velyric legt los. In den ersten Wochen verfeinern wir anhand echter Anrufe."
+        }
+      ],
+      "yourSetup": "Ihre Einrichtung",
+      "edit": "Ändern",
+      "home": "Zurück zur Startseite",
+      "summary": {
+        "business": "Unternehmen",
+        "tasks": "Aufgaben",
+        "voice": "Stimme",
+        "knowledge": "Wissensbasis",
+        "knowledgeLater": "Sie senden sie später, ein Kollege übernimmt sie",
+        "knowledgeFiles": "{count} Dateien",
+        "knowledgeNone": "Noch keine Unterlagen"
+      }
+    },
+    "preview": {
+      "title": "Ihr Agent",
+      "live": "Live-Vorschau",
+      "open": "Vorschau",
+      "business": "Unternehmen",
+      "voice": "Stimme",
+      "greeting": "Begrüßung",
+      "tasks": "Aufgaben",
+      "coverage": "Erreichbarkeit",
+      "languages": "Sprachen",
+      "empty": "Nach Schritt 1 entsteht hier Ihr Agent.",
+      "status": "In Einrichtung"
+    },
+    "templates": {
+      "unnamed": "unser Unternehmen",
+      "otherLabel": "Dienstleistungsunternehmen",
+      "greeting": {
+        "formal": "{business}, guten Tag! Hier spricht {agent}, Ihre KI-Assistenz. Wie kann ich Ihnen helfen?",
+        "informal": "{business}, hallo! Hier spricht {agent}, deine KI-Assistenz. Wie kann ich dir helfen?"
+      },
+      "closing": {
+        "formal": "Vielen Dank für Ihren Anruf. Einen schönen Tag noch!",
+        "informal": "Danke für deinen Anruf — schönen Tag noch!"
+      },
+      "handoffTask": {
+        "label": "Weiterleitung an Kollegen",
+        "detail": "Möchte der Anrufer einen Menschen sprechen, wird mit Zusammenfassung weitergeleitet."
+      },
+      "otherTasks": [
+        {
+          "label": "Terminbuchung",
+          "detail": "Sucht einen freien Termin und trägt ihn in Ihren Kalender ein."
+        },
+        {
+          "label": "Häufige Fragen",
+          "detail": "Beantwortet Fragen zu Öffnungszeiten, Preisen und Leistungen."
+        },
+        {
+          "label": "Weiterleitung an Kollegen",
+          "detail": "Möchte der Anrufer einen Menschen sprechen, wird mit Zusammenfassung weitergeleitet."
+        },
+        {
+          "label": "Rückrufwünsche",
+          "detail": "Notiert Name, Nummer und Anliegen und schickt sie Ihnen."
+        },
+        {
+          "label": "Umbuchung, Absage",
+          "detail": "Verschiebt oder storniert den Termin und gibt den Platz frei."
+        }
+      ],
+      "otherCall": [
+        "Guten Tag, ich hätte gern einen Termin nächste Woche.",
+        "Sehr gern. Dienstag um 10:00 oder Donnerstag um 14:00 wäre frei. Was passt Ihnen?",
+        "Donnerstag passt.",
+        "Perfekt, ich habe Donnerstag 14:00 für Sie eingetragen. Wir freuen uns auf Sie!"
+      ],
+      "tips": {
+        "tasks": "Beginnen Sie mit den häufigsten Anrufen — den Rest können Sie jederzeit aktivieren.",
+        "voice": "Hören Sie die Begrüßung in jeder Stimme und wählen Sie die, die Ihre Kunden gern hören würden.",
+        "knowledge": "Eine Preisliste und die Öffnungszeiten machen schon viel aus — Velyric nutzt nur, was Sie angeben."
+      }
+    },
+    "errors": {
+      "generic": "Etwas ist schiefgelaufen. Bitte erneut versuchen.",
+      "offline": "Keine Internetverbindung. Ihre Änderungen werden gespeichert, sobald Sie wieder online sind."
     }
   }
 }

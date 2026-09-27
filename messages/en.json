@@ -18,7 +18,8 @@
     "mainNav": "Main navigation",
     "menu": "Menu",
     "skipToContent": "Skip to content",
-    "solutions": "Solutions"
+    "solutions": "Solutions",
+    "account": "My account"
   },
   "common": {
     "loading": "Loading…"
@@ -193,7 +194,7 @@
     "confirm": {
       "successTitle": "Email confirmed ✔",
       "successText": "Your email is confirmed and you're logged in. Welcome to Velyric!",
-      "cta": "Continue to home",
+      "cta": "Continue to setup",
       "errorTitle": "This link is no longer valid",
       "errorText": "The confirmation link has expired or was already used. Log in and we'll send you a new one with one click.",
       "errorCta": "Go to log in"
@@ -500,6 +501,380 @@
       },
       "ctaTitle": "Stop losing jobs to the phone.",
       "ctaText": "We visit your workshop and tailor Velyric to how you work."
+    }
+  },
+  "setup": {
+    "meta": {
+      "title": "Setup"
+    },
+    "header": {
+      "saving": "Saving…",
+      "saved": "Saved",
+      "saveFailed": "Couldn't save",
+      "account": "Account",
+      "logout": "Log out",
+      "help": "Help:"
+    },
+    "steps": {
+      "business": "Business",
+      "tasks": "Tasks",
+      "voice": "Voice",
+      "knowledge": "Knowledge",
+      "billing": "Billing",
+      "payment": "Launch",
+      "done": "Done",
+      "progress": "Step {current} of {total}",
+      "rail": "Setup steps"
+    },
+    "nav": {
+      "back": "Back",
+      "next": "Continue",
+      "skip": "Skip for now",
+      "fixErrors": "Please check the fields marked in red."
+    },
+    "guide": {
+      "name": "Velyric assistant",
+      "thinking": "Thinking…",
+      "welcome": "Hi! I'll guide you through the setup — about 5 minutes. Everything is saved as you go, so you can continue any time.",
+      "templateNote": "I'm working from templates for now — full AI analysis starts once the key is configured."
+    },
+    "business": {
+      "eyebrow": "Step 1",
+      "title": "Tell us about your business.",
+      "lead": "A few sentences are enough. I'll build the first version of your voice agent from them — you can change everything later.",
+      "name": "Business name",
+      "namePlaceholder": "e.g. Smile Dental",
+      "website": "Website",
+      "optional": "optional",
+      "websitePlaceholder": "e.g. smiledental.com",
+      "description": "What do you do, and why do people call you?",
+      "descriptionPlaceholder": "e.g. We're a dental practice in Vienna with two dentists. Most callers want to book or reschedule, and many ask about prices and cleanings.",
+      "descriptionHint": "Use your own words: who calls, what they ask, what matters most.",
+      "tooShort": "Write at least a sentence or two (min. 20 characters).",
+      "examples": "Ideas:",
+      "exampleClinic": "Dental practice",
+      "exampleSalon": "Hair salon",
+      "exampleRestaurant": "Restaurant",
+      "exampleAuto": "Car service",
+      "exampleTexts": {
+        "clinic": "We're a dental practice in Budapest with two dentists and a hygienist. Most callers want to book or reschedule, or ask about treatment prices.",
+        "salon": "We're a hair and beauty salon in Debrecen with five stylists. People call to book colouring, cuts and nails, and many cancel at the last minute.",
+        "restaurant": "We're an Italian restaurant at Lake Balaton with 80 seats and a terrace. In summer we get lots of table bookings, many German and English guests, and questions about gluten-free food.",
+        "auto": "We're a car and tyre service in Győr. In season the phone rings all day for tyre changes, and many people ask when their car will be ready."
+      },
+      "analyze": "Analyse with AI",
+      "reanalyze": "Analyse again",
+      "analyzing": [
+        "Reading your description…",
+        "Recognising your industry…",
+        "Putting together the tasks…",
+        "Writing the first greeting…"
+      ],
+      "resultTitle": "Here's how I understand your business",
+      "resultEdit": "If something isn't right, edit it — the agent works from this.",
+      "summary": "Summary",
+      "services": "Services",
+      "changed": "You changed the description — shall I analyse it again?",
+      "error": "The analysis didn't work just now. Please try again in a minute.",
+      "rateLimited": "Too many requests in a short time. Please wait a moment and try again.",
+      "nameRequired": "Please enter your business name."
+    },
+    "tasks": {
+      "eyebrow": "Step 2",
+      "title": "What should Velyric do?",
+      "lead": "Based on your description, here's what I suggest. Switch on everything Velyric should handle for you.",
+      "yes": "Yes",
+      "no": "No",
+      "enabledCount": "{count} tasks enabled",
+      "noneEnabled": "Switch on at least one task.",
+      "addLabel": "Your own task",
+      "addPlaceholder": "e.g. Gift voucher orders",
+      "add": "Add",
+      "remove": "Remove",
+      "coverageTitle": "When should it answer?",
+      "coverage": {
+        "always": {
+          "title": "Always",
+          "text": "Day and night, it answers every call."
+        },
+        "afterHours": {
+          "title": "Outside opening hours",
+          "text": "You during the day, Velyric evenings and weekends."
+        },
+        "overflow": {
+          "title": "When you can't",
+          "text": "When the line is busy or nobody picks up after a few rings."
+        }
+      },
+      "languagesTitle": "Which languages should it speak?",
+      "languages": {
+        "hu": "Hungarian",
+        "de": "German",
+        "en": "English"
+      },
+      "handoffTitle": "Transfer to a person",
+      "handoffText": "If the caller wants a person, or asks something Velyric shouldn't answer, it transfers to this number — with a summary.",
+      "handoffPlaceholder": "+36 20 123 4567",
+      "handoffInvalid": "Enter a valid phone number, or leave it empty."
+    },
+    "voice": {
+      "eyebrow": "Step 3",
+      "title": "How should it sound?",
+      "lead": "Listen to each one and pick the voice that fits your business.",
+      "personas": {
+        "luca": "Warm, friendly",
+        "dora": "Calm, elegant",
+        "bence": "Deep, reassuring",
+        "mate": "Fresh, upbeat"
+      },
+      "female": "Female voice",
+      "male": "Male voice",
+      "play": "Listen",
+      "stop": "Stop",
+      "loadingAudio": "Loading audio…",
+      "previewNote": "Preview using your browser's voice. You'll get the final, natural voice during setup.",
+      "selected": "Selected",
+      "firstTitle": "Who speaks first on the call?",
+      "first": {
+        "agent": {
+          "title": "Velyric greets",
+          "text": "It introduces itself as soon as it picks up."
+        },
+        "caller": {
+          "title": "The caller speaks first",
+          "text": "It waits for the “Hello”, then greets."
+        }
+      },
+      "formalityTitle": "How should it address callers?",
+      "formality": {
+        "formal": {
+          "title": "Formal",
+          "text": "“How may I help you?”"
+        },
+        "informal": {
+          "title": "Casual",
+          "text": "“How can I help?”"
+        }
+      },
+      "agentName": "How should it introduce itself?",
+      "agentNameHint": "Your agent's name on calls.",
+      "greeting": "Greeting",
+      "closing": "Thank-you message at the end of the call",
+      "regenerate": "New version",
+      "regenerating": "Writing…",
+      "instructionPlaceholder": "Any wish for the wording? e.g. make it shorter",
+      "aiNote": "Under the EU AI Act, callers must know they're talking to an AI — so the greeting always says so.",
+      "greetingRequired": "The greeting can't be empty."
+    },
+    "knowledge": {
+      "eyebrow": "Step 4",
+      "title": "What should Velyric know?",
+      "lead": "The more it knows, the more accurately it answers. Price lists, services, FAQs, menus — anything helps.",
+      "drop": "Drop files here, or",
+      "browse": "choose from your computer",
+      "formats": "PDF, Word, Excel, TXT or image · max. 20 MB per file",
+      "uploading": "Uploading…",
+      "uploaded": "Uploaded",
+      "remove": "Remove",
+      "tooLarge": "{name}: too large (max. 20 MB).",
+      "badType": "{name}: we can't accept this format.",
+      "uploadFailed": "{name}: upload failed. Please try again.",
+      "demoFiles": "Demo mode: files aren't uploaded, they only appear in the list.",
+      "laterTitle": "I have a large knowledge base — I'll send it later",
+      "laterText": "No problem. A colleague will get in touch and collect the materials from you personally.",
+      "hours": "Opening hours",
+      "hoursPlaceholder": "e.g. Mon–Fri 8:00–18:00, Sat 9:00–13:00, closed Sunday",
+      "notes": "Anything else it should know",
+      "notesPlaceholder": "e.g. parking in the courtyard, appointments only, card payments accepted",
+      "empty": "This step is optional, but it makes a big difference to accurate answers."
+    },
+    "billing": {
+      "eyebrow": "Step 5",
+      "title": "Billing details",
+      "lead": "We'll issue the invoice to this name and address.",
+      "type": {
+        "company": "Company / sole trader",
+        "individual": "Private person"
+      },
+      "country": "Country",
+      "countries": {
+        "HU": "Hungary",
+        "AT": "Austria",
+        "DE": "Germany",
+        "OTHER": "Other EU country"
+      },
+      "companyName": "Company name",
+      "companyNamePlaceholder": "e.g. Smile Dental Ltd.",
+      "fullName": "Full name",
+      "fullNamePlaceholder": "e.g. Anna Kovács",
+      "taxNumber": "Hungarian tax number",
+      "taxNumberPlaceholder": "12345678-1-12",
+      "taxValid": "Valid format",
+      "euVat": "EU VAT number",
+      "euVatPlaceholderHU": "HU12345678",
+      "euVatPlaceholder": "e.g. ATU12345678",
+      "euVatSuggest": "Use {value}",
+      "zip": "Postcode",
+      "city": "City",
+      "address": "Street and number",
+      "addressPlaceholder": "e.g. Main Street 12",
+      "email": "Billing email",
+      "phone": "Phone number",
+      "phoneHint": "Our colleague will call you on this number for onboarding.",
+      "accept": "I accept the <terms>Terms</terms> and the <privacy>Privacy Policy</privacy>.",
+      "errors": {
+        "nameRequired": "Please enter the name.",
+        "taxRequired": "Please enter the tax number.",
+        "taxInvalid": "This isn't a valid tax number. Format: 12345678-1-12.",
+        "euVatRequired": "An EU VAT number is required for companies outside Hungary.",
+        "euVatInvalid": "This isn't a valid EU VAT number (e.g. ATU12345678).",
+        "zipInvalid": "Invalid postcode.",
+        "cityRequired": "Please enter the city.",
+        "addressRequired": "Please enter the address.",
+        "emailInvalid": "Please enter a valid email address.",
+        "phoneInvalid": "Please enter a valid phone number.",
+        "acceptRequired": "Please accept the terms to continue."
+      },
+      "optional": "optional"
+    },
+    "payment": {
+      "eyebrow": "Step 6",
+      "title": "Let's launch.",
+      "lead": "Secure payment via Stripe — by card, Apple Pay or Google Pay.",
+      "summary": "Summary",
+      "plan": "Velyric voice agent",
+      "custom": "Custom quote",
+      "perInterval": {
+        "day": "/ day",
+        "week": "/ week",
+        "month": "/ month",
+        "year": "/ year"
+      },
+      "oneTime": "one-time fee",
+      "includes": [
+        "Personal onboarding and setup",
+        "Your own tailored voice agent",
+        "Support team, 24/7"
+      ],
+      "for": "Billed to: {name}",
+      "edit": "Edit",
+      "pay": "Continue to secure payment",
+      "redirecting": "Redirecting to Stripe…",
+      "secure": "Your card details are handled by Stripe — we never see them.",
+      "methods": "Accepted payment methods",
+      "demoTitle": "Demo mode",
+      "demoText": "Payments aren't switched on for this site yet. You can go through the whole flow without being charged.",
+      "demoContinue": "Continue without payment",
+      "loginRequired": "Please sign in with a real account to pay.",
+      "cancelled": "Payment was cancelled — you haven't been charged. You can start again any time.",
+      "verifying": "Checking your payment…",
+      "notPaid": "We can't see the payment as successful yet. If you were charged, please call us.",
+      "error": "We couldn't start the payment just now. Please try again in a minute.",
+      "taxRejected": "Stripe didn't accept the tax number. Please check your billing details.",
+      "questions": "Questions before paying? Call us:"
+    },
+    "done": {
+      "eyebrow": "Done",
+      "title": "{agent} will be answering your calls soon.",
+      "lead": "We've received your setup. From here, we take over — you just watch the calls come in.",
+      "paid": "Payment successful",
+      "demo": "Demo mode",
+      "listen": "Hear how it greets",
+      "demoCall": "Here's how a call will sound at your business",
+      "demoCallNote": "An example the AI put together from your description.",
+      "nextTitle": "What happens now?",
+      "next": [
+        {
+          "title": "We'll call within 24 hours",
+          "text": "A colleague goes through your setup with you and arranges the personal onboarding."
+        },
+        {
+          "title": "We test it together",
+          "text": "You get a test number to try it live before anything goes public."
+        },
+        {
+          "title": "Go live",
+          "text": "You forward your calls and Velyric gets to work. In the first weeks we fine-tune it based on real calls."
+        }
+      ],
+      "yourSetup": "Your setup",
+      "edit": "Edit",
+      "home": "Back to the homepage",
+      "summary": {
+        "business": "Business",
+        "tasks": "Tasks",
+        "voice": "Voice",
+        "knowledge": "Knowledge base",
+        "knowledgeLater": "You'll send it later, a colleague will collect it",
+        "knowledgeFiles": "{count} files",
+        "knowledgeNone": "No materials yet"
+      }
+    },
+    "preview": {
+      "title": "Your agent",
+      "live": "Live preview",
+      "open": "Preview",
+      "business": "Business",
+      "voice": "Voice",
+      "greeting": "Greeting",
+      "tasks": "Tasks",
+      "coverage": "Availability",
+      "languages": "Languages",
+      "empty": "Your agent takes shape here after step 1.",
+      "status": "Being set up"
+    },
+    "templates": {
+      "unnamed": "our business",
+      "otherLabel": "Service business",
+      "greeting": {
+        "formal": "{business}, good day! I'm {agent}, an AI assistant. How may I help you?",
+        "informal": "{business}, hi! I'm {agent}, an AI assistant. How can I help?"
+      },
+      "closing": {
+        "formal": "Thank you for calling us. Have a lovely day!",
+        "informal": "Thanks for calling — have a great day!"
+      },
+      "handoffTask": {
+        "label": "Transfer to a colleague",
+        "detail": "If the caller wants a person, it transfers the call with a summary."
+      },
+      "otherTasks": [
+        {
+          "label": "Appointment booking",
+          "detail": "Finds a free slot and puts it in your calendar."
+        },
+        {
+          "label": "Frequent questions",
+          "detail": "Answers questions about opening hours, prices and services."
+        },
+        {
+          "label": "Transfer to a colleague",
+          "detail": "If the caller wants a person, it transfers the call with a summary."
+        },
+        {
+          "label": "Callback requests",
+          "detail": "Takes the caller's name, number and request, and sends them to you."
+        },
+        {
+          "label": "Rescheduling, cancellations",
+          "detail": "Moves or cancels the appointment and frees up the slot."
+        }
+      ],
+      "otherCall": [
+        "Hello, I'd like to book an appointment for next week.",
+        "Happy to help. We have Tuesday at 10:00 or Thursday at 14:00. Which suits you?",
+        "Thursday works.",
+        "Great, you're booked for Thursday at 14:00. We look forward to seeing you!"
+      ],
+      "tips": {
+        "tasks": "Start with your most common calls — you can switch on the rest any time.",
+        "voice": "Listen to the greeting in each voice and pick the one your customers would love to hear.",
+        "knowledge": "A price list and your opening hours already make a big difference — Velyric only uses what you give it."
+      }
+    },
+    "errors": {
+      "generic": "Something went wrong. Please try again.",
+      "offline": "No internet connection. We'll save your changes as soon as you're back online."
     }
   }
 }

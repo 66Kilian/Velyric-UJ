@@ -139,8 +139,8 @@ export function MobileMenu({ open, onClose, active, returnFocusRef, loggedIn, on
             transition={{ duration: DURATION.item, ease: EASE_OUT, delay: 0.25 }}
             className="relative flex flex-col gap-3 px-5 pt-8 pb-[max(1.5rem,env(safe-area-inset-bottom))] sm:px-8"
           >
-            <Button href="/regisztracio" size="lg" onClick={onClose} className="w-full">
-              {t("start")}
+            <Button href={loggedIn ? "/beallitas" : "/regisztracio"} size="lg" onClick={onClose} className="w-full">
+              {loggedIn ? t("account") : t("start")}
             </Button>
             {loggedIn ? (
               <Button

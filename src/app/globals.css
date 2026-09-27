@@ -101,9 +101,9 @@
   background-image: var(--brand-gradient);
 }
 
-/* Fő gomb: márka-gradiens 16% Deep Navy fátyollal → a fehér felirat AA (≈5:1) */
+/* Fő gomb: márka-gradiens 16% sötét szilva fátyollal → a fehér felirat AA (≈5:1) */
 @utility bg-cta {
-  background-image: linear-gradient(rgb(7 19 39 / 0.16), rgb(7 19 39 / 0.16)),
+  background-image: linear-gradient(rgb(30 6 22 / 0.16), rgb(30 6 22 / 0.16)),
     linear-gradient(135deg, var(--magenta) -10%, var(--pink) 50%, var(--crimson) 110%);
 }
 
@@ -220,6 +220,61 @@ html.lenis body {
   }
   .turn-in {
     animation: rise-in 0.36s var(--ease-out) both;
+  }
+  /* Beállítás: az MI-gömb „lélegzése”, elemzés-sáv, élő pont, sodródó felhők */
+  .orb-ring {
+    animation: orb-breathe 3.2s var(--ease-move) infinite alternate;
+  }
+  .orb-ring-fast {
+    animation-duration: 0.9s;
+  }
+  .analyze-bar {
+    animation: analyze-slide 1.3s var(--ease-move) infinite;
+  }
+  .live-dot {
+    animation: live-dot 2s var(--ease-out) infinite;
+  }
+  .cloud-float {
+    animation: cloud-float 18s var(--ease-move) infinite alternate;
+  }
+  .cloud-float-slow {
+    animation: cloud-float 26s var(--ease-move) infinite alternate-reverse;
+  }
+}
+
+@keyframes orb-breathe {
+  from {
+    transform: scale(0.9);
+    opacity: 0.25;
+  }
+  to {
+    transform: scale(1.35);
+    opacity: 0.55;
+  }
+}
+@keyframes analyze-slide {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(300%);
+  }
+}
+@keyframes live-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+@keyframes cloud-float {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(-4%, 6%, 0) scale(1.08);
   }
 }
 

@@ -106,8 +106,8 @@ export function Navbar() {
                 {t("login")}
               </Button>
             )}
-            <Button href="/regisztracio" className="ml-1 hidden sm:inline-flex">
-              {t("start")}
+            <Button href={session ? "/beallitas" : "/regisztracio"} className="ml-1 hidden sm:inline-flex">
+              {session ? t("account") : t("start")}
             </Button>
 
             {/* Hamburger – mobilon és tableten */}

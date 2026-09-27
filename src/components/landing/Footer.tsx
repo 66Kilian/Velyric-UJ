@@ -7,7 +7,7 @@ import { Link } from "@/i18n/navigation";
 import { INDUSTRIES } from "@/lib/industries";
 import { site } from "@/lib/site";
 
-// FOOTER (Deep Navy) – egyben a „Kapcsolat” szekció (a navbar ide görget)
+// FOOTER (legmélyebb szilva) – egyben a „Kapcsolat” szekció (a navbar ide görget)
 export function Footer() {
   const t = useTranslations("footer");
   const nav = useTranslations("nav");

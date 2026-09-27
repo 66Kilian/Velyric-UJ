@@ -13,6 +13,8 @@ type DayDialProps = {
 
 const R = 168; // az ív sugara (viewBox 400×400)
 const CIRC = 2 * Math.PI * R;
+// Kerekítés: a szerver és a böngésző lebegőpontos eredménye így biztosan egyezik (nincs hidratálási eltérés)
+const r2d = (v: number) => Math.round(v * 100) / 100;
 const HOURS = Array.from({ length: 24 }, (_, h) => h);
 
 // 24 órás számlap: a márka-gradiens ív görgetésre 00:00-tól 24:00-ig telik.
@@ -53,10 +55,10 @@ export const DayDial = forwardRef<HTMLDivElement, DayDialProps>(function DayDial
             return (
               <line
                 key={h}
-                x1={200 + Math.cos(a) * r1}
-                y1={200 + Math.sin(a) * r1}
-                x2={200 + Math.cos(a) * r2}
-                y2={200 + Math.sin(a) * r2}
+                x1={r2d(200 + Math.cos(a) * r1)}
+                y1={r2d(200 + Math.sin(a) * r1)}
+                x2={r2d(200 + Math.cos(a) * r2)}
+                y2={r2d(200 + Math.sin(a) * r2)}
                 stroke={lit ? "#FF4D9D" : "rgb(255 247 251 / 0.22)"}
                 strokeWidth={major ? 3 : 1.5}
                 strokeLinecap="round"
@@ -68,8 +70,8 @@ export const DayDial = forwardRef<HTMLDivElement, DayDialProps>(function DayDial
             return (
               <text
                 key={h}
-                x={200 + Math.cos(a) * 140}
-                y={200 + Math.sin(a) * 140 + 5}
+                x={r2d(200 + Math.cos(a) * 140)}
+                y={r2d(200 + Math.sin(a) * 140 + 5)}
                 textAnchor="middle"
                 className="fill-muted text-[13px] font-semibold"
                 style={{ fontVariantNumeric: "tabular-nums" }}
@@ -89,14 +91,14 @@ export const DayDial = forwardRef<HTMLDivElement, DayDialProps>(function DayDial
             stroke="url(#dial-grad)"
             strokeWidth="10"
             strokeLinecap="round"
-            strokeDasharray={CIRC}
-            strokeDashoffset={CIRC * (1 - p)}
+            strokeDasharray={r2d(CIRC)}
+            strokeDashoffset={r2d(CIRC * (1 - p))}
             transform="rotate(-90 200 200)"
           />
           {/* Vándorló jelölő */}
           <circle
-            cx={200 + Math.cos(angle) * R}
-            cy={200 + Math.sin(angle) * R}
+            cx={r2d(200 + Math.cos(angle) * R)}
+            cy={r2d(200 + Math.sin(angle) * R)}
             r="9"
             fill="#1e0616"
             stroke="#FF4D9D"

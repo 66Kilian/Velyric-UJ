@@ -41,7 +41,7 @@ export function ConfirmResult({ error }: { error: boolean }) {
           <CircleCheckBig className="size-8 text-success" aria-hidden="true" />
         </span>
         <p className="text-muted">{t("successText")}</p>
-        <Button href="/" size="lg" className="w-full">
+        <Button href="/beallitas" size="lg" className="w-full">
           {t("cta")}
         </Button>
       </div>

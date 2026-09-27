@@ -52,7 +52,7 @@ export function NewPasswordForm({ linkError }: { linkError: boolean }) {
     if (updateError) return setError(t(`errors.${authErrorKey(updateError)}`));
 
     toast.success(t("newPassword.success"));
-    router.replace("/");
+    router.replace("/beallitas");
     router.refresh();
   };
 

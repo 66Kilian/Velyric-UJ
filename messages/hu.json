@@ -18,7 +18,8 @@
     "mainNav": "Fő navigáció",
     "menu": "Menü",
     "skipToContent": "Ugrás a tartalomra",
-    "solutions": "Megoldások"
+    "solutions": "Megoldások",
+    "account": "Fiókom"
   },
   "common": {
     "loading": "Betöltés…"
@@ -193,7 +194,7 @@
     "confirm": {
       "successTitle": "Sikeres megerősítés ✔",
       "successText": "Az e-mail-címed megerősítve, és már be is jelentkeztél. Üdv a Velyric-nél!",
-      "cta": "Tovább a főoldalra",
+      "cta": "Tovább a beállításhoz",
       "errorTitle": "Ez a link már nem érvényes",
       "errorText": "A megerősítő link lejárt, vagy már felhasználták. Jelentkezz be, és egy kattintással küldünk újat.",
       "errorCta": "Tovább a bejelentkezéshez"
@@ -500,6 +501,380 @@
       },
       "ctaTitle": "A műhelyed ne veszítsen több munkát a telefon miatt.",
       "ctaText": "Kijövünk a műhelybe, és a ti munkarendetekhez szabjuk a Velyric-et."
+    }
+  },
+  "setup": {
+    "meta": {
+      "title": "Beállítás"
+    },
+    "header": {
+      "saving": "Mentés…",
+      "saved": "Mentve",
+      "saveFailed": "Nem sikerült menteni",
+      "account": "Fiók",
+      "logout": "Kijelentkezés",
+      "help": "Segítség:"
+    },
+    "steps": {
+      "business": "Vállalkozás",
+      "tasks": "Feladatok",
+      "voice": "Hang",
+      "knowledge": "Tudás",
+      "billing": "Számlázás",
+      "payment": "Indítás",
+      "done": "Kész",
+      "progress": "{current}. lépés / {total}",
+      "rail": "A beállítás lépései"
+    },
+    "nav": {
+      "back": "Vissza",
+      "next": "Tovább",
+      "skip": "Most kihagyom",
+      "fixErrors": "Nézd át a pirossal jelölt mezőket."
+    },
+    "guide": {
+      "name": "Velyric asszisztens",
+      "thinking": "Gondolkodom…",
+      "welcome": "Szia! Végigvezetlek a beállításon — kb. 5 perc. Mindent menet közben mentek, bármikor folytathatod.",
+      "templateNote": "Most sablonokból dolgozom — a teljes MI-elemzés a kulcs beállítása után indul."
+    },
+    "business": {
+      "eyebrow": "1. lépés",
+      "title": "Mesélj a vállalkozásodról.",
+      "lead": "Pár mondat elég. Ebből állítom össze a hangügynököd első változatát — mindent módosíthatsz később.",
+      "name": "Vállalkozás neve",
+      "namePlaceholder": "pl. Mosoly Fogászat",
+      "website": "Weboldal",
+      "optional": "nem kötelező",
+      "websitePlaceholder": "pl. mosolyfogaszat.hu",
+      "description": "Mivel foglalkoztok, és miért hívnak titeket?",
+      "descriptionPlaceholder": "pl. Fogorvosi rendelő vagyunk Budapesten, két orvossal. A legtöbben időpontot kérnek vagy áthelyeznek, és sokan kérdeznek árakról, fogkő-eltávolításról.",
+      "descriptionHint": "Írd le a saját szavaiddal: kik hívnak, mit kérdeznek, mi a legfontosabb.",
+      "tooShort": "Írj legalább egy-két mondatot (min. 20 karakter).",
+      "examples": "Ötletek:",
+      "exampleClinic": "Fogorvosi rendelő",
+      "exampleSalon": "Fodrászat",
+      "exampleRestaurant": "Étterem",
+      "exampleAuto": "Autószerviz",
+      "exampleTexts": {
+        "clinic": "Fogorvosi rendelő vagyunk Budapesten, két fogorvossal és egy szájhigiénikussal. A legtöbben időpontot kérnek, áthelyeznek, vagy a kezelések áráról kérdeznek.",
+        "salon": "Fodrász- és kozmetikai szalon vagyunk Debrecenben, öt kollégával. Hívnak időpontért festésre, vágásra, műkörömre, és sokan lemondanak az utolsó pillanatban.",
+        "restaurant": "Olasz étterem vagyunk a Balatonnál, 80 férőhellyel és terasszal. Nyáron sok az asztalfoglalás, sok a német és angol vendég, és gyakran kérdeznek gluténmentes ételekről.",
+        "auto": "Autószerviz és gumiszerviz vagyunk Győrben. Szezonban egész nap csörög a telefon gumicsere miatt, és sokan kérdezik, mikor lesz kész az autójuk."
+      },
+      "analyze": "Elemzés az MI-vel",
+      "reanalyze": "Újraelemzés",
+      "analyzing": [
+        "Olvasom a leírást…",
+        "Felismerem az iparágat…",
+        "Összeállítom a feladatokat…",
+        "Megírom az első köszönést…"
+      ],
+      "resultTitle": "Így értem a vállalkozásodat",
+      "resultEdit": "Ha valami nem pontos, írd át — az ügynök ebből dolgozik.",
+      "summary": "Összefoglaló",
+      "services": "Szolgáltatások",
+      "changed": "Módosítottad a leírást — elemezzem újra?",
+      "error": "Most nem sikerült az elemzés. Próbáld újra egy perc múlva.",
+      "rateLimited": "Sok kérés érkezett rövid idő alatt. Várj egy kicsit, és próbáld újra.",
+      "nameRequired": "Add meg a vállalkozás nevét."
+    },
+    "tasks": {
+      "eyebrow": "2. lépés",
+      "title": "Mire kell a Velyric?",
+      "lead": "A leírásod alapján ezeket javaslom. Kapcsold be, amit a Velyric intézzen helyetted.",
+      "yes": "Igen",
+      "no": "Nem",
+      "enabledCount": "{count} feladat bekapcsolva",
+      "noneEnabled": "Kapcsolj be legalább egy feladatot.",
+      "addLabel": "Saját feladat",
+      "addPlaceholder": "pl. Ajándékutalvány rendelése",
+      "add": "Hozzáadás",
+      "remove": "Törlés",
+      "coverageTitle": "Mikor vegye fel a telefont?",
+      "coverage": {
+        "always": {
+          "title": "Mindig",
+          "text": "Éjjel-nappal, minden hívást ő vesz fel."
+        },
+        "afterHours": {
+          "title": "Nyitvatartáson kívül",
+          "text": "Napközben ti, este és hétvégén a Velyric."
+        },
+        "overflow": {
+          "title": "Ha nem veszitek fel",
+          "text": "Ha foglalt a vonal, vagy pár csengés után sem veszi fel senki."
+        }
+      },
+      "languagesTitle": "Milyen nyelveken beszéljen?",
+      "languages": {
+        "hu": "Magyar",
+        "de": "Német",
+        "en": "Angol"
+      },
+      "handoffTitle": "Átkapcsolás emberhez",
+      "handoffText": "Ha a hívó emberrel szeretne beszélni, vagy olyat kérdez, amire a Velyric nem válaszolhat, erre a számra kapcsol — összefoglalóval.",
+      "handoffPlaceholder": "+36 20 123 4567",
+      "handoffInvalid": "Adj meg egy érvényes telefonszámot, vagy hagyd üresen."
+    },
+    "voice": {
+      "eyebrow": "3. lépés",
+      "title": "Milyen hangon szóljon?",
+      "lead": "Hallgasd meg mindet, és válaszd ki, amelyik a vállalkozásodhoz illik.",
+      "personas": {
+        "luca": "Meleg, barátságos",
+        "dora": "Nyugodt, elegáns",
+        "bence": "Mély, megnyugtató",
+        "mate": "Friss, lendületes"
+      },
+      "female": "Női hang",
+      "male": "Férfi hang",
+      "play": "Meghallgatom",
+      "stop": "Leállítás",
+      "loadingAudio": "Hang betöltése…",
+      "previewNote": "Előnézet a böngésző hangján. A végleges, természetes hangot a beállításkor kapod meg.",
+      "selected": "Kiválasztva",
+      "firstTitle": "Ki szóljon először a hívásban?",
+      "first": {
+        "agent": {
+          "title": "A Velyric köszön",
+          "text": "Kicsengés után azonnal bemutatkozik."
+        },
+        "caller": {
+          "title": "A hívó szól először",
+          "text": "Megvárja a „Halló”-t, csak utána köszön."
+        }
+      },
+      "formalityTitle": "Hogyan szólítsa meg a hívókat?",
+      "formality": {
+        "formal": {
+          "title": "Magázva",
+          "text": "„Miben segíthetek Önnek?”"
+        },
+        "informal": {
+          "title": "Tegezve",
+          "text": "„Miben segíthetek?”"
+        }
+      },
+      "agentName": "Hogyan mutatkozzon be?",
+      "agentNameHint": "Az ügynököd neve a hívásokban.",
+      "greeting": "Köszönés",
+      "closing": "Köszönő üzenet a hívás végén",
+      "regenerate": "Új változat",
+      "regenerating": "Írom…",
+      "instructionPlaceholder": "Kérésed a szöveghez? pl. legyen rövidebb",
+      "aiNote": "Az EU MI-rendelete szerint a hívónak tudnia kell, hogy mesterséges intelligenciával beszél — ezért a köszönés ezt mindig tartalmazza.",
+      "greetingRequired": "A köszönés nem lehet üres."
+    },
+    "knowledge": {
+      "eyebrow": "4. lépés",
+      "title": "Mit tudjon a Velyric?",
+      "lead": "Minél többet tud, annál pontosabban válaszol. Árlista, szolgáltatások, gyakori kérdések, étlap — bármi jöhet.",
+      "drop": "Húzd ide a fájlokat, vagy",
+      "browse": "válassz a gépedről",
+      "formats": "PDF, Word, Excel, TXT vagy kép · max. 20 MB / fájl",
+      "uploading": "Feltöltés…",
+      "uploaded": "Feltöltve",
+      "remove": "Eltávolítás",
+      "tooLarge": "{name}: túl nagy (max. 20 MB).",
+      "badType": "{name}: ezt a formátumot nem tudjuk fogadni.",
+      "uploadFailed": "{name}: a feltöltés nem sikerült. Próbáld újra.",
+      "demoFiles": "Bemutató mód: a fájlokat nem töltjük fel, csak a listában jelennek meg.",
+      "laterTitle": "Nagy tudásbázisom van — később küldöm el",
+      "laterText": "Semmi gond. A kollégánk felveszi veled a kapcsolatot, és személyesen átveszi az anyagokat.",
+      "hours": "Nyitvatartás",
+      "hoursPlaceholder": "pl. H–P 8:00–18:00, Szo 9:00–13:00, vasárnap zárva",
+      "notes": "Amit még érdemes tudnia",
+      "notesPlaceholder": "pl. parkolás az udvarban, csak előre egyeztetett időpontra fogadunk, bankkártyával is lehet fizetni",
+      "empty": "Ez a lépés nem kötelező, de sokat számít a pontos válaszokhoz."
+    },
+    "billing": {
+      "eyebrow": "5. lépés",
+      "title": "Számlázási adatok",
+      "lead": "Erre a névre és címre állítjuk ki a számlát.",
+      "type": {
+        "company": "Cég / egyéni vállalkozó",
+        "individual": "Magánszemély"
+      },
+      "country": "Ország",
+      "countries": {
+        "HU": "Magyarország",
+        "AT": "Ausztria",
+        "DE": "Németország",
+        "OTHER": "Más EU-ország"
+      },
+      "companyName": "Cégnév",
+      "companyNamePlaceholder": "pl. Mosoly Fogászat Kft.",
+      "fullName": "Teljes név",
+      "fullNamePlaceholder": "pl. Kovács Anna",
+      "taxNumber": "Adószám",
+      "taxNumberPlaceholder": "12345678-1-12",
+      "taxValid": "Érvényes formátum",
+      "euVat": "Közösségi adószám",
+      "euVatPlaceholderHU": "HU12345678",
+      "euVatPlaceholder": "pl. ATU12345678",
+      "euVatSuggest": "Használom: {value}",
+      "zip": "Irányítószám",
+      "city": "Település",
+      "address": "Utca, házszám",
+      "addressPlaceholder": "pl. Fő utca 12. 2/4.",
+      "email": "Számlázási e-mail",
+      "phone": "Telefonszám",
+      "phoneHint": "A kollégánk ezen keres a bevezetéshez.",
+      "accept": "Elfogadom az <terms>ÁSZF-et</terms> és az <privacy>Adatvédelmi tájékoztatót</privacy>.",
+      "errors": {
+        "nameRequired": "Add meg a nevet.",
+        "taxRequired": "Add meg az adószámot.",
+        "taxInvalid": "Ez nem érvényes adószám. Formátum: 12345678-1-12.",
+        "euVatRequired": "Külföldi cégnél kötelező a közösségi adószám.",
+        "euVatInvalid": "Ez nem érvényes közösségi adószám (pl. HU12345678).",
+        "zipInvalid": "Hibás irányítószám.",
+        "cityRequired": "Add meg a települést.",
+        "addressRequired": "Add meg a címet.",
+        "emailInvalid": "Adj meg érvényes e-mail-címet.",
+        "phoneInvalid": "Adj meg érvényes telefonszámot.",
+        "acceptRequired": "A folytatáshoz fogadd el a feltételeket."
+      },
+      "optional": "nem kötelező"
+    },
+    "payment": {
+      "eyebrow": "6. lépés",
+      "title": "Indítsuk el.",
+      "lead": "Biztonságos fizetés a Stripe-on keresztül — bankkártyával, Apple Pay-jel vagy Google Pay-jel.",
+      "summary": "Összesítő",
+      "plan": "Velyric hangügynök",
+      "custom": "Egyedi ajánlat szerint",
+      "perInterval": {
+        "day": "/ nap",
+        "week": "/ hét",
+        "month": "/ hó",
+        "year": "/ év"
+      },
+      "oneTime": "egyszeri díj",
+      "includes": [
+        "Személyes bevezetés és beállítás",
+        "Saját, rád szabott hangügynök",
+        "Magyar ügyfélszolgálat, 0–24"
+      ],
+      "for": "Számlázás: {name}",
+      "edit": "Módosítás",
+      "pay": "Tovább a biztonságos fizetéshez",
+      "redirecting": "Átirányítás a Stripe-ra…",
+      "secure": "A kártyaadatokat a Stripe kezeli — mi soha nem látjuk őket.",
+      "methods": "Elfogadott fizetési módok",
+      "demoTitle": "Bemutató mód",
+      "demoText": "A fizetés még nincs bekapcsolva ezen az oldalon. A folyamatot végig tudod nézni, terhelés nélkül.",
+      "demoContinue": "Folytatás fizetés nélkül",
+      "loginRequired": "A fizetéshez valódi fiókkal kell bejelentkezned.",
+      "cancelled": "A fizetés megszakadt — nem terheltünk semmit. Bármikor újrakezdheted.",
+      "verifying": "Fizetés ellenőrzése…",
+      "notPaid": "A fizetést még nem látjuk sikeresnek. Ha levonták az összeget, hívj minket.",
+      "error": "Most nem sikerült elindítani a fizetést. Próbáld újra egy perc múlva.",
+      "taxRejected": "A Stripe nem fogadta el az adószámot. Ellenőrizd a számlázási adatoknál.",
+      "questions": "Kérdésed van a fizetés előtt? Hívj minket:"
+    },
+    "done": {
+      "eyebrow": "Kész",
+      "title": "{agent} hamarosan felveszi a telefonjaidat.",
+      "lead": "Megkaptuk a beállításaidat. Innen már mi dolgozunk — te csak a hívásokat figyeld.",
+      "paid": "Fizetés sikeres",
+      "demo": "Bemutató mód",
+      "listen": "Hallgasd meg, hogyan köszön",
+      "demoCall": "Így hangzik majd egy hívás nálatok",
+      "demoCallNote": "Az MI által összeállított példa a leírásod alapján.",
+      "nextTitle": "Mi történik most?",
+      "next": [
+        {
+          "title": "24 órán belül hívunk",
+          "text": "A kollégánk átbeszéli veled a beállításokat, és egyeztet a személyes bevezetésről."
+        },
+        {
+          "title": "Együtt teszteljük",
+          "text": "Kapsz egy tesztszámot: kipróbálhatod élőben, mielőtt bármi élesedne."
+        },
+        {
+          "title": "Élesítés",
+          "text": "Átirányítod a hívásokat, és a Velyric munkába áll. Az első hetekben a valódi hívások alapján finomhangoljuk."
+        }
+      ],
+      "yourSetup": "A beállításaid",
+      "edit": "Módosítás",
+      "home": "Vissza a főoldalra",
+      "summary": {
+        "business": "Vállalkozás",
+        "tasks": "Feladatok",
+        "voice": "Hang",
+        "knowledge": "Tudásbázis",
+        "knowledgeLater": "Később küldöd, a kollégánk átveszi",
+        "knowledgeFiles": "{count} fájl",
+        "knowledgeNone": "Még nincs anyag"
+      }
+    },
+    "preview": {
+      "title": "Az ügynököd",
+      "live": "Élő előnézet",
+      "open": "Előnézet",
+      "business": "Vállalkozás",
+      "voice": "Hang",
+      "greeting": "Köszönés",
+      "tasks": "Feladatok",
+      "coverage": "Elérhetőség",
+      "languages": "Nyelvek",
+      "empty": "Az 1. lépés után itt épül fel az ügynököd.",
+      "status": "Beállítás alatt"
+    },
+    "templates": {
+      "unnamed": "a vállalkozás",
+      "otherLabel": "Szolgáltató vállalkozás",
+      "greeting": {
+        "formal": "{business}, jó napot kívánok! {agent} vagyok, mesterséges intelligencia asszisztens. Miben segíthetek?",
+        "informal": "{business}, szia! {agent} vagyok, MI-asszisztens. Miben segíthetek?"
+      },
+      "closing": {
+        "formal": "Köszönöm, hogy hívott minket! További szép napot kívánok.",
+        "informal": "Köszi, hogy hívtál! Szép napot!"
+      },
+      "handoffTask": {
+        "label": "Átkapcsolás kollégához",
+        "detail": "Ha a hívó emberrel szeretne beszélni, összefoglalóval átkapcsol."
+      },
+      "otherTasks": [
+        {
+          "label": "Időpontfoglalás",
+          "detail": "Szabad időpontot keres és beírja a naptáradba."
+        },
+        {
+          "label": "Gyakori kérdések",
+          "detail": "Válaszol a nyitvatartásra, árakra és szolgáltatásokra."
+        },
+        {
+          "label": "Átkapcsolás kollégához",
+          "detail": "Ha a hívó emberrel szeretne beszélni, összefoglalóval átkapcsol."
+        },
+        {
+          "label": "Visszahívás kérése",
+          "detail": "Felírja a hívó nevét, számát és kérését, és elküldi neked."
+        },
+        {
+          "label": "Átfoglalás, lemondás",
+          "detail": "Áthelyezi vagy törli az időpontot, és felszabadítja a helyet."
+        }
+      ],
+      "otherCall": [
+        "Jó napot, szeretnék időpontot egyeztetni a jövő hétre.",
+        "Szívesen segítek. Kedden 10:00-kor vagy csütörtökön 14:00-kor van szabad időpont. Melyik felel meg?",
+        "A csütörtök jó lesz.",
+        "Rendben, csütörtök 14:00-ra rögzítettem. Várjuk szeretettel!"
+      ],
+      "tips": {
+        "tasks": "Kezdd a leggyakoribb hívásokkal — a többit bármikor bekapcsolhatod.",
+        "voice": "Hallgasd meg a köszönést mindegyik hangon: azt válaszd, amelyiket a te ügyfeleid is szívesen hallanák.",
+        "knowledge": "Egy árlista és a nyitvatartás már sokat számít — a Velyric csak abból dolgozik, amit megadsz."
+      }
+    },
+    "errors": {
+      "generic": "Valami hiba történt. Próbáld újra.",
+      "offline": "Nincs internetkapcsolat. A változásaidat elmentjük, amint újra van."
     }
   }
 }

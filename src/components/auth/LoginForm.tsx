@@ -92,7 +92,7 @@ export function LoginForm({ initialError }: { initialError?: string | null }) {
 
     failures.current = 0;
     toast.success(t("login.success"));
-    router.replace("/");
+    router.replace("/beallitas");
     router.refresh();
   };
 

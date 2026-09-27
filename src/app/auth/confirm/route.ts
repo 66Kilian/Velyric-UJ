@@ -10,7 +10,7 @@ import { getSupabaseServer } from "@/lib/supabase/server";
 // Két formát is kezel:
 //  - token_hash + type (ajánlott e-mail sablon → másik eszközön megnyitva is működik)
 //  - code (PKCE: Google, illetve az alap e-mail sablon)
-const ALLOWED_NEXT: AppPathname[] = ["/", "/auth/megerosites", "/auth/uj-jelszo"];
+const ALLOWED_NEXT: AppPathname[] = ["/", "/beallitas", "/auth/megerosites", "/auth/uj-jelszo"];
 
 export async function GET(request: NextRequest) {
   const { searchParams, origin } = request.nextUrl;
@@ -22,7 +22,7 @@ export async function GET(request: NextRequest) {
 
   // Hiba esetén: jelszónál az új-jelszó oldal, Google-nél a bejelentkezés, egyébként a megerősítés oldal
   const failTo: AppPathname =
-    next === "/auth/uj-jelszo" ? "/auth/uj-jelszo" : next === "/" ? "/bejelentkezes" : "/auth/megerosites";
+    next === "/auth/uj-jelszo" ? "/auth/uj-jelszo" : next === "/" || next === "/beallitas" ? "/bejelentkezes" : "/auth/megerosites";
 
   const redirectTo = (href: AppPathname, error?: string) => {
     const url = new URL(getPathname({ locale, href }), origin);
@@ -49,8 +49,8 @@ export async function GET(request: NextRequest) {
 
   if (failed) return redirectTo(failTo, "expired");
   const response = redirectTo(next);
-  if (next === "/") {
-    // Google-belépés után a főoldalon üdvözlő értesítés jelenik meg
+  if (next === "/" || next === "/beallitas") {
+    // Google-belépés után üdvözlő értesítés jelenik meg
     const url = new URL(response.headers.get("location")!);
     url.searchParams.set("welcome", "1");
     response.headers.set("location", url.toString());
